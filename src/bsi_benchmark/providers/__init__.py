@@ -1,3 +1,10 @@
-from .base import Provider
+from .manager import ProviderManager
 
-__all__ = ["Provider"]
+from . import mock
+from . import crossref
+from . import openalex
+from . import semantic_scholar
+from . import arxiv
+from . import europepmc
+
+__all__ = ["ProviderManager"]
