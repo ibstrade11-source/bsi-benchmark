@@ -1,3 +1,9 @@
-from .crossref import CrossrefParser
-from .openalex import OpenAlexParser
-from .arxiv import ArxivParser
+from .registry import registry
+
+from . import crossref
+from . import openalex
+from . import arxiv
+
+__all__ = [
+    "registry",
+]

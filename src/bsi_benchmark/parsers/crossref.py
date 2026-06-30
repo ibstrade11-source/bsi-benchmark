@@ -31,3 +31,7 @@ class CrossrefParser(Parser):
             )
 
         return articles
+
+from .registry import registry
+
+registry.register("crossref", CrossrefParser())

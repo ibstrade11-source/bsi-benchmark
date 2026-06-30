@@ -24,3 +24,7 @@ class OpenAlexParser(Parser):
             )
 
         return articles
+
+from .registry import registry
+
+registry.register("openalex", OpenAlexParser())

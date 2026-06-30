@@ -34,3 +34,7 @@ class ArxivParser(Parser):
             )
 
         return articles
+
+from .registry import registry
+
+registry.register("arxiv", ArxivParser())
