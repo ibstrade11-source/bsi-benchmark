@@ -1,0 +1,7 @@
+pyproject.toml
+bsi_benchmark.egg-info/PKG-INFO
+bsi_benchmark.egg-info/SOURCES.txt
+bsi_benchmark.egg-info/dependency_links.txt
+bsi_benchmark.egg-info/entry_points.txt
+bsi_benchmark.egg-info/requires.txt
+bsi_benchmark.egg-info/top_level.txt

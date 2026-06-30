@@ -1,0 +1,17 @@
+[project]
+name = "bsi-benchmark"
+version = "0.1.0"
+description = "Behmanesh Structural Index Benchmark Platform"
+requires-python = ">=3.11"
+
+dependencies = [
+    "requests",
+    "httpx",
+    "beautifulsoup4",
+    "jinja2",
+    "tqdm",
+    "tabulate"
+]
+
+[project.scripts]
+bsi-benchmark = "benchmark.cli:main"
