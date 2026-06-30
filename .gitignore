@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+
+# Packaging
+*.egg-info/
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Benchmark outputs
+outputs/
+reports/
+cache/
+
+# Datasets (generated)
+datasets/raw/*
+datasets/processed/*
+
+# Keep directory structure
+!datasets/raw/.gitkeep
+!datasets/processed/.gitkeep
+!outputs/.gitkeep
+!reports/.gitkeep
+
+# Logs
+*.log

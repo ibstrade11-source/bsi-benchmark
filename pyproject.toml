@@ -1,17 +1,42 @@
+[build-system]
+requires = ["setuptools>=80", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "bsi-benchmark"
 version = "0.1.0"
-description = "Behmanesh Structural Index Benchmark Platform"
+description = "A reproducible benchmark platform for evaluating the execution fidelity, analytical quality, and interpretability of structured analysis frameworks on scientific literature."
+readme = "README.md"
 requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Mohammadali Behmanesh" }
+]
+keywords = [
+  "benchmark",
+  "scientific-analysis",
+  "llm",
+  "evaluation",
+  "bsi"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering"
+]
 
 dependencies = [
-    "requests",
-    "httpx",
-    "beautifulsoup4",
-    "jinja2",
-    "tqdm",
-    "tabulate"
+  "requests>=2.32"
 ]
 
 [project.scripts]
-bsi-benchmark = "benchmark.cli:main"
+bsi-benchmark = "bsi_benchmark.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
