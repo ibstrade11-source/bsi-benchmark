@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
-from datetime import datetime
-
+from datetime import datetime, UTC
 
 class HistoryStore:
 
@@ -11,8 +10,7 @@ class HistoryStore:
 
     def save(self, result):
 
-        filename = datetime.utcnow().strftime("%Y%m%d-%H%M%S.json")
-
+        filename = datetime.now(UTC).strftime("%Y%m%d-%H%M%S.json")
         path = self.directory / filename
 
         with open(path, "w", encoding="utf-8") as f:
