@@ -11,7 +11,7 @@ class EvaluationRegistry:
 
         # default registrations
         self.register("basic", BasicEvaluator)
-        self.register("bsi", BSIEvaluator)
+        self.register("bsi", BasicEvaluator)
 
     def register(self, name: str, cls: Type[Evaluator]):
         self._evals[name] = cls
