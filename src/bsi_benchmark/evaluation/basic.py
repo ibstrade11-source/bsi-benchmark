@@ -1,15 +1,9 @@
-from .base import Evaluator
-from .result import EvaluationResult
+from .bsi import BSIEvaluator
 
 
-class BasicEvaluator(Evaluator):
-    """
-    legacy fallback evaluator
-    """
+class BasicEvaluator:
+    def __init__(self):
+        self.impl = BSIEvaluator()
 
     def evaluate(self, dataset):
-        return EvaluationResult(
-            scores={
-                "articles": len(dataset.articles)
-            }
-        )
+        return self.impl.evaluate(dataset)

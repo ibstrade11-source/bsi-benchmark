@@ -1,27 +1,36 @@
-from .base import Evaluator
-from .result import EvaluationResult
+from dataclasses import dataclass
 
 
-class BSIawareEvaluator(Evaluator):
-    """
-    Simple BSI-aware scoring (v1):
-    - completeness
-    - article volume normalization
-    """
+@dataclass
+class BSIScore:
+    coverage: float
+    completeness: float
+    signal_quality: float
+    total: float
 
-    def __init__(self, metrics):
-        self.metrics = metrics
 
+class BSIEvaluator:
     def evaluate(self, dataset):
-        scores = {}
+        articles = dataset.articles
 
-        for metric in self.metrics:
-            scores[metric.name] = metric.compute(dataset)
+        if not articles:
+            return BSIScore(0, 0, 0, 0)
 
-        # aggregate BSI score (simple weighted mean placeholder)
-        total = sum(scores.values()) if scores else 0
-        normalized = total / max(len(scores), 1)
+        coverage = min(len(articles) / 5.0, 1.0)
 
-        scores["bsi_score"] = normalized
+        completeness = sum(
+            1 for a in articles if a.abstract and a.doi
+        ) / len(articles)
 
-        return EvaluationResult(scores=scores)
+        signal_quality = sum(
+            1 for a in articles if a.title and len(a.title) > 10
+        ) / len(articles)
+
+        total = 0.4 * coverage + 0.3 * completeness + 0.3 * signal_quality
+
+        return BSIScore(
+            coverage=coverage,
+            completeness=completeness,
+            signal_quality=signal_quality,
+            total=total,
+        )
