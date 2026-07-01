@@ -1,8 +1,8 @@
 from typing import Dict, Type
 from .base import Evaluator
 from .basic import BasicEvaluator
-from .bsi import BSIawareEvaluator
-from .bsi import BSIawareEvaluator
+from .bsi import BSIAwareEvaluator
+from .bsi import BSIAwareEvaluator
 
 
 class EvaluationRegistry:
@@ -11,7 +11,7 @@ class EvaluationRegistry:
 
         # default registrations
         self.register("basic", BasicEvaluator)
-        self.register("bsi", BSIawareEvaluator)
+        self.register("bsi", BSIAwareEvaluator)
 
     def register(self, name: str, cls: Type[Evaluator]):
         self._evals[name] = cls
