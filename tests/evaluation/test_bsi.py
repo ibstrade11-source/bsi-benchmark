@@ -8,7 +8,7 @@ def test_bsi():
         "Artificial Intelligence",
     )
 
-    result = EvaluationEngine().evaluate(dataset)
+    result = EvaluationEngine().evaluate("bsi", dataset)
 
     assert "BSI" in result.scores
 

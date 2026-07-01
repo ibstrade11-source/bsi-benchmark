@@ -5,4 +5,4 @@ class EvaluationEngine:
 
     def evaluate(self, name, dataset):
         evaluator = registry.get(name)
-        return evaluator.evaluate(dataset)
+        return evaluator().evaluate(dataset)
