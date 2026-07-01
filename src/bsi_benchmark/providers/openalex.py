@@ -5,6 +5,7 @@ OpenAlex provider.
 from urllib.parse import quote
 
 from bsi_benchmark.network import HttpClient
+from bsi_benchmark.errors import ProviderUnavailable
 
 from .base import Provider
 from .registry import registry
@@ -30,7 +31,9 @@ class OpenAlexProvider(Provider):
         response = self.client.get(url)
 
         if not response.ok:
-            return []
+            raise ProviderUnavailable(
+                f"OpenAlex HTTP {response.status_code}: {response.body}"
+            )
 
         return response.body
 
