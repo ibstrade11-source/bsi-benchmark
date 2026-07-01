@@ -1,16 +1,26 @@
+from typing import Dict, Type
+from .base import Evaluator
+from .basic import BasicEvaluator
+from .bsi import BSIawareEvaluator
+from .bsi import BSIawareEvaluator
+
+
 class EvaluationRegistry:
-
     def __init__(self):
-        self._evaluators = {}
+        self._evals: Dict[str, Type[Evaluator]] = {}
 
-    def register(self, evaluator):
-        self._evaluators[evaluator.name] = evaluator
+        # default registrations
+        self.register("basic", BasicEvaluator)
+        self.register("bsi", BSIawareEvaluator)
 
-    def get(self, name):
-        return self._evaluators[name]
+    def register(self, name: str, cls: Type[Evaluator]):
+        self._evals[name] = cls
 
-    def available(self):
-        return sorted(self._evaluators.keys())
+    def get(self, name: str):
+        return self._evals[name]
+
+    def names(self):
+        return sorted(self._evals.keys())
 
 
 registry = EvaluationRegistry()

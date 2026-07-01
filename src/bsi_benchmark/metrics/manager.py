@@ -1,20 +1,13 @@
 from .registry import registry
 
 
-class MetricManager:
+class MetricsManager:
+    def __init__(self):
+        self.registry = registry
 
-    def available(self):
+    def compute_all(self, dataset):
+        metrics = []
+        for name in self.registry.names():
+            metrics.append(self.registry.get(name)())
 
-        return registry.available()
-
-    def evaluate(self, dataset):
-
-        results = {}
-
-        for name in registry.available():
-
-            metric = registry.get(name)
-
-            results[name] = metric.evaluate(dataset)
-
-        return results
+        return metrics
