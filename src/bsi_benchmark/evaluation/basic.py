@@ -1,9 +1,15 @@
 from .bsi import BSIEvaluator
-
+from .result import EvaluationResult
 
 class BasicEvaluator:
-    def __init__(self):
-        self.impl = BSIEvaluator()
-
     def evaluate(self, dataset):
-        return self.impl.evaluate(dataset)
+        s = BSIEvaluator().evaluate(dataset)
+        return EvaluationResult(
+            evaluator="bsi",
+            scores={
+                "coverage": s.coverage,
+                "completeness": s.completeness,
+                "signal_quality": s.signal_quality,
+                "BSI": s.total,
+            },
+        )

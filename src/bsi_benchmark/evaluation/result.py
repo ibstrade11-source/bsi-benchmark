@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-
+from typing import Dict
 
 @dataclass
 class EvaluationResult:
     evaluator: str
-    scores: dict
+    scores: Dict[str, float]
