@@ -30,3 +30,12 @@ class CrossrefProvider(Provider):
 
         response = self.client.get(url)
 
+        if not response.ok:
+            raise ProviderUnavailable(
+                f"Crossref HTTP {response.status_code}: {response.body}"
+            )
+
+        return response.body
+
+
+registry.register(CrossrefProvider)
