@@ -1,0 +1,57 @@
+{
+  "dataset_name": "test",
+  "results": [
+    {
+      "article": {
+        "title": "test",
+        "abstract": "",
+        "doi": null,
+        "url": null
+      },
+      "cells": [
+        {
+          "generator": "mock",
+          "mode": "raw",
+          "analysis": {
+            "text": "test: ",
+            "source_model": "mock",
+            "generated_at": null
+          },
+          "scores": {
+            "D1": 0.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.0,
+            "D5": 0.0,
+            "D6": 0.0,
+            "D7": 0.5,
+            "BSI": 0.205,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "mock",
+          "mode": "bsi",
+          "analysis": {
+            "text": "لایه Manifest (آشکار): [FACT] test discusses: \nلایه Latent (پنهان): [INFERENCE] If the stated method is valid, assuming its core assumptions hold, the conclusion follows conditionally.\nلایه Meta (فرا): [SPECULATION] It may generalize further; this suggests future work could extend the implications.",
+            "source_model": "mock",
+            "generated_at": null
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.466,
+            "D4": 0.967741935483871,
+            "D5": 1.0,
+            "D6": 0.125,
+            "D7": 1.0,
+            "BSI": 0.828396129032258,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 1.0
+          }
+        }
+      ]
+    }
+  ]
+}
