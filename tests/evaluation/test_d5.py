@@ -1,31 +1,26 @@
+"""D5 StrategicDepth proxy: density of implication/forward-looking statements."""
 from bsi_benchmark.evaluation.bsi import BSIEvaluator
+from bsi_benchmark.models import Article, Analysis, AnalyzedArticle
 
-class Article:
-    def __init__(self, abstract=None, doi=None):
-        self.abstract = abstract
-        self.doi = doi
-        self.title = "Artificial Intelligence"
+ARTICLE = Article(title="Interpretation Drift", abstract="A framework for analytical governance.")
 
-class Dataset:
-    def __init__(self, articles):
-        self.articles = articles
 
-def test_d5_full():
-    score = BSIEvaluator().evaluate(
-        Dataset([
-            Article("a", "1"),
-            Article("b", "2"),
-            Article("c", "3"),
-        ])
+def _analyzed(text):
+    return AnalyzedArticle(article=ARTICLE, analysis=Analysis(text=text))
+
+
+def test_d5_no_implication_language_scores_zero():
+    text = "The paper defines drift and gives two examples."
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
+    assert score.d5 == 0.0
+
+
+def test_d5_implication_language_raises_score():
+    text = (
+        "This suggests that going forward, future work should extend the "
+        "framework; the implication is that downstream effects on governance "
+        "follow-on into other domains, and this means that practitioners "
+        "should reassess their pipelines."
     )
-    assert score.d5 == 1.0
-
-def test_d5_partial():
-    score = BSIEvaluator().evaluate(
-        Dataset([
-            Article("a", "1"),
-            Article(None, "2"),
-            Article("c", None),
-        ])
-    )
-    assert abs(score.d5 - (1 / 3)) < 1e-9
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
+    assert score.d5 > 0.0

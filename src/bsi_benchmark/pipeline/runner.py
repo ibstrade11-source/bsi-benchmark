@@ -3,6 +3,7 @@ from bsi_benchmark.providers import ProviderManager
 from bsi_benchmark.parsers.crossref import CrossrefParser
 from bsi_benchmark.parsers.openalex import OpenAlexParser
 from bsi_benchmark.parsers.arxiv import ArxivParser
+from bsi_benchmark.parsers.mock import MockParser
 
 from .result import PipelineResult
 
@@ -17,6 +18,7 @@ class PipelineRunner:
             "crossref": CrossrefParser(),
             "openalex": OpenAlexParser(),
             "arxiv": ArxivParser(),
+            "mock": MockParser(),
         }
 
     def run(self, provider_name, query):

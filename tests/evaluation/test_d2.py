@@ -1,35 +1,39 @@
+"""D2 LongitudinalCoherence proxy: tag/language coherence.
+
+A [FACT] sentence with hedge words, or a [SPECULATION]/[HYPOTHESIS]
+sentence with only overclaim words, counts as incoherent.
+"""
 from bsi_benchmark.evaluation.bsi import BSIEvaluator
+from bsi_benchmark.models import Article, Analysis, AnalyzedArticle
+
+ARTICLE = Article(title="Mark of a Criminal Record", abstract="Audit study of employer callbacks.")
 
 
-class Article:
-    def __init__(self, abstract=None, doi=None):
-        self.abstract = abstract
-        self.doi = doi
-        self.title = "Artificial Intelligence"
+def _analyzed(text):
+    return AnalyzedArticle(article=ARTICLE, analysis=Analysis(text=text))
 
 
-class Dataset:
-    def __init__(self, articles):
-        self.articles = articles
-
-
-def test_d2_full():
-    score = BSIEvaluator().evaluate(
-        Dataset([
-            Article("a", "1"),
-            Article("b", "2"),
-            Article("c", "3"),
-        ])
+def test_d2_all_coherent_tags_scores_one():
+    text = (
+        "[FACT] Callback rates were lower for applicants with a criminal record. "
+        "[SPECULATION] It may be the case that this pattern generalizes to all cities."
     )
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
     assert score.d2 == 1.0
 
 
-def test_d2_partial():
-    score = BSIEvaluator().evaluate(
-        Dataset([
-            Article("a", "1"),
-            Article(None, "2"),
-            Article("c", None),
-        ])
+def test_d2_incoherent_fact_with_hedge_lowers_score():
+    text = (
+        "[FACT] Callback rates may possibly have been somewhat lower for applicants "
+        "with a criminal record, it seems."
     )
-    assert abs(score.d2 - (1 / 3)) < 1e-9
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
+    assert score.d2 == 0.0
+
+
+def test_d2_no_tags_at_all_defaults_to_one():
+    # No tagged sentences means nothing to be incoherent about; tag_coverage
+    # (a separate diagnostic) will independently be 0.0 in this case.
+    text = "This is a plain paragraph with no claim tags at all."
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
+    assert score.d2 == 1.0

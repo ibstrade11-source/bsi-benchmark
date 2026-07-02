@@ -40,7 +40,5 @@ class SemanticScholarProvider(Provider):
 
         return response.body
 
-        return response.body
-
 
 registry.register(SemanticScholarProvider)

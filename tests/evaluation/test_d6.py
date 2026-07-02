@@ -1,31 +1,25 @@
+"""D6 InterdisciplinaryBreadth proxy: distinct disciplinary keyword clusters touched."""
 from bsi_benchmark.evaluation.bsi import BSIEvaluator
+from bsi_benchmark.models import Article, Analysis, AnalyzedArticle
 
-class Article:
-    def __init__(self, title):
-        self.title = title
-        self.abstract = "abstract"
-        self.doi = "doi"
+ARTICLE = Article(title="Cross-disciplinary study", abstract="A broad analysis.")
 
-class Dataset:
-    def __init__(self, articles):
-        self.articles = articles
 
-def test_d6_full():
-    score = BSIEvaluator().evaluate(
-        Dataset([
-            Article("Artificial Intelligence"),
-            Article("Machine Learning Research"),
-            Article("Large Language Models"),
-        ])
+def _analyzed(text):
+    return AnalyzedArticle(article=ARTICLE, analysis=Analysis(text=text))
+
+
+def test_d6_single_domain_scores_low():
+    text = "This is a purely economic analysis of market prices and inflation."
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
+    assert 0.0 < score.d6 <= 0.25
+
+
+def test_d6_multiple_domains_scores_higher():
+    text = (
+        "This touches economic market dynamics, sociological institution "
+        "effects, philosophical epistemic questions, and computer science "
+        "algorithm design, plus legal regulation constraints."
     )
-    assert score.d6 == 1.0
-
-def test_d6_partial():
-    score = BSIEvaluator().evaluate(
-        Dataset([
-            Article("AI"),
-            Article("Machine Learning Research"),
-            Article("ML"),
-        ])
-    )
-    assert abs(score.d6 - (1 / 3)) < 1e-9
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
+    assert score.d6 >= 0.5

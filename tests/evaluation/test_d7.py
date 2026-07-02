@@ -1,34 +1,33 @@
+"""D7 AntiPerformativeDrift proxy: hedge markers vs. overclaim markers."""
 from bsi_benchmark.evaluation.bsi import BSIEvaluator
+from bsi_benchmark.models import Article, Analysis, AnalyzedArticle
 
-class Article:
-    def __init__(self, title=None, abstract=None, doi=None):
-        self.title = title
-        self.abstract = abstract
-        self.doi = doi
+ARTICLE = Article(title="Some paper", abstract="Some findings.")
 
-class Dataset:
-    def __init__(self, articles):
-        self.articles = articles
 
-def test_d7_full():
-    score = BSIEvaluator().evaluate(
-        Dataset([
-            Article("Artificial Intelligence", "a", "1"),
-            Article("Machine Learning Research", "b", "2"),
-            Article("Large Language Models", "c", "3"),
-            Article("Deep Learning", "d", "4"),
-            Article("Neural Networks", "e", "5"),
-        ])
-    )
+def _analyzed(text):
+    return AnalyzedArticle(article=ARTICLE, analysis=Analysis(text=text))
+
+
+def test_d7_only_overclaiming_scores_zero():
+    text = "This certainly always proves the effect definitely and undeniably."
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
+    assert score.d7 == 0.0
+
+
+def test_d7_only_hedging_scores_one():
+    text = "This may possibly suggest the effect, which could likely be the case."
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
     assert score.d7 == 1.0
 
-def test_d7_partial():
-    score = BSIEvaluator().evaluate(
-        Dataset([
-            Article("AI", "a", "1"),
-            Article("Machine Learning Research", None, "2"),
-            Article("ML", "c", None),
-        ])
-    )
-    expected = (0.6 + (1/3) + (1/3)) / 3
-    assert abs(score.d7 - expected) < 1e-9
+
+def test_d7_neither_marker_scores_neutral():
+    text = "The paper presents a result about employment."
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
+    assert score.d7 == 0.5
+
+
+def test_d7_mixed_markers_scores_between():
+    text = "This certainly shows an effect, though it may not generalize."
+    score = BSIEvaluator().score_dimensions(_analyzed(text))
+    assert 0.0 < score.d7 < 1.0

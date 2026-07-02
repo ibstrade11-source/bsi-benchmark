@@ -1,0 +1,4 @@
+Follow the BSI master prompt (Manifest/Latent/Meta layers, FACT/INFERENCE/HYPOTHESIS/SPECULATION tags).
+
+Title: {title}
+Abstract: {abstract}

@@ -2,7 +2,6 @@
 Crossref provider.
 """
 
-import time
 from urllib.parse import quote
 
 from bsi_benchmark.network import HttpClient
@@ -22,30 +21,24 @@ class CrossrefProvider(Provider):
         self.client = HttpClient()
 
     def search(self, query: str, rows: int = 5):
-
+        # Retry-on-5xx/429 is now handled centrally inside HttpClient.get()
+        # (see network/retry.py should_retry predicate). This method only
+        # needs to translate a still-failing final response into a
+        # provider-level error.
         url = (
             f"{self.BASE_URL}"
             f"?query={quote(query)}"
             f"&rows={rows}"
         )
 
-        response = None
+        response = self.client.get(url)
 
-        for attempt in range(3):
-            response = self.client.get(url)
+        if not response.ok:
+            raise ProviderUnavailable(
+                f"Crossref HTTP {response.status_code}: {response.body}"
+            )
 
-            if response.ok:
-                return response.body
-
-            if response.status_code >= 500 and attempt < 2:
-                time.sleep(2 ** attempt)
-                continue
-
-            break
-
-        raise ProviderUnavailable(
-            f"Crossref HTTP {response.status_code}: {response.body}"
-        )
+        return response.body
 
 
 registry.register(CrossrefProvider)

@@ -1,23 +1,22 @@
+"""
+BasicEvaluator: a trivial, non-BSI smoke-test evaluator over a raw
+(fetched, not-yet-analyzed) Dataset. Useful for quickly checking that a
+provider/query returned anything at all, without needing an analysis text.
+
+This previously got overwritten to secretly delegate to BSIEvaluator,
+which meant "basic" and "bsi" silently did the exact same thing. Restored
+to its original, distinct purpose here.
+"""
+
 from .result import EvaluationResult
-from .bsi import BSIEvaluator
 
 
 class BasicEvaluator:
-    def evaluate(self, dataset):
-        s = BSIEvaluator().evaluate(dataset)
 
-        scores = {
-            "D1": s.d1,
-            "D2": s.d2,
-            "D3": s.d3,
-            "D4": s.d4,
-            "D5": s.d5,
-            "D6": s.d6,
-            "D7": s.d7,
-            "BSI": s.total,
-        }
+    name = "basic"
 
+    def evaluate(self, dataset) -> EvaluationResult:
         return EvaluationResult(
-            evaluator="bsi",
-            scores=scores,
+            evaluator=self.name,
+            scores={"articles": len(dataset.articles)},
         )

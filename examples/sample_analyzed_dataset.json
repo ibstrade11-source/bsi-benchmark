@@ -1,0 +1,18 @@
+{
+  "name": "sample-test-batch",
+  "items": [
+    {
+      "article": {
+        "title": "The China Syndrome: Local Labor Market Effects of Import Competition",
+        "abstract": "This paper studies how rising Chinese import competition affected local U.S. labor markets between 1990 and 2007.",
+        "doi": "10.1257/aer.103.6.2121",
+        "url": "https://doi.org/10.1257/aer.103.6.2121"
+      },
+      "analysis": {
+        "text": "لایه Manifest (آشکار): [FACT] اشتغال در مناطق درمعرض واردات کاهش یافت. لایه Latent (پنهان): [INFERENCE] اگر ابزار شیفت-شیر معتبر باشد، مشروط بر عدم مهاجرت نیروی کار، اثر علّی قابل استنتاج است. لایه Meta (فرا): [SPECULATION] ممکن است این الگو در اقتصادهای دیگر هم دیده شود؛ این یعنی پژوهش‌های آینده باید پیامدهای سیاستی بازآموزی را بررسی کنند.",
+        "source_model": "claude-sonnet-5",
+        "generated_at": "2026-07-02T00:00:00Z"
+      }
+    }
+  ]
+}

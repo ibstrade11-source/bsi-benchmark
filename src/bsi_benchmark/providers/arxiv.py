@@ -2,7 +2,6 @@
 arXiv provider.
 """
 
-import time
 from urllib.parse import quote
 
 from bsi_benchmark.network import HttpClient
@@ -22,7 +21,7 @@ class ArxivProvider(Provider):
         self.client = HttpClient()
 
     def search(self, query: str, rows: int = 5):
-
+        # Retry-on-5xx/429 is handled centrally inside HttpClient.get().
         url = (
             f"{self.BASE_URL}"
             f"?search_query=all:{quote(query)}"
@@ -30,26 +29,14 @@ class ArxivProvider(Provider):
             f"&max_results={rows}"
         )
 
-        response = None
+        response = self.client.get(url)
 
-        for attempt in range(3):
-            response = self.client.get(url)
-
-            if response.ok:
-                return response.body
-
-            if response.status_code == 429 or response.status_code >= 500:
-                if attempt < 2:
-                    time.sleep(2 ** attempt)
-                    continue
-
+        if not response.ok:
             raise ProviderUnavailable(
                 f"arXiv HTTP {response.status_code}: {response.body}"
             )
 
-        raise ProviderUnavailable(
-            f"arXiv HTTP {response.status_code}: {response.body}"
-        )
+        return response.body
 
 
 registry.register(ArxivProvider)
