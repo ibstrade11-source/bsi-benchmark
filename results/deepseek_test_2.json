@@ -1,0 +1,135 @@
+{
+  "dataset_name": "labor economics import competition",
+  "results": [
+    {
+      "article": {
+        "title": "Import competition and gender differences in labor reallocation",
+        "abstract": null,
+        "doi": "10.1016/j.labeco.2022.102149",
+        "url": "https://doi.org/10.1016/j.labeco.2022.102149"
+      },
+      "cells": [
+        {
+          "generator": "deepseek",
+          "mode": "raw",
+          "analysis": null,
+          "scores": {
+            "error": "DeepSeek HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+          }
+        },
+        {
+          "generator": "deepseek",
+          "mode": "bsi",
+          "analysis": null,
+          "scores": {
+            "error": "DeepSeek HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "Import competition, labor market regulations, and firm outsourcing",
+        "abstract": null,
+        "doi": "10.1016/j.jdeveco.2024.103272",
+        "url": "https://doi.org/10.1016/j.jdeveco.2024.103272"
+      },
+      "cells": [
+        {
+          "generator": "deepseek",
+          "mode": "raw",
+          "analysis": null,
+          "scores": {
+            "error": "DeepSeek HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+          }
+        },
+        {
+          "generator": "deepseek",
+          "mode": "bsi",
+          "analysis": null,
+          "scores": {
+            "error": "DeepSeek HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "From the Invisible Handshake to the Invisible Hand? How Import Competition Changes the Employment Relationship",
+        "abstract": null,
+        "doi": "10.1086/423153",
+        "url": "https://doi.org/10.1086/423153"
+      },
+      "cells": [
+        {
+          "generator": "deepseek",
+          "mode": "raw",
+          "analysis": null,
+          "scores": {
+            "error": "DeepSeek HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+          }
+        },
+        {
+          "generator": "deepseek",
+          "mode": "bsi",
+          "analysis": null,
+          "scores": {
+            "error": "DeepSeek HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "The role of immigrants in the United States labor market and Chinese import competition",
+        "abstract": null,
+        "doi": "10.1016/j.jinteco.2023.103792",
+        "url": "https://doi.org/10.1016/j.jinteco.2023.103792"
+      },
+      "cells": [
+        {
+          "generator": "deepseek",
+          "mode": "raw",
+          "analysis": null,
+          "scores": {
+            "error": "DeepSeek HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+          }
+        },
+        {
+          "generator": "deepseek",
+          "mode": "bsi",
+          "analysis": null,
+          "scores": {
+            "error": "DeepSeek HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "Import Competition and the Great US Employment Sag of the 2000s",
+        "abstract": null,
+        "doi": "10.1086/682384",
+        "url": "https://doi.org/10.1086/682384"
+      },
+      "cells": [
+        {
+          "generator": "deepseek",
+          "mode": "raw",
+          "analysis": null,
+          "scores": {
+            "error": "DeepSeek HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+          }
+        },
+        {
+          "generator": "deepseek",
+          "mode": "bsi",
+          "analysis": null,
+          "scores": {
+            "error": "DeepSeek HTTP 402: {\"error\":{\"message\":\"Insufficient Balance\",\"type\":\"unknown_error\",\"param\":null,\"code\":\"invalid_request_error\"}}"
+          }
+        }
+      ]
+    }
+  ]
+}
