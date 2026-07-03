@@ -38,3 +38,5 @@ datasets/processed/*
 # Logs
 *.log
 bsi-benchmark-results/
+MASTER_PROMPT_BSI_v3.4.2.md
+*.md.1
