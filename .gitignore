@@ -37,3 +37,4 @@ datasets/processed/*
 
 # Logs
 *.log
+bsi-benchmark-results/
