@@ -12,12 +12,6 @@ DIM_ORDER = ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "BSI", "grounding_ratio",
 def render_markdown(report: ComparisonReport) -> str:
     lines = [f"# Comparison: {report.dataset_name}", ""]
 
-    if report.source_url:
-        lines.append(
-            f"> BSI prompt source (read it yourself, unedited): {report.source_url}"
-        )
-        lines.append("")
-
     for result in report.results:
         title = result.article.title or "(untitled)"
         lines.append(f"## {title}")
