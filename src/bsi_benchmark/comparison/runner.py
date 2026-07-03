@@ -28,7 +28,7 @@ class CrossModelRunner:
         self.generator_manager = generator_manager or GeneratorManager()
         self.evaluator = evaluator or BSIEvaluator()
 
-    def run(self, dataset, spec) -> ComparisonReport:
+    def run(self, dataset, spec, source_url=None) -> ComparisonReport:
         results = []
 
         for article in dataset.articles:
@@ -44,7 +44,7 @@ class CrossModelRunner:
             results.append(ComparisonResult(article=article, cells=cells))
 
         dataset_name = getattr(dataset, "query", None) or getattr(dataset, "name", "unnamed")
-        return ComparisonReport(dataset_name=dataset_name, results=results)
+        return ComparisonReport(dataset_name=dataset_name, results=results, source_url=source_url)
 
     def _run_one(self, article, generator, generator_name, mode, template) -> ComparisonCell:
         try:
