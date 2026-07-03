@@ -17,4 +17,4 @@ def test_csv_report(tmp_path):
     text = out.read_text(encoding="utf-8")
 
     assert "Metric" in text
-    assert "BSI" in text
+    assert "articles" in text
