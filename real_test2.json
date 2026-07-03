@@ -1,0 +1,73 @@
+{
+  "dataset_name": "machine learning",
+  "results": [
+    {
+      "article": {
+        "title": "machine learning",
+        "abstract": "",
+        "doi": null,
+        "url": null
+      },
+      "cells": [
+        {
+          "generator": "mock",
+          "mode": "raw",
+          "analysis": {
+            "text": "machine learning: ",
+            "source_model": "mock",
+            "generated_at": null
+          },
+          "scores": {
+            "D1": 0.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.0,
+            "D5": 0.0,
+            "D6": 0.0,
+            "D7": 0.5,
+            "BSI": 0.205,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "mock",
+          "mode": "bsi",
+          "analysis": {
+            "text": "machine learning: ",
+            "source_model": "mock",
+            "generated_at": null
+          },
+          "scores": {
+            "D1": 0.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.0,
+            "D5": 0.0,
+            "D6": 0.0,
+            "D7": 0.5,
+            "BSI": 0.205,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "anthropic",
+          "mode": "raw",
+          "analysis": null,
+          "scores": {
+            "error": "Anthropic HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CcfbA9TZEFqCyWMahCZLD\"}"
+          }
+        },
+        {
+          "generator": "anthropic",
+          "mode": "bsi",
+          "analysis": null,
+          "scores": {
+            "error": "Anthropic HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CcfbAB827HD5w43Rsa2ch\"}"
+          }
+        }
+      ]
+    }
+  ]
+}
