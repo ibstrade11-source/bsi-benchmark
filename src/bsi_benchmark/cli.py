@@ -133,6 +133,7 @@ def main() -> int:
         from bsi_benchmark.pipeline import PipelineRunner
         from bsi_benchmark.comparison import ComparisonSpec, CrossModelRunner, render_markdown
         from bsi_benchmark.comparison.json_export import save as save_json
+        from bsi_benchmark.prompt_loader import load_bsi_prompt
 
         DEFAULT_RAW_PROMPT = (
             "Analyze the following academic article. Give a concise, "
@@ -142,11 +143,13 @@ def main() -> int:
 
         raw_prompt = DEFAULT_RAW_PROMPT
         if args.raw_prompt_file:
-            with open(args.raw_prompt_file, encoding="utf-8") as f:
-                raw_prompt = f.read()
+            raw_prompt = load_bsi_prompt(args.raw_prompt_file, label="raw-prompt-file")
 
-        with open(args.bsi_prompt_file, encoding="utf-8") as f:
-            bsi_prompt = f.read()
+        # Permanent fix: a raw copy of MASTER_PROMPT_BSI_v3.4.2.md (or any
+        # other BSI master prompt) has no {title}/{abstract} placeholders.
+        # load_bsi_prompt() auto-appends them if missing, so the file can
+        # be used exactly as downloaded -- no manual edit required.
+        bsi_prompt = load_bsi_prompt(args.bsi_prompt_file, label="bsi-prompt-file")
 
         try:
             dataset = PipelineRunner().run(args.provider, args.query)
