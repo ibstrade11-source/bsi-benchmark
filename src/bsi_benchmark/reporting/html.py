@@ -28,7 +28,7 @@ class HtmlReport:
 
 <h2>Overall</h2>
 
-<p>BSI Score: {result.evaluation.scores.get("BSI", "Not Available")}</p>
+<p>{result.evaluation.scores["BSI"]}</p>
 
 </body>
 </html>

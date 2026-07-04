@@ -3,7 +3,7 @@ from bsi_benchmark.generation import GeneratorManager
 
 def test_generator_manager_lists_all_backends():
     names = GeneratorManager().available()
-    assert set(names) == {"mock", "anthropic", "openai", "deepseek", "bsi_api"}
+    assert set(names) == {"mock", "anthropic", "openai", "deepseek"}
 
 
 def test_generator_manager_creates_mock_instance():
