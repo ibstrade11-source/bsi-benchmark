@@ -38,3 +38,11 @@ class ComparisonResult:
 class ComparisonReport:
     dataset_name: str
     results: List[ComparisonResult] = field(default_factory=list)
+    # Link to the canonical BSI prompt file used for the "bsi" mode, so
+    # anyone reading the report can go read the exact prompt themselves
+    # instead of trusting this tool's local copy / auto-templating.
+    source_url: Optional[str] = None
+    # Provenance: exact code version, timestamp, and methodology caveat --
+    # see bsi_benchmark.run_metadata.RunMetadata. Optional (None) only for
+    # backward compatibility with older callers that don't pass it.
+    run_metadata: Optional[dict] = None

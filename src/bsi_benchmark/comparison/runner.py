@@ -14,6 +14,8 @@ bad combination should not lose the results for everything else in a
 multi-hour benchmark run.
 """
 
+from datetime import datetime, timezone
+
 from bsi_benchmark.errors import ProviderError
 from bsi_benchmark.evaluation.bsi import BSIEvaluator
 from bsi_benchmark.generation.manager import GeneratorManager
@@ -28,7 +30,7 @@ class CrossModelRunner:
         self.generator_manager = generator_manager or GeneratorManager()
         self.evaluator = evaluator or BSIEvaluator()
 
-    def run(self, dataset, spec) -> ComparisonReport:
+    def run(self, dataset, spec, source_url=None, run_metadata=None) -> ComparisonReport:
         results = []
 
         for article in dataset.articles:
@@ -44,11 +46,19 @@ class CrossModelRunner:
             results.append(ComparisonResult(article=article, cells=cells))
 
         dataset_name = getattr(dataset, "query", None) or getattr(dataset, "name", "unnamed")
-        return ComparisonReport(dataset_name=dataset_name, results=results)
+        return ComparisonReport(
+            dataset_name=dataset_name, results=results,
+            source_url=source_url, run_metadata=run_metadata,
+        )
 
     def _run_one(self, article, generator, generator_name, mode, template) -> ComparisonCell:
         try:
             analysis = generator.generate(article, template)
+            # Stamp generation time centrally (here, not per-generator) so
+            # every generator -- including future ones -- gets a real
+            # timestamp without each having to remember to set it.
+            if analysis is not None and analysis.generated_at is None:
+                analysis.generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         except ProviderError as e:
             return ComparisonCell(
                 generator=generator_name, mode=mode, analysis=None,

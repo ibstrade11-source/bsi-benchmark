@@ -72,6 +72,15 @@ def main() -> int:
              "from the main BSI repository. Not fabricated by this tool -- "
              "supply the real prompt you want benchmarked.",
     )
+    compare.add_argument(
+        "--bsi-source-url",
+        default="https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+        help="Link to the canonical BSI prompt file, printed in the report "
+             "so readers can go read the exact unedited prompt themselves. "
+             "Override if you benchmarked against a different branch/file, "
+             "e.g. .../blob/conceptual-refactor-volume1/MASTER_PROMPT_BSI_v3.4.2.md. "
+             "Pass '' to omit the link entirely.",
+    )
     compare.add_argument("--output", required=True, help="Output file path prefix (writes .md and .json).")
 
     args = parser.parse_args()
@@ -134,6 +143,8 @@ def main() -> int:
         from bsi_benchmark.comparison import ComparisonSpec, CrossModelRunner, render_markdown
         from bsi_benchmark.comparison.json_export import save as save_json
         from bsi_benchmark.prompt_loader import load_bsi_prompt
+        from bsi_benchmark.run_metadata import RunMetadata
+        from dataclasses import asdict as _asdict
 
         DEFAULT_RAW_PROMPT = (
             "Analyze the following academic article. Give a concise, "
@@ -170,7 +181,11 @@ def main() -> int:
         print("Running... (this calls a real API for each non-mock generator; may take a while)")
         print()
 
-        report = CrossModelRunner().run(dataset, spec)
+        report = CrossModelRunner().run(
+            dataset, spec,
+            source_url=args.bsi_source_url or None,
+            run_metadata=_asdict(RunMetadata.capture(repo_dir=os.path.dirname(os.path.abspath(__file__)))),
+        )
 
         md_path = f"{args.output}.md"
         json_path = f"{args.output}.json"
