@@ -83,6 +83,28 @@ def main() -> int:
     )
     compare.add_argument("--output", required=True, help="Output file path prefix (writes .md and .json).")
 
+    self_compare = sub.add_parser(
+        "self-compare",
+        help="Record an analyst's own comparison of their raw-vs-bsi "
+             "analysis of one article. The analyst chooses their own "
+             "criteria (this tool imposes no rubric) and supplies a "
+             "raw_score/bsi_score per criterion; the winner per criterion "
+             "is derived from those two scores, not separately asserted. "
+             "Input is a JSON file -- see examples/self_compare_example.json "
+             "for the expected shape and examples/self_compare_prompt.md "
+             "for the instructions to give the analyst.",
+    )
+    self_compare.add_argument(
+        "--input", required=True,
+        help="Path to a self-comparison JSON file filled in by the analyst.",
+    )
+    self_compare.add_argument(
+        "--output", required=True,
+        help="Output file path prefix (writes .md and .json). The .json "
+             "output is the canonical stored record (results/ is the "
+             "conventional place to keep these); the .md is for reading.",
+    )
+
     args = parser.parse_args()
 
     print(f"BSI Benchmark {__version__}")
@@ -197,6 +219,46 @@ def main() -> int:
         with open(md_path, "w", encoding="utf-8") as f:
             f.write(render_markdown(report))
         save_json(report, json_path)
+
+        print(f"Wrote {md_path}")
+        print(f"Wrote {json_path}")
+
+        return 0
+
+    if args.command == "self-compare":
+        from bsi_benchmark.self_compare import SelfComparisonIO, render_markdown as render_self_compare_md
+        from bsi_benchmark.run_metadata import RunMetadata
+        from dataclasses import asdict as _asdict
+
+        io = SelfComparisonIO()
+        try:
+            record = io.load(args.input)
+        except (ValueError, FileNotFoundError, KeyError) as e:
+            print(f"ERROR reading self-compare input: {e}")
+            return 1
+
+        if record.run_metadata is None:
+            record.run_metadata = _asdict(
+                RunMetadata.capture(repo_dir=os.path.dirname(os.path.abspath(__file__)))
+            )
+
+        print(f"Article        : {record.article_title}")
+        print(f"Analyst        : {record.analyst_model}")
+        print(f"Criteria       : {len(record.criteria)}")
+        print(f"raw wins / bsi wins / ties : {record.raw_wins()} / {record.bsi_wins()} / {record.ties()}")
+        print(f"Overall winner : {record.overall_winner}")
+        print()
+
+        md_path = f"{args.output}.md"
+        json_path = f"{args.output}.json"
+
+        out_dir = os.path.dirname(md_path)
+        if out_dir:
+            os.makedirs(out_dir, exist_ok=True)
+
+        with open(md_path, "w", encoding="utf-8") as f:
+            f.write(render_self_compare_md(record))
+        io.save(record, json_path)
 
         print(f"Wrote {md_path}")
         print(f"Wrote {json_path}")
