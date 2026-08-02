@@ -59,19 +59,55 @@ class RunMetadata:
     git_dirty: Optional[bool]
     run_timestamp_utc: str
     methodology_note: str = METHODOLOGY_NOTE
+    # Model/generation configuration, so "GPT-5.5" alone (no version, no
+    # date, no temperature) is never the whole provenance record. All
+    # optional and None by default -- populated by the caller (cli.py)
+    # from whatever it actually knows for that run; this module has no
+    # way to discover them on its own.
+    provider_name: Optional[str] = None
+    model_version: Optional[str] = None
+    temperature: Optional[float] = None
+    max_tokens: Optional[int] = None
+    prompt_version: Optional[str] = None
+    # Which analysis framework produced the "treatment" arm of this run.
+    # Defaults to "bsi" today because that's the only framework this
+    # tool currently drives end-to-end, but the field exists so a future
+    # framework (see ROADMAP.md, plugin architecture) does not require a
+    # schema change to be distinguishable in stored records.
+    framework_name: str = "bsi"
 
     @classmethod
-    def capture(cls, repo_dir: Optional[str] = None) -> "RunMetadata":
+    def capture(
+        cls,
+        repo_dir: Optional[str] = None,
+        *,
+        provider_name: Optional[str] = None,
+        model_version: Optional[str] = None,
+        temperature: Optional[float] = None,
+        max_tokens: Optional[int] = None,
+        prompt_version: Optional[str] = None,
+        framework_name: str = "bsi",
+    ) -> "RunMetadata":
         """
         Build a RunMetadata snapshot for 'right now'.
 
         git_commit / git_dirty are None (not False) if this isn't a git
         checkout or git isn't available -- callers should render that as
         an explicit "unknown", not silently treat it as clean/absent.
+
+        The generation-config kwargs are all optional and default to
+        None: this function cannot discover them itself (it doesn't call
+        any generator), so it only records what the caller passes in.
         """
         return cls(
             tool_version=TOOL_VERSION,
             git_commit=_git_commit(repo_dir),
             git_dirty=_git_dirty(repo_dir),
             run_timestamp_utc=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            provider_name=provider_name,
+            model_version=model_version,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            prompt_version=prompt_version,
+            framework_name=framework_name,
         )

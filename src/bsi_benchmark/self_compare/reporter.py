@@ -47,6 +47,31 @@ def render_markdown(record: SelfComparisonRecord) -> str:
     )
     lines.append("")
 
+    lines.append("## قابلیت راستی‌آزمایی (self-evidencing)")
+    if record.has_source_texts():
+        lines.append(
+            "متن کامل هر دو تحلیل (raw و bsi) در فایل JSON این رکورد ذخیره شده "
+            "است -- نمرات بالا صرفاً ادعا نیستند، قابل راستی‌آزمایی در برابر "
+            "متن واقعی‌اند."
+        )
+        lines.append(f"- SHA-256 (raw): `{record.raw_analysis_sha256}`")
+        lines.append(f"- SHA-256 (bsi): `{record.bsi_analysis_sha256}`")
+    else:
+        missing = []
+        if not record.raw_analysis_text:
+            missing.append("raw")
+        if not record.bsi_analysis_text:
+            missing.append("bsi")
+        lines.append(
+            f"⚠️ متن تحلیل {' و '.join(missing)} در این رکورد ذخیره نشده -- "
+            "نمرات بالا خوداظهاری‌اند و قابل راستی‌آزمایی مستقیم نیستند."
+        )
+        if record.raw_analysis_sha256 and not record.raw_analysis_text:
+            lines.append(f"- SHA-256 منتشرشده (raw، بدون متن): `{record.raw_analysis_sha256}`")
+        if record.bsi_analysis_sha256 and not record.bsi_analysis_text:
+            lines.append(f"- SHA-256 منتشرشده (bsi، بدون متن): `{record.bsi_analysis_sha256}`")
+    lines.append("")
+
     lines.append("## نتیجهٔ نهایی تحلیلگر")
     lines.append(f"**ترجیح کلی:** {record.overall_winner}")
     lines.append("")

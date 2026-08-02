@@ -70,7 +70,7 @@ class SelfComparisonIO:
                     "criterion needs 'criterion', 'raw_score', 'bsi_score'."
                 ) from e
 
-        return SelfComparisonRecord(
+        record = SelfComparisonRecord(
             article_title=article.get("title", "(untitled)"),
             article_doi=article.get("doi"),
             article_url=article.get("url"),
@@ -79,8 +79,22 @@ class SelfComparisonIO:
             overall_winner=data.get("overall_winner", "unspecified"),
             overall_reasoning=data.get("overall_reasoning", ""),
             criteria_rationale=data.get("criteria_rationale"),
+            raw_analysis_text=data.get("raw_analysis_text"),
+            bsi_analysis_text=data.get("bsi_analysis_text"),
             run_metadata=data.get("run_metadata"),
         )
+
+        # Text-withheld-but-hash-published case: __post_init__ only
+        # derives a hash when text is present. If the input JSON carries
+        # a hash without the matching text (e.g. text omitted for length
+        # or copyright reasons, hash kept as a checkable fingerprint),
+        # preserve that hash rather than silently dropping it.
+        if record.raw_analysis_text is None and data.get("raw_analysis_sha256"):
+            record.raw_analysis_sha256 = data["raw_analysis_sha256"]
+        if record.bsi_analysis_text is None and data.get("bsi_analysis_sha256"):
+            record.bsi_analysis_sha256 = data["bsi_analysis_sha256"]
+
+        return record
 
     def save(self, record: SelfComparisonRecord, path: str) -> None:
         payload = {
@@ -103,10 +117,15 @@ class SelfComparisonIO:
             ],
             "overall_winner": record.overall_winner,
             "overall_reasoning": record.overall_reasoning,
+            "raw_analysis_text": record.raw_analysis_text,
+            "bsi_analysis_text": record.bsi_analysis_text,
+            "raw_analysis_sha256": record.raw_analysis_sha256,
+            "bsi_analysis_sha256": record.bsi_analysis_sha256,
             "summary": {
                 "raw_wins": record.raw_wins(),
                 "bsi_wins": record.bsi_wins(),
                 "ties": record.ties(),
+                "has_source_texts": record.has_source_texts(),
             },
             "run_metadata": record.run_metadata,
         }

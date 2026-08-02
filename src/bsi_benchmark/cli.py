@@ -81,6 +81,23 @@ def main() -> int:
              "e.g. .../blob/conceptual-refactor-volume1/MASTER_PROMPT_BSI_v3.4.2.md. "
              "Pass '' to omit the link entirely.",
     )
+    compare.add_argument(
+        "--temperature", type=float, default=None,
+        help="Record the generation temperature used, if you know it "
+             "(this tool does not set it -- it just records it in "
+             "run_metadata so 'GPT-5.5' alone is never the whole "
+             "provenance record).",
+    )
+    compare.add_argument(
+        "--max-tokens", type=int, default=None,
+        help="Record the max_tokens setting used, if you know it.",
+    )
+    compare.add_argument(
+        "--prompt-version", default=None,
+        help="Record a version label for the prompt used (e.g. "
+             "'v3.4.2'), if you want it distinguishable in stored "
+             "records from other prompt versions later.",
+    )
     compare.add_argument("--output", required=True, help="Output file path prefix (writes .md and .json).")
 
     self_compare = sub.add_parser(
@@ -103,6 +120,32 @@ def main() -> int:
         help="Output file path prefix (writes .md and .json). The .json "
              "output is the canonical stored record (results/ is the "
              "conventional place to keep these); the .md is for reading.",
+    )
+
+    stats = sub.add_parser(
+        "stats",
+        help="Aggregate multiple self-compare JSON records (from "
+             "'self-compare' output) into descriptive statistics: mean "
+             "raw/bsi scores, bootstrap 95%% CI on the difference, "
+             "Cohen's d_z, and a Wilcoxon signed-rank test. Pure Python, "
+             "no scipy dependency (so it runs on Termux). Purely "
+             "descriptive of the self-reported data -- see the caveats "
+             "section of its own output for what it does NOT establish.",
+    )
+    stats.add_argument(
+        "--input", required=True, nargs="+",
+        help="One or more self-compare .json record files (the output "
+             "of 'self-compare --output ...'), e.g. results/self_compare/*.json",
+    )
+    stats.add_argument("--output", required=True, help="Output file path prefix (writes .md).")
+
+    frameworks = sub.add_parser(
+        "frameworks",
+        help="List analysis frameworks registered with this tool. Today "
+             "only 'bsi' is registered end-to-end; this command exists "
+             "so the tool's framework list is inspectable rather than "
+             "hardcoded and invisible -- see ROADMAP.md for the plan to "
+             "add more.",
     )
 
     args = parser.parse_args()
@@ -206,7 +249,12 @@ def main() -> int:
         report = CrossModelRunner().run(
             dataset, spec,
             source_url=args.bsi_source_url or None,
-            run_metadata=_asdict(RunMetadata.capture(repo_dir=os.path.dirname(os.path.abspath(__file__)))),
+            run_metadata=_asdict(RunMetadata.capture(
+                repo_dir=os.path.dirname(os.path.abspath(__file__)),
+                temperature=args.temperature,
+                max_tokens=args.max_tokens,
+                prompt_version=args.prompt_version,
+            )),
         )
 
         md_path = f"{args.output}.md"
@@ -247,6 +295,12 @@ def main() -> int:
         print(f"Criteria       : {len(record.criteria)}")
         print(f"raw wins / bsi wins / ties : {record.raw_wins()} / {record.bsi_wins()} / {record.ties()}")
         print(f"Overall winner : {record.overall_winner}")
+        if not record.has_source_texts():
+            print(
+                "WARNING: raw_analysis_text/bsi_analysis_text missing -- "
+                "this record's scores are self-reported only, not checkable "
+                "against the actual analysis text."
+            )
         print()
 
         md_path = f"{args.output}.md"
@@ -262,6 +316,62 @@ def main() -> int:
 
         print(f"Wrote {md_path}")
         print(f"Wrote {json_path}")
+
+        return 0
+
+    if args.command == "stats":
+        from bsi_benchmark.self_compare import SelfComparisonIO
+        from bsi_benchmark.stats import aggregate, render_markdown as render_stats_md
+
+        io = SelfComparisonIO()
+        records = []
+        for path in args.input:
+            try:
+                records.append(io.load(path))
+            except (ValueError, FileNotFoundError, KeyError) as e:
+                print(f"ERROR reading '{path}': {e}")
+                return 1
+
+        if not records:
+            print("ERROR: no input records loaded.")
+            return 1
+
+        result = aggregate(records)
+
+        print(f"Records : {result.n_records}")
+        print(f"Pairs   : {result.n}")
+        print(f"Mean diff (bsi - raw) : {result.mean_diff:.3f}")
+        if result.ci95_low is not None:
+            print(f"95% CI  : [{result.ci95_low:.3f}, {result.ci95_high:.3f}]")
+        if result.wilcoxon_p_approx is not None:
+            print(f"Wilcoxon p (approx) : {result.wilcoxon_p_approx:.4f}")
+        print()
+
+        md_path = f"{args.output}.md"
+        out_dir = os.path.dirname(md_path)
+        if out_dir:
+            os.makedirs(out_dir, exist_ok=True)
+        with open(md_path, "w", encoding="utf-8") as f:
+            f.write(render_stats_md(result))
+
+        print(f"Wrote {md_path}")
+
+        return 0
+
+    if args.command == "frameworks":
+        from bsi_benchmark.frameworks import registry
+
+        names = registry.list_names()
+        if not names:
+            print("No frameworks registered.")
+            return 0
+
+        print(f"{len(names)} framework(s) registered:\n")
+        for name in names:
+            fw = registry.get(name)
+            print(f"- {fw.name} (version: {fw.version or 'unknown'})")
+            print(f"  {fw.description}")
+            print()
 
         return 0
 
