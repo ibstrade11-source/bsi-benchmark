@@ -378,3 +378,6 @@ def main() -> int:
     parser.print_help()
 
     return 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())
