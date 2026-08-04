@@ -1,0 +1,11 @@
+Based on the provided title and abstract, here is a concise, factual analysis of the article's main claims and contributions:
+
+### **Main Claims**
+*   **Limitation of Image-Only Diagnosis:** Standard automated methods for medical image diagnosis identify regions of interest (ROIs) solely from images, ignoring the clinical context (prior patient knowledge) that human pathologists naturally use.
+*   **Dynamic Attention:** A patient's clinical records should dynamically influence and shift the attention regions (ROIs) within their medical images.
+*   **Multimodal Integration:** The relationships between medical images and clinical text can be effectively encoded using a Transformer-based architecture to achieve this personalized, context-aware attention.
+
+### **Key Contributions**
+*   **The PersAM Framework:** Introduction of the **Personalized Attention Mechanism (PersAM)**, a novel method that adaptively adjusts attention regions in medical images based on accompanying clinical records.
+*   **Transformer-Based Multimodal Fusion:** Development of a specialized Transformer variant designed to model the complex interactions between high-resolution medical images and patient clinical records.
+*   **Large-Scale Validation:** Demonstration of the model's efficacy on a highly complex, real-world task: classifying subtypes of malignant lymphoma for 842 patients using gigapixel whole slide images (WSIs) and clinical text.

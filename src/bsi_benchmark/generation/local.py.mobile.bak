@@ -1,0 +1,120 @@
+"""
+LocalGenerator: generic local/OpenAI-compatible generator.
+
+Supports:
+- Ollama (/api/chat)
+- OpenAI-compatible APIs (/v1/chat/completions)
+
+Environment variables:
+    LOCAL_MODEL
+    LOCAL_LLM_URL
+    LOCAL_API_KEY
+"""
+
+import json
+import os
+
+from bsi_benchmark.errors import (
+    InvalidProviderResponse,
+    ProviderUnavailable,
+)
+from bsi_benchmark.models.analysis import Analysis
+from bsi_benchmark.network import HttpClient
+
+from .base import AnalysisGenerator
+from .prompt import render
+
+DEFAULT_MODEL = os.getenv("LOCAL_MODEL", "llama3.2:1b")
+DEFAULT_URL = os.getenv(
+    "LOCAL_LLM_URL",
+    "http://localhost:11434/api/chat",
+)
+DEFAULT_API_KEY = os.getenv("LOCAL_API_KEY")
+
+
+class LocalGenerator(AnalysisGenerator):
+    name = "local"
+
+    def __init__(
+        self,
+        model: str = DEFAULT_MODEL,
+        url: str = DEFAULT_URL,
+        api_key: str = DEFAULT_API_KEY,
+    ):
+        self.model = model
+        self.url = url
+        self.api_key = api_key
+        self.client = HttpClient()
+
+    def generate(self, article, prompt_template: str) -> Analysis:
+        prompt = render(prompt_template, article)
+
+        headers = {
+            "Content-Type": "application/json",
+        }
+
+        if self.api_key:
+            headers["Authorization"] = f"Bearer {self.api_key}"
+
+        if self.url.rstrip("/").endswith("/api/chat"):
+            body = {
+                "model": self.model,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt,
+                    }
+                ],
+                "stream": False,
+                "options": {"num_ctx": 2048, "temperature": 0.1},
+            }
+        else:
+            body = {
+                "model": self.model,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt,
+                    }
+                ],
+                "max_tokens": 2000,
+            }
+
+        response = self.client.post(
+            self.url,
+            json_body=body,
+            headers=headers,
+        )
+
+        if not response.ok:
+            raise ProviderUnavailable(
+                f"Local LLM HTTP {response.status_code}: {response.body}"
+            )
+
+        try:
+            payload = json.loads(response.body)
+
+            if "message" in payload:
+                text = payload["message"]["content"]
+            else:
+                text = payload["choices"][0]["message"]["content"]
+
+        except (
+            json.JSONDecodeError,
+            KeyError,
+            IndexError,
+            TypeError,
+        ) as exc:
+            raise InvalidProviderResponse(
+                f"Could not parse local LLM response: {exc}"
+            ) from exc
+
+        if not text:
+            raise InvalidProviderResponse(
+                "Local LLM response contained no text content."
+            )
+
+        return Analysis(
+            text=text,
+            source_model=self.model,
+        )

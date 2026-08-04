@@ -1,0 +1,34 @@
+Based on the provided abstract, here is a concise, factual analysis of the article's main claims and contributions.
+
+### **Core Thesis**
+Standard transformer attention suffers from two limitations: it treats all tokens as equally salient (ignoring informational density) and all positions as equally local. The authors propose that **informational salience** (what to attend to) and **scale-selective locality** (where to attend) are complementary inductive biases. When addressed together using learned mechanisms, they yield a "superadditive" improvement in model performance.
+
+---
+
+### **Key Technical Contributions**
+
+1. **Energy-Gated Attention (EGA):**
+   * **Purpose:** Identifies and selects salient tokens (*what* to attend to).
+   * **Mechanism:** Gates value aggregation using a learned energy estimate of key token embeddings, computed via a single linear projection. It operates end-to-end without requiring explicit frequency decomposition.
+
+2. **Morlet Positional Encoding (MoPE):**
+   * **Purpose:** Adapts position-frequency localization (*where* to attend).
+   * **Mechanism:** Replaces fixed sinusoidal positional encodings with learned, Gaussian-windowed wavelets (Morlet wavelets) that adapt to the specific corpus during training.
+
+---
+
+### **Main Empirical Claims & Results**
+Evaluated on the character-level **TinyShakespeare** benchmark (using models $\le$6M parameters), the components demonstrated a synergistic relationship:
+
+* **EGA alone:** Improved validation loss by **+0.092** over standard attention.
+* **MoPE alone:** Decreased performance by **-0.032** (performing below the baseline).
+* **EGA + MoPE combined:** Achieved a **+0.119** validation loss improvement. 
+* **Superadditivity:** The combined improvement (+0.119) is greater than the sum of their individual parts ($0.092 - 0.032 = 0.060$). This indicates that positional locality (MoPE) requires salience gating (EGA) to be effective.
+* **Learned vs. Fixed Priors:** Ablation studies confirmed that unconstrained, learned versions of these components consistently outperformed highly structured, fixed spectral priors (such as fixed sinusoidal encodings).
+
+---
+
+### **Scope and Limitations**
+* **Scale:** The findings are highly localized to small-scale environments ($\le$6M parameters).
+* **Evaluation:** Tested only on small, character-level datasets (TinyShakespeare) using a single experimental seed. 
+* **Future Work:** The authors explicitly note that validating these mechanisms at a larger scale with multi-seed training is the most critical next step.

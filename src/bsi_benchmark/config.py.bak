@@ -17,7 +17,7 @@ OUTPUTS_DIR = ROOT / "outputs"
 REPORTS_DIR = ROOT / "reports"
 LOGS_DIR = ROOT / "logs"
 
-DEFAULT_TIMEOUT = 1800
+DEFAULT_TIMEOUT = 300
 
 DEFAULT_USER_AGENT = (
     "BSI-Benchmark/0.1.0 "

@@ -1,0 +1,85 @@
+"""
+LocalGenerator: calls a local OpenAI-compatible/Ollama-style LLM endpoint.
+
+Designed for reproducible offline/local benchmark runs.
+Requires:
+    LOCAL_LLM_URL (optional, default: Ollama endpoint)
+    LOCAL_MODEL   (optional, default: llama3.1)
+"""
+
+import json
+import os
+
+from bsi_benchmark.network import HttpClient
+from bsi_benchmark.models.analysis import Analysis
+from bsi_benchmark.errors import ProviderUnavailable, InvalidProviderResponse
+
+from .base import AnalysisGenerator
+from .prompt import render
+
+
+DEFAULT_URL = "http://localhost:11434/api/chat"
+DEFAULT_MODEL = "llama3.2"
+
+
+class LocalGenerator(AnalysisGenerator):
+
+    name = "local"
+
+    def __init__(
+        self,
+        model: str = DEFAULT_MODEL,
+        url: str = DEFAULT_URL,
+    ):
+        self.model = model
+        self.url = url
+        self.client = HttpClient()
+
+    def generate(self, article, prompt_template: str) -> Analysis:
+
+        prompt = render(prompt_template, article)
+
+        response = self.client.post(
+            self.url,
+            json_body={
+                "model": self.model,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt,
+                    }
+                ],
+                "stream": False,
+            },
+            headers={
+                "Content-Type": "application/json",
+            },
+        )
+
+        if not response.ok:
+            raise ProviderUnavailable(
+                f"Local LLM HTTP {response.status_code}: {response.body}"
+            )
+
+        try:
+            payload = json.loads(response.body)
+
+            if "message" in payload:
+                text = payload["message"]["content"]
+            else:
+                text = payload["choices"][0]["message"]["content"]
+
+        except (json.JSONDecodeError, KeyError, IndexError, TypeError) as exc:
+            raise InvalidProviderResponse(
+                f"Could not parse local LLM response: {exc}"
+            ) from exc
+
+        if not text:
+            raise InvalidProviderResponse(
+                "Local LLM response contained no text content."
+            )
+
+        return Analysis(
+            text=text,
+            source_model=self.model,
+        )

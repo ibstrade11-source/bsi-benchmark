@@ -1,5 +1,4 @@
 import json
-import re
 
 from .base import Parser
 from bsi_benchmark.models.article import Article
@@ -10,6 +9,7 @@ class CrossrefParser(Parser):
     def parse(self, raw):
 
         data = json.loads(raw)
+
         articles = []
 
         items = data["message"]["items"]
@@ -21,34 +21,16 @@ class CrossrefParser(Parser):
             if item.get("title"):
                 title = item["title"][0]
 
-            abstract = item.get("abstract")
-
-            if abstract:
-                abstract = re.sub(
-                    "<[^>]+>",
-                    "",
-                    abstract
-                ).strip()
-
-            quality = {
-                "has_title": bool(title),
-                "has_abstract": bool(abstract),
-                "source": "crossref",
-                "enriched": False,
-            }
-
             articles.append(
                 Article(
                     title=title,
-                    abstract=abstract,
+                    abstract=item.get("abstract"),
                     doi=item.get("DOI"),
                     url=item.get("URL"),
-                    input_quality=quality,
                 )
             )
 
         return articles
-
 
 from .registry import registry
 
