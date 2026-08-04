@@ -5,6 +5,9 @@ from .anthropic import AnthropicGenerator
 from .openai import OpenAIGenerator
 from .deepseek import DeepSeekGenerator
 from .bsi_api import BSIAPIGenerator
+from .local import LocalGenerator
+from .gemini import GeminiGenerator
+from .groq import GroqGenerator
 
 registry: Registry = Registry()
 
@@ -13,3 +16,6 @@ registry.register("anthropic", AnthropicGenerator)
 registry.register("openai", OpenAIGenerator)
 registry.register("deepseek", DeepSeekGenerator)
 registry.register("bsi_api", BSIAPIGenerator)
+registry.register("local", LocalGenerator)
+registry.register("gemini", GeminiGenerator)
+registry.register("groq", GroqGenerator)
