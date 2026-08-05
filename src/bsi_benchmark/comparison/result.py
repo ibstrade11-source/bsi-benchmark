@@ -21,12 +21,12 @@ class ComparisonCell:
     generator: str
     mode: str
     analysis: Optional[Analysis]
-    scores: Dict[str, float]
+    evaluator_scores: Dict[str, float]
     judge_result: Optional[dict] = None
 
     @property
     def failed(self) -> bool:
-        return "error" in self.scores
+        return "error" in self.evaluator_scores
 
 
 @dataclass

@@ -48,11 +48,11 @@ def render_markdown(report: ComparisonReport) -> str:
 
         for cell in result.cells:
             if cell.failed:
-                row = f"| {cell.generator} | {cell.mode} | ERROR: {cell.scores['error']} |"
+                row = f"| {cell.generator} | {cell.mode} | ERROR: {cell.evaluator_scores['error']} |"
                 lines.append(row)
                 continue
 
-            values = " | ".join(f"{cell.scores.get(d, 0.0):.3f}" for d in DIM_ORDER)
+            values = " | ".join(f"{cell.evaluator_scores.get(d, 0.0):.3f}" for d in DIM_ORDER)
             lines.append(f"| {cell.generator} | {cell.mode} | {values} |")
 
         if result.cells:

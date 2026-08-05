@@ -88,7 +88,7 @@ class CrossModelRunner:
                             generator=generator_name,
                             mode=mode,
                             analysis=analysis,
-                            scores=scores,
+                            evaluator_scores=scores,
                             judge_result=judge_result,
                         )
                     )
