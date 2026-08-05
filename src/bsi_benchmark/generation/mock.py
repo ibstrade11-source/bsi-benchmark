@@ -15,6 +15,40 @@ class MockGenerator(AnalysisGenerator):
 
     name = "mock"
 
+
+    def generate_raw(self, article, prompt: str) -> Analysis:
+        if "Return ONLY valid JSON" in prompt or "Required structure" in prompt:
+            text = """{
+  "winner": "bsi",
+  "criteria": [
+    {
+      "name": "depth",
+      "importance": 5,
+      "raw_score": 5,
+      "bsi_score": 8,
+      "reason": "BSI analysis shows deeper structure."
+    }
+  ],
+  "total_scores": {
+    "raw": 5,
+    "bsi": 8
+  },
+  "reasoning": "BSI provided a stronger structured analysis."
+}"""
+            return Analysis(text=text, source_model=self.name)
+
+        is_bsi_mode = "bsi" in prompt.lower() or "لایه" in prompt
+
+        if is_bsi_mode:
+            text = (
+                f"لایه Manifest (آشکار): [FACT] {article.title} "
+                f"discusses: {article.abstract}"
+            )
+        else:
+            text = f"{article.title}: {article.abstract}"
+
+        return Analysis(text=text, source_model=self.name)
+
     def generate(self, article, prompt_template: str) -> Analysis:
         rendered = render(prompt_template, article)
         is_bsi_mode = "bsi" in rendered.lower() or "لایه" in rendered

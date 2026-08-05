@@ -55,6 +55,12 @@ def main() -> int:
     compare.add_argument("--provider", required=True, help="e.g. crossref, arxiv, mock")
     compare.add_argument("--query", required=True)
     compare.add_argument(
+        "--judge",
+        default=None,
+        help="Judge generator name. If omitted, each generator judges its own output.",
+    )
+
+    compare.add_argument(
         "--generators", required=True,
         help="Comma-separated generator names registered in generation.registry "
              "(e.g. 'anthropic,openai' or 'mock' for an offline dry run).",
@@ -236,6 +242,7 @@ def main() -> int:
         spec = ComparisonSpec(
             generators=[g.strip() for g in args.generators.split(",") if g.strip()],
             prompt_modes={"raw": raw_prompt, "bsi": bsi_prompt},
+            judge=args.judge,
         )
 
         print(f"Provider   : {dataset.provider}")

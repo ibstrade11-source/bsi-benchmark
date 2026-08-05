@@ -61,3 +61,6 @@ demo_run.json
 demo_run.md
 report.html
 articles/
+results/
+*.bak
+*.debug

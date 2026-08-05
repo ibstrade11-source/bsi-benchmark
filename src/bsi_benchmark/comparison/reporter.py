@@ -55,6 +55,27 @@ def render_markdown(report: ComparisonReport) -> str:
             values = " | ".join(f"{cell.scores.get(d, 0.0):.3f}" for d in DIM_ORDER)
             lines.append(f"| {cell.generator} | {cell.mode} | {values} |")
 
+        if result.cells:
+            jr = result.cells[0].judge_result
+            if jr:
+                lines.append("")
+                lines.append("### Judge Evaluation")
+                lines.append("")
+
+                if "winner" in jr:
+                    lines.append(f"- **Winner:** {jr['winner']}")
+
+                if "reasoning" in jr:
+                    lines.append(f"- **Reasoning:** {jr['reasoning']}")
+
+                criteria = jr.get("criteria")
+                if isinstance(criteria, dict):
+                    lines.append("")
+                    lines.append("| Criterion | Score |")
+                    lines.append("|---|---:|")
+                    for name, score in criteria.items():
+                        lines.append(f"| {name} | {score} |")
+
         lines.append("")
 
     return "\n".join(lines)

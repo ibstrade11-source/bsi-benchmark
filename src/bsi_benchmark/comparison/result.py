@@ -22,6 +22,7 @@ class ComparisonCell:
     mode: str
     analysis: Optional[Analysis]
     scores: Dict[str, float]
+    judge_result: Optional[dict] = None
 
     @property
     def failed(self) -> bool:
