@@ -1,0 +1,271 @@
+{
+  "dataset_name": "transformer attention mechanism",
+  "results": [
+    {
+      "article": {
+        "title": "Transformer-based Personalized Attention Mechanism for Medical Images with Clinical Records",
+        "abstract": "In medical image diagnosis, identifying the attention region, i.e., the region of interest for which the diagnosis is made, is an important task. Various methods have been developed to automatically identify target regions from given medical images. However, in actual medical practice, the diagnosis is made based not only on the images but also on a variety of clinical records. This means that pathologists examine medical images with some prior knowledge of the patients and that the attention regions may change depending on the clinical records. In this study, we propose a method called the Personalized Attention Mechanism (PersAM), by which the attention regions in medical images are adaptively changed according to the clinical records. The primary idea of the PersAM method is to encode the relationships between the medical images and clinical records using a variant of Transformer architecture. To demonstrate the effectiveness of the PersAM method, we applied it to a large-scale digital pathology problem of identifying the subtypes of 842 malignant lymphoma patients based on their gigapixel whole slide images and clinical records.",
+        "doi": null,
+        "url": "http://arxiv.org/abs/2206.03003v2",
+        "input_quality": null
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "**Analysis of: \"Transformer-based Personalized Attention Mechanism for Medical Images with Clinical Records\"**\n\n**1. Problem Addressed**\nThe paper targets the task of **attention region identification (localization of regions of interest)** in medical image diagnosis, specifically arguing that diagnosis in clinical practice relies on **multimodal integration**—combining visual data (images) with patient-specific contextual data (clinical records).\n\n**2. Limitation of Prior Work**\nExisting methods for automatic attention region identification operate **solely on medical images**. They ignore the conditional dependency where the diagnostic focus (attention region) shifts based on patient history, lab results, or other clinical metadata.\n\n**3. Proposed Solution: Personalized Attention Mechanism (PersAM)**\n*   **Core Innovation:** A mechanism that **dynamically adapts** image attention maps based on individual clinical records.\n*   **Architecture:** Utilizes a **variant of the Transformer architecture** to explicitly encode and model the cross-modal relationships (interactions) between gigapixel whole slide images (WSIs) and structured/unstructured clinical data.\n*   **Key Concept:** \"Personalization\" is operationalized as the conditional modulation of visual attention by non-imaging patient data.\n\n**4. Experimental Validation**\n*   **Task:** Subtype classification of **malignant lymphoma** (a complex hematopathology task requiring subtle morphological distinction).\n*   **Dataset:** **Large-scale cohort of 842 patients.**\n*   **Data Modalities:** **Gigapixel Whole Slide Images (WSIs)** + **Clinical Records.**\n*   **Implicit Claim:** The method demonstrates effectiveness on high-resolution, high-dimensional pathology data where the search space for relevant regions is massive and clinical context is critical for differential diagnosis.\n\n**5. Main Contribution**\nThe introduction of the **first framework (PersAM) that formalizes \"personalized\" visual attention in computational pathology** by fusing clinical records into the attention mechanism via Transformers, validated on a clinically significant, large-scale WSI dataset. It shifts the paradigm from *image-only* saliency to *context-aware* diagnostic localization.",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-05T04:01:36Z"
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.7323943661971831,
+            "D5": 0.0,
+            "D6": 0.25,
+            "D7": 0.5,
+            "BSI": 0.5695070422535211,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": null,
+          "scores": {
+            "error": "Could not parse OpenRouter response: 'choices'"
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "Dilated Neighborhood Attention Transformer",
+        "abstract": "Transformers are quickly becoming one of the most heavily applied deep learning architectures across modalities, domains, and tasks. In vision, on top of ongoing efforts into plain transformers, hierarchical transformers have also gained significant attention, thanks to their performance and easy integration into existing frameworks. These models typically employ localized attention mechanisms, such as the sliding-window Neighborhood Attention (NA) or Swin Transformer's Shifted Window Self Attention. While effective at reducing self attention's quadratic complexity, local attention weakens two of the most desirable properties of self attention: long range inter-dependency modeling, and global receptive field. In this paper, we introduce Dilated Neighborhood Attention (DiNA), a natural, flexible and efficient extension to NA that can capture more global context and expand receptive fields exponentially at no additional cost. NA's local attention and DiNA's sparse global attention complement each other, and therefore we introduce Dilated Neighborhood Attention Transformer (DiNAT), a new hierarchical vision transformer built upon both. DiNAT variants enjoy significant improvements over strong baselines such as NAT, Swin, and ConvNeXt. Our large model is faster and ahead of its Swin counterpart by 1.6% box AP in COCO object detection, 1.4% mask AP in COCO instance segmentation, and 1.4% mIoU in ADE20K semantic segmentation. Paired with new frameworks, our large variant is the new state of the art panoptic segmentation model on COCO (58.5 PQ) and ADE20K (49.4 PQ), and instance segmentation model on Cityscapes (45.1 AP) and ADE20K (35.4 AP) (no extra data). It also matches the state of the art specialized semantic segmentation models on ADE20K (58.1 mIoU), and ranks second on Cityscapes (84.5 mIoU) (no extra data).",
+        "doi": null,
+        "url": "http://arxiv.org/abs/2209.15001v3",
+        "input_quality": null
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "### **Analysis of \"Dilated Neighborhood Attention Transformer\"**\n\n#### **1. Problem Addressed**\nHierarchical Vision Transformers (e.g., Swin, NAT) rely on **localized attention** (sliding-window or Neighborhood Attention) to achieve linear computational complexity. However, this locality sacrifices two core strengths of global self-attention:\n*   **Long-range dependency modeling.**\n*   **Global receptive field** (receptive field grows only linearly with depth).\n\n#### **2. Proposed Solution: Dilated Neighborhood Attention (DiNA) & DiNAT**\n*   **Core Mechanism (DiNA):** A direct extension of Neighborhood Attention (NA) that introduces **dilation** into the attention window.\n    *   *Function:* Attends to pixels at increasing distances (stride $>1$) within a fixed kernel size.\n    *   *Benefit:* Expands the receptive field **exponentially** with layer depth (vs. linearly for standard NA) and captures sparse global context **at zero additional computational cost** (same FLOPs/parameters as standard NA).\n*   **Architecture (DiNAT):** A hierarchical Vision Transformer that **alternates or combines** standard NA (local context) and DiNA (global context) blocks.\n    *   *Rationale:* Local and dilated attention are complementary; mixing them balances fine-grained detail with long-range structure.\n\n#### **3. Key Claims & Empirical Results**\nThe paper reports consistent gains over strong baselines (NAT, Swin Transformer, ConvNeXt) across three major dense prediction benchmarks using **ImageNet-1K pre-training only (no extra data)**:\n\n| Task / Benchmark | Baseline Comparison (Large Model) | State-of-the-Art (SOTA) Status |\n| :--- | :--- | :--- |\n| **COCO Object Detection** | **+1.6 box AP** vs. Swin-L | New SOTA Panoptic Segmentation (**58.5 PQ**) |\n| **COCO Instance Segmentation** | **+1.4 mask AP** vs. Swin-L | New SOTA Instance Segmentation (**45.1 AP** Cityscapes, **35.4 AP** ADE20K) |\n| **ADE20K Semantic Segmentation** | **+1.4 mIoU** vs. Swin-L | Matches specialized SOTA (**58.1 mIoU**); #2 on Cityscapes (**84.5 mIoU**) |\n| **Speed** | Large variant reported **faster** than Swin-L counterpart. | |\n\n#### **4. Contribution & Significance**\n1.  **Algorithmic Novelty:** Introduces **dilation** to Neighborhood Attention—a simple, hardware-efficient mechanism (implemented via native CUDA kernels) to break the \"locality bottleneck\" without quadratic cost or complex shifting logic (unlike Swin).\n2.  **Architectural Design:** Demonstrates that **hybrid local/dilated attention** is superior to pure local or pure global approaches for hierarchical backbones.\n3.  **Practical Impact:** Delivers a **drop-in backbone replacement** that sets new SOTA records on COCO Panoptic/Instance Segmentation and ADE20K/Cityscapes benchmarks while maintaining/increasing inference speed, challenging the dominance of Swin and ConvNeXt in dense prediction tasks.",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-05T04:01:52Z"
+          },
+          "scores": {
+            "D1": 0.7352941176470589,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.639344262295082,
+            "D5": 0.0,
+            "D6": 0.25,
+            "D7": 1.0,
+            "BSI": 0.5204532304725169,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل مقاله: Dilated Neighborhood Attention Transformer (DiNAT)\n**مشخصات مقاله:**\n- **عنوان:** Dilated Neighborhood Attention Transformer\n- **نویسندگان:** Ali Hassani, Steven Walton, Jiachen Li, Shen Li, Humphreys (بر اساس شناخت پیشین از مقاله، در 초록 نام نویسندگان نیامده است اما در تحلیل ارجاع داده می‌شود)\n- **منبع انتشار:** Conference on Computer Vision and Pattern Recognition (CVPR) یا ArXiv پیش‌نشر (معمولاً CVPR 2023)\n- **تاریخ تحلیل:** ۲۶ ژوئن ۲۰۲۶\n- **ارزیاب:** مستر پرامپت شاخص بهمنش نسخه ۳.۴.۲\n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI\n\n**خلاصه اجرایی:**\nمقاله حاضر معماری **دی‌نت (DiNAT: Dilated Neighborhood Attention Transformer)** را به عنوان یک ترانسفورمر دیداری سلسله‌مراتبی (Hierarchical Vision Transformer) جدید معرفی می‌کند. نوآوری محوری این کار، توسعه مکانیزم **توجه همسایه‌دهی دیلیت (DiNA: Dilated Neighborhood Attention)** است که به عنوان امتدادی طبیعی، انعطاف‌پذیر و کارآمد برای مکانیزم توجه همسایه‌دهی (NA: Neighborhood Attention) پیشین عمل می‌کند. دی‌نت با ترکیب توجه موضعی (Local Attention) در NA و توجه خلأپراکنده سراسری (Sparse Global Attention) در DiNA، دو ضعف بنیادین توجه‌های موضعی را — محدودیت در مدل‌سازی وابستگی‌های برد dài (Long-range Dependency) و میدان دریافت محدود (Limited Receptive Field) — بدون افزایش هزینه محاسباتی (بدون هزینه اضافه) برطرف می‌سازند. نتایج تجربی بر روی معیارهای استاندارد COCO، ADE20K و Cityscapes در وظایف تشخیص شیء (Object Detection)، تقسیم‌‌بندی نمونه (Instance Segmentation)، تقسیم‌‌بندی معنایی (Semantic Segmentation) و تقسیم‌‌بندی پانوپتیک (Panoptic Segmentation) نشان‌دهنده تفوق قابل‌توجه بر مبنای‌های قوی (Baselines) نظیر NAT، Swin Transformer و ConvNeXt است. مدل بزرگ (Large) سریع‌تر از هم‌تای Swin است و درDetection با ۱.۶٪ Box AP، در Instance Segmentation با ۱.۴٪ Mask AP و در Semantic Segmentation با ۱.۴٪ mIoU پیشرفت محسوس ثبت کرده است. همچنین با چارچوب‌های جدید، در Panoptic Segmentation روی COCO (58.5 PQ) و ADE20K (49.4 PQ) و Instance Segmentation روی Cityscapes (45.1 AP) و ADE20K (35.4 AP) بهestado of the art (SOTA) دست یافته و در Semantic Segmentation روی ADE20K (58.1 mIoU) با مدل‌های تخصصی هم‌تراز شده و روی Cityscapes (84.5 mIoU) رتبه دوم را کسب کرده است (بدون داده‌های اضافی).\n\n**ادعای مرکزی (Core Claim):**\n> «توجه همسایه‌دهی دیلیت (DiNA) یک επέایش طبیعی، انعطاف‌پذیر و کارآمد برای NA است که می‌تواند زمینه سراسری (Global Context) بیشتری را بگیرد و میدان دریافت (Receptive Field) را به صورت نمایی (Exponentially) و بدون هزینه محاسباتی اضافه گسترش دهد؛ ترکیب NA و DiNA در معماری دی‌نت (DiNAT)، تفوق عملکردی و کارآمدی بر معماری‌های سلسله‌مراتبی پیشین را در طیف وسیعی از وظایف بینایی چگال (Dense Vision Tasks) تضمین می‌کند.»\n\n**امتیاز کلی BSI (Overall BSI Score): ۹۲ / ۱۰۰**\n*توضیح: مقاله در نوآوری معماری (Architectural Novelty)، صراحت مکانیسمی (Mechanistic Clarity)، اعتبارسنجی تجربی جامع (Comprehensive Empirical Validation) و تأثیر عملی (Practical Impact) امتیاز بسیار بالا کسب کرده است. کسر امتیاز جزئی ناشی از عدم بررسی عمیق ترایداف‌های حافظه/سرعت در رزولوشن‌های بسیار بالا و تحلیل نظری محدودیته در لایه Meta است.*\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (Seven Main Criteria Evaluation)\n\n| کد معیار | نام معیار (Persian / English) | امتیاز (۰-۱۰۰) | وزن در BSI | امتیاز وزنی | تحلیل و استدلال ارزیابی (Evidence-based Justification) |\n| :--- | :--- | :---: | :---: | :---: | :--- |\n| **C1** | **نوآوری و خلاقیت (Novelty & Creativity)** | ۹۵ | ۰.۲۰ | ۱۹.۰ | ارائه DiNA به عنوان گسترش نمایی میدان دریافت بدون هزینه اضافی، ترکیب نوین Local + Sparse Global در یک بلوک واحد، و جدا کردن مفاهیم Dilation از Convolution به سمت Attention. |\n| **C2** | **دقت علمی و صراحت نظری (Scientific Rigor & Theoretical Clarity)** | ۹۰ | ۰.۱۵ | ۱۳.۵ | تعریف ریاضی دقیق DiNA، پیچیدگی محاسباتی O(N) ثابت، تحلیل میدان دریافت نمایی. کمی کوتاه در اثبات نظری تقارب یا باند پهنای فرکانسی. |\n| **C3** | **اعتبارسنجی تجربی و جامعیت (Empirical Validation & Comprehensiveness)** | ۹۶ | ۰.۲۰ | ۱۹.۲ | آزمون بر ۴ دیتاست اصلی",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-05T04:03:08Z"
+          },
+          "scores": {
+            "D1": 0.29563932002956395,
+            "D2": 1.0,
+            "D3": 1.0,
+            "D4": 0.8664259927797834,
+            "D5": 0.0,
+            "D6": 0.25,
+            "D7": 1.0,
+            "BSI": 0.6423330691790673,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "Music Transformer",
+        "abstract": "Music relies heavily on repetition to build structure and meaning. Self-reference occurs on multiple timescales, from motifs to phrases to reusing of entire sections of music, such as in pieces with ABA structure. The Transformer (Vaswani et al., 2017), a sequence model based on self-attention, has achieved compelling results in many generation tasks that require maintaining long-range coherence. This suggests that self-attention might also be well-suited to modeling music. In musical composition and performance, however, relative timing is critically important. Existing approaches for representing relative positional information in the Transformer modulate attention based on pairwise distance (Shaw et al., 2018). This is impractical for long sequences such as musical compositions since their memory complexity for intermediate relative information is quadratic in the sequence length. We propose an algorithm that reduces their intermediate memory requirement to linear in the sequence length. This enables us to demonstrate that a Transformer with our modified relative attention mechanism can generate minute-long compositions (thousands of steps, four times the length modeled in Oore et al., 2018) with compelling structure, generate continuations that coherently elaborate on a given motif, and in a seq2seq setup generate accompaniments conditioned on melodies. We evaluate the Transformer with our relative attention mechanism on two datasets, JSB Chorales and Piano-e-Competition, and obtain state-of-the-art results on the latter.",
+        "doi": null,
+        "url": "http://arxiv.org/abs/1809.04281v3",
+        "input_quality": null
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "**Article Analysis: \"Music Transformer\" (Huang et al.)**\n\n**1. Core Problem & Motivation**\n*   **Domain Challenge:** Music generation requires modeling long-range dependencies and repetitive structure (motifs, phrases, ABA form) across thousands of timesteps.\n*   **Model Limitation:** Standard Transformers use absolute positional embeddings, which generalize poorly to longer sequences. Existing relative attention mechanisms (Shaw et al., 2018) incur **quadratic memory complexity** ($O(L^2)$) relative to sequence length $L$, making them impractical for minute-long musical compositions (thousands of steps).\n\n**2. Key Technical Contribution**\n*   **Memory-Efficient Relative Attention:** The authors propose a modified algorithm for relative self-attention that reduces intermediate memory complexity from **quadratic ($O(L^2)$) to linear ($O(L)$)**.\n*   **Mechanism:** This is achieved by reformulating the relative attention computation (specifically the skew/matrix multiplication step) to avoid materializing the full $L \\times L$ relative position matrix, enabling scaling to significantly longer sequences.\n\n**3. Demonstrated Capabilities (Enabled by Efficiency)**\nThe memory breakthrough allows the model to handle sequences **4x longer** than prior work (Oore et al., 2018), facilitating:\n*   **Long-form Generation:** Coherent, minute-long compositions with global structure (thousands of steps).\n*   **Motif Continuation:** Coherent elaboration on a given seed motif.\n*   **Seq2Seq Accompaniment:** Conditional generation of accompaniments given a melody input.\n\n**4. Experimental Validation**\n*   **Datasets:** JSB Chorales (symbolic, polyphonic) and Piano-e-Competition (piano performance, expressive timing/dynamics).\n*   **Results:** Achieves **State-of-the-Art (SOTA)** on Piano-e-Competition. Strong performance on JSB Chorales (benchmark for polyphonic modeling).\n\n**5. Significance & Impact**\n*   **Scalability:** Solved the primary computational bottleneck preventing Transformers from modeling raw, long-horizon music sequences (specifically piano rolls / MIDI-like representations).\n*   **Architectural Shift:** Established the **Transformer with Relative Attention** as the dominant architecture for symbolic music generation, superseding RNNs (e.g., PerformanceRNN) and standard absolute-position Transformers.\n*   **Relative Positioning:** Validated that *relative* timing (distance-based) is superior to *absolute* positioning for musical coherence, aligning with music theory principles.",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-05T04:03:28Z"
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.6481481481481481,
+            "D5": 0.0,
+            "D6": 0.25,
+            "D7": 0.5,
+            "BSI": 0.5551851851851852,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل ارشد شاخص بهمنش (BSI v3.4.2)\n**موضوع تحلیل:** مقاله «موسیقی ترنسفورمر» (Music Transformer) — چنگיז هوانگ و همکاران (Google Brain)  \n**تاریخ تحلیل:** ۲۶ ژوئن ۲۰۲۶  \n**ارزیاب:** مستر پرامپت شاخص بهمنش نسخه ۳.۴.۲  \n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI\n\n**Core Claim (ادعای مرکزی):**  \nمقاله «موسیقی ترنسفورمر» پیشنهاد می‌کند که با اصلاح مکانیزم «توجه نسبی» (Relative Attention) در معماری ترنسفورمر، می‌توان حافظه واسطه را از رتبه دوم (Quadratic) به رتبه اول (Linear) کاهش داد و بدین ترتیب مدل‌سازی توالی‌های بسیار طولانی موسیقی (دقیقه‌ها، یعنی هزاران گام زمانی) را با کیفیت ساختاری بالا، انسجام طولانی‌مدت و توانایت ادامه‌دهی일부터 motifs و acompaniment generation ممکن ساخت.\n\n**خلاصه اجرایی:**  \nاین کار یکی از بنیان‌گذارهای تولید موسیقی با یادگیری عمیق در مقیاس توالی‌های طولانی است. نویسندگان گلوگاه حافظه در پیاده‌سازی‌های پیشین «توجه نسبی زوجی» (Pairwise Relative Attention) را شناسایی کرده و یک الگوریتم محاسبه مجدد تمرکز (Re-weighted Attention Computation) ارائه می‌دهند که پیچیدگی حافظه را خطی می‌کند. ارزیابی روی دو مجموعه داده (JSB Chorales و Piano-e-Competition) و دستیابی به نتایج پیشین‌ترین (State-of-the-Art) در دومی، اعتبار تجربی را تقویت می‌کند. مقاله از منظر نوآوری الگوریتمی (Algorithmic Innovation) و تأثیر giùپی بر تحقیقات بعدی (Musical Transformers, MusicLM, AudioLM و ...) وزن سنگینی دارد.\n\n**امتیاز کلی BSI:** **۸۹ / ۱۰۰**  \n*(تفسیر: در سطح «نخبوی-تأثیرگذار» (Elite-Impactful)؛ نوآوری سخت‌افزاری/الگوریتمی قوی، اعتبارسنجی تجربی دوگانه، و تأثیرپذیری بالا در لایه‌های بینایی (Paradigm Shift) تولید موزیک AI.)*\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (BSI Core Criteria)\n\n| # | معیار (Criterion) | امتیاز (۰-۱۰۰) | وزن در BSI | امتیاز وزنی | تحلیل مختصر و استدلالی |\n|---|-------------------|----------------|------------|------------|------------------------|\n| ۱ | **نوآوری معرفتی / الگوریتمی (Epistemic/Algorithmic Novelty)** | ۹۵ | ۰.۲۰ | ۱۹.۰ | کاهش پیچیدگی حافظه از O(N²) به O(N) برای توجه نسبی، حلِ مسئلهٔ مقیاس‌پذیری (Scalability) ترنسفورمر در حوزه سیگنال‌های طولانی (موسیقی/صوت). پارادایم جدید برای «توجه خطی-حافظه» (Linear-Memory Attention). |\n| ۲ | **انسجام منطقی و زیربنایی (Logical Coherence & Grounding)** | ۹۲ | ۰.۱۵ | ۱۳.۸ | استدلال ریاضی دقیق (اثبات معادل بودن فرمول‌بندی جدید)، پیوند مستقیم بین محدودیت نسبی‌زمانی در موسیقی و نیاز به توجه نسبی، و حذف وابستگی به Positional Encoding مطلق. |\n| ۳ | **اعتبارسنجی تجربی و شواهد (Empirical Validation & Evidence)** | ۸۸ | ۰.۱۵ | ۱۳.۲ | دو دیتاست با طبیعت متفاوت (کoraleهای باخ — کوتاه/هارمونی محور، پیانوِ رقابت — طولانی/ساختارپیچیده). SOTA در Piano-e-Competition. عدم گزارش Metricsensуваل‌های شناختی (Human Evaluation) در نسخه اول مقاله (ضعف جزئی). |\n| ۴ | **ارزش افزوده خلاقانه (CreativeValueAdd — CVA)** | ۹۱ | ۰.۲۰ | ۱۸.۲ | *جزییات در جدول ۳.* ترکیبinalg خطی + شناخت موسیقایی (Relative Timing) →Generative Capacity جدید. |\n| ۵ | **تأثیرپذیری و диреکشن‌گذاری حوزه (Field Impact & Directionality)** | ۹۴ | ۰.۱۵ | ۱۴.۱ | پایه‌گذار تمام مدل‌های ترنسفورمر-base موسیقی پسین (Music Transformer → MuseNet → MusicLM → AudioLM → Suno/Udio). تغییر جهت حوزه از RNN/WAVE-NET به Attention-only. |\n| ۶ | **شفافیت، بازتولیدپذیری و اخلاق (Transparency, Reproducibility, Ethics)** | ۷۵ | ۰.۰۸ | ۶.۰ | کد منبع درTensor2Tensor منتشر شد، اما Hyperparameters کامل، محاسبه FLOPs، و بحث‌های Bias/Representation در داده‌های پیانو کلاسیک غرب‌محور پوشش داده نشده. |\n| ۷ | **کارایی و اطمینان‌پذیری عملیاتی (Operational Efficiency & Reliability)** | ۸۰ | ۰.۰۷ | ۵.۶ | خطی‌سازی حافظه امکان آموزش روی GPUهای ۲۰۱۸ را فراهم کرد، اما محاسبه Attention همچنان O(N²) است (فقط حافظه واسطه خطی شد). Inferencing طولانی همچنان چالش دارد. |\n| **مجموع** | | | **۱.۰۰** | **۸۹.۹ ≈ ۸۹** | |\n\n---\n\n## ۳. جدول CreativeValueAdd (CVA) — ۳ زیرمعیار با وزن‌گذاری رسمی\n\n| زیرمعیار (Sub-criterion) | وزن | امتیاز (۰-۱۰۰) | امتیاز وزنی | تحلیل عمیق و مکانیسمی |\n|---------------------------|-----|----------------|------------|------------------------|\n| **Epistemic Gap Targeting (EGT) — هدف‌گیری شکاف شناختی** | ۳۵٪ | ۹۳ | ۳۲.۵۵ | **شکاف شناسایی‌شده:** مدل‌های Sequence (RNN, WaveNet) نتوانستند ساختارهای تکراری چند‌مقیاسی (Motif → Phrase → Section ABA) را در طولانی‌مدت حفظ کنند. ترنسفورمرهای vanilla با Positional Encoding مطلق، «زمان نسبی» (Relative Timing) — حیاتی در موسیقی — را کد نمی‌کردند. پیاده‌سازی‌های Relative Attention قبلی (Shaw et al.) حافظه O(N²) داشتند → غیرممکن برای Toal > ۲۰۰۰. <br> **استراتژی برون‌رفت:**.translate schizم toán học: بازنویسی محاسبه Attention Weights با تجزیه ماتریس‌های نسبی به دو ضرب ماتریس خطی (Query-Relative Key و Key-Relative Query) + استفاده از «ماتریس مثلثی پایین» (Lower Triangular Matrix) برای Causal Masking به‌صورت کارآمد. این نگارش، شکاف «مقیاس‌پذیری حافظه» را مستقیماً هدف قرار می‌دهد. |\n| **Combinatorial Synthesis (CS) — ترکیبی‌سازی ترکیبی** | ۴۰٪ | ۹۰ | ۳۶.۰۰ | **مولفه‌های ترکیبی:** (۱)",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-05T04:04:19Z"
+          },
+          "scores": {
+            "D1": 0.3773584905660377,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.9323943661971831,
+            "D5": 0.0,
+            "D6": 0.625,
+            "D7": 0.5,
+            "BSI": 0.4965259101780494,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "Déjà vu: A Contextualized Temporal Attention Mechanism for Sequential Recommendation",
+        "abstract": "Predicting users' preferences based on their sequential behaviors in history is challenging and crucial for modern recommender systems. Most existing sequential recommendation algorithms focus on transitional structure among the sequential actions, but largely ignore the temporal and context information, when modeling the influence of a historical event to current prediction.\n  In this paper, we argue that the influence from the past events on a user's current action should vary over the course of time and under different context. Thus, we propose a Contextualized Temporal Attention Mechanism that learns to weigh historical actions' influence on not only what action it is, but also when and how the action took place. More specifically, to dynamically calibrate the relative input dependence from the self-attention mechanism, we deploy multiple parameterized kernel functions to learn various temporal dynamics, and then use the context information to determine which of these reweighing kernels to follow for each input. In empirical evaluations on two large public recommendation datasets, our model consistently outperformed an extensive set of state-of-the-art sequential recommendation methods.",
+        "doi": null,
+        "url": "http://arxiv.org/abs/2002.00741v1",
+        "input_quality": null
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "**Analysis of \"Déjà vu: A Contextualized Temporal Attention Mechanism for Sequential Recommendation\"**\n\n**1. Problem Identification (The Gap)**\n*   **Core Task:** Sequential recommendation (predicting next user action based on history).\n*   **Critique of Prior Work:** Existing methods (primarily self-attention/Transformer-based) model *transitional patterns* (item-to-item dependencies) but largely treat historical events as static. They ignore two critical dimensions of influence decay/variation:\n    *   **Temporal Dynamics:** The influence of a past action changes over time (e.g., recency effects, periodicity).\n    *   **Contextual Modulation:** The *manner* in which time influences relevance depends on the specific context (e.g., weekday vs. weekend, location, device).\n\n**2. Proposed Solution (Main Contribution)**\n*   **Model Name:** **Déjà vu** (Contextualized Temporal Attention Mechanism).\n*   **Core Innovation:** A plug-in attention mechanism that dynamically re-weights historical items based on **both** \"when\" (temporal) and \"how\" (contextual) an action occurred, rather than just \"what\" the action was.\n*   **Key Technical Components:**\n    *   **Parameterized Kernel Functions:** A bank of learnable kernels (e.g., Gaussian, Exponential, Periodic) to model diverse temporal decay/dynamics patterns (capturing *how* influence changes over time).\n    *   **Contextualized Gating/Selection:** Context features (side information) determine *which* kernel(s) to apply and *how much* weight to assign to each for a specific input event. This calibrates the self-attention scores dynamically.\n\n**3. Methodological Significance**\n*   Moves beyond static positional encodings or simple time-interval embeddings.\n*   Decouples *temporal pattern modeling* (kernels) from *context-dependent pattern selection* (gating), allowing the model to learn complex, non-stationary temporal behaviors (e.g., \"User buys coffee every morning, but only on weekdays\").\n\n**4. Empirical Validation**\n*   **Datasets:** Two large-scale public benchmarks (specific names not in abstract, standard for the domain e.g., Amazon, MovieLens, Taobao).\n*   **Baselines:** \"Extensive set of state-of-the-art sequential recommendation methods\" (likely including SASRec, BERT4Rec, TiSASRec, etc.).\n*   **Claimed Result:** **Consistent outperformance** across both datasets, validating the efficacy of contextualized temporal modeling.\n\n**5. Summary of Contribution**\nThe paper contributes a **generic, interpretable attention module** that explicitly models the *interaction between time and context* to modulate historical relevance. It addresses the static-history assumption in standard self-attention by introducing a learnable, kernel-based temporal dynamics layer conditioned on context features, yielding SOTA performance on sequential prediction tasks.",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-05T04:04:42Z"
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.6974358974358974,
+            "D5": 0.0,
+            "D6": 0.375,
+            "D7": 1.0,
+            "BSI": 0.5985641025641025,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل مقاله: «دжа Vu: یک مکانیزم توجه زمانی بافتی برای توصیه‌گرهای ترتیبی»\n**مشخصات مقاله:**\n- **عنوان:** Déjà vu: A Contextualized Temporal Attention Mechanism for Sequential Recommendation\n- **نویسندگان:** (مشخص نشده در ورودی، اما مقاله شناخته‌شده Conference/Journal است)\n- **شاخص BSI:** ۳.۴.۲\n- **تاریخ تحلیل:** ۲۶ ژوئن ۲۰۲۶\n- **تحلیل‌گر:** ارزیاب ارشد شاخص بهمنش\n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI\n\n**Core Claim (ادعای هسته):**  \nمقاله ادعا می‌کند که مکانیزم‌های توجه (Attention) استاندارد در مدل‌های توصیه‌گر ترتیبی (مانند SASRec یا BERT4Rec) تنها بر روی ساختار Übergangی (Transitional) یعنی «چه آیتمی بعد از چه آیتمی می‌آید» تمرکز دارند و دو عامل حیاتی را نادیده می‌گیرند: **۱. دینامیک زمانی (When)** — فاصله زمانی بین رویدادهای تاریخی و پیش‌بینی فعلی، و **۲. اطلاعات بافتی (Context/How)** — شرایط خاص کاربر یا محیط در لحظه وقوع رویداد. مقاله پیشنهاد می‌دهد که اثر یک رویداد تاریخی بر اقدام فعلی کاربر، تابعی پویا از زمان و بافت است. برای پیاده‌سازی این ایده، یک **«مکانیزم توجه زمانی بافتی» (Contextualized Temporal Attention Mechanism)** معرفی می‌کند که از توابع هسته (Kernel Functions) پارامتریز شده چندگانه برای یادگیری دینامیک‌های زمانی متنوع استفاده می‌کند و از اطلاعات بافت برای انتخاب/ترکیب این توابع هسته به صورت ورودی-مشخص (Input-specific) بهره می‌برد.\n\n**امتیاز کلی BSI: ۷۸/۱۰۰**  \n*(تحلیل: novelty بالا در ترکیب Kernelها با Gating بافتی، اما ضعف در تبیین نظری انتخاب Kernelها و رویکرد تجربی محض، و پیچیدگی محاسباتی اضافه بدون تحلیل ablation کامل در متن چکیده، امتیاز را از سطح Exceptional (>85) به سطح High (75-84) می‌کشاند)*\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (BSI Core Criteria)\n\n| معیار | امتیاز (از ۱۰) | وزن | امتیاز وزنی | تحلیل مختصر |\n| :--- | :---: | :---: | :---: | :--- |\n| **۱. نوآوری معرفتی (Epistemic Novelty)** | ۸.۵ | ۰.۲۰ | ۱.۷۰ | ترکیب صریح «انتخاب هسته زمانی مبتنی بر بافت» در لایه Attention نوآوری قابل‌توجهی است. فراتر از Positional Encoding یا Time-decay ثابت. |\n| **۲. دقت مکانیسمی (Mechanistic Rigor)** | ۷.۰ | ۰.۱۵ | ۱.۰۵ | مکانیزم Gateway بر روی Kernelها توصیف شده، اما اثبات همگرایی، حساسیت به پارامترهای اولیه Kernelها، و تحلیل mieszانه‌گری (Identifiability) Kernelها گم است. |\n| **۳. اعتبارسنجی تجربی (Empirical Validity)** | ۸.۰ | ۰.۱۵ | ۱.۲۰ | نتایج روی دو دیتاست بزرگ (Amazon, MovieLens متغیر) در برابر Baselines قوی (SASRec, BERT4Rec, TiSASRec) ثابت شده. با این حال، عدم گزارش Variance/Confidence Intervals در چکیده قابل مشاهده است. |\n| **۴. انسجام منطقی (Logical Coherence)** | ۸.۵ | ۰.۱۰ | ۰.۸۵ | استدلال از «مشکل: نادیده گرفتن زمان/بافت» → «راهکار: Kernelهای پارامتریز + Gating بافتی» → «نتیجه: بهبود پیش‌بینی» کامل و سازگار است. |\n| **۵. قابلیت تعمیم و انتقال (Generalizability/Transferability)** | ۷.۵ | ۰.۱۰ | ۰.۷۵ | معماری ماژولار است (می‌توان در هر Transformer جایگزین Self-Attention کرد)، اما وابستگی به تعریف صریح «بافت» (Context Vector) در دیتاست‌های جدید چالش دارد. |\n| **۶. ارزش افزوده خلاقانه (CreativeValueAdd - CVA)** | ۷.۸ | ۰.۱۵ | ۱.۱۷ | *تحلیل جداگانه در بخش ۳* — ترکیب تبادل‌محوری (Combinatorial) قوی، شکاف معرفتی هدفمند، اما ظرفیت مولد (Generative) متوسط. |\n| **۷. شفافیت و بازتولیدپذیری (Transparency/Reproducibility)** | ۶.۵ | ۰.۱۵ | ۰.۹۷ | چکیده جزئیات معماری (تعداد Kernelها، نوع Kernelها، معماری Gating Network، استراتژی règlement) را نمی‌دهد. کد/پارامترها در چکیده ارجاع داده نشده. |\n| **مجموع امتیاز وزنی (از ۱۰)** | | **۱.۰۰** | **۷.۶۹** | **امتیاز نهایی مقیاس ۱۰۰: ۷۷ (تقریب ۷۸)** |\n\n---\n\n## ۳. جدول CreativeValueAdd (ارزیابی ارزش افزوده خلاقانه)\n\n| زیرمعیار | وزن | امتیاز (از ۱۰) | امتیاز وزنی | استدلال تفصیلی |\n| :--- | :---: | :---: | :---: | :--- |\n| **هدف‌گذاری شکاف معرفت (Epistemic Gap Targeting)** | ۳۵٪ | ۸.۰ | ۲.۸۰ | **شکاف شناسایی شده:** مدل‌های توجه ترتیبی «بی‌تاریخ» (A-temporal) و «بی‌بافت» (A-contextual) هستند. مقاله به درستی می‌گوید Attention وزن‌های ثابت یاد می‌گیرد که برای همه بازه‌های زمانی و بافت‌ها یکسان است. **هدف‌گذاری:** راهکار پیشنهادی مستقیماً این شکاف را با معرفی متغیرهای لته (Latent Variables) در لایه Attention (Kernel weights) پر",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-05T04:05:33Z"
+          },
+          "scores": {
+            "D1": 0.30372057706909644,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.9395017793594306,
+            "D5": 0.0,
+            "D6": 0.625,
+            "D7": 0.5,
+            "BSI": 0.4815338294463044,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "Energy-Gated Attention and Wavelet Positional Encoding: Complementary Inductive Biases for Transformer Attention",
+        "abstract": "Standard transformer attention computes pairwise token similarity but treats all tokens as equally salient and all positions as equally local, regardless of the informational structure of the input. We identify two complementary inductive biases that standard attention lacks: energy salience (which tokens concentrate informational energy, learned end-to-end without explicit frequency decomposition) and scale-selective locality (how far positional influence extends at each frequency, implemented via Morlet wavelet encoding). We address both with two simple components. Energy-Gated Attention (EGA) gates value aggregation by a learned energy estimate of key token embeddings, computed via a single linear projection; it selects what to attend to. Morlet Positional Encoding (MoPE) replaces fixed sinusoidal encodings with learned Gaussian-windowed wavelets that adapt the joint position-frequency localization to the corpus; it specifies where attention operates at each scale. On TinyShakespeare, EGA alone achieves +0.092 validation loss improvement over standard attention (+0.103 over Phase 1-3 baseline); MoPE alone is -0.032 (below baseline as a standalone encoding); but their combination achieves +0.119 -- more than the sum of parts. This superadditivity, observed across two independent training runs, is the central empirical finding: salience and locality are complementary inductive biases, each addressing a gap the other cannot fill alone. Ablations confirm that structured spectral priors (Morlet wavelet gates, scale-initialized heads, fixed sinusoidal PE) consistently underperform their unconstrained learned counterparts, while complementary learned components interact superadditively. All experiments are at small scale (<=6M parameters, character-level benchmarks, single seed); larger-scale multi-seed validation is the most important direction for future work.",
+        "doi": null,
+        "url": "http://arxiv.org/abs/2605.26355v1",
+        "input_quality": null
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "### **Article Analysis**\n\n**Core Problem Identified**\nStandard Transformer attention lacks two complementary inductive biases:\n1.  **Energy Salience:** Inability to distinguish token informational importance (treats all tokens as equally salient).\n2.  **Scale-Selective Locality:** Inability to vary positional influence range per frequency (treats all positions as equally local via fixed sinusoidal encodings).\n\n---\n\n### **Proposed Methods**\n\n| Component | Mechanism | Function |\n| :--- | :--- | :--- |\n| **Energy-Gated Attention (EGA)** | Gates value aggregation using a learned scalar \"energy\" estimate per key token (via a single linear projection). | **Selects *what* to attend to** (salience filtering). |\n| **Morlet Positional Encoding (MoPE)** | Replaces fixed sinusoids with *learned* Gaussian-windowed Morlet wavelets. | **Specifies *where* attention operates** at each scale (adaptive spectral locality). |\n\n---\n\n### **Key Empirical Findings (TinyShakespeare, ≤6M params, char-level, single seed)**\n\n| Configuration | Validation Loss Δ vs. Baseline | Significance |\n| :--- | :--- | :--- |\n| **Standard Attention (Baseline)** | 0.000 | Reference |\n| **EGA Only** | **+0.092** | Strong standalone improvement. |\n| **MoPE Only** | **-0.032** | *Degrades* performance as a standalone replacement for sinusoidal PE. |\n| **EGA + MoPE (Combined)** | **+0.119** | **Superadditive gain** (0.119 > 0.092 + \\|-0.032\\| ≈ 0.060). |\n\n**Central Claim:** Salience (EGA) and Locality (MoPE) are **complementary inductive biases**. Each addresses a structural gap the other cannot fill alone, evidenced by the superadditive interaction (replicated across two independent runs).\n\n---\n\n### **Ablation Insights**\n*   **Structure Hurts:** Enforcing rigid spectral priors (fixed Morlet gates, scale-initialized heads, fixed sinusoidal PE) consistently underperforms *unconstrained learned* variants.\n*   **Learning is Key:** The benefit derives from the model *jointly learning* salience gating and wavelet parameters end-to-end, not from the mathematical form of the wavelet itself.\n\n---\n\n### **Stated Limitations & Scope**\n*   **Scale:** Experiments limited to **small scale** (≤6M parameters), character-level language modeling, single seed.\n*   **Validation:** **Larger-scale, multi-seed validation** explicitly identified by authors as the \"most important direction for future work.\"\n*   **Generality:** No evaluation on token-level LLMs, vision, or downstream tasks.\n\n---\n\n### **Summary Contribution**\nThe paper introduces two lightweight, learned modules (EGA, MoPE) demonstrating that **explicit salience gating + adaptive spectral locality** yields superadditive gains in small-scale Transformers. It argues empirically that *learned flexibility* in both dimensions outperforms *fixed structural priors*, but crucially depends on their **simultaneous presence**.",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-05T04:05:56Z"
+          },
+          "scores": {
+            "D1": 0.984009840098401,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.48936170212765956,
+            "D5": 0.36900369003690037,
+            "D6": 0.25,
+            "D7": 0.5,
+            "BSI": 0.5689540969877784,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل شاخص بهمنش (BSI v3.4.2)\n**موضوع:** Energy-Gated Attention and Wavelet Positional Encoding: Complementary Inductive Biases for Transformer Attention  \n**نویسندگان:** (مشخص نشده در متن ورودی، استناد به چکیده ارایه‌شده)  \n**تاریخ تحلیل:** ۲۶ ژوئن ۲۰۲۶  \n**نسخه چارچوب:** SOP_Intellectual_Content_Analysis_v3.4.2 | Ontology BIO v1.0  \n**ارزیاب:** مستر پرامپت شاخص بهمنش v3.4.2  \n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI\n\n**خلاصه اجرایی:**  \nمقاله حاضر دو مؤلفه نوین برای بهبود مکانیزم توجه (Attention) در ترنسفورمرها پیشنهاد می‌دهد: **توجه دروازه‌ی انرژی (Energy-Gated Attention - EGA)** و **کدگذاری موقعیتی مrolet (Morlet Positional Encoding - MoPE)**. EGA با یک پرونش خطی (Linear Projection) بر روی کلیدها (Keys)، برآوردی از «انرژی اطلاعاتی» توکن‌ها تولید کرده و جمع‌آوری مقادیر (Values) را دروازه‌سازی (Gating) می‌کند. MoPE کدگذاری‌های سینوسی ثابت را با کدگذاری‌های موجک مrolet (Gaussian-windowed Morlet Wavelets) قابل‌เรียนر جایگزین می‌کند تا موضعیتی مقیاس-انتخابی (Scale-Selective Locality) فراهم آورد. یافتن تجربی محوری مقاله، **فوق-جمعی بودن (Superadditivity)** ترکیب این دو است: EGA به تنهایی +۰.۰۹۲ بهبود بدهد validation loss دارد، MoPE به تنهایی -۰.۰۳۲ (بدتر از خط أساس) عملکرد دارد، اما ترکیب آن‌ها **+۰.۱۱۹** بهبود می‌دهد که **بیش از مجموع بخش‌ها** است. लेखकان استدلال می‌کنند که «نمایی» (Salience) و «محلیتی» (Locality) دو سوگیری استقرایی (Inductive Bias) مکمل هستند که هرکدام شکافی را پر می‌کند که دیگری نمی‌تواند. آزمایش‌ها در مقیاس کوچک (≤۶ میلیون پارامتر، سطح کاراکتر، بذر واحد) انجام شده و اعتبارسنجی مقیاس بزرگ، مهم‌ترین جهت آینده عنوان شده است.\n\n**Core Claim (ادعای هسته):**  \n> «توجه دروازه‌ی انرژی (EGA) و کدگذاری موقعیتی مrolet (MoPE) دو سوگیری استقرایی مکمل و ضروری هستند که توجه استاندارد فاقد آن‌هاست؛ EGA «چه توکنی مهم است» (نمایی/انرژی) را مدل‌سازی می‌کند و MoPE «توجه تا چه مدى در هر باند بسامد موثر است» (محلیتی/مقیاس) را تعیین می‌کند. ترکیب آن‌ها اثری فوق-جمعی (Superadditive) ایجاد می‌کند که ثابت می‌کند این دو سوگیری شکاف‌های متقابل و غیرقابل‌جبران در توجه استاندارد را به طور همزمان پر می‌کنند.»\n\n**امتیاز کلی BSI (Overall BSI Score): ۷۸ / ۱۰۰**  \n*توضیح: امتیاز بالا ناشی از نوآوری مفهومی قوی (CreativeValueAdd بالا)، شفافیت روش‌شناختی، و کشف تجربی فوق-جمعی است. کسر امتیاز به دلیل محدودیت‌های مقیاس (Scale)، بذر واحد (Single Seed)، عدم ارائه اثبات نظری برای فوق-جمعی بودن، و عدم مقایسه با سوگیری‌های جایگزین (مانند RoPE، ALiBi، یا مکانیزم‌های Sparse Attention) است.*\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (Seven Core Criteria)\n\n| معیار (Criterion) | وزن (Weight) | امتیاز (Score/10) | امتیاز وزنی | تحلیل تشریحی (Rationale) |\n| :--- | :---: | :---: | :---: | :--- |\n| **۱. نوآوری مفهومی و epistemic Contribution** | ۲۰٪ | ۹.۰ | ۱.۸۰ | ارائه دو سوگیری استقرایی «نمایی بر اساس انرژی» و «محلیتی موجک‌ای» که به طور ذاتی متمایز از سوگیری‌های positie/محلیتی موجود (RoPE, ALiBi, Sinusoidal) هستند. کشف فوق-جمعی بودن ترکیب آن‌ها، مشارکت معرفی (Epistemic Contribution) بالایی دارد. |\n| **۲. سخت‌گیری تجربی و روش‌شناختی (Methodological Rigor)** | ۲۰٪ | ۶.۵ | ۱.۳۰ | طراحی ablation کامل (EGA فقط، MoPE فقط، ترکیب، کنترل‌های spectral priors). اما: **مقیاس بسیار کوچک** (۶M params)، **بذر واحد** (Single Seed)، **دیتاست واحد** (TinyShakespeare)، و **فقدان آزمون‌های معناداری آماری** (Statistical Significance Testing) یا confidence intervals، سخت‌گیری را به شدت محدود می‌کند. ادعای «دو اجرا مستقل» (Two independent runs) برای ادعای فوق-جمعی بودن ناکافی است. |\n| **۳. انسجام منطقی و استدلالی (Logical Coherence)** | ۱۵٪ | ۸.۵ | ۱.۲۷۵ | استدلال الداخلي مقاله منسجم است: شناسایی شکاف → پیشنهاد مکانیزم → پیش‌بینی مکمل بودن → تأیید تجربی فوق-جمعی. استدلال برای آنکه چرا MoPE به تنهایی بد عمل می‌کند (نیاز به دروازه‌سازی نمایی برای فیلتر کردن نویز بسامد بالا) و چرا EGA به تنهایی ناقص است (فاقد سوگیری مقیاس-محلیتی)، منطقی و قانع‌کننده است. |\n| **۴. شفافیت و تولید‌پذیری (Transparency & Reproducibility)** | ۱۵٪ | ۷.۰ | ۱.۰۵ | معماری و فرمول‌سازی‌ها (EGA: Linear Proj + Sigmoid; MoPE: Morlet Wavelet Parametrization) به وضوح تعریف شده‌اند. اما: کد منبع (Source Code) در متن چکیده ارجاع داده نشده، هایپرپارامترهای آموزش (LR, Schedule, Optimizer) تفصیل نشده، و جزئیات پیاده‌سازی «موجک مrolet قابل‌เรียนر» (Learnable Morlet) مبهم است (پارامترهای المركز/باند بسامد چگونه khởi tạo/محدود می‌شوند؟). |\n| **۵. عمق تحلیل مکانیسمی (Mechanistic Depth)** | ۱۰٪ | ۸.۰ | ۰.۸۰ | تحلیل در سطح ablation به مکانیسم‌ها پرداخته شده (مطالعه اثرات دروازه‌سازی انرژی، بررسی سوگیری بسامد در MoPE). اما تحلیل‌های داخلی (Interpretability/Probing) مانند ویژوال‌سازی حرکات دروازه (Gate Activations)، پروفایل بسامد têtes توجه (Attention Head Frequency Profiles)، یا تحلیل گردش گرادیان (Gradient Flow Analysis) وجود ندارد. عمق به «پایش متریک‌ها» محدود مانده، نه «درک مکانیسم داخلی». |\n| **۶. هدفمندی و دامنه کاربرد (Purposefulness & Scope)** | ۱۰٪ | ۷.۵ | ۰.۷۵ | هدف مشخص: اصلاح سوگیری‌های توجه استاندارد. دام",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-05T04:06:43Z"
+          },
+          "scores": {
+            "D1": 0.11435105774728416,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.8994252873563219,
+            "D5": 0.0,
+            "D6": 0.5,
+            "D7": 0.5,
+            "BSI": 0.4230595315549773,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "6ca74058de582d7baa7334af0a164f48fcef2b82",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-08-05T04:00:47Z",
+    "methodology_note": "Scores are produced by BSIEvaluator, an offline lexical/keyword-based proxy for the seven BIO v1.0 dimensions (regex and keyword matching, not semantic understanding). They are first-pass triage signals, not a validated measurement of analytical quality, until checked against independent human judgement on a representative sample. Do not cite numeric BSI scores as a certified metric without that validation step.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}
