@@ -17,9 +17,31 @@ JSON_OUTPUT_INSTRUCTIONS = """
 بدون هیچ متن قبل یا بعدش، دقیقاً با همان کلیدهایی که در «فرمت خروجی لازم»
 بالا توصیف شده (article, analyst_model, criteria_rationale, criteria,
 overall_winner, overall_reasoning, raw_analysis_text, bsi_analysis_text).
+اگر داخل متن تحلیل از نمادهای ریاضی/LaTeX (مثل \\le یا \\times) استفاده
+کردی، حتماً بک‌اسلش را به‌درستی escape کن (\\\\le) وگرنه JSON نامعتبر می‌شود.
 عنوان مقاله و متن دو تحلیل (raw و bsi) که باید مقایسه کنی، همین‌جا زیر
 آورده شده -- این‌ها را عیناً در raw_analysis_text و bsi_analysis_text هم
 برگردان.
+
+⚠️ هشدار بسیار مهم دربارهٔ انتخاب معیار:
+متن تحلیل bsi (که در ادامه می‌آید) حاوی یک جدول امتیازدهی با معیارهای
+داخلی چارچوب BSI است (مثل «انسجام منطقی»، «عمق روش‌شناختی»، «نوآوری علمی»
+و...). این معیارها، معیارهای خودِ آن چارچوب هستند — نه معیارهای شما.
+شما باید معیارهایی کاملاً مستقل از ساختار داخلی BSI انتخاب کنید.
+معیارهای شما باید از خوانش واقعی شما از کیفیت محتوایی هر دو تحلیل
+برخاسته باشند، نه از جدولی که از پیش داخل یکی از آن‌هاست. استفاده از
+همان معیارهای BSI به‌عنوان چارچوب مقایسه، این ارزیابی را بی‌معنی می‌کند.
+
+پیشنهاد معیارهای مستقل (اختیاری — فقط اگر بعد از خواندن هر دو تحلیل
+تشخیص دادید مرتبط‌اند، از آن‌ها استفاده کنید؛ در غیر این‌صورت معیارهای
+خودتان را بسازید):
+- دقت (Accuracy): تطابق ادعاها با محتوای واقعی مقاله
+- استفاده از شواهد (Evidence Handling): استناد صحیح به داده‌ها و یافته‌ها
+- مدیریت عدم قطعیت (Uncertainty Calibration): پرهیز از ادعاهای قطعی بی‌پشتوانه
+- انسجام استدلال (Logical Consistency): پیوستگی و سازگاری درونی تحلیل
+- عمق بینش (Depth of Insight): فراتر رفتن از سطح آشکار متن
+- نرخ توهم‌زایی (Hallucination Rate): ادعاهای بی‌پشتوانه یا ساختگی
+- کاربردپذیری (Practical Usefulness): ارزش عملی برای خواننده/پژوهشگر
 
 عنوان مقاله: {title}
 
@@ -48,13 +70,40 @@ def strip_code_fences(text: str) -> str:
     return text
 
 
+_VALID_JSON_ESCAPES = set('"\\/bfnrtu')
+
+
+def sanitize_json_escapes(text: str) -> str:
+    out = []
+    in_string = False
+    i = 0
+    n = len(text)
+    while i < n:
+        ch = text[i]
+        if in_string and ch == "\\":
+            nxt = text[i + 1] if i + 1 < n else ""
+            if nxt in _VALID_JSON_ESCAPES:
+                out.append(ch)
+                out.append(nxt)
+                i += 2
+                continue
+            else:
+                out.append("\\\\")
+                i += 1
+                continue
+        if ch == '"' and (i == 0 or text[i - 1] != "\\" or (i >= 2 and text[i - 2] == "\\")):
+            in_string = not in_string
+        out.append(ch)
+        i += 1
+    return "".join(out)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--title", required=True)
     parser.add_argument("--raw-file", required=True, type=Path)
     parser.add_argument("--bsi-file", required=True, type=Path)
-    parser.add_argument("--generator", default="gemini",
-                         help="Which registered generator to use as judge (default: gemini)")
+    parser.add_argument("--generator", default="gemini")
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
 
@@ -113,19 +162,67 @@ def main():
             sys.exit(1)
         payload = json.loads(response.body)
         raw_reply = payload["choices"][0]["message"]["content"]
+    elif args.generator == "openrouter":
+        import os
+        from bsi_benchmark.network import HttpClient
+        api_key = os.environ.get("OPENROUTER_API_KEY")
+        if not api_key:
+            print("OPENROUTER_API_KEY not set.", file=sys.stderr)
+            sys.exit(1)
+        client = HttpClient()
+        response = client.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            json_body={"model": generator.model, "max_tokens": 4000,
+                       "messages": [{"role": "user", "content": prompt}]},
+            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+        )
+        if not response.ok:
+            print(f"OpenRouter HTTP {response.status_code}: {response.body}", file=sys.stderr)
+            sys.exit(1)
+        payload = json.loads(response.body)
+        raw_reply = payload["choices"][0]["message"]["content"]
+    elif args.generator == "claude":
+        import os
+        from bsi_benchmark.network import HttpClient
+        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        if not api_key:
+            print("ANTHROPIC_API_KEY not set. Get a key at https://console.anthropic.com", file=sys.stderr)
+            sys.exit(1)
+        client = HttpClient()
+        response = client.post(
+            "https://api.anthropic.com/v1/messages",
+            json_body={"model": "claude-sonnet-4-6", "max_tokens": 4000,
+                       "messages": [{"role": "user", "content": prompt}]},
+            headers={"x-api-key": api_key, "anthropic-version": "2023-06-01",
+                     "content-type": "application/json"},
+        )
+        if not response.ok:
+            print(f"Claude HTTP {response.status_code}: {response.body}", file=sys.stderr)
+            sys.exit(1)
+        payload = json.loads(response.body)
+        raw_reply = "".join(
+            block.get("text", "")
+            for block in payload.get("content", [])
+            if block.get("type") == "text"
+        )
     else:
-        print(f"This script only wires up 'gemini' and 'groq' as judges "
-              f"today; '{args.generator}' would need its own branch here.",
+        print(f"Unsupported generator '{args.generator}'. Available: gemini, groq, openrouter, claude",
               file=sys.stderr)
         sys.exit(1)
 
     cleaned = strip_code_fences(raw_reply)
     try:
         parsed = json.loads(cleaned)
-    except json.JSONDecodeError as exc:
-        print(f"Judge did not return valid JSON: {exc}\n\n--- raw reply ---\n{raw_reply}",
-              file=sys.stderr)
-        sys.exit(1)
+    except json.JSONDecodeError:
+        try:
+            parsed = json.loads(sanitize_json_escapes(cleaned))
+        except json.JSONDecodeError as exc:
+            print(f"Judge did not return valid JSON even after escape repair: {exc}\n\n--- raw reply ---\n{raw_reply}",
+                  file=sys.stderr)
+            sys.exit(1)
+
+    model_name = getattr(generator, "model", None) or "claude-sonnet-4-6"
+    parsed["analyst_model"] = f"{args.generator} ({model_name})"
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(parsed, ensure_ascii=False, indent=2), encoding="utf-8")
