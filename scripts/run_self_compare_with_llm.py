@@ -104,6 +104,7 @@ def main():
     parser.add_argument("--raw-file", required=True, type=Path)
     parser.add_argument("--bsi-file", required=True, type=Path)
     parser.add_argument("--generator", default="gemini")
+    parser.add_argument("--generator-model", default=None, help="Override model for generator, e.g. anthropic/claude-sonnet-4-6")
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
 
@@ -113,6 +114,8 @@ def main():
     prompt = build_prompt(args.title, raw_text, bsi_text)
 
     generator = GeneratorManager().create(args.generator)
+    if args.generator_model:
+        generator.model = args.generator_model
 
     print(f"Calling {args.generator} as judge (this hits a real API)...")
 
