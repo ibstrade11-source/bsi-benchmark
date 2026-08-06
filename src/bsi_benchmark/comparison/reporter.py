@@ -1,15 +1,24 @@
 """
-Minimal Markdown reporter.
+Markdown reporter for comparison runs.
 
-Comparison reports are based on the independent LLM Judge.
-No internal BSI evaluator scores are rendered.
+Reports preserve judge provenance:
+- criteria source
+- score scale
+- weights
+- normalized weighted scores
+- final comparison result
+
+The judge selects criteria. Suggested criteria are only fallback metadata.
 """
 
 from .result import ComparisonReport
 
 
 def render_markdown(report: ComparisonReport) -> str:
-    lines = [f"# Comparison: {report.dataset_name}", ""]
+    lines = [
+        f"# Comparison: {report.dataset_name}",
+        ""
+    ]
 
     if report.run_metadata:
         m = report.run_metadata
@@ -31,6 +40,7 @@ def render_markdown(report: ComparisonReport) -> str:
     for result in report.results:
 
         lines.append(f"## {result.article.title}")
+        lines.append("")
 
         if result.article.url:
             lines.append(f"*source:* {result.article.url}")
@@ -40,14 +50,16 @@ def render_markdown(report: ComparisonReport) -> str:
 
         lines.append("")
 
-        jr = None
+        judge = None
 
         for cell in result.cells:
             if cell.judge_result:
-                jr = cell.judge_result
+                judge = cell.judge_result
                 break
 
-        if jr is None:
+        if not judge:
+            lines.append("### Judge Evaluation")
+            lines.append("")
             lines.append("No judge result.")
             lines.append("")
             continue
@@ -55,64 +67,93 @@ def render_markdown(report: ComparisonReport) -> str:
         lines.append("### Judge Evaluation")
         lines.append("")
 
-        if "winner" in jr:
-            lines.append(f"- **Winner:** {jr['winner']}")
+        lines.append("#### Judge Information")
+        lines.append("")
+        lines.append("| Field | Value |")
+        lines.append("|---|---|")
+        lines.append(
+            f"| Criteria source | {judge.get('criteria_source','judge')} |"
+        )
+        lines.append(
+            f"| Score scale | {judge.get('scale','0-10')} |"
+        )
+        lines.append(
+            f"| Weight sum | {judge.get('weight_sum','100')} |"
+        )
+        lines.append("")
 
-        if "reasoning" in jr:
-            lines.append(f"- **Reasoning:** {jr['reasoning']}")
+        lines.append("#### Judge Reasoning")
+        lines.append("")
+        lines.append(f"**Winner:** {judge.get('winner','')}")
+        lines.append("")
+        lines.append(judge.get("reasoning",""))
+        lines.append("")
 
-        criteria = jr.get("criteria")
+        criteria = judge.get("criteria", [])
 
-        if isinstance(criteria, list):
+        lines.append("#### Criteria Selected by Judge")
+        lines.append("")
+        lines.append(
+            "| Criterion | Weight | Raw (/10) | BSI (/10) | Weighted Raw | Weighted BSI | Explanation |"
+        )
+        lines.append(
+            "|---|---:|---:|---:|---:|---:|---|"
+        )
 
-            lines.append("")
-            lines.append("#### Independent Judge Criteria")
-            lines.append("")
-            lines.append("| Criterion | Importance | Raw | BSI | Reason |")
-            lines.append("|---|---:|---:|---:|---|")
+        raw_total = 0.0
+        bsi_total = 0.0
 
-            for item in criteria:
+        for item in criteria:
 
-                lines.append(
-                    f"| {item.get('name','')} "
-                    f"| {item.get('importance','')} "
-                    f"| {item.get('raw_score','')} "
-                    f"| {item.get('bsi_score','')} "
-                    f"| {item.get('reason','')} |"
-                )
+            weight = float(item.get("importance", 0))
+            raw = float(item.get("raw_score", 0))
+            bsi = float(item.get("bsi_score", 0))
 
-        totals = jr.get("total_scores")
+            weighted_raw = round(raw * weight / 100, 2)
+            weighted_bsi = round(bsi * weight / 100, 2)
 
-        if isinstance(totals, dict):
+            raw_total += weighted_raw
+            bsi_total += weighted_bsi
 
-            lines.append("")
-            lines.append("#### Judge Total Scores")
-            lines.append("")
-            lines.append("| Raw | BSI |")
-            lines.append("|---:|---:|")
             lines.append(
-                f"| {totals.get('raw','')} | {totals.get('bsi','')} |"
+                f"| {item.get('name','')} "
+                f"| {weight:.0f} "
+                f"| {raw:.1f} "
+                f"| {bsi:.1f} "
+                f"| {weighted_raw:.2f} "
+                f"| {weighted_bsi:.2f} "
+                f"| {item.get('reason','')} |"
             )
 
         lines.append("")
 
+        lines.append("#### Final Scores")
+        lines.append("")
+        lines.append("| Analysis | Score (/10) |")
+        lines.append("|---|---:|")
+        lines.append(f"| Raw | {raw_total:.2f} |")
+        lines.append(f"| BSI | {bsi_total:.2f} |")
 
-        if cell.judge_result:
-            jr = cell.judge_result
+        lines.append("")
 
-            lines.append("")
-            lines.append("### Judge Result")
-            lines.append("")
-            lines.append(f"- Winner: {jr.get('winner','')}")
-            lines.append(f"- Reasoning: {jr.get('reasoning','')}")
+        diff = round(bsi_total - raw_total, 2)
 
-            totals = jr.get("total_scores")
-            if isinstance(totals, dict):
-                lines.append("")
-                lines.append("| Raw | BSI |")
-                lines.append("|---:|---:|")
-                lines.append(
-                    f"| {totals.get('raw','')} | {totals.get('bsi','')} |"
-                )
+        lines.append("#### Summary")
+        lines.append("")
+        lines.append(f"- Winner: **{judge.get('winner','')}**")
+        lines.append(f"- Score difference: **{diff:+.2f}**")
+        lines.append(
+            f"- Criteria evaluated: **{len(criteria)}**"
+        )
+
+        lines.append("")
+
+        lines.append("#### Score Formula")
+        lines.append("")
+        lines.append(
+            "Final score = Σ(weight × criterion score / 100)"
+        )
+        lines.append("")
+
 
     return "\n".join(lines)
