@@ -19,6 +19,7 @@ class PipelineRunner:
             "openalex": OpenAlexParser(),
             "arxiv": ArxivParser(),
             "mock": MockParser(),
+            "single_article": MockParser(),
         }
 
     def run(self, provider_name, query):

@@ -1,11 +1,11 @@
 """
 AnalyzedDataset: a collection of (raw article, BSI analysis text) pairs.
 
-This is the input format for BSIEvaluator's "compare raw vs analyzed"
-scoring. Since this benchmark runner cannot itself call an LLM to produce
-BSI analyses (no network access here), the analysis text is expected to be
-pasted in from a real BSI run (Termux, claude.ai, the deployed API, etc.)
-and saved to a JSON file matching the schema below, then loaded with
+Legacy compatibility container for analysis comparison. Since this
+benchmark runner cannot itself call an LLM to produce BSI analyses in
+every environment, the analysis text is expected to be pasted in from a
+real BSI run (Termux, claude.ai, the deployed API, etc.) and saved to a
+JSON file matching the schema below, then loaded with
 `AnalyzedDatasetIO.load()`.
 
 JSON schema:
@@ -20,7 +20,6 @@ JSON schema:
   ]
 }
 """
-
 import json
 from dataclasses import dataclass, field, asdict
 
@@ -40,7 +39,6 @@ class AnalyzedDataset:
 
 
 class AnalyzedDatasetIO:
-
     def save(self, dataset: AnalyzedDataset, filename: str) -> None:
         payload = {
             "name": dataset.name,
@@ -58,7 +56,6 @@ class AnalyzedDatasetIO:
     def load(self, filename: str) -> AnalyzedDataset:
         with open(filename, encoding="utf-8") as f:
             data = json.load(f)
-
         items = [
             AnalyzedArticle(
                 article=Article(**entry["article"]),
@@ -66,5 +63,4 @@ class AnalyzedDatasetIO:
             )
             for entry in data["items"]
         ]
-
         return AnalyzedDataset(name=data.get("name", "unnamed"), items=items)
