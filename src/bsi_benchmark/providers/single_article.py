@@ -1,3 +1,16 @@
+"""
+SingleArticleProvider: a fixed-output test fixture, not a real search
+provider.
+
+`search()` ignores its `query` argument entirely and always returns the
+same one hardcoded article. This exists so pipeline/self-compare runs can
+be pointed at a known, reproducible article (via provider name
+"single_article", wired in pipeline/runner.py) without depending on a
+live network call to a real bibliographic API -- useful for offline
+smoke tests. It is registered in the same registry as the real
+providers (crossref, arxiv, etc.) for that reason, but it must not be
+mistaken for one: any real query passed to it is silently discarded.
+"""
 from .base import Provider
 from .registry import registry
 

@@ -15,7 +15,6 @@ error) is caught and recorded as a failed cell rather than raising -- one
 bad combination should not lose the results for everything else in a
 multi-hour benchmark run.
 """
-from bsi_benchmark.ab.client import BSIApiClient
 from datetime import datetime, timezone
 
 from bsi_benchmark.errors import ProviderError
@@ -30,12 +29,21 @@ class CrossModelRunner:
     def __init__(self, generator_manager=None, judge=None):
         self.generator_manager = generator_manager or GeneratorManager()
         # `judge` may be a generator NAME (str, e.g. from --judge) or an
-        # already-built LLMJudge instance. If neither this nor spec.judge
-        # is given, falls back to LLMJudge(generator=None), which always
-        # uses the honestly-labeled keyword heuristic.
+        # already-built LLMJudge instance.
+        #
+        # Priority when building the judge for a given cell:
+        #   1. an explicit LLMJudge instance passed to __init__
+        #   2. an explicit judge generator NAME (--judge / spec.judge)
+        #   3. self-judging: the SAME generator that produced this cell's
+        #      raw/bsi analyses judges its own output (this is the
+        #      documented default -- see the --judge help text in cli.py)
+        #   4. only if a generator instance truly isn't available does this
+        #      fall through to LLMJudge(generator=None), the honestly
+        #      labeled keyword heuristic -- this should not happen in
+        #      normal operation since step 3 always has a generator.
         self._explicit_judge = judge
 
-    def _build_judge(self, spec) -> LLMJudge:
+    def _build_judge(self, spec, self_generator=None) -> LLMJudge:
         if isinstance(self._explicit_judge, LLMJudge):
             return self._explicit_judge
 
@@ -43,10 +51,12 @@ class CrossModelRunner:
         if judge_model:
             return LLMJudge(self.generator_manager.create(judge_model))
 
+        if self_generator is not None:
+            return LLMJudge(self_generator)
+
         return LLMJudge(generator=None)
 
     def run(self, dataset, spec, source_url=None, run_metadata=None) -> ComparisonReport:
-        judge = self._build_judge(spec)
         results = []
 
         for article in dataset.articles:
@@ -54,6 +64,9 @@ class CrossModelRunner:
 
             for generator_name in spec.generators:
                 generator = self.generator_manager.create(generator_name)
+                # Built per-generator so that, absent an explicit judge,
+                # each generator judges its own raw-vs-bsi output.
+                judge = self._build_judge(spec, self_generator=generator)
 
                 generated = {}
                 for mode, template in spec.prompt_modes.items():
