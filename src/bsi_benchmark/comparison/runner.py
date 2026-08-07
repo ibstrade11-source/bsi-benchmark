@@ -84,7 +84,16 @@ class CrossModelRunner:
                             analysis=analysis,
                             metadata=metadata,
                             judge_result=judge_result,
-                            scores={"BSI": 0.5},
+                            scores=(
+                                                        {
+                                                            "RAW": round(float(judge_result["total_scores"].get("raw", 0)) / 10, 3),
+                                                            "BSI": round(float(judge_result["total_scores"].get("bsi", 0)) / 10, 3),
+                                                        }
+                                                        if judge_result and "total_scores" in judge_result
+                                                        else {
+                                                            "BSI": 0.5
+                                                        }
+                                                    ),
                         )
                     )
 

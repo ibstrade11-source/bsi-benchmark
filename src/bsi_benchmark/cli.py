@@ -275,6 +275,14 @@ def main() -> int:
             )),
         )
 
+        if any(
+            c.generator == "mock"
+            for r in report.results
+            for c in r.cells
+        ):
+            print("ERROR: MockGenerator output is test-only and cannot be stored as benchmark evidence.")
+            return 2
+
         md_path = f"{args.output}.md"
         json_path = f"{args.output}.json"
 
@@ -320,6 +328,7 @@ def main() -> int:
                 "against the actual analysis text."
             )
         print()
+
 
         md_path = f"{args.output}.md"
         json_path = f"{args.output}.json"

@@ -64,3 +64,4 @@ articles/
 results/
 *.bak
 *.debug
+backups/
