@@ -9,7 +9,7 @@ limits or one API key is missing, you still get results for everything
 else.
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, field
 from typing import Dict, List, Optional
 
 from bsi_benchmark.models.analysis import Analysis
@@ -23,7 +23,8 @@ class ComparisonCell:
     analysis: Optional[Analysis]
     metadata: Dict[str, object]
     judge_result: Optional[dict] = None
-
+    scores: dict = field(default_factory=dict)
+    failed: bool = False
 
 @dataclass
 class ComparisonResult:

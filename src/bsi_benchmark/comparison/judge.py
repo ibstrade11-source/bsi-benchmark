@@ -31,8 +31,8 @@ class LLMJudge:
         if self.generator is not None:
             try:
                 return self._compare_with_llm(article, raw_text, bsi_text)
-            except Exception:
-                pass  # fall through to the honestly-labeled heuristic below
+            except Exception as e:
+                print("JUDGE_LLM_ERROR:", repr(e))
 
         return self._compare_with_heuristic(raw_text, bsi_text)
 

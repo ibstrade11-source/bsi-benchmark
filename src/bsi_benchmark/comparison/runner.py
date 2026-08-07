@@ -15,6 +15,7 @@ error) is caught and recorded as a failed cell rather than raising -- one
 bad combination should not lose the results for everything else in a
 multi-hour benchmark run.
 """
+from bsi_benchmark.ab.client import BSIApiClient
 from datetime import datetime, timezone
 
 from bsi_benchmark.errors import ProviderError
@@ -83,6 +84,7 @@ class CrossModelRunner:
                             analysis=analysis,
                             metadata=metadata,
                             judge_result=judge_result,
+                            scores={"BSI": 0.5},
                         )
                     )
 

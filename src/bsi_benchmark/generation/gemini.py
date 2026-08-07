@@ -29,7 +29,7 @@ class GeminiGenerator(AnalysisGenerator):
         self.client = HttpClient()
 
     def generate(self, article, prompt_template: str) -> Analysis:
-        api_key = os.environ.get("GEMINI_API_KEY")
+        api_key = os.environ.get("GEMINI_API_KEY", "").strip().encode("ascii", "ignore").decode("ascii")
         if not api_key:
             raise ProviderUnavailable(
                 "GEMINI_API_KEY is not set. Get a free key at "

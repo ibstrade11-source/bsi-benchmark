@@ -15,6 +15,7 @@ class HtmlReport:
 <meta charset="utf-8">
 <title>BSI Benchmark Report</title>
 </head>
+
 <body>
 
 <h1>BSI Benchmark Report</h1>
@@ -25,8 +26,12 @@ class HtmlReport:
 <h2>Scores</h2>
 
 <ul>
-{''.join(f'<li>{k}: {v}</li>' for k, v in result.evaluation.scores.items())}
+<li>BSI: N/A</li>
 </ul>
+
+<h2>Articles</h2>
+
+<p>Total Articles: {len(result.dataset.articles)}</p>
 
 </body>
 </html>

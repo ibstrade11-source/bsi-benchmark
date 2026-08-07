@@ -18,7 +18,7 @@ class HistoryStore:
                 {
                     "provider": result.dataset.provider,
                     "query": result.dataset.query,
-                    "scores": result.evaluation.scores,
+                    "scores": getattr(result.evaluation, "scores", {}),
                 },
                 f,
                 indent=2,

@@ -1,8 +1,10 @@
+import os
+
 import requests
 
 
 class BSIApiClient:
-    def __init__(self, base_url="http://127.0.0.1:8000"):
+    def __init__(self, base_url=os.environ.get("BSI_API_URL","https://behmanesh-index-prompt-production.up.railway.app")):
         self.base_url = base_url.rstrip("/")
 
     def score(self, text, detail=False):

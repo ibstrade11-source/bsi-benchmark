@@ -78,6 +78,13 @@ def main() -> int:
              "from the main BSI repository. Not fabricated by this tool -- "
              "supply the real prompt you want benchmarked.",
     )
+
+    compare.add_argument(
+    "--limit",
+    type=int,
+    default=None,
+    help="Limit number of articles returned by provider"
+)
     compare.add_argument(
         "--bsi-source-url",
         default="https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
@@ -234,7 +241,11 @@ def main() -> int:
         bsi_prompt = load_bsi_prompt(args.bsi_prompt_file, label="bsi-prompt-file")
 
         try:
-            dataset = PipelineRunner().run(args.provider, args.query)
+            dataset = PipelineRunner().run(
+                args.provider,
+                args.query,
+                args.limit,
+            )
         except ProviderError as e:
             print(f"ERROR fetching dataset: {e}")
             return 1
