@@ -10,6 +10,7 @@ from .gemini import GeminiGenerator
 from .groq import GroqGenerator
 from .openrouter import OpenRouterGenerator
 from .gapgpt import GapGptGenerator
+from .gapgpt import GapGptGenerator
 
 registry: Registry = Registry()
 
@@ -25,4 +26,5 @@ registry.register("groq", GroqGenerator)
 registry.register("openrouter", OpenRouterGenerator)
 registry.register("openrouter-gemma", lambda **kw: OpenRouterGenerator(model="google/gemma-4-31b-it:free", **kw))
 registry.register("openrouter-gpt", lambda **kw: OpenRouterGenerator(model="openai/gpt-oss-20b:free", **kw))
+registry.register("gapgpt", GapGptGenerator)
 registry.register("gapgpt", GapGptGenerator)
