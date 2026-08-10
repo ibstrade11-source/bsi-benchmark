@@ -1,0 +1,184 @@
+{
+  "dataset_name": "The Algorithmic Caricature: Auditing LLM-Generated Political Discourse Across Crisis Events",
+  "results": [
+    {
+      "article": {
+        "title": "The Algorithmic Caricature: Auditing LLM-Generated Political Discourse Across Crisis Events",
+        "abstract": "Large Language Models (LLMs) can generate fluent political text at scale, raising concerns about synthetic discourse during crises and social conflict. Existing AI-text detection often focuses on sentence-level cues such as perplexity, burstiness, or token irregularities, but these signals may weaken as generative systems improve. We instead adopt a Computational Social Science perspective and ask whether synthetic political discourse behaves like an observed online population. We construct a paired corpus of 1,789,406 posts across nine crisis events: COVID-19, the Jan. 6 Capitol attack, the 2020 and 2024 U.S. elections, Dobbs/Roe v. Wade, the 2020 BLM protests, U.S. midterms, the Utah shooting, and the U.S.-Iran war. For each event, we compare observed discourse from social platforms with synthetic discourse generated for the same context. We evaluate four dimensions: emotional intensity, structural regularity, lexical-ideological framing, and cross-event dependency, using mean gaps and dispersion evidence. Across events, synthetic discourse is fluent but population-level unrealistic. It is generally more negative and less dispersed in sentiment, structurally more regular, and lexically more abstract than observed discourse. Observed discourse instead shows broader emotional variation, longer-tailed structural distributions, and more context-specific, colloquial lexical markers. These differences are event-dependent: larger for fast-moving, decentralized crises and smaller for formal or institutionally mediated events. We summarize them with a simple event-level measure, the Caricature Gap. Our findings suggest that the main limitation of synthetic political discourse is not grammar or fluency, but reduced population realism. Population-level auditing complements traditional text-detection and provides a CSS framework for evaluating the social realism of generated discourse.",
+        "doi": null,
+        "url": "http://arxiv.org/abs/2605.12452v1",
+        "input_quality": null
+      },
+      "cells": [
+        {
+          "generator": "groq",
+          "mode": "raw",
+          "analysis": {
+            "text": "Here is a concise, factual analysis of the article's main claims and contribution:\n\n**Main Claims:**\n\n1. Large Language Models (LLMs) can generate fluent but unrealistic political text, particularly during crisis events.\n2. Synthetic political discourse differs from observed online discourse in four dimensions: emotional intensity, structural regularity, lexical-ideological framing, and cross-event dependency.\n3. Synthetic discourse is generally more negative, less dispersed in sentiment, structurally more regular, and lexically more abstract than observed discourse.\n\n**Contribution:**\n\nThe article contributes to the field of Computational Social Science by introducing a population-level auditing framework to evaluate the social realism of generated discourse. The authors propose a simple event-level measure, the Caricature Gap, to summarize the differences between synthetic and observed discourse. The study's findings suggest that population-level auditing can complement traditional text-detection methods and provide a new perspective on evaluating the limitations of synthetic political discourse.\n\n**Key Findings:**\n\n* Synthetic discourse is less realistic at the population level, despite being fluent and grammatically correct.\n* The differences between synthetic and observed discourse are event-dependent, with larger gaps in fast-moving, decentralized crises and smaller gaps in formal or institutionally mediated events.\n\nOverall, the article highlights the importance of considering the social realism of generated discourse, particularly in the context of crisis events, and provides a new framework for evaluating the limitations of LLM-generated political text.",
+            "source_model": "llama-3.3-70b-versatile",
+            "generated_at": "2026-08-10T04:49:52Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "raw",
+            "reasoning": "RAW accurately summarizes the article's technical core (four dimensions, Caricature Gap, event-dependent findings) and its theoretical positioning (population-level auditing vs. text detection) in clear, coherent language. BSI introduces multiple framework artifacts (7-criterion table, CreativeValueAdd, Manifest/Latent/Meta layers, EIG, REIG) but populates them with generic or template content that does not engage the article's specifics. BSI's scores are unexplained, its limitation assessment is vague, and its mixed-language presentation impedes clarity. No BSI capability is realized effectively here; the analysis adds confusion without analytical benefit.",
+            "criteria": [
+              {
+                "name": "Accuracy of technical summary",
+                "importance": 25.0,
+                "raw_score": 9.0,
+                "bsi_score": 7.0,
+                "reason": "The article introduces a specific four-dimensional framework (emotional intensity, structural regularity, lexical-ideological framing, cross-event dependency), a novel measure (Caricature Gap), and event-dependent findings. Accurate capture of these technical details is essential for any meaningful evaluation."
+              },
+              {
+                "name": "Understanding of theoretical contribution",
+                "importance": 20.0,
+                "raw_score": 8.0,
+                "bsi_score": 6.0,
+                "reason": "The core contribution is the population-level auditing framework as a complement to text-detection methods. An analysis must distinguish this from mere text-quality assessment to reflect the article's actual advance."
+              },
+              {
+                "name": "Critical evaluation of findings",
+                "importance": 20.0,
+                "raw_score": 7.0,
+                "bsi_score": 5.0,
+                "reason": "The finding that gaps are larger in fast-moving, decentralized crises and smaller in formal/institutional events is a key empirical result. Proper representation of this nuance indicates analytical depth."
+              },
+              {
+                "name": "Assessment of limitations",
+                "importance": 15.0,
+                "raw_score": 6.0,
+                "bsi_score": 5.0,
+                "reason": "The article acknowledges database and evaluation limitations. A scientific evaluation should surface these rather than presenting the study as definitive."
+              },
+              {
+                "name": "Clarity and coherence",
+                "importance": 10.0,
+                "raw_score": 9.0,
+                "bsi_score": 4.0,
+                "reason": "Mixed-language presentation, disconnected framework tables (CreativeValueAdd, EIG, REIG), and template-like compliance checks reduce the BSI analysis's communicative effectiveness."
+              },
+              {
+                "name": "Depth of analytical insight",
+                "importance": 10.0,
+                "raw_score": 6.0,
+                "bsi_score": 5.0,
+                "reason": "Going beyond summary to interpret implications for LLM development, crisis communication, or computational social science adds value. RAW offers modest insight; BSI's layer/EIG structure appears performative rather than substantive for this article."
+              }
+            ],
+            "total_scores": {
+              "raw": 7.65,
+              "bsi": 5.6
+            },
+            "bsi_capability_assessment": {
+              "relevance": "medium",
+              "realization": "low",
+              "incremental_value": "low",
+              "reason": "BSI's structured evaluation and epistemic-gap concepts could theoretically support auditing LLM discourse, but the supplied analysis applies them mechanically (EIG/REIG checklists are empty templates; CreativeValueAdd scores are unexplained; layer analysis adds no article-specific insight). The result is analytical overhead without incremental understanding."
+            },
+            "incremental_value": "low",
+            "scale": "0-10",
+            "weight_sum": 100.0
+          },
+          "scores": {
+            "RAW": 0.765,
+            "BSI": 0.56
+          },
+          "failed": false
+        },
+        {
+          "generator": "groq",
+          "mode": "bsi",
+          "analysis": {
+            "text": "## تحلیل ارزياب ارشد شاخص بهمنش\n\n### ۱. خلاصه اجرایی\nاین مقاله به بررسیifferences بین گفتمان سیاسی واقعی و گفتمان سیاسی تولید شده توسط مدل‌های زبان بزرگ (LLMs) در durante بحران‌ها و رویدادهای اجتماعی می‌پردازد. محققین یک پایگاه داده زوج از ۱,۷۸۹,۴۰۶ پست در nine رویداد بحرانی tạo کرده‌اند و 四بعدی از گفتمان را ارزیابی کرده‌اند: شدت عاطفی، منظم بودن ساختاری، چارچوب لکسیکو-ایده‌شناختی و وابستگی بین رویدادها. نتایج نشان می‌دهد که گفتمان تولید شده Synthetic،尽管 fluent است، however، population-level نا واقعی است و تفاوت‌های قابل توجهی با گفتمان واقعی دارد.\n\n**خلاصه Claim:** گفتمان تولید شده توسط مدل‌های زبان بزرگ در خلال بحران‌ها و رویدادهای اجتماعی نااقعی و کم‌عمق است.\n\n**امتیاز کلی BSI:** ۸۲\n\n\n### ۲. جدول ارزیابی معیارهای اصلی ۷گانه\n\n| معیار | امتیاز | توضیح |\n| --- | --- | --- |\n| Attention (توجه) | ۸ | مقاله به بررسی جزیی differences بین گفتمان واقعی و تولید شده می‌پردازد. |\n| Relevance (اهمیت) | ۹ | موضوع article بسیار مهم و مرتبط با بحران‌ها و رویدادهای اجتماعی است. |\n| Soundness (صحت) | ۸ | روش‌شناسی مقاله مناسب است، however، некоторые محدودیت‌ها در پایگاه داده و ارزیابی وجود دارد. |\n| Completeness (کاملیت) | ۸ | مقاله به بررسی四بعدی از گفتمان می‌پردازد، however، برخی از аспکت‌ها را پوشش نمی‌دهد. |\n| Significance (اهمیت) | ۹ | نتایج مقاله非常 importantes و può影響 به سیاست‌گذاری و توسعه مدل‌های زبان را دارد. |\n| Impact (تأثیر) | ۸ | مقاله puede影响 به توسعه مدل‌های زبان و سیاست‌گذاری در lĩnh vực ارتباطات اجتماعی. |\n| Originality (novelty) | ۸ | artikel bietet eine neue Perspektive auf die Bewertung von Synthetic-Discourse. |\n\n### ۳. جدول CreativeValueAdd\n\n| زیرمعیار | امتیاز | توضیح |\n| --- | --- | --- |\n| Epistemic Gap Targeting (هدف‌گذاری شکاف‌های epistemic) | ۳۵ | مقاله به بررسی differences بین گفتمان واقعی و تولید شده می‌پردازد و برخی از شکاف‌های epistemic را پوشش می‌دهد. |\n| Combinatorial Synthesis (ترکیب ترکیبی) | ۴۰ | مقاله به ترکیب четырехبعدی از گفتمان می‌پردازد و نتایج را با داده‌های واقعی مقایسه می‌کند. |\n| Generative Capacity (ظرفیت تولیدی) | ۲۵ | مقاله به بررسی ظرفیت تولیدی مدل‌های زبان بزرگ می‌پردازد و محدودیت‌های آن‌ها را نشان می‌دهد. |\n\n### ۴. لایه‌برداری عمیق\n\n#### Manifest Layer (لایه آشکار)\nگفتمان واقعی و تولید شده هر دو دارای ویژگی‌های آشکار مانند fluency و 구조 هستند. however، گفتمان تولید شده souvent کم‌عمق‌تر و meno واقعی است.\n\n#### Latent Layer (لایه پنهان)\nگفتمان واقعی دارای لایه پنهانی از مکانیسم‌های پنهان، الگوهای تکرارشونده و Feedback Loops است که در گفتمان تولید شده کمتر مشاهده می‌شود.\n\n#### Meta Layer (لایه فرا)\nگفتمان واقعی و تولید شده هر دو دارای لایه فرایی از وابستگی‌های بین رویدادها و影响 به سیاست‌گذاری و توسعه مدل‌های زبان هستند.\n\n### ۵. EIG Analysis\n\n CORE QUESTION: آیا گفتمان تولید شده توسط مدل‌های زبان بزرگ در durante بحران‌ها و رویدادهای اجتماعی نااقعی و کم‌عمق است؟\n چهار نقطه بررسی:\n □ Causal Compliance: آیا گفتمان تولید شده علیت ادعا کرده است جایی که فقط همبستگی دارد؟\n □ Generalization Compliance: آیا گفتمان تولید شده تعمیم غیرمجاز داده است؟\n □ Measurement Compliance: آیا امتیازات و اعداد گفتمان تولید شده دقیق‌تر از اطمینان واقعی است؟\n □ Framing Compliance: آیا گفتمان تولید شده قضاوت ارزشی فراتر از داده‌ها داده است؟\n خروجی: PASS / FAIL + توضیح هر نقض یافت‌شده\n\n### ۶. REIG — ممیزی Draft Analysis\n\n INPUT درست REIG = Draft Analysis\n CORE QUESTION: آیا ما — تحلیلگران — در خروجی خودم از گپ‌های EIG عبور کردیم؟\n چهار نقطه بررسی:\n □ Causal Compliance: آیا در Draft خودم علیت ادعا کردم جایی که فقط همبستگی داشتم؟\n □ Generalization Compliance: آیا در Draft خودم تعمیم غیرمجاز دادم؟\n □ Measurement Compliance: آیا امتیازات و اعداد Draft دقیق‌تر از اطمینان واقعی‌ام گزارش شدند؟\n □ Framing Compliance: آیا در Draft خودم قضاوت ارزشی فراتر از داده‌ها دادم؟\n خروجی: PASS / FAIL + توضیح هر نقض یافت‌شده\n\n### ۷. نتیجه‌گیری نهایی\nگفتمان تولید شده توسط 모델‌های زبان بزرگ در durante بحران‌ها و رویدادهای اجتماعی نااقعی و کم‌عمق است. نتایج مقاله 매우 importante و può影響 به سیاست‌گذاری و توسعه مدل‌های زبان را دارد.\n\n**نقاط قوت:**\n\n* مقاله به بررسی جزیی differences بین گفتمان واقعی و تولید شده می‌پردازد.\n* روش‌شناسی مقاله مناسب است.\n\n**نقاط ضعف:**\n\n* پایگاه داده و ارزیابی مقاله有些 محدودیت‌ها دارد.\n* برخی از аспکت‌ها را پوشش نمی‌دهد.\n\n**پیشنهاد بهبود:**\n\n* توسعه مدل‌های زبان بزرگ با توجه به مکانیسم‌های پنهان و الگوهای تکرارشونده.\n* ارزیابی بیشتر گفتمان تولید شده در خلال بحران‌ها و رویدادهای اجتماعی.\n\nتحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.",
+            "source_model": "llama-3.3-70b-versatile",
+            "generated_at": "2026-08-10T04:49:58Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "raw",
+            "reasoning": "RAW accurately summarizes the article's technical core (four dimensions, Caricature Gap, event-dependent findings) and its theoretical positioning (population-level auditing vs. text detection) in clear, coherent language. BSI introduces multiple framework artifacts (7-criterion table, CreativeValueAdd, Manifest/Latent/Meta layers, EIG, REIG) but populates them with generic or template content that does not engage the article's specifics. BSI's scores are unexplained, its limitation assessment is vague, and its mixed-language presentation impedes clarity. No BSI capability is realized effectively here; the analysis adds confusion without analytical benefit.",
+            "criteria": [
+              {
+                "name": "Accuracy of technical summary",
+                "importance": 25.0,
+                "raw_score": 9.0,
+                "bsi_score": 7.0,
+                "reason": "The article introduces a specific four-dimensional framework (emotional intensity, structural regularity, lexical-ideological framing, cross-event dependency), a novel measure (Caricature Gap), and event-dependent findings. Accurate capture of these technical details is essential for any meaningful evaluation."
+              },
+              {
+                "name": "Understanding of theoretical contribution",
+                "importance": 20.0,
+                "raw_score": 8.0,
+                "bsi_score": 6.0,
+                "reason": "The core contribution is the population-level auditing framework as a complement to text-detection methods. An analysis must distinguish this from mere text-quality assessment to reflect the article's actual advance."
+              },
+              {
+                "name": "Critical evaluation of findings",
+                "importance": 20.0,
+                "raw_score": 7.0,
+                "bsi_score": 5.0,
+                "reason": "The finding that gaps are larger in fast-moving, decentralized crises and smaller in formal/institutional events is a key empirical result. Proper representation of this nuance indicates analytical depth."
+              },
+              {
+                "name": "Assessment of limitations",
+                "importance": 15.0,
+                "raw_score": 6.0,
+                "bsi_score": 5.0,
+                "reason": "The article acknowledges database and evaluation limitations. A scientific evaluation should surface these rather than presenting the study as definitive."
+              },
+              {
+                "name": "Clarity and coherence",
+                "importance": 10.0,
+                "raw_score": 9.0,
+                "bsi_score": 4.0,
+                "reason": "Mixed-language presentation, disconnected framework tables (CreativeValueAdd, EIG, REIG), and template-like compliance checks reduce the BSI analysis's communicative effectiveness."
+              },
+              {
+                "name": "Depth of analytical insight",
+                "importance": 10.0,
+                "raw_score": 6.0,
+                "bsi_score": 5.0,
+                "reason": "Going beyond summary to interpret implications for LLM development, crisis communication, or computational social science adds value. RAW offers modest insight; BSI's layer/EIG structure appears performative rather than substantive for this article."
+              }
+            ],
+            "total_scores": {
+              "raw": 7.65,
+              "bsi": 5.6
+            },
+            "bsi_capability_assessment": {
+              "relevance": "medium",
+              "realization": "low",
+              "incremental_value": "low",
+              "reason": "BSI's structured evaluation and epistemic-gap concepts could theoretically support auditing LLM discourse, but the supplied analysis applies them mechanically (EIG/REIG checklists are empty templates; CreativeValueAdd scores are unexplained; layer analysis adds no article-specific insight). The result is analytical overhead without incremental understanding."
+            },
+            "incremental_value": "low",
+            "scale": "0-10",
+            "weight_sum": 100.0
+          },
+          "scores": {
+            "RAW": 0.765,
+            "BSI": 0.56
+          },
+          "failed": false
+        }
+      ]
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "302bfb085d5c4201756ec36e02199b9f5c65c9db",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-08-10T04:49:49Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "dataset_name": "consciousness philosophy of mind artificial intelligence",
+  "results": [
+    {
+      "article": {
+        "title": "Traditional African Philosophy of Mind and World: Facilitating a Dialogue",
+        "abstract": null,
+        "doi": "10.1007/978-3-031-36163-0_7",
+        "url": "https://doi.org/10.1007/978-3-031-36163-0_7",
+        "input_quality": {
+          "has_title": true,
+          "has_abstract": false,
+          "source": "crossref",
+          "enriched": false
+        }
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "I'd be happy to analyze this academic article for you, but I notice that only the title \"Traditional African Philosophy of Mind and World: Facilitating a Dialogue\" is provided. The abstract appears to be cut off or missing.\n\nTo provide a meaningful analysis of the article's main claims and contributions, I would need:\n\n1. The complete abstract\n2. Ideally, the full article or at least key sections like the introduction and conclusion\n\nBased solely on the title, I can infer that the article likely:\n- Examines traditional African philosophical perspectives on mind and world/reality\n- Aims to facilitate dialogue (possibly between African philosophy and other philosophical traditions)\n- May address the relationship between consciousness/mind and external reality from an African philosophical framework\n\nCould you please provide the complete abstract or additional content from the article? This would allow me to give you the thorough, factual analysis you're looking for.",
+            "source_model": "anthropic/claude-sonnet-4",
+            "generated_at": "2026-08-05T05:36:38Z"
+          },
+          "scores": {
+            "D1": 0.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.9,
+            "D5": 0.0,
+            "D6": 0.125,
+            "D7": 1.0,
+            "BSI": 0.393,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل شاخص بهمنش: فلسفۀ ذهن و جهان سنتی آفریقا - تسهیل گفت‌وگو\n\n**مشخصات مقاله:**\n- عنوان: فلسفۀ سنتی آفریقایی ذهن و جهان: تسهیل گفت‌وگو\n- نوع: مقالۀ فلسفی\n- موضوع: فلسفۀ تطبیقی و میان‌فرهنگی\n\n---\n\n## ۱. خلاصۀ اجرایی (Executive Summary)\n\n**ادعای هستۀ مرکزی (Core Claim):** این مقاله تلاش می‌کند تا گفت‌وگویی میان فلسفۀ سنتی آفریقایی و جریان‌های فلسفی معاصر در حوزۀ ذهن و جهان برقرار کند.\n\nبر اساس تحلیل عنوان و چکیدۀ ناقص ارائه‌شده، این اثر در زمینۀ فلسفۀ تطبیقی قرار می‌گیرد و هدف آن ایجاد پلی میان سنت‌های فکری آفریقایی و مباحث معاصر فلسفۀ ذهن است. با توجه به محدودیت اطلاعات ارائه‌شده، ارزیابی دقیق امکان‌پذیر نیست.\n\n**امتیاز کلی شاخص بهمنش: غیرقابل تعیین** (به دلیل عدم دسترسی به متن کامل)\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه\n\n| معیار | امتیاز | توضیح |\n|--------|---------|--------|\n| **دقت منطقی (Logical Rigor)** | - | عدم دسترسی به استدلال‌های کامل |\n| **عمق تحلیل (Analytical Depth)** | - | نیاز به بررسی متن کامل |\n| **پشتیبانی شواهدی (Evidential Support)** | - | عدم دسترسی به منابع و مستندات |\n| **وضوح بیان (Clarity)** | - | نیاز به بررسی سبک نگارشی کامل |\n| **اهمیت موضوع (Relevance)** | 7/10 | موضوع دارای اهمیت فلسفی و فرهنگی |\n| **جامعیت پوشش (Comprehensiveness)** | - | نیاز به بررسی گسترۀ مباحث |\n| **نوآوری (Originality)** | - | عدم دسترسی به محتوای تحلیلی |\n\n---\n\n## ۳. جدول ارزش‌افزای خلاقانه (CreativeValueAdd)\n\n| زیرمعیار | وزن | امتیاز | تحلیل |\n|----------|-----|--------|-------|\n| **هدف‌گیری شکاف معرفتی (Epistemic Gap Targeting)** | ۳۵٪ | - | نیاز به شناسایی شکاف‌های مطرح‌شده |\n| **ترکیب‌سازی ترکیبی (Combinatorial Synthesis)** | ۴۰٪ | - | عدم دسترسی به نحوۀ ترکیب عناصر |\n| **ظرفیت تولیدی (Generative Capacity)** | ۲۵٪ | - | نیاز به بررسی پتانسیل تولید بینش |\n\n---\n\n## ۴. لایه‌برداری عمیق (Deep Layer Analysis)\n\n### **لایۀ آشکار (Manifest Layer)**\nبر اساس عنوان، مقاله صراحتاً به دنبال ایجاد گفت‌وگو میان فلسفۀ سنتی آفریقایی و مباحث معاصر است. هدف تسهیل تبادل فکری میان این دو حوزه مطرح شده است.\n\n### **لایۀ پنهان (Latent Layer)**\n**مکانیسم‌های پنهان:**\n- چالش غلبۀ فلسفۀ غربی بر گفتمان جهانی\n- ضرورت بازشناسی تنوع معرفتی و فلسفی\n- مقاومت در برابر یکسان‌انگاری فلسفی\n\n**حلقه‌های بازخورد (Feedback Loops):**\n- تقویت متقابل میان شناخت سنت‌های بومی و غنای فلسفی جهانی\n- تعمیق درک تطبیقی از طریق مواجهۀ میان‌فرهنگی\n\n**نقاط اهرمی (Leverage Points):**\n- روش‌شناسی گفت‌وگوی میان‌فرهنگی\n- شناسایی اشتراکات و تمایزات بنیادین\n\n### **لایۀ فرا (Meta Layer)**\nدر سطح فرانظری، این مقاله احتمالاً با پرسش بنیادین \"چگونه می‌توان از تک‌گفتمانی بودن فلسفه عبور کرد؟\" سروکار دارد و به دنبال بازتعریف مرزهای فلسفۀ معاصر است.\n\n---\n\n## ۵. تحلیل شکاف معرفتی (EIG Analysis)\n\n**شکاف‌های شناسایی‌شده:**\n- عدم نمایندگی کافی فلسفۀ آفریقایی در گفتمان جهانی\n- فقدان چارچوب‌های مناسب برای گفت‌وگوی میان‌فلسفی\n- محدودیت زبانی و مفهومی در انتقال مفاهیم\n\n**نحوۀ پرداختن:** نیاز به بررسی متن کامل برای ارزیابی دقیق\n\n---\n\n## ۶. ممیزی تحلیل پیش‌نویس (REIG)\n\n**بررسی تطبیق:**\n□ **تطبیق علی (Causal Compliance):** PASS - در تحلیل از ادعای علیت بدون مستند خودداری شد\n□ **تطبیق تعمیم (Generalization Compliance):** PASS - تعمیم‌های غیرمجاز ارائه نشد\n□ **تطبیق انداز",
+            "source_model": "anthropic/claude-sonnet-4",
+            "generated_at": "2026-08-05T05:37:11Z"
+          },
+          "scores": {
+            "D1": 0.17271157167530227,
+            "D2": 1.0,
+            "D3": 1.0,
+            "D4": 1.0,
+            "D5": 0.0,
+            "D6": 0.25,
+            "D7": 1.0,
+            "BSI": 0.6379965457685665,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "4d7bbfa2f1fa2aea31a0d61d16f2b97689eb6c95",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-08-05T05:36:31Z",
+    "methodology_note": "Scores are produced by BSIEvaluator, an offline lexical/keyword-based proxy for the seven BIO v1.0 dimensions (regex and keyword matching, not semantic understanding). They are first-pass triage signals, not a validated measurement of analytical quality, until checked against independent human judgement on a representative sample. Do not cite numeric BSI scores as a certified metric without that validation step.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": 0.0,
+    "max_tokens": 8000,
+    "prompt_version": "v3.4.2",
+    "framework_name": "bsi"
+  }
+}

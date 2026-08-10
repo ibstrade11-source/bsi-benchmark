@@ -1,0 +1,279 @@
+{
+  "dataset_name": "quantum physics",
+  "results": [
+    {
+      "article": {
+        "title": "Space-Time Symmetries in Quantum Physics",
+        "abstract": null,
+        "doi": "10.1007/978-3-540-49972-5_4",
+        "url": "https://doi.org/10.1007/978-3-540-49972-5_4"
+      },
+      "cells": [
+        {
+          "generator": "mock",
+          "mode": "raw",
+          "analysis": {
+            "text": "Space-Time Symmetries in Quantum Physics: None",
+            "source_model": "mock",
+            "generated_at": "2026-08-02T18:58:38Z"
+          },
+          "scores": {
+            "D1": 0.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.16666666666666666,
+            "D5": 0.0,
+            "D6": 0.125,
+            "D7": 0.5,
+            "BSI": 0.24333333333333332,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "mock",
+          "mode": "bsi",
+          "analysis": {
+            "text": "لایه Manifest (آشکار): [FACT] Space-Time Symmetries in Quantum Physics discusses: None\nلایه Latent (پنهان): [INFERENCE] If the stated method is valid, assuming its core assumptions hold, the conclusion follows conditionally.\nلایه Meta (فرا): [SPECULATION] It may generalize further; this suggests future work could extend the implications.",
+            "source_model": "mock",
+            "generated_at": "2026-08-02T18:58:38Z"
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.47600000000000003,
+            "D4": 0.8611111111111112,
+            "D5": 1.0,
+            "D6": 0.25,
+            "D7": 1.0,
+            "BSI": 0.8220688888888888,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "Quantum physics",
+        "abstract": null,
+        "doi": "10.1017/cbo9780511535284.003",
+        "url": "https://doi.org/10.1017/cbo9780511535284.003"
+      },
+      "cells": [
+        {
+          "generator": "mock",
+          "mode": "raw",
+          "analysis": {
+            "text": "Quantum physics: None",
+            "source_model": "mock",
+            "generated_at": "2026-08-02T18:58:38Z"
+          },
+          "scores": {
+            "D1": 0.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.3333333333333333,
+            "D5": 0.0,
+            "D6": 0.125,
+            "D7": 0.5,
+            "BSI": 0.27166666666666667,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "mock",
+          "mode": "bsi",
+          "analysis": {
+            "text": "لایه Manifest (آشکار): [FACT] Quantum physics discusses: None\nلایه Latent (پنهان): [INFERENCE] If the stated method is valid, assuming its core assumptions hold, the conclusion follows conditionally.\nلایه Meta (فرا): [SPECULATION] It may generalize further; this suggests future work could extend the implications.",
+            "source_model": "mock",
+            "generated_at": "2026-08-02T18:58:38Z"
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.47000000000000003,
+            "D4": 0.9393939393939394,
+            "D5": 1.0,
+            "D6": 0.25,
+            "D7": 1.0,
+            "BSI": 0.8342969696969698,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "Quantum physics",
+        "abstract": null,
+        "doi": "10.1017/cbo9781107295605.004",
+        "url": "https://doi.org/10.1017/cbo9781107295605.004"
+      },
+      "cells": [
+        {
+          "generator": "mock",
+          "mode": "raw",
+          "analysis": {
+            "text": "Quantum physics: None",
+            "source_model": "mock",
+            "generated_at": "2026-08-02T18:58:38Z"
+          },
+          "scores": {
+            "D1": 0.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.3333333333333333,
+            "D5": 0.0,
+            "D6": 0.125,
+            "D7": 0.5,
+            "BSI": 0.27166666666666667,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "mock",
+          "mode": "bsi",
+          "analysis": {
+            "text": "لایه Manifest (آشکار): [FACT] Quantum physics discusses: None\nلایه Latent (پنهان): [INFERENCE] If the stated method is valid, assuming its core assumptions hold, the conclusion follows conditionally.\nلایه Meta (فرا): [SPECULATION] It may generalize further; this suggests future work could extend the implications.",
+            "source_model": "mock",
+            "generated_at": "2026-08-02T18:58:38Z"
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.47000000000000003,
+            "D4": 0.9393939393939394,
+            "D5": 1.0,
+            "D6": 0.25,
+            "D7": 1.0,
+            "BSI": 0.8342969696969698,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "Chapter 6. Ontological Commitment in Quantum Physics",
+        "abstract": null,
+        "doi": "10.3726/978-3-653-04701-1/14",
+        "url": "https://doi.org/10.3726/978-3-653-04701-1/14"
+      },
+      "cells": [
+        {
+          "generator": "mock",
+          "mode": "raw",
+          "analysis": {
+            "text": "Chapter 6. Ontological Commitment in Quantum Physics: None",
+            "source_model": "mock",
+            "generated_at": "2026-08-02T18:58:38Z"
+          },
+          "scores": {
+            "D1": 0.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.16666666666666666,
+            "D5": 0.0,
+            "D6": 0.25,
+            "D7": 0.5,
+            "BSI": 0.25333333333333335,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "mock",
+          "mode": "bsi",
+          "analysis": {
+            "text": "لایه Manifest (آشکار): [FACT] Chapter 6. Ontological Commitment in Quantum Physics discusses: None\nلایه Latent (پنهان): [INFERENCE] If the stated method is valid, assuming its core assumptions hold, the conclusion follows conditionally.\nلایه Meta (فرا): [SPECULATION] It may generalize further; this suggests future work could extend the implications.",
+            "source_model": "mock",
+            "generated_at": "2026-08-02T18:58:38Z"
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.47600000000000003,
+            "D4": 0.8611111111111112,
+            "D5": 1.0,
+            "D6": 0.375,
+            "D7": 1.0,
+            "BSI": 0.8320688888888889,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "article": {
+        "title": "Part III. Reflections on Quantum Physics",
+        "abstract": null,
+        "doi": "10.3726/978-3-653-06286-1/15",
+        "url": "https://doi.org/10.3726/978-3-653-06286-1/15"
+      },
+      "cells": [
+        {
+          "generator": "mock",
+          "mode": "raw",
+          "analysis": {
+            "text": "Part III. Reflections on Quantum Physics: None",
+            "source_model": "mock",
+            "generated_at": "2026-08-02T18:58:38Z"
+          },
+          "scores": {
+            "D1": 0.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.16666666666666666,
+            "D5": 0.0,
+            "D6": 0.125,
+            "D7": 0.5,
+            "BSI": 0.24333333333333332,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "mock",
+          "mode": "bsi",
+          "analysis": {
+            "text": "لایه Manifest (آشکار): [FACT] Part III. Reflections on Quantum Physics discusses: None\nلایه Latent (پنهان): [INFERENCE] If the stated method is valid, assuming its core assumptions hold, the conclusion follows conditionally.\nلایه Meta (فرا): [SPECULATION] It may generalize further; this suggests future work could extend the implications.",
+            "source_model": "mock",
+            "generated_at": "2026-08-02T18:58:38Z"
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.47600000000000003,
+            "D4": 0.8611111111111112,
+            "D5": 1.0,
+            "D6": 0.25,
+            "D7": 1.0,
+            "BSI": 0.8220688888888888,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.75
+          }
+        }
+      ]
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "ed784b6bda89ede63814894ef732914a7374f31e",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-08-02T18:58:38Z",
+    "methodology_note": "Scores are produced by BSIEvaluator, an offline lexical/keyword-based proxy for the seven BIO v1.0 dimensions (regex and keyword matching, not semantic understanding). They are first-pass triage signals, not a validated measurement of analytical quality, until checked against independent human judgement on a representative sample. Do not cite numeric BSI scores as a certified metric without that validation step.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}

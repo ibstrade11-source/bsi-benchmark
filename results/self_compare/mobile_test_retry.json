@@ -1,0 +1,77 @@
+{
+  "dataset_name": "Adoption of machine learning for medical diagnosis",
+  "results": [
+    {
+      "article": {
+        "title": "Adoption of machine learning for medical diagnosis",
+        "abstract": "The healthcare industry has historically been an early adopter of technology advancements and has reaped significant benefits. Machine learning (an artificial intelligence subset) is being used in a variety of health-related fields, including the invention of new medical treatments, the management of patient data and records, and the treatment of chronic diseases. One of the most important uses of machine learning in healthcare is the detection and diagnosis of diseases and conditions that are otherwise difficult to identify. This can range from tumors that are difficult to detect in their early stages to other hereditary illnesses. This research identifies and discusses the various usages of machine learning in medical diagnosis.",
+        "doi": "10.14293/s2199-1006.1.sor-.pphmka6.v1",
+        "url": "https://doi.org/10.14293/s2199-1006.1.sor-.pphmka6.v1",
+        "input_quality": {
+          "has_title": true,
+          "has_abstract": true,
+          "source": "crossref",
+          "enriched": false
+        }
+      },
+      "cells": [
+        {
+          "generator": "local",
+          "mode": "raw",
+          "analysis": {
+            "text": "This academic article provides a concise overview of the adoption of machine learning in medical diagnosis, highlighting its applications and benefits in healthcare.\n\n**Main Claims:**\n\n1. Machine learning is being used in various health-related fields to improve disease detection and diagnosis.\n2. The use of machine learning has led to significant benefits for the healthcare industry.\n3. Machine learning is particularly useful for detecting tumors and other hereditary illnesses that are difficult to identify.\n\n**Contribution:**\n\nThis article contributes to the growing body of research on the application of machine learning in medical diagnosis, highlighting its potential to improve patient outcomes and reduce healthcare costs. By discussing the various uses of machine learning in medical diagnosis, this article provides a comprehensive overview of the field and its benefits.\n\nSome key points that can be taken away from this article include:\n\n* Machine learning is being increasingly adopted in healthcare for disease detection and diagnosis.\n* The use of machine learning has led to improved patient outcomes and reduced healthcare costs.\n* This research highlights the potential of machine learning to improve the accuracy and efficiency of medical diagnoses.\n\nOverall, this article provides a concise and factual analysis of the main claims and contribution of the research, highlighting the importance of machine learning in medical diagnosis.",
+            "source_model": "llama3.2:1b",
+            "generated_at": "2026-08-03T17:45:40Z"
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.6216216216216216,
+            "D5": 0.0,
+            "D6": 0.125,
+            "D7": 0.5,
+            "BSI": 0.5406756756756756,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        },
+        {
+          "generator": "local",
+          "mode": "bsi",
+          "analysis": {
+            "text": "تحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.\n\n**تحلیل**\n\nاین مقاله به‌طور کلی در مورد استفاده از Machine Learning (ML) برای تشخیص و診斷 بیماری‌ها در بخش پزشکیDiscuss شده است. ML یک زیرساخت مهم در زمینه پزشکی است که می‌تواند در تشخیص و درمان bệnh‌های مختلف کمک کند. در این مقاله، به استفاده ML در DifferentApplications در پزشکی اشاره شده است.\n\n**تحلیلی بر استفاده ML در Different Applications**\n\n1.  **Detecting Tumors**: ML می‌تواند برای تشخیص و شناسایی ریزها (tumors) که درInitial Stages difficult to detect be used. ML می‌تواند به‌طور hiệuی ریزها را Detect کند.\n2.  **Identifying Genetic Disorders**: ML می‌تواند برای Identifying genetic disorders، مانند Hereditary Diseases، استفاده شود. ML می‌تواند به‌طور hiệuی ریزها را Identify کند.\n3.  **Managing Patient Data and Records**: ML می‌تواند برای مدیریت داده‌هایPatient وRecords، استفاده شود. ML می‌تواند به‌طور hiệuی داده‌ها را Manage کند.\n\n**تحلیلی بر نقاط ضعف**\n\n1.  **محدودیت در تشخیص**: ML می‌تواند به‌طور hiệuی در تشخیص ریزها (tumors) Help کند، اما در تشخیص Hereditary Diseases، Limited است.\n2.  **محدودیت در Identifying Genetic Disorders**: ML می‌تواند برای Identifying genetic disorders، Limited است.\n\n**تحلیلی بر نقاط قوت**\n\n1.  **مقدار استفاده ML**: ML به‌طور hiệuی در Different Applications در پزشکی استفاده شود.\n2.  **مقدار Improvement ML**: ML می‌تواند به‌طور hiệuی Improve شود.\n\n**تحلیلی بر پیشنهادهای بهبود**\n\n1.  **توسعه ML برای Different Applications**: ML برای Different Applications در پزشکی توسعه شود.\n2.  **توسعه ML برای Hereditary Diseases**: ML برای Hereditary Diseases توسعه شود.\n\n**نکته‌های مهم**\n\n1.  **محدودیت در استفاده ML**: ML می‌تواند به‌طور hiệuی در Different Applications در پزشکی استفاده شود، اما در تشخیص Hereditary Diseases Limited است.\n2.  **مقدار Improvement ML**: ML می‌تواند به‌طور hiệuی Improve شود.\n\n**نکته‌های مهم**\n\n1.  **توسعه ML برای Different Applications**: ML برای Different Applications در پزشکی توسعه شود.\n2.  **توسعه ML برای Hereditary Diseases**: ML برای Hereditary Diseases توسعه شود.",
+            "source_model": "llama3.2:1b",
+            "generated_at": "2026-08-03T17:56:27Z"
+          },
+          "scores": {
+            "D1": 1.0,
+            "D2": 1.0,
+            "D3": 0.0,
+            "D4": 0.8375,
+            "D5": 0.0,
+            "D6": 0.375,
+            "D7": 1.0,
+            "BSI": 0.622375,
+            "grounding_ratio": 1.0,
+            "tag_coverage": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "85f2f01c3cd0011931edf819e040580130965f66",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-08-03T17:42:52Z",
+    "methodology_note": "Scores are produced by BSIEvaluator, an offline lexical/keyword-based proxy for the seven BIO v1.0 dimensions (regex and keyword matching, not semantic understanding). They are first-pass triage signals, not a validated measurement of analytical quality, until checked against independent human judgement on a representative sample. Do not cite numeric BSI scores as a certified metric without that validation step.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}

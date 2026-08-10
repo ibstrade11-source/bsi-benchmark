@@ -1,0 +1,198 @@
+{
+  "dataset_name": "biology molecular biology genetics cell biology",
+  "results": [
+    {
+      "article": {
+        "title": "Bayesian uncertainty analysis for complex systems biology models: emulation, global parameter searches and evaluation of gene functions",
+        "abstract": "Background: Many mathematical models have now been employed across every area of systems biology. These models increasingly involve large numbers of unknown parameters, have complex structure which can result in substantial evaluation time relative to the needs of the analysis, and need to be compared to observed data. The correct analysis of such models usually requires a global parameter search, over a high dimensional parameter space, that incorporates and respects the most important sources of uncertainty. This can be an extremely difficult task, but it is essential for any meaningful inference or prediction to be made about any biological system. It hence represents a fundamental challenge for the whole of systems biology.\n  Results: Bayesian statistical methodology for the uncertainty analysis of complex models is introduced, which is designed to address the high dimensional global parameter search problem. Bayesian emulators that mimic the systems biology model but which are extremely fast to evaluate are embedded within an iterative history match: an efficient method to search high dimensional spaces within a more formal statistical setting, while incorporating major sources of uncertainty. The approach is demonstrated via application to two models of hormonal crosstalk in Arabidopsis root development, which have 32 rate parameters, for which we identify the sets of rate parameter values that lead to acceptable matches to observed trend data. The biological consequences of the resulting comparison, including the evaluation of gene functions, are described.",
+        "doi": "10.1186/s12918-017-0484-3",
+        "url": "http://arxiv.org/abs/1607.06358v2",
+        "input_quality": null
+      },
+      "cells": [
+        {
+          "generator": "gapgpt",
+          "mode": "raw",
+          "analysis": {
+            "text": "### Main claims\n- **Current systems biology models are hard to analyze rigorously** because they contain **many unknown parameters**, have **complex structure**, and are **expensive to evaluate** relative to the needs of parameter inference.\n- **Meaningful inference/prediction requires a global parameter search** in a **high-dimensional parameter space** that properly accounts for **major uncertainty sources**; doing this is portrayed as a central, widely difficult challenge in systems biology.\n- The paper claims to address this by introducing a **Bayesian uncertainty analysis framework** that combines:\n  - **Bayesian emulation** (surrogate models that approximate the expensive simulator), and\n  - **An iterative history matching procedure** (to efficiently rule out implausible parameter regions while remaining within a statistical/Bayesian framing).\n\n### Proposed contribution / what is added\n- A **methodological pipeline**:\n  1. Build **Bayesian emulators** of complex systems biology models to enable fast evaluation across parameter space.\n  2. Use an **iterative history matching** strategy to perform an efficient **global search** for parameter sets consistent with observed data.\n  3. Incorporate uncertainty in a more formal statistical way than ad hoc calibration.\n- **Demonstration on real biological models**:\n  - Applied to **two Arabidopsis root hormonal crosstalk models** with **32 parameters**.\n  - Produces **acceptable sets of parameter values** that match observed **trend data** (i.e., identifies regions of parameter space consistent with data rather than a single optimum).\n- **Biological use of the inferred parameter sets**:\n  - Uses the resulting comparisons to make **inferences about gene function**, framing gene roles based on which parameter values/behaviors are consistent with data.\n\n### Evidence and scope (as indicated by the abstract)\n- The abstract reports a successful application that yields **parameter-region identification** and **biologically interpretable consequences** (including gene-function evaluation).\n- The method is presented as generally addressing the “high-dimensional global parameter search + uncertainty incorporation” challenge, though the abstract specifically validates it on the two hormone crosstalk examples.\n\n**Overall:** The article’s core contribution is a Bayesian surrogate + history-matching framework for uncertainty analysis of expensive, high-parameter systems biology models, demonstrated on Arabidopsis root signaling models to identify data-consistent parameter sets and infer gene-function consequences.",
+            "source_model": "gpt-4o-mini",
+            "generated_at": "2026-08-10T06:39:07Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "reasoning": "BSI analysis demonstrates a higher overall quality, with stronger scores in relevance to systems biology challenges, methodological soundness, and practical applicability",
+            "criteria": [
+              {
+                "name": "Relevance to Systems Biology Challenges",
+                "importance": 25.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.0,
+                "reason": "BSI analysis demonstrates a higher relevance to systems biology challenges"
+              },
+              {
+                "name": "Methodological Soundness",
+                "importance": 20.0,
+                "raw_score": 7.0,
+                "bsi_score": 8.0,
+                "reason": "BSI analysis provides a more comprehensive and well-justified methodology"
+              },
+              {
+                "name": "Innovativeness and Originality",
+                "importance": 15.0,
+                "raw_score": 6.0,
+                "bsi_score": 8.0,
+                "reason": "BSI analysis introduces new and innovative approaches to addressing systems biology challenges"
+              },
+              {
+                "name": "Practical Applicability",
+                "importance": 15.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.0,
+                "reason": "BSI analysis demonstrates a higher practical applicability"
+              },
+              {
+                "name": "Statistical Validity",
+                "importance": 10.0,
+                "raw_score": 6.0,
+                "bsi_score": 8.0,
+                "reason": "BSI analysis provides a more statistically valid approach"
+              },
+              {
+                "name": "Biological Interpretability",
+                "importance": 10.0,
+                "raw_score": 7.0,
+                "bsi_score": 8.0,
+                "reason": "BSI analysis provides more biologically meaningful insights and interpretations"
+              },
+              {
+                "name": "Clarity and Coherence",
+                "importance": 5.0,
+                "raw_score": 8.0,
+                "bsi_score": 7.0,
+                "reason": "RAW analysis is clearer and more well-organized, but BSI analysis is still coherent and easy to follow"
+              }
+            ],
+            "total_scores": {
+              "raw": 7.2,
+              "bsi": 8.35
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "medium",
+              "incremental_value": "medium",
+              "reason": "BSI analysis demonstrates a high relevance to systems biology challenges, but the realization and incremental value could be further improved"
+            },
+            "incremental_value": "medium",
+            "scale": "0-10",
+            "weight_sum": 100.0
+          },
+          "scores": {
+            "RAW": 0.72,
+            "BSI": 0.835
+          },
+          "failed": false
+        },
+        {
+          "generator": "gapgpt",
+          "mode": "bsi",
+          "analysis": {
+            "text": "## عنوان تحلیل با مشخصات مقاله/محتوا  \n**عنوان:** Bayesian uncertainty analysis for complex systems biology models: emulation, global parameter searches and evaluation of gene functions  \n**نوع محتوا:** مقاله علمی (Research Article)  \n**موضوع:** تحلیل عدم‌قطعیت بیزین (Bayesian Uncertainty Analysis) در مدل‌های زیست‌شناسی سامانه‌ای (Systems Biology)؛ شبیه‌ساز/امولاتور (Emulator)؛ جست‌وجوی سراسری پارامتر (Global Parameter Search)؛ ارزیابی عملکرد ژن (Gene Function Evaluation)  \n**دامنه مدل‌های آزمایشی:** دو مدل ارتباط متقابل هورمون‌ها در رشد ریشهٔ *Arabidopsis* (مجموعاً ۳۲ پارامتر نرخ)  \n**کلیدواژهٔ روش‌شناختی:** امولاتور بیزین برای کاهش هزینه محاسباتی + «تاریخ‌نگاری انطباق» (History Matching) به‌عنوان چارچوب جست‌وجوی کارا در فضای پارامتری پربعد + ارزیابی «ست‌های پارامتر» سازگار با داده‌های روند (Trend Data)\n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI  \n### خلاصه اجرایی (Executive Summary)  \nاین مقاله با مسئلهٔ بنیادی و پرچالش زیست‌شناسی سامانه‌ای مواجه است: مدل‌های ریاضی پیچیده معمولاً هزینه محاسباتی بالایی دارند، پارامترهای ناشناخته متعدد دارند و نااطمینانی‌های گوناگون باید به‌صورت منسجم در استنتاج وارد شوند. نویسندگان چارچوبی بیزین ارائه می‌کنند که در آن یک **امولاتور بیزین (Bayesian Emulator)** مدل دقیق را شبیه‌سازی می‌کند تا امکان جست‌وجوی سراسری پارامترها با سرعت بیشتر فراهم شود. سپس این امولاتور داخل یک فرایند **تاریخ‌نگاری انطباق** (History Matching) قرار می‌گیرد تا به‌صورت کارا، بخش‌های نامحتمل فضای پارامترها حذف شوند و «مجموعه‌های پارامتر قابل‌قبول» که با داده‌های مشاهده‌شده همخوانی روندی دارند شناسایی شود. در مطالعهٔ کاربردی، این روش روی دو مدل تعامل هورمونی در رشد ریشهٔ *Arabidopsis* (با ۳۲ پارامتر نرخ) پیاده‌سازی شده و پیامدهای زیستی شامل ارزیابی کارکرد ژن‌ها گزارش می‌شود.\n\n### Core Claim  \n**ادعای مرکزی مقاله** این است که:  \nترکیب **امولاتور بیزین** با **تاریخ‌نگاری انطباق** می‌تواند مسئلهٔ «جست‌وجوی سراسری پارامتر در فضای پربعد» را به‌گونه‌ای کارآمد و از نظر آماری منسجم با عدم‌قطعیت‌ها حل کند و در نهایت اجازه دهد استنباطی معنادار درباره عملکرد ژن‌ها از روی مجموعه‌های پارامتر سازگار انجام شود.\n\n### امتیاز کلی BSI  \nبا توجه به آن‌چه از چکیده استخراج می‌شود (و نه متن کامل مقاله)، امتیاز کلی BSI به‌صورت زیر برآورد می‌گردد:  \n\n**امتیاز کلی BSI: 78 / 100**\n\n> دلیل امتیاز: ایدهٔ روش‌شناختی روشن و هم‌راستا با نیاز مسئله است (کاهش هزینه محاسباتی + جست‌وجوی کارا)، اما از منظر «قابل‌ممیزی بودن جزئیات» و «کمی‌سازی کیفیت» در متن فعلی (چکیده) محدودیت جدی وجود دارد؛ بنابراین بخشی از امتیاز به بخش‌های قابل اتکا در متن کامل وابسته است.\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه  \n\n| معیار | ارزیابی (با اتکا به چکیده) | قوت‌ها | نقاط ضعف/ابهام‌ها |\n|---|---|---|---|\n| 1) انطباق با مسئله (Problem Fit) | بسیار بالا | مسئلهٔ واقعی زیست‌شناسی سامانه‌ای: هزینه بالا + پربعد بودن + نیاز به لحاظ عدم‌قطعیت | جزئیات این‌که کدام منابع عدم‌قطعیت دقیقاً مدل شده‌اند در چکیده مشخص نیست |\n| 2) انسجام منطقی (Logical Coherence) | بالا | جریان روش: امولاتور → تاریخ‌نگاری انطباق → مجموعه‌های قابل‌قبول → پیامدهای زیستی | برای خوانندهٔ بیرونی، حد بین «امولاتور» و «تاریخ‌نگاری انطباق» از نظر تعریف دقیق مرزها مبهم است |\n| 3) نوآوری/ارزش افزوده (Creative Value Add) | بالا | ترکیب یک روش جست‌وجوی کارا (history matching) با امولاتور بیزین برای مشکل جهانی پربعد | میزان نوآوری نسبت به کارهای مشابه (مقایسه مستقیم) در چکیده واضح نیست |\n| 4) صحت آماری/روش‌شناختی (Statistical Validity) | متوسط تا بالا | ادعای روش بیزین و لحاظ عدم‌قطعیت‌ها؛ هدف مشخص برای همخوانی با داده روندی | شاخص‌های اعتبارسنجی، برآورد سوگیری‌ها، و تضمین‌های آماری در چکیده ارائه نشده |\n| 5) قابلیت ارزیابی و بازتولید (Reproducibility) | متوسط | مثال کاربردی با ۳۲ پارامتر نرخ و دو مدل مشخص ذکر شده | فرمول‌ها/تنظیمات کلیدی (مثلاً انتخاب کرنل در امولاتور، سیاست بندهای history matching) در چکیده وجود ندارد |\n| 6) کیفیت ارائهٔ نتایج (Results Quality) | متوسط | خروجی مشخص: شناسایی ست‌های پارامتر قابل‌قبول + توضیح پیامدهای زیستی | معیار عددی «قابل‌قبول بودن» و کیفیت تطابق (fit metrics) در چکیده نیست |\n| 7) ربط به تفسیر زیستی (Biological Interpretability) | بالا (اما مشروط) | ارتباط دادن مجموعه پارامترها به ارزیابی عملکرد ژن‌ها | چکیده نشان نمی‌دهد این ارزیابی چقدر به عدم‌قطعیت‌ها حساس است و چگونه با علیت زیستی برخورد شده |\n\n---\n\n## ۳. جدول CreativeValueAdd با ۳ زیرمعیار  \n\n| زیرمعیار | امتیاز (از ۱۰۰) | ارزیابی دقیق مبتنی بر چکیده | دلیل وزن/نتیجه |\n|---|---:|---|---|\n| Epistemic Gap Targeting (هدف‌گیری گپ معرفتی) — ۳۵٪ | ۸۲ | مقاله به گپ عملی/معرفتی مهم می‌پردازد: «چطور در حضور عدم‌قطعیت و هزینه محاسباتی بالا، جست‌وجوی جهانی پربعد قابل‌استناد انجام دهیم؟» | مسئله دقیقاً همان گپ تصمیم‌گیری در مدل‌های پیچیده است؛ اما میزان پوشش همهٔ گپ‌ها در چکیده محدود است |\n| Combinatorial Synthesis (ترکیب ترکیبی روش‌ها) — ۴۰٪ | ۷۶ | ترکیب امولاتور بیزین و history matching یک سنتز منطقی از دو ایده است: سرعت + چارچوب آماری برای حذف ناحیه‌های نامحتمل | این ترکیب برای مسئله کاملاً طبیعی است، ولی در چکیده شواهد اثرگذاری افزودهٔ ترکیب (مثلاً مقایسه با روش‌های جایگزین) دیده نمی‌شود |\n| Generative Capacity (ظرفیت تولید دانش/استنتاج جدید) — ۲۵٪ | ۷۰ | خروجی شامل ارزیابی عملکرد ژن‌ها از روی پارامترهای قابل‌قبول است؛ این می‌تواند دانش قابل تولید برای زیست‌شناسی ایجاد کند | ظرفیت تولید دانش تا حدی به نحوهٔ اتصال پارامترها به تفسیر ژن وابسته است که در چکیده به شکل جزئیات‌دار نیامده |\n\n**جمع‌بندی CreativeValueAdd (وزن‌دار): 77/100**  \n\n---\n\n## ۴. لایه‌برداری عمیق (Manifest Layer، Latent Layer، Meta Layer) با مکانیسم‌ها، Feedback Loops و Leverage Points  \n\n### ۴-۱. لایهٔ آشکار (Manifest Layer)  \nدر سطح آشکار، معماری مقاله را می‌توان به شکل زیر صورت‌بندی کرد:\n\n1. **ورود مسئله:** مدل‌های زیست‌شناسی سامانه‌ای با ساختار پیچیده و پارامترهای ناشناخته متعدد، که ارزیابی آن‌ها زمان‌بر است.  \n2. **نیاز:** باید عدم‌قطعیت‌ها و فضای پربعد پارامترها در یک «جست‌وجوی سراسری» وارد شوند تا استنباط/پیش‌بینی معنادار تولید گردد.  \n3. **راهکار محاسباتی-آماری:**  \n   - ساخت **امولاتور بیزین** که مدل کند را با یک مدل سریع‌تر جایگزین می",
+            "source_model": "gpt-4o-mini",
+            "generated_at": "2026-08-10T06:39:30Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "reasoning": "BSI analysis demonstrates a higher overall quality, with stronger scores in relevance to systems biology challenges, methodological soundness, and practical applicability",
+            "criteria": [
+              {
+                "name": "Relevance to Systems Biology Challenges",
+                "importance": 25.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.0,
+                "reason": "BSI analysis demonstrates a higher relevance to systems biology challenges"
+              },
+              {
+                "name": "Methodological Soundness",
+                "importance": 20.0,
+                "raw_score": 7.0,
+                "bsi_score": 8.0,
+                "reason": "BSI analysis provides a more comprehensive and well-justified methodology"
+              },
+              {
+                "name": "Innovativeness and Originality",
+                "importance": 15.0,
+                "raw_score": 6.0,
+                "bsi_score": 8.0,
+                "reason": "BSI analysis introduces new and innovative approaches to addressing systems biology challenges"
+              },
+              {
+                "name": "Practical Applicability",
+                "importance": 15.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.0,
+                "reason": "BSI analysis demonstrates a higher practical applicability"
+              },
+              {
+                "name": "Statistical Validity",
+                "importance": 10.0,
+                "raw_score": 6.0,
+                "bsi_score": 8.0,
+                "reason": "BSI analysis provides a more statistically valid approach"
+              },
+              {
+                "name": "Biological Interpretability",
+                "importance": 10.0,
+                "raw_score": 7.0,
+                "bsi_score": 8.0,
+                "reason": "BSI analysis provides more biologically meaningful insights and interpretations"
+              },
+              {
+                "name": "Clarity and Coherence",
+                "importance": 5.0,
+                "raw_score": 8.0,
+                "bsi_score": 7.0,
+                "reason": "RAW analysis is clearer and more well-organized, but BSI analysis is still coherent and easy to follow"
+              }
+            ],
+            "total_scores": {
+              "raw": 7.2,
+              "bsi": 8.35
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "medium",
+              "incremental_value": "medium",
+              "reason": "BSI analysis demonstrates a high relevance to systems biology challenges, but the realization and incremental value could be further improved"
+            },
+            "incremental_value": "medium",
+            "scale": "0-10",
+            "weight_sum": 100.0
+          },
+          "scores": {
+            "RAW": 0.72,
+            "BSI": 0.835
+          },
+          "failed": false
+        }
+      ]
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "302bfb085d5c4201756ec36e02199b9f5c65c9db",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-08-10T06:38:59Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}

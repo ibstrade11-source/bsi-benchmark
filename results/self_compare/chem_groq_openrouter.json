@@ -1,0 +1,184 @@
+{
+  "dataset_name": "chemistry",
+  "results": [
+    {
+      "article": {
+        "title": "Guest Editorial: Special Topic on Data-enabled Theoretical Chemistry",
+        "abstract": "A survey of the contributions to the Special Topic on Data-enabled Theoretical Chemistry is given, including a glossary of relevant machine learning terms.",
+        "doi": "10.1063/1.5043213",
+        "url": "http://arxiv.org/abs/1806.02690v2",
+        "input_quality": null
+      },
+      "cells": [
+        {
+          "generator": "groq",
+          "mode": "raw",
+          "analysis": {
+            "text": "This article is a guest editorial that introduces a special topic on Data-enabled Theoretical Chemistry. The main claim of the article is that it provides an overview of the contributions to this special topic. \n\nThe article's contribution appears to be threefold: \n1. It provides a survey of the contributions to the special topic, likely offering a comprehensive understanding of the current state of research in Data-enabled Theoretical Chemistry.\n2. It includes a glossary of relevant machine learning terms, which can serve as a resource for readers who may be unfamiliar with the technical vocabulary used in the field.\n3. By doing so, the article aims to facilitate understanding and accessibility of the special topic for its readers.\n\nOverall, the article seems to be an introductory piece that sets the stage for the special topic, rather than presenting original research or groundbreaking findings. Its purpose is to inform, educate, and provide context for the subsequent articles in the special topic.",
+            "source_model": "llama-3.3-70b-versatile",
+            "generated_at": "2026-08-09T19:29:32Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "raw",
+            "reasoning": "RAW correctly identifies the article as a guest editorial, accurately describes its three actual functions (survey, glossary, accessibility framing), and avoids category errors. BSI fundamentally misclassifies the editorial as a research paper, applies an entire research-evaluation apparatus (7 criteria, CreativeValueAdd, layer analysis, EIG, REIG) to it, and generates detailed but hallucinated 'findings' about methodology, results, innovation, and causal mechanisms that do not exist in the editorial. BSI's framework is not merely unhelpful but actively detrimental for this article type, yielding negative incremental value.",
+            "criteria": [
+              {
+                "name": "Genre Recognition & Type-Appropriate Analysis",
+                "importance": 25.0,
+                "raw_score": 10.0,
+                "bsi_score": 2.0,
+                "reason": "This is the most critical criterion because the article is explicitly a Guest Editorial introducing a special topic, not a research paper. RAW correctly identifies it as an 'introductory piece that sets the stage' and 'not presenting original research.' BSI fundamentally misclassifies it, evaluating it as if it were a research article with methodology, results, discussion, and innovation claims."
+              },
+              {
+                "name": "Accuracy of Content Description",
+                "importance": 20.0,
+                "raw_score": 9.0,
+                "bsi_score": 3.0,
+                "reason": "RAW accurately describes the threefold contribution: survey of contributions, glossary of ML terms, and facilitating reader accessibility. BSI mentions the glossary but incorrectly attributes research claims ('core claim: data can be used as a powerful tool') to the editorial itself rather than recognizing it as an overview of other papers."
+              },
+              {
+                "name": "Understanding of Editorial Purpose",
+                "importance": 20.0,
+                "raw_score": 9.0,
+                "bsi_score": 2.0,
+                "reason": "Editorials serve to frame, contextualize, and provide accessibility for a collection. RAW captures this: 'inform, educate, and provide context for the subsequent articles.' BSI entirely misses this purpose, instead searching for research contributions, mechanisms, and generative capacity within the editorial itself."
+              },
+              {
+                "name": "Avoidance of Category Errors",
+                "importance": 15.0,
+                "raw_score": 10.0,
+                "bsi_score": 1.0,
+                "reason": "BSI commits severe category errors by applying a full research-paper evaluation rubric (innovation, methodology, results, discussion, conclusion, EIG analysis, REIG compliance) to an editorial. RAW avoids this entirely, noting the article is 'rather than presenting original research or groundbreaking findings.'"
+              },
+              {
+                "name": "Identification of Actual Contributions",
+                "importance": 10.0,
+                "raw_score": 9.0,
+                "bsi_score": 3.0,
+                "reason": "RAW specifically identifies the survey function, the glossary resource, and the accessibility goal. BSI notes the glossary but conflates the editorial with the special topic's research papers, attributing their content ('predicting chemical properties, designing new materials') to the editorial itself."
+              },
+              {
+                "name": "Analytical Coherence & Relevance",
+                "importance": 10.0,
+                "raw_score": 9.0,
+                "bsi_score": 4.0,
+                "reason": "RAW's analysis is coherent, concise, and directly relevant to the actual article. BSI's analysis is internally consistent within its own framework but irrelevant to the actual editorial, producing elaborate but misdirected output (CreativeValueAdd, layer analysis, EIG, REIG) that addresses a phantom research paper."
+              }
+            ],
+            "total_scores": {
+              "raw": 9.4,
+              "bsi": 2.35
+            },
+            "bsi_capability_assessment": {
+              "relevance": "low",
+              "realization": "low",
+              "incremental_value": "negative",
+              "reason": "BSI's analytical framework appears designed for evaluating research articles (with innovation, methodology, results, causal claims, generalization). This editorial is a framing/overview piece with no research claims, methods, or results to evaluate. The framework is mismatched to the task, and its application produces actively misleading analysis by imposing research-paper categories on a non-research article."
+            },
+            "incremental_value": "negative",
+            "scale": "0-10",
+            "weight_sum": 100.0
+          },
+          "scores": {
+            "RAW": 0.94,
+            "BSI": 0.235
+          },
+          "failed": false
+        },
+        {
+          "generator": "groq",
+          "mode": "bsi",
+          "analysis": {
+            "text": "**عنوان تحلیل:** Guest Editorial: Special Topic on Data-enabled Theoretical Chemistry\n**معرفی مختصر:** این مقاله یک بررسی اجمالی از مقاله‌های ارائه شده در ویژه‌نامهٔ Data-enabled Theoretical Chemistry (شیمی теорتیکی با پشتیبانی داده) است که شامل یک واژه‌نامه از اصطلاحات مهم یادگیری ماشین (Machine Learning) می‌باشد.\n\n---\n\n**۱. خلاصهٔ اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI:**\n\nاین ویژه‌نامه به بررسی نقش داده‌ها در پیشرفت شیمی نظری می‌پردازد و cómo می‌توان از تکنیک‌های یادگیری ماشین برای بهبود درک ما از پدیده‌های شیمیایی استفاده کرد. مقاله‌های این ویژه‌نامه نشان می‌دهند که چگونه از داده‌ها برای پیش‌بینی خواص شیمیایی، طراحی مواد جدید و درک مکانیسم‌های شیمیایی استفاده می‌شود. core claim این مقاله این است که داده‌ها می‌توانند به عنوان یک ابزار قدرتمند برای پیشرفت شیمی نظری استفاده شوند. امتیاز کلی BSI برای این مقاله ۸۵ است، زیرا آن‌ها به خوبی از داده‌ها برای پیشرفت درک ما از شیمی نظری استفاده کرده‌اند، اما در برخی از موارد، نیاز به جزئیات بیشتر و تعمیم‌دهی بهتر وجود دارد.\n\n---\n\n**۲. جدول ارزیابی معیارهای اصلی ۷گانه:**\n\n| معیار | توضیح | امتیاز |\n| --- | --- | --- |\n| ۱. نوآوری | استفاده از داده‌ها برای پیشرفت شیمی نظری | ۹ |\n| ۲. اهمیت | نقش داده‌ها در chemistry نظری | ۹ |\n| ۳. روش‌شناسی | استفاده از تکنیک‌های Machine Learning | ۸ |\n| ۴. RESULTS | résultats خوب، اما نیاز به جزئیات بیشتر | ۸ |\n| ۵. дискуссия |讨论 خوب، اما نیاز به تعمیم‌دهی بهتر | ۸ |\n| ۶.结论 | نتیجه‌گیری خوب، اما نیاز به پیشنهادات بیشتر | ۸ |\n| ۷. زبان و ساختار | زبان و ساختار خوب، اما نیاز به ویرایش بیشتر | ۸ |\n\n---\n\n**۳. جدول CreativeValueAdd با ۳ زیرمعیار:**\n\n| زیرمعیار | توضیح | امتیاز |\n| --- | --- | --- |\n| Epistemic Gap Targeting (۳۵٪) | استفاده از داده‌ها برای پر کردن شکاف‌های دانش | ۹ |\n| Combinatorial Synthesis (۴۰٪) | استفاده از تکنیک‌های Machine Learning برای ترکیب داده‌ها | ۸ |\n| Generative Capacity (۲۵٪) | استفاده از داده‌ها برای تولید RESULTS جدید | ۸ |\n\n---\n\n**۴. لایه‌برداری عمیق (Manifest Layer، Latent Layer، Meta Layer):**\n\n* **Manifest Layer:** سطح ظاهری مقاله که به بررسی نقش داده‌ها در شیمی نظری می‌پردازد.\n* **Latent Layer:** سطح پنهان مقاله که نشان می‌دهد cómo می‌توان از تکنیک‌های Machine Learning برای بهبود درک ما از پدیده‌های شیمیایی استفاده کرد.\n* **Meta Layer:** سطح üst مقاله که به بررسی چگونگی استفاده از داده‌ها برای پیشرفت شیمی نظری می‌پردازد.\n\n**مکانیسم‌های پنهان:** استفاده از داده‌ها برای پیش‌بینی خواص شیمیایی و طراحی مواد جدید.\n**الگوهای تکرارشونده:** استفاده از تکنیک‌های Machine Learning برای ترکیب داده‌ها.\n**Feedback Loops:** استفاده از داده‌ها برای بهبود درک ما از پدیده‌های شیمیایی.\n**Leverage Points:** استفاده از داده‌ها برای پیشرفت شیمی نظری.\n\n---\n\n**۵. EIG Analysis:**\n\n* **E:** استفاده از داده‌ها برای پیش‌بینی خواص شیمیایی و طراحی مواد جدید (خوب).\n* **I:** استفاده از تکنیک‌های Machine Learning برای ترکیب داده‌ها (خوب).\n* **G:** استفاده از داده‌ها برای پیشرفت شیمی نظری (خوب).\n\n---\n\n**۶. REIG — ممیزی Draft Analysis:**\n\n* **Causal Compliance:** آیا در Draft خودم علیت ادعا کردم جایی که فقط همبستگی داشتم؟ (PASS)\n* **Generalization Compliance:** آیا در Draft خودم تعمیم غیرمجاز دادم؟ (FAIL - نیاز به تعمیم‌دهی بهتر)\n* **Measurement Compliance:** آیا امتیازات و اعداد Draft دقیق‌تر از اطمینان واقعی‌ام گزارش شدند؟ (PASS)\n* **Framing Compliance:** آیا در Draft خودم قضاوت ارزشی فراتر از داده‌ها دادم؟ (PASS)\n\n**نتیجه:** PASS (اما نیاز به ویرایش بیشتر و تعمیم‌دهی بهتر)\n\n---\n\n**۷. نتیجه‌گیری نهایی + نقاط قوت/ضعف + پیشنهاد بهبود:**\n\nنتیجه‌گیری نهایی: این مقاله به خوبی از داده‌ها برای پیشرفت شیمی نظری استفاده کرده است، اما نیاز به جزئیات بیشتر و تعمیم‌دهی بهتر وجود دارد.\nنقاط قوت: استفاده از داده‌ها برای پیش‌بینی خواص شیمیایی و طراحی مواد جدید.\nنقاط ضعف: نیاز به جزئیات بیشتر و تعمیم‌دهی بهتر.\nپیشنهاد بهبود: استفاده از تکنیک‌های Machine Learning برای ترکیب داده‌ها و پیش‌بینی خواص شیمیایی.\n\n**تحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.**",
+            "source_model": "llama-3.3-70b-versatile",
+            "generated_at": "2026-08-09T19:29:37Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "raw",
+            "reasoning": "RAW correctly identifies the article as a guest editorial, accurately describes its three actual functions (survey, glossary, accessibility framing), and avoids category errors. BSI fundamentally misclassifies the editorial as a research paper, applies an entire research-evaluation apparatus (7 criteria, CreativeValueAdd, layer analysis, EIG, REIG) to it, and generates detailed but hallucinated 'findings' about methodology, results, innovation, and causal mechanisms that do not exist in the editorial. BSI's framework is not merely unhelpful but actively detrimental for this article type, yielding negative incremental value.",
+            "criteria": [
+              {
+                "name": "Genre Recognition & Type-Appropriate Analysis",
+                "importance": 25.0,
+                "raw_score": 10.0,
+                "bsi_score": 2.0,
+                "reason": "This is the most critical criterion because the article is explicitly a Guest Editorial introducing a special topic, not a research paper. RAW correctly identifies it as an 'introductory piece that sets the stage' and 'not presenting original research.' BSI fundamentally misclassifies it, evaluating it as if it were a research article with methodology, results, discussion, and innovation claims."
+              },
+              {
+                "name": "Accuracy of Content Description",
+                "importance": 20.0,
+                "raw_score": 9.0,
+                "bsi_score": 3.0,
+                "reason": "RAW accurately describes the threefold contribution: survey of contributions, glossary of ML terms, and facilitating reader accessibility. BSI mentions the glossary but incorrectly attributes research claims ('core claim: data can be used as a powerful tool') to the editorial itself rather than recognizing it as an overview of other papers."
+              },
+              {
+                "name": "Understanding of Editorial Purpose",
+                "importance": 20.0,
+                "raw_score": 9.0,
+                "bsi_score": 2.0,
+                "reason": "Editorials serve to frame, contextualize, and provide accessibility for a collection. RAW captures this: 'inform, educate, and provide context for the subsequent articles.' BSI entirely misses this purpose, instead searching for research contributions, mechanisms, and generative capacity within the editorial itself."
+              },
+              {
+                "name": "Avoidance of Category Errors",
+                "importance": 15.0,
+                "raw_score": 10.0,
+                "bsi_score": 1.0,
+                "reason": "BSI commits severe category errors by applying a full research-paper evaluation rubric (innovation, methodology, results, discussion, conclusion, EIG analysis, REIG compliance) to an editorial. RAW avoids this entirely, noting the article is 'rather than presenting original research or groundbreaking findings.'"
+              },
+              {
+                "name": "Identification of Actual Contributions",
+                "importance": 10.0,
+                "raw_score": 9.0,
+                "bsi_score": 3.0,
+                "reason": "RAW specifically identifies the survey function, the glossary resource, and the accessibility goal. BSI notes the glossary but conflates the editorial with the special topic's research papers, attributing their content ('predicting chemical properties, designing new materials') to the editorial itself."
+              },
+              {
+                "name": "Analytical Coherence & Relevance",
+                "importance": 10.0,
+                "raw_score": 9.0,
+                "bsi_score": 4.0,
+                "reason": "RAW's analysis is coherent, concise, and directly relevant to the actual article. BSI's analysis is internally consistent within its own framework but irrelevant to the actual editorial, producing elaborate but misdirected output (CreativeValueAdd, layer analysis, EIG, REIG) that addresses a phantom research paper."
+              }
+            ],
+            "total_scores": {
+              "raw": 9.4,
+              "bsi": 2.35
+            },
+            "bsi_capability_assessment": {
+              "relevance": "low",
+              "realization": "low",
+              "incremental_value": "negative",
+              "reason": "BSI's analytical framework appears designed for evaluating research articles (with innovation, methodology, results, causal claims, generalization). This editorial is a framing/overview piece with no research claims, methods, or results to evaluate. The framework is mismatched to the task, and its application produces actively misleading analysis by imposing research-paper categories on a non-research article."
+            },
+            "incremental_value": "negative",
+            "scale": "0-10",
+            "weight_sum": 100.0
+          },
+          "scores": {
+            "RAW": 0.94,
+            "BSI": 0.235
+          },
+          "failed": false
+        }
+      ]
+    }
+  ],
+  "source_url": null,
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "302bfb085d5c4201756ec36e02199b9f5c65c9db",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-08-09T19:29:30Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}
