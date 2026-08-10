@@ -71,15 +71,58 @@ class OpenRouterGenerator(AnalysisGenerator):
 
         try:
             payload = json.loads(response.body)
-            text = payload["choices"][0]["message"]["content"]
-        except (json.JSONDecodeError, KeyError, IndexError, TypeError) as exc:
+        except json.JSONDecodeError as exc:
             raise InvalidProviderResponse(
-                f"Could not parse OpenRouter response: {exc}"
+                "OpenRouter returned HTTP 200 but the response body was not "
+                f"valid JSON: {exc}. Body prefix={response.body[:1000]!r}"
             ) from exc
 
-        if not text:
+        if not isinstance(payload, dict):
             raise InvalidProviderResponse(
-                "OpenRouter response contained no text content."
+                "OpenRouter returned an unexpected JSON type: "
+                f"{type(payload).__name__}"
+            )
+
+        # OpenRouter normally returns the OpenAI-compatible:
+        # choices[0].message.content
+        # If that structure is absent, preserve enough response information
+        # to diagnose provider/model failures instead of exposing only
+        # a cryptic KeyError such as "'choices'".
+        choices = payload.get("choices")
+
+        if not isinstance(choices, list) or not choices:
+            error = payload.get("error")
+            raise InvalidProviderResponse(
+                "OpenRouter response did not contain a non-empty 'choices' "
+                f"array. keys={list(payload.keys())!r}; "
+                f"error={error!r}; body_prefix={response.body[:1500]!r}"
+            )
+
+        first = choices[0]
+        if not isinstance(first, dict):
+            raise InvalidProviderResponse(
+                "OpenRouter response contained an invalid first choice: "
+                f"{first!r}"
+            )
+
+        message = first.get("message")
+        if not isinstance(message, dict):
+            raise InvalidProviderResponse(
+                "OpenRouter response choice did not contain a valid "
+                f"'message' object: {first!r}"
+            )
+
+        text = message.get("content")
+
+        if not isinstance(text, str):
+            raise InvalidProviderResponse(
+                "OpenRouter response message did not contain string "
+                f"'content'. message_keys={list(message.keys())!r}"
+            )
+
+        if not text.strip():
+            raise InvalidProviderResponse(
+                "OpenRouter response contained empty text content."
             )
 
         return Analysis(text=text, source_model=self.model)
