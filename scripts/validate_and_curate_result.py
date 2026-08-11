@@ -19,6 +19,18 @@ def valid_result(path):
     except Exception as e:
         return [f"invalid JSON: {e}"]
 
+    # Only genuine self-compare records belong in results/self_compare/.
+    # A raw `compare`-CLI report (schema: dataset_name/results/...) can
+    # also contain a perfectly valid judge_result nested inside its cells
+    # -- that alone does NOT make it a self-compare record. Without this
+    # check, any successful `compare` run gets silently curated into the
+    # self-compare directory alongside actual self-compare records,
+    # mixing two incompatible schemas.
+    if not (isinstance(data, dict) and "article" in data and "analyst_model" in data):
+        return ["not a self-compare record (missing top-level 'article'/"
+                "'analyst_model' -- looks like a raw compare-CLI report; "
+                "leave it in results/, do not curate)"]
+
     def walk(x):
         if isinstance(x, dict):
             if x.get("failed") is True:
@@ -123,6 +135,17 @@ def main():
     print()
     print("===== COMMIT COMPLETE =====")
     run(["git", "status", "-sb"])
+
+    print()
+    print("===== PUSH =====")
+    try:
+        run(["git", "push"])
+        print("Pushed.")
+    except subprocess.CalledProcessError as e:
+        print(f"Push failed (commit is still saved locally): {e}")
+        print("Run 'git push' manually once the issue is resolved "
+              "(e.g. no network, no upstream tracking branch, auth).")
+        return 1
 
 if __name__ == "__main__":
     main()
