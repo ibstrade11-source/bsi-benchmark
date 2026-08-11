@@ -20,7 +20,7 @@ class CrossrefProvider(Provider):
     def __init__(self):
         self.client = HttpClient()
 
-    def search(self, query: str, rows: int = 1):
+    def search(self, query: str, rows: int = 5):
         # Retry-on-5xx/429 is now handled centrally inside HttpClient.get()
         # (see network/retry.py should_retry predicate). This method only
         # needs to translate a still-failing final response into a
@@ -29,6 +29,7 @@ class CrossrefProvider(Provider):
             f"{self.BASE_URL}"
             f"?query={quote(query)}"
             f"&rows={rows}"
+            f"&filter=has-abstract:true"
         )
 
         response = self.client.get(url)

@@ -1,0 +1,198 @@
+{
+  "dataset_name": "philosophy of mind consciousness",
+  "results": [
+    {
+      "article": {
+        "title": "The Rediscovery of the Mind",
+        "abstract": null,
+        "doi": "https://doi.org/10.7551/mitpress/5834.001.0001",
+        "url": "https://openalex.org/W1804524409",
+        "input_quality": null
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "**Cannot Analyze: Missing Content**\n\nYou have provided the **Title** (\"The Rediscovery of the Mind\") and the label **\"Abstract:\"**, but **there is no abstract text or article content following it.**\n\nPlease provide the **abstract** (or the full text) of the article so I can give you a concise, factual analysis of its main claims and contribution.",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-10T23:56:46Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "tie",
+            "reasoning": "Both analyses have limitations, and it's challenging to declare a winner.",
+            "criteria": [
+              {
+                "name": "Title Relevance",
+                "importance": 15.0,
+                "raw_score": 5.0,
+                "bsi_score": 8.0,
+                "reason": "The title is relevant, but the BSI analysis provides more context."
+              },
+              {
+                "name": "Abstract Quality",
+                "importance": 20.0,
+                "raw_score": 0.0,
+                "bsi_score": 2.0,
+                "reason": "The RAW analysis has no abstract, while the BSI analysis provides some information."
+              },
+              {
+                "name": "Content Availability",
+                "importance": 25.0,
+                "raw_score": 0.0,
+                "bsi_score": 1.0,
+                "reason": "The RAW analysis has no content, while the BSI analysis provides some information."
+              },
+              {
+                "name": "Logical Coherence",
+                "importance": 15.0,
+                "raw_score": 0.0,
+                "bsi_score": 3.0,
+                "reason": "The BSI analysis provides some logical structure, but it's limited."
+              },
+              {
+                "name": "Epistemic Validity",
+                "importance": 10.0,
+                "raw_score": 0.0,
+                "bsi_score": 2.0,
+                "reason": "The BSI analysis provides some claims, but limited evidence."
+              },
+              {
+                "name": "Creative Value Add",
+                "importance": 5.0,
+                "raw_score": 0.0,
+                "bsi_score": 4.0,
+                "reason": "The BSI analysis provides some creative potential, but it's limited."
+              },
+              {
+                "name": "Transparency and Reproducibility",
+                "importance": 10.0,
+                "raw_score": 0.0,
+                "bsi_score": 2.0,
+                "reason": "The BSI analysis provides some information, but limited transparency."
+              }
+            ],
+            "total_scores": {
+              "raw": 0.75,
+              "bsi": 2.9
+            },
+            "bsi_capability_assessment": {
+              "relevance": "medium",
+              "realization": "low",
+              "incremental_value": "low",
+              "reason": "BSI's capabilities are somewhat relevant, but not fully realized due to the limited content."
+            },
+            "incremental_value": "low",
+            "scale": "0-10",
+            "weight_sum": 100.0
+          },
+          "scores": {
+            "RAW": 0.075,
+            "BSI": 0.29
+          },
+          "failed": false
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل مقاله: «بازآفرینیِ ذهن» (The Rediscovery of the Mind)\n\n**مشخصات مقاله/محتوا**  \n- **عنوان:** The Rediscovery of the Mind (بازآفرینیِ ذهن)  \n- **چکیده (Abstract):** [تهی / ارائه نشده]  \n- **نویسنده/منبع:** نامشخص (فقط عنوان و برچسب چکیده ارائه شده)  \n- **تاریخ تحلیل:** ۲۶ ژوئن ۲۰۲۶  \n- **نسخه SOP:** Intellectual_Content_Analysis_v3.4.2  \n- **نسخه Ontology:** BIO v1.0  \n- **ارزیاب:** مستر پرامپت شاخص بهمنش (BSI) v3.4.2  \n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI\n\n**خلاصه اجرایی**  \nمحتواِ ورودی تنها شامل یک **عنوان** («The Rediscovery of the Mind») و یک **چکیده خالی** است. بدنه متن، استدلال‌ها، شواهد، روش‌شناسی، نتایج و گفتارهای تخصصی در دسترس قرار نگرفته‌اند. از این رو، تحلیل حاضر بر روی «وعده‌های معرفتیِ عنوان» و «فراغت داده» متمرکز است، نه بر روی محتوای استدلالی کامل.\n\n**Core Claim (ادعای مرکزی استنباط‌شده از عنوان)**  \n> «ذهن (Mind) به عنوان یک پدیده اصلی، istorically غفلت‌شده یا تقلیل‌یافته، نیازمند بازشناسیِ اکتشافی (Rediscovery) است که فراتر از Парадиگم‌های رایجِ فیزیکالیستی، فانکشنالیستی یا رفتاری‌نگرانه پیش می‌رود.»\n\n**امتیاز کلی BSI (Overall BSI Score): ۲۸ / ۱۰۰**  \n*توضیح: امتیاز پایین ناشی از فقدان محتوای قابل ارزیابی است، نه بالضرورة از ضعف خودِ ایده. BSI محتوای واقعی را می‌سنجد، نه پتانسیل عنوان.*\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (Seven Core Criteria)\n\n| # | معیار (Criterion) | وزن SOP | امتیاز خام (Raw) | امتیاز وزنی (Weighted) | استدلال ارزیابی (Evidence-based Reasoning) |\n|---|-------------------|---------|------------------|------------------------|--------------------------------------------|\n| ۱ | **انسجام منطقی (Logical Coherence)** | ۱۵٪ | ۳۰ | ۴.۵ | عنوان خودِ منطقی است، اما بدون مقدمات، استدلال‌ها و نتیجه‌گیری، عدم امکان بررسیِ انسجامِ داخلیِ استدلال وجود دارد. |\n| ۲ | **صحت معرفت‌شناختی (Epistemic Validity)** | ۱۵٪ | ۲۰ | ۳.۰ | هیچ ادعای معرفتیِ صریح، استدلال،参照 یا داده‌ای برای تأیید/رد وجود ندارد. |\n| ۳ | **افزایش ارزش خلاقانه (Creative Value Add — CVA)** | ۲۰٪ | ۳۵ | ۷.۰ | عنوان یک «واکasone گپ معرفت‌شناختی» (Epistemic Gap) را نوید می‌دهد (بازآفرینی vs. تقلیل)، اما بی‌بدنه است. |\n| ۴ | **تراکم اطلاعاتی (Information Density)** | ۱۵٪ | ۵ | ۰.۷۵ | تراکم نزدیک به صفر: تنها یک رشته کاراکتری (عنوان) + برچسب چکیده خالی. |\n| ۵ | **کاربرد و اثربخشی (Applicability & Efficacy)** | ۱۰٪ | ۱۰ | ۱.۰ | بدون بدنه متن، هیچ मार्गدری عملی، چارچوب اجرایی یا پیش‌بینی قابل تست وجود ندارد. |\n| ۶ | **اخلاقس‌مداری و پیشگیری از خطر (Ethical Guardrails & Risk Mitigation)** | ۱۰٪ | ۵۰ | ۵.۰ | محتوای خطرناک وجود ندارد؛ اما عدم شفافیت روش‌شناختی مانع ارزیابی کامل است. |\n| ۷ | **شفافیت و قابل‌تکرار بودن (Transparency & Reproducibility)** | ۱۵٪ | ۱۰ | ۱.۵ | منبع، روش، داده و محدودیت‌ها گم‌شده‌اند. فقط یک برچسب عنوان باقی مانده. |\n| **مجموع** | | **۱۰۰٪** | | **۲۲.۷۵ ≈ ۲۳** | **توجه:** امتیاز نهایی BSI با جریمه‌ی «فقدان بدنه متن» (Penalty Factor ۰.۸) => **۲۸** |\n\n---\n\n## ۳. جدول CreativeValueAdd (CVA) با ۳ زیرمعیار\n\n| زیرمعیار (Sub-criterion) | وزن در CVA | امتیاز (۰-۱۰۰) | امتیاز وزنی | استدلال دقیق |\n|---------------------------|------------|----------------|------------|--------------|\n| **هدف‌گیری گپ معرفت‌شناختی (Epistemic Gap Targeting)** | ۳۵٪ | ۶۰ | ۲۱.۰ | عنوان صریحاً روی «گپِ بازآفرینی» تمرکز دارد: ذهنِ «گم‌شده» در ادبیات سائدِ عصبی/محاسبه‌ای. این یک گپ واقعی و پرمخاطب است. |\n| **سنتز ترکیبی (Combinatorial Synthesis)** | ۴۰٪ | ۲۵ | ۱۰.۰ | هیچ اثری از ترکیب نظریه‌ها، داده‌ها، رویکردها یا متدها در ورودی دیده نمی‌شود. تنها یک برچسب مفهومی منفرد. |\n| **ظرفیت مولد (Generative Capacity)** | ۲۵٪ | ۴۰ | ۱۰.۰ | عنوان می‌تواند مولدِ فرضیه‌ها، برنامه‌های تحقیق و συζητήگان فلسفی باشد، اما بدون بدنه متن، این پتانسیل محقق نشده باقی می‌ماند. |\n| **مجموع CVA** | ۱۰۰٪ | | **۴۱** | **CVA نهایی (با وزن ۲۰٪ در BSI) = ۸.۲** |\n\n---\n\n## ۴. لایه‌برداری عمیق (Deep Layering)\n\n### ۴.۱. لایه آشکار (Manifest Layer) — «چه چیزی گفته شده است؟»\n- **محتوا:** رشته متنی «The Rediscovery of the Mind» + برچسب «Abstract:» با مقدار تهی.\n- **ساختار سطحی:** عنوانِ یکِ کتاب/مقاله‌ی کلاسیک (جان Серل، ۱۹۹۲) یا الضمیمه‌ای با همان نام. هیچ مقدمه، استدلال، بخش‌بندی، ارجاع، نمودار، جدول یا نتیجه‌گیری وجود ندارد.\n- **مکانیسم‌های مستقیم:** هیچ‌کدام. فقط یک شناسه‌ی نام‌گذاری (Naming Act).\n\n### ۴.۲. لایه پنهان (Latent Layer) — «چه مکانیسم‌ها، الگو‌ها و ثنائي‌خوردگی‌ها در کار هستند؟»\n\n| مکانیسم پنهان (Latent Mechanism) | توصیف تحلیلی | Feedback Loops (حلقه‌های بازخورد) | Leverage Points (نقاطльного) |\n|",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-10T23:57:58Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "tie",
+            "reasoning": "Both analyses have limitations, and it's challenging to declare a winner.",
+            "criteria": [
+              {
+                "name": "Title Relevance",
+                "importance": 15.0,
+                "raw_score": 5.0,
+                "bsi_score": 8.0,
+                "reason": "The title is relevant, but the BSI analysis provides more context."
+              },
+              {
+                "name": "Abstract Quality",
+                "importance": 20.0,
+                "raw_score": 0.0,
+                "bsi_score": 2.0,
+                "reason": "The RAW analysis has no abstract, while the BSI analysis provides some information."
+              },
+              {
+                "name": "Content Availability",
+                "importance": 25.0,
+                "raw_score": 0.0,
+                "bsi_score": 1.0,
+                "reason": "The RAW analysis has no content, while the BSI analysis provides some information."
+              },
+              {
+                "name": "Logical Coherence",
+                "importance": 15.0,
+                "raw_score": 0.0,
+                "bsi_score": 3.0,
+                "reason": "The BSI analysis provides some logical structure, but it's limited."
+              },
+              {
+                "name": "Epistemic Validity",
+                "importance": 10.0,
+                "raw_score": 0.0,
+                "bsi_score": 2.0,
+                "reason": "The BSI analysis provides some claims, but limited evidence."
+              },
+              {
+                "name": "Creative Value Add",
+                "importance": 5.0,
+                "raw_score": 0.0,
+                "bsi_score": 4.0,
+                "reason": "The BSI analysis provides some creative potential, but it's limited."
+              },
+              {
+                "name": "Transparency and Reproducibility",
+                "importance": 10.0,
+                "raw_score": 0.0,
+                "bsi_score": 2.0,
+                "reason": "The BSI analysis provides some information, but limited transparency."
+              }
+            ],
+            "total_scores": {
+              "raw": 0.75,
+              "bsi": 2.9
+            },
+            "bsi_capability_assessment": {
+              "relevance": "medium",
+              "realization": "low",
+              "incremental_value": "low",
+              "reason": "BSI's capabilities are somewhat relevant, but not fully realized due to the limited content."
+            },
+            "incremental_value": "low",
+            "scale": "0-10",
+            "weight_sum": 100.0
+          },
+          "scores": {
+            "RAW": 0.075,
+            "BSI": 0.29
+          },
+          "failed": false
+        }
+      ]
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "4988afe7ae6be3fc8a955a6856cc3296a74a4f6a",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-08-10T23:56:28Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}

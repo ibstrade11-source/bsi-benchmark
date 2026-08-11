@@ -259,6 +259,20 @@ def main() -> int:
         print(f"Provider   : {dataset.provider}")
         print(f"Query      : {dataset.query}")
         print(f"Articles   : {len(dataset.articles)}")
+        if dataset.skipped_count:
+            print(
+                f"Skipped    : {dataset.skipped_count} article(s) with no "
+                f"usable title/abstract (not sent to any generator): "
+                f"{', '.join(dataset.skipped_titles[:5])}"
+                + (" ..." if dataset.skipped_count > 5 else "")
+            )
+        if not dataset.articles:
+            print(
+                "ERROR: no articles with a usable title/abstract were found "
+                "for this query/provider/limit combination. Try a different "
+                "query, provider, or a higher --limit."
+            )
+            return 1
         print(f"Generators : {', '.join(spec.generators)}")
         print(f"Modes      : {', '.join(spec.prompt_modes.keys())}")
         print("Running... (this calls a real API for each non-mock generator; may take a while)")

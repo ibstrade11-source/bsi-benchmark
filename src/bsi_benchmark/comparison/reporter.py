@@ -50,6 +50,15 @@ def render_markdown(report: ComparisonReport) -> str:
 
         lines.append("")
 
+        failed_cells = [cell for cell in result.cells if cell.failed]
+        if failed_cells:
+            lines.append("### Generation failures")
+            lines.append("")
+            for cell in failed_cells:
+                error = cell.metadata.get("error", "unknown error")
+                lines.append(f"- **{cell.generator}/{cell.mode}**: {error}")
+            lines.append("")
+
         judge = None
 
         for cell in result.cells:

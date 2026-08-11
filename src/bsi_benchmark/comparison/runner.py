@@ -90,6 +90,7 @@ class CrossModelRunner:
                             judge_result = {"error": str(exc)}
 
                 for mode, (analysis, metadata) in generated.items():
+                    cell_failed = analysis is None
                     cells.append(
                         ComparisonCell(
                             generator=generator_name,
@@ -97,16 +98,19 @@ class CrossModelRunner:
                             analysis=analysis,
                             metadata=metadata,
                             judge_result=judge_result,
+                            failed=cell_failed,
                             scores=(
-                                                        {
-                                                            "RAW": round(float(judge_result["total_scores"].get("raw", 0)) / 10, 3),
-                                                            "BSI": round(float(judge_result["total_scores"].get("bsi", 0)) / 10, 3),
-                                                        }
-                                                        if judge_result and "total_scores" in judge_result
-                                                        else {
-                                                            "BSI": 0.5
-                                                        }
-                                                    ),
+                                {}
+                                if cell_failed
+                                else (
+                                    {
+                                        "RAW": round(float(judge_result["total_scores"].get("raw", 0)) / 10, 3),
+                                        "BSI": round(float(judge_result["total_scores"].get("bsi", 0)) / 10, 3),
+                                    }
+                                    if judge_result and "total_scores" in judge_result
+                                    else {}
+                                )
+                            ),
                         )
                     )
 

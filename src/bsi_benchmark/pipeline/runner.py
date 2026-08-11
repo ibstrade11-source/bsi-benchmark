@@ -27,11 +27,27 @@ class PipelineRunner:
 
         articles = parser.parse(raw)
 
+        # Drop articles with no usable title/abstract *before* applying
+        # --limit, not after -- otherwise a --limit N request can silently
+        # hand the benchmark N articles that are all missing content while
+        # perfectly good results sit further down the provider's list.
+        valid_articles = []
+        skipped_titles = []
+        for article in articles:
+            title_ok = bool((article.title or "").strip())
+            abstract_ok = bool((article.abstract or "").strip())
+            if title_ok and abstract_ok:
+                valid_articles.append(article)
+            else:
+                skipped_titles.append(article.title or "(untitled)")
+
         if limit is not None:
-            articles = articles[:limit]
+            valid_articles = valid_articles[:limit]
 
         return PipelineResult(
             provider=provider_name,
             query=query,
-            articles=articles,
+            articles=valid_articles,
+            skipped_count=len(skipped_titles),
+            skipped_titles=skipped_titles,
         )
