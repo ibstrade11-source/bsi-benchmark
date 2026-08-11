@@ -17,7 +17,11 @@ OUTPUTS_DIR = ROOT / "outputs"
 REPORTS_DIR = ROOT / "reports"
 LOGS_DIR = ROOT / "logs"
 
-DEFAULT_TIMEOUT = 1800
+import os
+
+# Central HTTP timeout. Override for slow/long-running environments with:
+# BSI_HTTP_TIMEOUT=<seconds>
+DEFAULT_TIMEOUT = int(os.environ.get("BSI_HTTP_TIMEOUT", "300"))
 
 DEFAULT_USER_AGENT = (
     "BSI-Benchmark/0.1.0 "
