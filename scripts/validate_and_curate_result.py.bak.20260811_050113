@@ -9,34 +9,6 @@ ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 CURATED = RESULTS / "self_compare"
 
-
-def classify_result(data):
-    """
-    Classify benchmark JSON without conflating compare-cli reports
-    with self-compare records.
-
-    Returns:
-      compare   -> normal compare-cli benchmark report
-      self      -> self-compare record
-      unknown   -> unsupported/invalid JSON structure
-    """
-    if not isinstance(data, dict):
-        return "unknown"
-
-    # Normal compare-cli output used by the current BSI benchmark.
-    if (
-        isinstance(data.get("results"), list)
-        and "run_metadata" in data
-        and ("dataset_name" in data or "source_url" in data)
-    ):
-        return "compare"
-
-    # Existing self-compare schema.
-    if "article" in data and "analyst_model" in data:
-        return "self"
-
-    return "unknown"
-
 def run(cmd):
     return subprocess.run(cmd, cwd=ROOT, check=True)
 
@@ -55,7 +27,7 @@ def valid_result(path):
     # self-compare directory alongside actual self-compare records,
     # mixing two incompatible schemas.
     if not (isinstance(data, dict) and "article" in data and "analyst_model" in data):
-        return ["not a self-compare record / compare-cli report (missing top-level 'article'/"
+        return ["not a self-compare record (missing top-level 'article'/"
                 "'analyst_model' -- looks like a raw compare-CLI report; "
                 "leave it in results/, do not curate)"]
 
