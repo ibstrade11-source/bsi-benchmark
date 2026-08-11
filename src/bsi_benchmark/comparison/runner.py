@@ -63,10 +63,31 @@ class CrossModelRunner:
             cells = []
 
             for generator_name in spec.generators:
-                generator = self.generator_manager.create(generator_name)
+                try:
+                    generator = self.generator_manager.create(generator_name)
+                except Exception as exc:
+                    cells.append(
+                        ComparisonCell(
+                            generator=generator_name,
+                            mode="error",
+                            analysis=None,
+                            metadata={"error": f"generator initialization failed: {exc}"},
+                            judge_result=None,
+                            failed=True,
+                            scores={},
+                        )
+                    )
+                    continue
+
                 # Built per-generator so that, absent an explicit judge,
                 # each generator judges its own raw-vs-bsi output.
-                judge = self._build_judge(spec, self_generator=generator)
+                try:
+                    judge = self._build_judge(spec, self_generator=generator)
+                except Exception as exc:
+                    judge = None
+                    judge_init_error = str(exc)
+                else:
+                    judge_init_error = None
 
                 generated = {}
                 for mode, template in spec.prompt_modes.items():
@@ -76,7 +97,9 @@ class CrossModelRunner:
                     generated[mode] = (analysis, metadata)
 
                 judge_result = None
-                if "raw" in generated and "bsi" in generated:
+                if judge_init_error is not None:
+                    judge_result = {"error": f"judge initialization failed: {judge_init_error}"}
+                elif "raw" in generated and "bsi" in generated:
                     raw_analysis = generated["raw"][0]
                     bsi_analysis = generated["bsi"][0]
                     if raw_analysis and bsi_analysis:
