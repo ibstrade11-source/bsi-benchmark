@@ -59,6 +59,11 @@ def main() -> int:
         default=None,
         help="Judge generator name. If omitted, each generator judges its own output.",
     )
+    compare.add_argument(
+        "--judge-model",
+        default=None,
+        help="Optional model identifier used by the explicit judge generator.",
+    )
 
     compare.add_argument(
         "--generators", required=True,
@@ -254,6 +259,7 @@ def main() -> int:
             generators=[g.strip() for g in args.generators.split(",") if g.strip()],
             prompt_modes={"raw": raw_prompt, "bsi": bsi_prompt},
             judge=args.judge,
+            judge_model=args.judge_model,
         )
 
         print(f"Provider   : {dataset.provider}")

@@ -29,6 +29,7 @@ DEFAULT_MODEL = os.environ.get(
     "OPENROUTER_MODEL",
     "nvidia/nemotron-3-ultra-550b-a55b:free"
 )
+
 DEFAULT_MAX_TOKENS = 2000
 
 

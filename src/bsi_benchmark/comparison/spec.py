@@ -13,3 +13,6 @@ class ComparisonSpec:
 
     # Optional independent judge model used for raw vs BSI comparison.
     judge: Optional[str] = None
+    # Optional model used by an explicit independent judge.
+    # Does not affect self-judge behavior when judge is None.
+    judge_model: Optional[str] = None

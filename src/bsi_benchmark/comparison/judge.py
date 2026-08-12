@@ -108,6 +108,14 @@ class LLMJudge:
             except Exception as e:
                 print("JUDGE_LLM_ERROR:", repr(e))
 
+                # Preserve the existing fallback behavior for self-judge
+                # and explicit judge modes, but expose the real failure
+                # so it can be diagnosed from the benchmark result.
+                fallback = self._compare_with_heuristic(raw_text, bsi_text)
+                fallback["judge_error"] = repr(e)
+                fallback["judge_failure_stage"] = "llm_compare"
+                return fallback
+
         return self._compare_with_heuristic(raw_text, bsi_text)
 
     def _compare_with_llm(self, article, raw_text, bsi_text):

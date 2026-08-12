@@ -49,8 +49,21 @@ class CrossModelRunner:
 
         judge_model = self._explicit_judge or getattr(spec, "judge", None)
         if judge_model:
-            return LLMJudge(self.generator_manager.create(judge_model))
+            judge_kwargs = {}
 
+            # Explicit judge model is intentionally independent from the
+            # generator model. If no model is supplied, the generator's
+            # normal/default model remains unchanged.
+            explicit_model = getattr(spec, "judge_model", None)
+            if explicit_model:
+                judge_kwargs["model"] = explicit_model
+
+            return LLMJudge(
+                self.generator_manager.create(judge_model, **judge_kwargs)
+            )
+
+        # IMPORTANT:
+        # Preserve existing self-judge behavior exactly.
         if self_generator is not None:
             return LLMJudge(self_generator)
 
