@@ -64,6 +64,13 @@ def main() -> int:
         default=None,
         help="Optional model identifier used by the explicit judge generator.",
     )
+    compare.add_argument(
+        "--fresh",
+        action="store_true",
+        help="Ignore any existing checkpoint at --output and start a new "
+             "run (an existing checkpoint/report, if present, is archived "
+             "with a timestamp suffix rather than overwritten).",
+    )
 
     compare.add_argument(
         "--generators", required=True,
@@ -284,6 +291,17 @@ def main() -> int:
         print("Running... (this calls a real API for each non-mock generator; may take a while)")
         print()
 
+        from bsi_benchmark.comparison.checkpoint import (
+            checkpoint_path as _checkpoint_path_for,
+            archive_existing_checkpoint,
+        )
+
+        ckpt_path = _checkpoint_path_for(args.output)
+        if args.fresh:
+            archive_existing_checkpoint(args.output)
+        elif os.path.exists(ckpt_path):
+            print(f"Resuming from checkpoint: {ckpt_path}")
+
         report = CrossModelRunner().run(
             dataset, spec,
             source_url=args.bsi_source_url or None,
@@ -293,7 +311,8 @@ def main() -> int:
                 max_tokens=args.max_tokens,
                 prompt_version=args.prompt_version,
             )),
-        )
+        
+            checkpoint_path=ckpt_path,)
 
         if any(
             c.generator == "mock"

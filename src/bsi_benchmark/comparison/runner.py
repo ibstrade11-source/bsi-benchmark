@@ -14,12 +14,23 @@ A failure calling any one generator (missing API key, rate limit, network
 error) is caught and recorded as a failed cell rather than raising -- one
 bad combination should not lose the results for everything else in a
 multi-hour benchmark run.
+
+Checkpoint/resume: when `checkpoint_path` is given, per-cell analyses and
+per-generator judge results are persisted to that file as the run
+progresses (see comparison/checkpoint.py). Re-running with the same
+checkpoint_path:
+  - never re-calls a generator for an analysis that already succeeded;
+  - re-runs the judge for any cell whose judge result is missing, errored,
+    or fell back to the keyword heuristic, overwriting that invalid entry;
+  - leaves a cell whose judge result already came from a real LLM judge
+    untouched.
 """
 from datetime import datetime, timezone
 
 from bsi_benchmark.errors import ProviderError
 from bsi_benchmark.generation.manager import GeneratorManager
 
+from . import checkpoint as checkpointing
 from .result import ComparisonCell, ComparisonResult, ComparisonReport
 from .judge import LLMJudge
 
@@ -69,10 +80,22 @@ class CrossModelRunner:
 
         return LLMJudge(generator=None)
 
-    def run(self, dataset, spec, source_url=None, run_metadata=None) -> ComparisonReport:
+    def run(self, dataset, spec, source_url=None, run_metadata=None,
+            checkpoint_path=None) -> ComparisonReport:
+        checkpoint = None
+        if checkpoint_path:
+            checkpoint = checkpointing.load_checkpoint(checkpoint_path)
+        if checkpoint is None:
+            checkpoint = checkpointing.new_checkpoint()
+
+        def _save_checkpoint():
+            if checkpoint_path:
+                checkpointing.save_checkpoint(checkpoint_path, checkpoint)
+
         results = []
 
         for article in dataset.articles:
+            art_key = checkpointing.article_key(article)
             cells = []
 
             for generator_name in spec.generators:
@@ -104,17 +127,35 @@ class CrossModelRunner:
 
                 generated = {}
                 for mode, template in spec.prompt_modes.items():
-                    analysis, metadata = self._generate_one(
-                        article, generator, generator_name, mode, template,
-                    )
+                    ckey = checkpointing.cell_key(art_key, generator_name, mode)
+                    cached_cell = checkpoint["cells"].get(ckey)
+
+                    if cached_cell and not cached_cell.get("failed") and cached_cell.get("analysis"):
+                        analysis, metadata, _ = checkpointing.cell_from_dict(cached_cell)
+                    else:
+                        analysis, metadata = self._generate_one(
+                            article, generator, generator_name, mode, template,
+                        )
+                        checkpoint["cells"][ckey] = checkpointing.cell_to_dict(
+                            analysis, metadata, analysis is None,
+                        )
+                        _save_checkpoint()
+
                     generated[mode] = (analysis, metadata)
 
-                judge_result = None
-                if judge_init_error is not None:
+                jkey = checkpointing.judge_key(art_key, generator_name)
+                cached_judge = checkpoint["judge_results"].get(jkey)
+
+                if checkpointing.is_valid_judge_result(cached_judge):
+                    judge_result = cached_judge
+                elif judge_init_error is not None:
                     judge_result = {"error": f"judge initialization failed: {judge_init_error}"}
+                    checkpoint["judge_results"][jkey] = judge_result
+                    _save_checkpoint()
                 elif "raw" in generated and "bsi" in generated:
                     raw_analysis = generated["raw"][0]
                     bsi_analysis = generated["bsi"][0]
+                    judge_result = None
                     if raw_analysis and bsi_analysis:
                         try:
                             judge_result = judge.compare(
@@ -124,6 +165,10 @@ class CrossModelRunner:
                             )
                         except Exception as exc:
                             judge_result = {"error": str(exc)}
+                    checkpoint["judge_results"][jkey] = judge_result
+                    _save_checkpoint()
+                else:
+                    judge_result = cached_judge
 
                 for mode, (analysis, metadata) in generated.items():
                     cell_failed = analysis is None
