@@ -27,14 +27,50 @@ class MockGenerator(AnalysisGenerator):
             text = """{
   "criteria": [
     {
-      "name": "depth",
+      "name": "structural_layers",
+      "importance": 30,
       "raw_score": 5,
       "bsi_score": 8,
-      "reason": "BSI analysis shows deeper structure."
+      "reason": "Structural organization is highly important for comparing these analyses."
+    },
+    {
+      "name": "epistemic_separation",
+      "importance": 20,
+      "raw_score": 5,
+      "bsi_score": 8,
+      "reason": "Separating factual content from inference is important for this evaluation."
+    },
+    {
+      "name": "uncertainty_awareness",
+      "importance": 20,
+      "raw_score": 5,
+      "bsi_score": 8,
+      "reason": "Recognition of uncertainty materially affects analytical quality."
+    },
+    {
+      "name": "evidence_grounding",
+      "importance": 15,
+      "raw_score": 6,
+      "bsi_score": 8,
+      "reason": "Evidence grounding is relevant to judging the reliability of the analysis."
+    },
+    {
+      "name": "analysis_depth",
+      "importance": 15,
+      "raw_score": 5,
+      "bsi_score": 9,
+      "reason": "Analytical coverage provides an important measure of comparative quality."
     }
   ],
+  "bsi_capability_assessment": {
+    "relevance": "high",
+    "realization": "high",
+    "incremental_value": "high",
+    "reason": "The structured BSI analysis provides additional observable analytical depth."
+  },
   "winner": "bsi",
-  "reasoning": "BSI provided a stronger structured analysis."
+  "incremental_value": "high",
+  "reasoning": "The BSI analysis provides stronger structured and epistemically separated analysis."
 }"""
             return Analysis(text=text, source_model=self.name)
 

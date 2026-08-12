@@ -1,6 +1,7 @@
 from types import SimpleNamespace
 
 from bsi_benchmark.comparison.runner import CrossModelRunner
+from bsi_benchmark.models.analysis import Analysis
 
 
 class FakeArticle:
@@ -19,7 +20,7 @@ class FakeGenerator:
             title=article.title,
             abstract=article.abstract,
         )
-        return SimpleNamespace(
+        return Analysis(
             text=f"analysis for {prompt}",
             source_model="fake-model",
             generated_at=None,
