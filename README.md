@@ -8,7 +8,7 @@ BSI-specific abbreviations and technical terms appearing in generated
 analyses.
 
 **Canonical benchmark glossary:**
-`docs/BSI_GLOSSARY_FINAL.md`
+`docs/BSI_GLOSSARY.md`
 
 The glossary is a semantic-disambiguation resource only. It does not modify
 the analytical criteria, scoring rules, provider behavior, RAW/BSI
