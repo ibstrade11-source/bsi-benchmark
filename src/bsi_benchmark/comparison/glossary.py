@@ -9,7 +9,7 @@ an evaluation rubric and must not be treated as evidence that BSI is
 superior -- see comparison/judge.py for how the caveat is restated in
 the prompt section that includes this text.
 
-Design: the glossary file (docs/BSI_GLOSSARY.md) is parsed once into a
+Design: the glossary file (docs/BSI_GLOSSARY_FINAL.md) is parsed once into a
 {term: definition} map. On each judge call, only the entries whose term
 actually appears in that specific raw/bsi analysis text are included in
 the prompt -- not the full ~560-line file every time. A judge call for
@@ -36,7 +36,7 @@ def _repo_glossary_path() -> str:
     here = os.path.dirname(os.path.abspath(__file__))
     # comparison/ -> bsi_benchmark/ -> src/ -> repo root
     repo_root = os.path.abspath(os.path.join(here, "..", "..", ".."))
-    return os.path.join(repo_root, "docs", "BSI_GLOSSARY.md")
+    return os.path.join(repo_root, "docs", "BSI_GLOSSARY_FINAL.md")
 
 
 def _parse_sections(raw_text: str) -> dict:

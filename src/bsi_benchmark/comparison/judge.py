@@ -17,30 +17,6 @@ import json
 
 from bsi_benchmark import config
 
-_GLOSSARY_CACHE = None
-
-
-def _load_glossary():
-    """
-    Load the canonical BSI glossary (docs/BSI_GLOSSARY_FINAL.md) so the LLM
-    judge actually has access to the semantic-disambiguation reference the
-    README describes it using. Previously this file was never read by any
-    code -- the judge prompt had no glossary content in it at all.
-
-    Returns "" (and prints a one-time warning) if the file is missing,
-    rather than crashing the judge over a documentation file.
-    """
-    global _GLOSSARY_CACHE
-    if _GLOSSARY_CACHE is not None:
-        return _GLOSSARY_CACHE
-    path = config.ROOT / "docs" / "BSI_GLOSSARY_FINAL.md"
-    try:
-        _GLOSSARY_CACHE = path.read_text(encoding="utf-8")
-    except OSError as e:
-        print(f"JUDGE_GLOSSARY_WARNING: could not load {path}: {e!r}")
-        _GLOSSARY_CACHE = ""
-    return _GLOSSARY_CACHE
-
 from bsi_benchmark.comparison.glossary import relevant_glossary_section
 
 
@@ -160,7 +136,7 @@ class LLMJudge:
         # earlier version of this file had them double-escaped, which sent
         # the judge a wall of text with literal backslash-n markers
         # instead of actual line breaks.
-        glossary_text = _load_glossary()
+        glossary_text = relevant_glossary_section(raw_text, bsi_text)
         glossary_block = ""
         if glossary_text:
             glossary_block = (
