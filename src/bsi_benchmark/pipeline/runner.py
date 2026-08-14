@@ -3,6 +3,8 @@ from bsi_benchmark.parsers.crossref import CrossrefParser
 from bsi_benchmark.parsers.openalex import OpenAlexParser
 from bsi_benchmark.parsers.arxiv import ArxivParser
 from bsi_benchmark.parsers.mock import MockParser
+from bsi_benchmark.parsers.europepmc import EuropePMCParser
+from bsi_benchmark.parsers.semantic_scholar import SemanticScholarParser
 
 from .result import PipelineResult
 
@@ -14,6 +16,8 @@ class PipelineRunner:
             "crossref": CrossrefParser(),
             "openalex": OpenAlexParser(),
             "arxiv": ArxivParser(),
+            "europepmc": EuropePMCParser(),
+            "semantic_scholar": SemanticScholarParser(),
             "mock": MockParser(),
             "single_article": MockParser(),
         }

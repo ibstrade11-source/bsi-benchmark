@@ -16,6 +16,7 @@ _ALLOWED = {
     "title",
     "abstract",
     "doi",
+    "full_text",
 }
 
 
@@ -26,6 +27,7 @@ def render(prompt_template: str, article) -> str:
         "title": article.title or "",
         "abstract": article.abstract or "",
         "doi": article.doi or "",
+        "full_text": getattr(article, "full_text", None) or "",
     }
 
     pattern = re.compile(r"\{([A-Za-z_][A-Za-z0-9_]*)\}")
