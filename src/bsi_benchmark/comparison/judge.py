@@ -17,9 +17,7 @@ import json
 
 from bsi_benchmark import config
 
-from bsi_benchmark.comparison.glossary import relevant_glossary_section
-
-
+from bsi_benchmark.comparison.glossary import load_full_glossary
 class LLMJudge:
 
     @staticmethod
@@ -136,21 +134,24 @@ class LLMJudge:
         # earlier version of this file had them double-escaped, which sent
         # the judge a wall of text with literal backslash-n markers
         # instead of actual line breaks.
-        glossary_text = relevant_glossary_section(raw_text, bsi_text)
+        glossary_text = load_full_glossary()
         glossary_block = ""
         if glossary_text:
             glossary_block = (
-                "GLOSSARY (semantic disambiguation only, not evidence of "
-                "quality):\n"
-                "If the BSI analysis below uses BSI-specific terms or "
-                "abbreviations you don't recognize, consult this glossary "
-                "to understand what they mean. It exists only to reduce "
-                "semantic ambiguity -- a term's presence, absence, or "
-                "correct use must never by itself raise or lower a score, "
-                "and the glossary is not evidence that BSI is correct, "
-                "rigorous, or superior.\n\n"
+                "FULL BSI GLOSSARY (semantic disambiguation only; NOT "
+                "evidence, NOT a scoring rubric, and NOT a required "
+                "criterion list):\n"
+                "The complete BSI glossary is provided so you can understand "
+                "BSI terminology without relying on keyword matching.\n"
+                "You must independently determine whether any glossary "
+                "concept is relevant to this article and to the RAW-vs-BSI "
+                "comparison.\n"
+                "Do not reward BSI merely because a capability appears in "
+                "the glossary. Do not create a criterion merely because a "
+                "glossary term exists. The glossary does not establish that "
+                "BSI is correct, effective, or superior.\n\n"
                 f"{glossary_text}\n"
-                "--- END GLOSSARY ---\n\n"
+                "--- END FULL BSI GLOSSARY ---\n\n"
             )
 
         prompt = (
