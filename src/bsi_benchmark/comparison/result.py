@@ -42,6 +42,12 @@ class ComparisonCell:
         if self.judge_result.get("error"):
             return False
 
+        if self.judge_result.get("judge_error"):
+            return False
+
+        if self.judge_result.get("criteria_source") != "llm":
+            return False
+
         return True
 
 
