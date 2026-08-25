@@ -98,6 +98,13 @@ def main() -> int:
     help="Limit number of articles returned by provider"
 )
     compare.add_argument(
+        "--full-text-file",
+        default=None,
+        help="Optional UTF-8 full-text file to attach to every fetched article "
+             "for this benchmark run. The file is not modified.",
+    )
+
+    compare.add_argument(
         "--bsi-source-url",
         default="https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
         help="Link to the canonical BSI prompt file, printed in the report "
@@ -261,6 +268,37 @@ def main() -> int:
         except ProviderError as e:
             print(f"ERROR fetching dataset: {e}")
             return 1
+
+        if args.full_text_file:
+            full_text_path = os.path.abspath(args.full_text_file)
+
+            if not os.path.isfile(full_text_path):
+                print(f"ERROR: full-text file not found: {full_text_path}")
+                return 1
+
+            try:
+                with open(full_text_path, "r", encoding="utf-8") as f:
+                    full_text = f.read()
+            except OSError as e:
+                print(f"ERROR reading full-text file: {e}")
+                return 1
+
+            if not full_text.strip():
+                print(f"ERROR: full-text file is empty: {full_text_path}")
+                return 1
+
+            for article in dataset.articles:
+                article.full_text = full_text
+                quality = dict(article.input_quality or {})
+                quality["has_full_text"] = True
+                quality["full_text_chars"] = len(full_text)
+                quality["full_text_source"] = full_text_path
+                article.input_quality = quality
+
+            print(
+                f"FULLTEXT   : {len(full_text):,} chars "
+                f"from {full_text_path}"
+            )
 
         spec = ComparisonSpec(
             generators=[g.strip() for g in args.generators.split(",") if g.strip()],

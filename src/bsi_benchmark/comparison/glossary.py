@@ -59,3 +59,63 @@ def load_full_glossary() -> str:
         _GLOSSARY_CACHE = ""
 
     return _GLOSSARY_CACHE
+
+
+def load_compact_glossary(max_chars: int = 3000) -> str:
+    """
+    Return a compact semantic version of the full BSI glossary.
+
+    The full glossary remains unchanged on disk. For LLM judging, retain
+    section headings plus a short semantic excerpt from each section so
+    the judge can understand BSI terminology without consuming the full
+    prompt/token budget.
+    """
+    full = load_full_glossary()
+    if not full:
+        return ""
+
+    lines = full.splitlines()
+    sections = []
+    current = []
+
+    for line in lines:
+        if line.startswith("#"):
+            if current:
+                sections.append(current)
+            current = [line]
+        elif current:
+            current.append(line)
+
+    if current:
+        sections.append(current)
+
+    compact_sections = []
+
+    for section in sections:
+        heading = section[0].strip()
+        body = " ".join(
+            x.strip()
+            for x in section[1:]
+            if x.strip() and not x.strip().startswith("```")
+        )
+
+        if not body:
+            compact_sections.append(heading)
+            continue
+
+        # Keep enough text to preserve the semantic definition while
+        # aggressively reducing prompt size.
+        excerpt = body[:360].rstrip()
+        if len(body) > 360:
+            excerpt += "..."
+
+        compact_sections.append(f"{heading}\n{excerpt}")
+
+    compact = "\n\n".join(compact_sections)
+
+    # Hard upper bound for the entire glossary contribution.
+    if len(compact) > max_chars:
+        compact = compact[:max_chars].rsplit("\n", 1)[0].rstrip()
+        compact += "\n[Compact glossary truncated for token budget.]"
+
+    return compact

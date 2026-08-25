@@ -15,8 +15,6 @@ criteria_source ("llm" or "heuristic_fallback").
 
 import json
 
-from bsi_benchmark import config
-
 from bsi_benchmark.comparison.glossary import load_full_glossary
 class LLMJudge:
 
@@ -121,125 +119,83 @@ class LLMJudge:
         return self._compare_with_heuristic(raw_text, bsi_text)
 
     def _compare_with_llm(self, article, raw_text, bsi_text):
-        # Braces here are single, not doubled: this prompt goes through
-        # generator.generate() -> prompt.render(), which substitutes only
-        # the literal {title}/{abstract}/{doi} placeholders via regex and
-        # leaves every other brace untouched (it does NOT use str.format,
-        # despite an earlier version of this comment claiming otherwise --
-        # that was stale and caused the JSON schema below to be sent to
-        # the judge LLM with literal doubled braces).
+        # Architecture: the glossary and judging rules are background
+        # context for HOW to judge, not part of WHAT is being judged.
+        # They are sent as a separate system-level message
+        # (generate_with_system's system_prompt) so they never mix into
+        # the same turn as the RAW/BSI analyses themselves, which are
+        # sent as the user-level message (user_prompt). Generators that
+        # don't support a real system role (anything that hasn't
+        # overridden AnalysisGenerator.generate_with_system) fall back to
+        # a concatenated single prompt automatically -- see
+        # generation/base.py.
         #
-        # The `\n`/`\n\n` sequences below are real newline escapes
-        # (single backslash), not literal two-character "\n" text -- an
-        # earlier version of this file had them double-escaped, which sent
-        # the judge a wall of text with literal backslash-n markers
-        # instead of actual line breaks.
+        # Full glossary is mandatory for LLM judging.
+        # Never silently downgrade to a compact or glossary-free judge.
         glossary_text = load_full_glossary()
-        glossary_block = ""
-        if glossary_text:
-            glossary_block = (
-                "FULL BSI GLOSSARY (semantic disambiguation only; NOT "
-                "evidence, NOT a scoring rubric, and NOT a required "
-                "criterion list):\n"
-                "The complete BSI glossary is provided so you can understand "
-                "BSI terminology without relying on keyword matching.\n"
-                "You must independently determine whether any glossary "
-                "concept is relevant to this article and to the RAW-vs-BSI "
-                "comparison.\n"
-                "Do not reward BSI merely because a capability appears in "
-                "the glossary. Do not create a criterion merely because a "
-                "glossary term exists. The glossary does not establish that "
-                "BSI is correct, effective, or superior.\n\n"
-                f"{glossary_text}\n"
-                "--- END FULL BSI GLOSSARY ---\n\n"
+
+        if not glossary_text:
+            raise RuntimeError(
+                "BSI Judge requires the full glossary, but "
+                "docs/BSI_GLOSSARY_FINAL.md could not be loaded "
+                "or BSI_JUDGE_GLOSSARY is disabled"
             )
 
-        prompt = (
-            "You are an independent scientific evaluator. "
+        glossary_block = (
+            "FULL BSI GLOSSARY (semantic disambiguation only; NOT "
+            "evidence, NOT a scoring rubric, and NOT a required "
+            "criterion list):\n"
+            "Use the glossary only to disambiguate BSI terminology. "
+            "Determine independently which concepts are relevant. "
+            "Do not treat glossary terms as evidence, criteria, or "
+            "proof that BSI is correct, effective, or superior.\n\n"
+            f"{glossary_text}\n"
+            "--- END FULL BSI GLOSSARY ---\n\n"
+        )
+
+        system_prompt = (
+            "You are an independent scientific evaluator comparing RAW and BSI fairly. "
             "Your task is to compare RAW and BSI analyses fairly and "
             "scientifically.\n\n"
-
-            "IMPORTANT INDEPENDENCE RULES:\n"
-            "1. Do not assume that RAW is superior merely because it is "
-            "simpler or does not use a specialized analytical framework.\n"
-            "2. Do not assume that BSI is superior merely because it uses "
-            "a specialized framework.\n"
-            "3. You may consider BSI-specific analytical capabilities "
-            "when they are relevant to the scientific task and the article. "
-            "Do NOT automatically exclude, ignore, or penalize capabilities "
-            "simply because they originate from BSI.\n"
-            "4. You are NOT required to use BSI's internal vocabulary "
-            "(such as D1-D7 or EIG), but you are permitted to recognize "
-            "and evaluate the underlying analytical capabilities they "
-            "represent when those capabilities are observable in the BSI "
-            "analysis. Translate them into scientifically meaningful "
-            "evaluation criteria rather than treating the vocabulary "
-            "itself as evidence of quality.\n\n"
-
+            "INDEPENDENCE RULES:\n"
+            "Evaluate RAW and BSI impartially. Judge actual capabilities, "
+            "not framework labels; no automatic reward or penalty.\n\n"
             f"{glossary_block}"
-
             "ARTICLE-ADAPTIVE CRITERIA:\n"
-            "5. Read the article title and both analyses carefully.\n"
-            "6. Develop 4-8 evaluation criteria appropriate to THIS specific "
-            "article, its scientific domain, and the task of comparing the "
-            "two analyses.\n"
-            "7. Criteria must be substantive and analytically meaningful. "
-            "Do not create criteria merely to favor RAW or BSI.\n"
-            "8. Assign an importance weight to EACH criterion yourself. "
-            "Weights must reflect the criterion's relative importance for "
-            "THIS article, not simply the number of criteria.\n"
-            "9. Use weights from 5 to 35. The weights MUST sum exactly to 100.\n"
-            "10. Do NOT use equal weights by default. At least two criteria "
-            "MUST have different weights unless genuinely equal importance "
-            "is scientifically justified. If equal weighting is justified, "
-            "explain why explicitly.\n"
-            "11. For EVERY criterion, briefly explain why its assigned "
-            "weight is appropriate for this particular article.\n\n"
-
+            "Create 4-8 substantive article-specific criteria. Weight each "
+            "5-35; weights must sum to 100. Avoid equal weights unless "
+            "scientifically justified; briefly justify every weight.\n\n"
             "SCORING:\n"
-            "12. Score RAW and BSI independently on every criterion from "
-            "0-10.\n"
-            "13. Base scores on the actual analytical content provided, "
-            "not on the name of the framework.\n"
-            "14. Do not award a bonus or penalty merely because an analysis "
-            "uses or does not use BSI.\n\n"
-
+            "Score RAW and BSI independently from 0-10 using actual "
+            "content; no automatic BSI bonus or penalty.\n\n"
             "BSI CAPABILITY ASSESSMENT:\n"
-            "15. Separately assess BSI's capability relevance: whether "
-            "the capabilities represented by BSI are relevant to this "
-            "article and analytical task.\n"
-            "16. Separately assess capability realization: whether those "
-            "relevant capabilities were actually realized effectively in "
-            "the BSI analysis supplied here.\n"
-            "17. Separately assess incremental value: whether BSI provides "
-            "analytical value beyond RAW. This may be high, medium, low, "
-            "none, or negative.\n"
-            "18. These BSI assessments must NEVER constitute an automatic "
-            "bonus to the BSI score.\n\n"
-
+            "Separately rate BSI relevance, realization, and incremental "
+            "value beyond RAW. Base relevance/realization on this article "
+            "and the supplied BSI analysis. These ratings never create an "
+            "automatic BSI score bonus.\n\n"
             "FINAL DECISION:\n"
-            "19. Give an overall winner (raw/bsi/tie) for analytical quality.\n"
-            "20. Give a concise overall reason supported by the actual "
-            "comparison.\n\n"
-
-            "Return ONLY valid JSON, exactly this shape:\n"
+            "Choose raw, bsi, or tie and give a concise evidence-grounded "
+            "reason.\n\n"
+            "Return ONLY valid JSON with this shape:\n"
             '{"criteria":[{"name":"","importance":20,"raw_score":0,'
             '"bsi_score":0,"reason":""}],'
-            '"bsi_capability_assessment":{'
-            '"relevance":"high|medium|low",'
+            '"bsi_capability_assessment":{"relevance":"high|medium|low",'
             '"realization":"high|medium|low",'
             '"incremental_value":"high|medium|low|none|negative",'
-            '"reason":""},'
-            '"winner":"raw|bsi|tie",'
+            '"reason":""},"winner":"raw|bsi|tie",'
             '"incremental_value":"high|medium|low|none|negative",'
             '"reasoning":""}\n\n'
+            "The article title and the two analyses to compare follow in "
+            "the next message."
+        )
 
+        user_prompt = (
             f"ARTICLE TITLE\n{article.title}\n\n"
             f"RAW ANALYSIS\n{raw_text}\n\n"
             f"BSI ANALYSIS\n{bsi_text}\n"
         )
 
-        result = self.generator.generate(article, prompt)
+        result = self.generator.generate_with_system(article, system_prompt, user_prompt)
         text = (result.text or "").strip()
 
         if text.startswith("```"):
@@ -374,9 +330,37 @@ class LLMJudge:
 
         weight_sum = sum(c["importance"] for c in criteria)
 
+        if weight_sum <= 0:
+            raise ValueError(
+                f"LLM judge returned invalid total importance weight: {weight_sum}"
+            )
+
+        if abs(weight_sum - 100.0) > 0.01:
+            # LLMs may occasionally return valid per-criterion weights
+            # whose total is slightly or substantially different from 100.
+            # Normalize rather than discarding an otherwise usable judgment.
+            for c in criteria:
+                c["importance"] = (
+                    float(c["importance"]) * 100.0 / weight_sum
+                )
+
+            # Remove floating-point drift so the total is exactly 100.
+            corrected_sum = sum(c["importance"] for c in criteria)
+            drift = 100.0 - corrected_sum
+
+            largest = max(
+                criteria,
+                key=lambda c: float(c["importance"])
+            )
+            largest["importance"] = (
+                float(largest["importance"]) + drift
+            )
+
+        weight_sum = sum(c["importance"] for c in criteria)
+
         if abs(weight_sum - 100.0) > 0.01:
             raise ValueError(
-                f"LLM judge weights must sum to exactly 100; got {weight_sum}"
+                f"LLM judge weight repair failed; got {weight_sum}"
             )
 
         distinct_weights = {
@@ -394,7 +378,26 @@ class LLMJudge:
         for c in criteria:
             c["importance"] = round(c["importance"], 2)
 
+        # Correct rounding drift after normalizing weights.
         weight_sum = round(sum(c["importance"] for c in criteria), 2)
+        if weight_sum != 100.0:
+            drift = round(100.0 - weight_sum, 2)
+            largest = max(
+                criteria,
+                key=lambda c: float(c["importance"])
+            )
+            largest["importance"] = round(
+                float(largest["importance"]) + drift,
+                2
+            )
+
+        weight_sum = round(sum(c["importance"] for c in criteria), 2)
+
+        if weight_sum != 100.0:
+            raise ValueError(
+                f"LLM judge final weight repair failed; got {weight_sum}"
+            )
+
         raw_total = round(sum(c["raw_score"] * c["importance"] for c in criteria) / weight_sum, 2)
         bsi_total = round(sum(c["bsi_score"] * c["importance"] for c in criteria) / weight_sum, 2)
 

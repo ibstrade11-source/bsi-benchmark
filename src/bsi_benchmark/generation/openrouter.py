@@ -52,12 +52,31 @@ class OpenRouterGenerator(AnalysisGenerator):
 
         prompt = render(prompt_template, article)
 
+        return self._call_messages(
+            api_key, [{"role": "user", "content": prompt}]
+        )
+
+    def generate_with_system(self, article, system_prompt: str, user_prompt: str) -> Analysis:
+        api_key = os.environ.get('OPENROUTER_API_KEY')
+        if not api_key:
+            raise ProviderUnavailable(
+                "OPENROUTER_API_KEY is not set."
+            )
+        return self._call_messages(
+            api_key,
+            [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+        )
+
+    def _call_messages(self, api_key: str, messages: list) -> Analysis:
         response = self.client.post(
             API_URL,
             json_body={
                 "model": self.model,
                 "max_tokens": self.max_tokens,
-                "messages": [{"role": "user", "content": prompt}],
+                "messages": messages,
             },
             headers={
                 "Authorization": f"Bearer {api_key}",
