@@ -15,6 +15,34 @@ class MockGenerator(AnalysisGenerator):
 
     name = "mock"
 
+    def generate_with_judge_resource(
+        self,
+        article,
+        system_prompt: str,
+        user_prompt: str,
+        judge_resource: str | None = None,
+    ) -> Analysis:
+        """Offline mock implementation of the independent judge-resource API.
+
+        Contract:
+        - judge_resource is accepted separately.
+        - judge_resource is never inserted into system_prompt.
+        - judge_resource is never inserted into user_prompt.
+        - the deterministic mock judge response is produced through the
+          existing generate() implementation.
+        - no provider/model identity is injected into the prompt.
+        """
+        if judge_resource is None:
+            judge_resource = ""
+
+        # IMPORTANT:
+        # The glossary/resource is deliberately NOT included here.
+        # Mock transport only needs the judging instructions + comparison
+        # task to activate its deterministic JSON judge behavior.
+        combined_prompt = system_prompt + "\n\n" + user_prompt
+
+        return self.generate(article, combined_prompt)
+
     def generate(self, article, prompt_template: str) -> Analysis:
         rendered = render(prompt_template, article)
 

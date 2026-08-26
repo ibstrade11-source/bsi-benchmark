@@ -15,7 +15,7 @@ criteria_source ("llm" or "heuristic_fallback").
 
 import json
 
-from bsi_benchmark.comparison.glossary import load_full_glossary
+from bsi_benchmark.comparison.glossary import load_judge_resource
 class LLMJudge:
 
     @staticmethod
@@ -119,39 +119,25 @@ class LLMJudge:
         return self._compare_with_heuristic(raw_text, bsi_text)
 
     def _compare_with_llm(self, article, raw_text, bsi_text):
-        # Architecture: the glossary and judging rules are background
-        # context for HOW to judge, not part of WHAT is being judged.
-        # They are sent as a separate system-level message
-        # (generate_with_system's system_prompt) so they never mix into
-        # the same turn as the RAW/BSI analyses themselves, which are
-        # sent as the user-level message (user_prompt). Generators that
-        # don't support a real system role (anything that hasn't
-        # overridden AnalysisGenerator.generate_with_system) fall back to
-        # a concatenated single prompt automatically -- see
-        # generation/base.py.
+        # Architecture:
+        # - system_prompt contains judging instructions only.
+        # - user_prompt contains the actual RAW/BSI comparison task.
+        # - judge_resource contains independent judge-side knowledge.
         #
-        # Full glossary is mandatory for LLM judging.
-        # Never silently downgrade to a compact or glossary-free judge.
-        glossary_text = load_full_glossary()
+        # The glossary is therefore NOT part of the comparison prompt.
+        # Provider implementations are responsible for transporting the
+        # judge resource through the explicit judge-resource API.
+        #
+        # The glossary is a judge-side RESOURCE, not part of the
+        # comparison prompt. Keep the two concepts architecturally separate.
+        judge_resource = load_judge_resource()
 
-        if not glossary_text:
+        if not judge_resource:
             raise RuntimeError(
-                "BSI Judge requires the full glossary, but "
+                "BSI Judge requires the full glossary judge resource, but "
                 "docs/BSI_GLOSSARY_FINAL.md could not be loaded "
                 "or BSI_JUDGE_GLOSSARY is disabled"
             )
-
-        glossary_block = (
-            "FULL BSI GLOSSARY (semantic disambiguation only; NOT "
-            "evidence, NOT a scoring rubric, and NOT a required "
-            "criterion list):\n"
-            "Use the glossary only to disambiguate BSI terminology. "
-            "Determine independently which concepts are relevant. "
-            "Do not treat glossary terms as evidence, criteria, or "
-            "proof that BSI is correct, effective, or superior.\n\n"
-            f"{glossary_text}\n"
-            "--- END FULL BSI GLOSSARY ---\n\n"
-        )
 
         system_prompt = (
             "You are an independent scientific evaluator comparing RAW and BSI fairly. "
@@ -160,7 +146,7 @@ class LLMJudge:
             "INDEPENDENCE RULES:\n"
             "Evaluate RAW and BSI impartially. Judge actual capabilities, "
             "not framework labels; no automatic reward or penalty.\n\n"
-            f"{glossary_block}"
+
             "ARTICLE-ADAPTIVE CRITERIA:\n"
             "Create 4-8 substantive article-specific criteria. Weight each "
             "5-35; weights must sum to 100. Avoid equal weights unless "
@@ -195,7 +181,7 @@ class LLMJudge:
             f"BSI ANALYSIS\n{bsi_text}\n"
         )
 
-        result = self.generator.generate_with_system(article, system_prompt, user_prompt)
+        result = self.generator.generate_with_judge_resource(article, system_prompt, user_prompt, judge_resource)
         text = (result.text or "").strip()
 
         if text.startswith("```"):

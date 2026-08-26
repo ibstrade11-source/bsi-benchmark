@@ -59,6 +59,65 @@ class GroqGenerator(AnalysisGenerator):
             ],
         )
 
+    def generate_with_judge_resource(
+        self,
+        article,
+        system_prompt: str,
+        user_prompt: str,
+        judge_resource: str | None = None,
+    ) -> Analysis:
+        """Transport judge resource separately from the comparison prompt.
+
+        IMPORTANT ARCHITECTURAL RULE:
+
+        - system_prompt = judging instructions ONLY
+        - user_prompt   = RAW/BSI comparison ONLY
+        - judge_resource = independent judge knowledge ONLY
+
+        Provider name and model name are API metadata only. They are
+        never inserted into any prompt content.
+        """
+        api_key = os.environ.get("GROQ_API_KEY")
+        if not api_key:
+            raise ProviderUnavailable(
+                "GROQ_API_KEY is not set."
+            )
+
+        messages = []
+
+        if judge_resource:
+            messages.append(
+                {
+                    "role": "system",
+                    "content": (
+                        "JUDGE KNOWLEDGE RESOURCE.\n"
+                        "Use this only as background knowledge for semantic "
+                        "disambiguation of BSI terminology.\n"
+                        "It is NOT evidence, NOT a scoring rubric, and NOT "
+                        "proof of any conclusion.\n\n"
+                        + judge_resource
+                    ),
+                }
+            )
+
+        # Judging instructions only.
+        messages.append(
+            {
+                "role": "system",
+                "content": system_prompt,
+            }
+        )
+
+        # Actual comparison task only.
+        messages.append(
+            {
+                "role": "user",
+                "content": user_prompt,
+            }
+        )
+
+        return self._call_messages(api_key, messages)
+
     def _call_messages(self, api_key: str, messages: list) -> Analysis:
         response = self.client.post(
             API_URL,

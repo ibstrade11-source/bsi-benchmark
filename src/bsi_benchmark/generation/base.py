@@ -42,6 +42,42 @@ class AnalysisGenerator(ABC):
         """
         raise NotImplementedError
 
+    def generate_with_judge_resource(
+        self,
+        article,
+        system_prompt: str,
+        user_prompt: str,
+        judge_resource: str | None = None,
+    ):
+        """Judge-resource transport contract.
+
+        Architectural separation:
+
+        system_prompt:
+            judging instructions only.
+
+        user_prompt:
+            article + RAW/BSI comparison task only.
+
+        judge_resource:
+            independent judge-side knowledge resource.
+
+        The base class MUST NOT concatenate judge_resource into either
+        prompt. Provider implementations that support an independent
+        resource channel may override this method.
+        """
+        if judge_resource:
+            raise NotImplementedError(
+                f"{self.__class__.__name__} does not implement the "
+                "independent judge-resource transport API"
+            )
+
+        return self.generate_with_system(
+            article,
+            system_prompt,
+            user_prompt,
+        )
+
     def generate_with_system(self, article, system_prompt: str, user_prompt: str):
         """
         Like generate(), but with the prompt split into a system-level

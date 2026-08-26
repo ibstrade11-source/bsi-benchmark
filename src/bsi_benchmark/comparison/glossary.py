@@ -119,3 +119,12 @@ def load_compact_glossary(max_chars: int = 3000) -> str:
         compact += "\n[Compact glossary truncated for token budget.]"
 
     return compact
+
+
+def load_judge_resource() -> str:
+    """Load glossary content as an independent judge knowledge resource.
+
+    This function deliberately does NOT build or modify a comparison prompt.
+    The caller must treat the returned text as judge-side context/resource only.
+    """
+    return load_full_glossary()

@@ -70,6 +70,61 @@ class OpenRouterGenerator(AnalysisGenerator):
             ],
         )
 
+    def generate_with_judge_resource(
+        self,
+        article,
+        system_prompt: str,
+        user_prompt: str,
+        judge_resource: str | None = None,
+    ) -> Analysis:
+        """Transport judge resource separately from the comparison prompt.
+
+        Architectural contract:
+
+        - system_prompt = judging instructions ONLY
+        - user_prompt = RAW/BSI comparison ONLY
+        - judge_resource = independent judge knowledge ONLY
+        - provider/model identity remains API metadata only
+        """
+        api_key = os.environ.get("OPENROUTER_API_KEY")
+        if not api_key:
+            raise ProviderUnavailable(
+                "OPENROUTER_API_KEY is not set."
+            )
+
+        messages = []
+
+        if judge_resource:
+            messages.append(
+                {
+                    "role": "system",
+                    "content": (
+                        "JUDGE KNOWLEDGE RESOURCE.\n"
+                        "Use this only as background knowledge for semantic "
+                        "disambiguation of BSI terminology.\n"
+                        "It is NOT evidence, NOT a scoring rubric, and NOT "
+                        "proof of any conclusion.\n\n"
+                        + judge_resource
+                    ),
+                }
+            )
+
+        messages.append(
+            {
+                "role": "system",
+                "content": system_prompt,
+            }
+        )
+
+        messages.append(
+            {
+                "role": "user",
+                "content": user_prompt,
+            }
+        )
+
+        return self._call_messages(api_key, messages)
+
     def _call_messages(self, api_key: str, messages: list) -> Analysis:
         response = self.client.post(
             API_URL,
