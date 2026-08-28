@@ -26,13 +26,35 @@ checkpoint_path:
     untouched.
 """
 from datetime import datetime, timezone
+from dataclasses import replace as _dataclasses_replace
 
 from bsi_benchmark.errors import ProviderError
 from bsi_benchmark.generation.manager import GeneratorManager
+from bsi_benchmark.generation.compaction import compact_full_text
 
 from . import checkpoint as checkpointing
 from .result import ComparisonCell, ComparisonResult, ComparisonReport
 from .judge import LLMJudge
+
+
+# Substrings seen in real provider error messages for "this single
+# request is too large / would exceed a per-minute token budget" --
+# deliberately provider-agnostic (Groq, OpenRouter, or any future
+# generator all phrase this differently, so we match on the shared
+# vocabulary rather than a specific provider's exact wording).
+_TOKEN_BUDGET_ERROR_MARKERS = (
+    "rate_limit_exceeded",
+    "tokens per minute",
+    "request too large",
+    "reduce your message size",
+    "context_length_exceeded",
+    "maximum context length",
+)
+
+
+def _looks_like_token_budget_error(exc: Exception) -> bool:
+    text = str(exc).lower()
+    return any(marker in text for marker in _TOKEN_BUDGET_ERROR_MARKERS)
 
 
 class CrossModelRunner:
@@ -209,6 +231,31 @@ class CrossModelRunner:
             if analysis is not None and analysis.generated_at is None:
                 analysis.generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         except ProviderError as e:
+            full_text = getattr(article, "full_text", None)
+            if _looks_like_token_budget_error(e) and full_text:
+                # Generator-agnostic fallback: retry ONCE with a much
+                # smaller, head/middle/tail-compacted copy of the same
+                # article's full text substituted in, instead of giving
+                # up. This never touches generator-specific code -- any
+                # AnalysisGenerator (Groq, OpenRouter, future ones) hits
+                # this same path since it only wraps generator.generate().
+                compacted_article = _dataclasses_replace(
+                    article, full_text=compact_full_text(full_text)
+                )
+                try:
+                    analysis = generator.generate(compacted_article, template)
+                    if analysis is not None and analysis.generated_at is None:
+                        analysis.generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+                    return analysis, {
+                        "token_budget_fallback": True,
+                        "original_error": str(e),
+                    }
+                except ProviderError as e2:
+                    return None, {
+                        "error": str(e2),
+                        "token_budget_fallback_attempted": True,
+                        "original_error": str(e),
+                    }
             return None, {"error": str(e)}
 
         return analysis, {}
