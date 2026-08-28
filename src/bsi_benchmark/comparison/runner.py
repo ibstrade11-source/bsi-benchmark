@@ -57,6 +57,9 @@ def _looks_like_token_budget_error(exc: Exception) -> bool:
     return any(marker in text for marker in _TOKEN_BUDGET_ERROR_MARKERS)
 
 
+_COMPACTION_BUDGET_ESCALATION = (6000, 1500, 300)
+
+
 class CrossModelRunner:
 
     def __init__(self, generator_manager=None, judge=None):
@@ -232,15 +235,14 @@ class CrossModelRunner:
                 analysis.generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         except ProviderError as e:
             full_text = getattr(article, "full_text", None)
-            if _looks_like_token_budget_error(e) and full_text:
-                # Generator-agnostic fallback: retry ONCE with a much
-                # smaller, head/middle/tail-compacted copy of the same
-                # article's full text substituted in, instead of giving
-                # up. This never touches generator-specific code -- any
-                # AnalysisGenerator (Groq, OpenRouter, future ones) hits
-                # this same path since it only wraps generator.generate().
+            if not (_looks_like_token_budget_error(e) and full_text):
+                return None, {"error": str(e)}
+
+            last_error = e
+            for budget_chars in _COMPACTION_BUDGET_ESCALATION:
                 compacted_article = _dataclasses_replace(
-                    article, full_text=compact_full_text(full_text)
+                    article,
+                    full_text=compact_full_text(full_text, budget_chars=budget_chars),
                 )
                 try:
                     analysis = generator.generate(compacted_article, template)
@@ -248,14 +250,24 @@ class CrossModelRunner:
                         analysis.generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
                     return analysis, {
                         "token_budget_fallback": True,
+                        "token_budget_fallback_chars": budget_chars,
                         "original_error": str(e),
                     }
                 except ProviderError as e2:
-                    return None, {
-                        "error": str(e2),
-                        "token_budget_fallback_attempted": True,
-                        "original_error": str(e),
-                    }
-            return None, {"error": str(e)}
+                    if not _looks_like_token_budget_error(e2):
+                        return None, {
+                            "error": str(e2),
+                            "token_budget_fallback_attempted": True,
+                            "original_error": str(e),
+                        }
+                    last_error = e2
+                    continue
+
+            return None, {
+                "error": str(last_error),
+                "token_budget_fallback_attempted": True,
+                "token_budget_fallback_budgets_tried": list(_COMPACTION_BUDGET_ESCALATION),
+                "original_error": str(e),
+            }
 
         return analysis, {}
