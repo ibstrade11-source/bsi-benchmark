@@ -19,7 +19,9 @@ DEFAULT_MODEL = os.environ.get(
     "GROQ_MODEL",
     "openai/gpt-oss-20b"
 )
-DEFAULT_MAX_TOKENS = 2000
+DEFAULT_MAX_TOKENS = 8000
+
+JUDGE_MAX_TOKENS = 2000
 
 
 class GroqGenerator(AnalysisGenerator):
@@ -116,14 +118,14 @@ class GroqGenerator(AnalysisGenerator):
             }
         )
 
-        return self._call_messages(api_key, messages)
+        return self._call_messages(api_key, messages, max_tokens=JUDGE_MAX_TOKENS)
 
-    def _call_messages(self, api_key: str, messages: list) -> Analysis:
+    def _call_messages(self, api_key: str, messages: list, max_tokens: int | None = None) -> Analysis:
         response = self.client.post(
             API_URL,
             json_body={
                 "model": self.model,
-                "max_tokens": self.max_tokens,
+                "max_tokens": max_tokens if max_tokens is not None else self.max_tokens,
                 "reasoning_effort": "low",
                 "messages": messages,
             },
