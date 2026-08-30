@@ -64,3 +64,18 @@ articles/
 *.bak
 *.debug
 backups/
+
+# Local benchmark artifacts / patch backups
+backup_pre_provider_agnostic_*/
+branch_token_budget_fallback.sh
+chem_ar5iv.html
+chem_fulltext.txt
+chem_fulltext_compact.txt
+chem_paper.pdf
+patch_arxiv_fulltext.sh
+patch_arxiv_oldstyle_id_fix.sh
+patch_arxiv_withdrawn_version_fallback.sh
+patch_escalating_compaction.sh
+patch_fix_test_regressions.sh
+patch_judge_max_tokens.sh
+patch_wire_fulltext_into_prompts.sh
