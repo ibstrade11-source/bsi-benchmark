@@ -28,6 +28,8 @@ PLACEHOLDER_BLOCK = (
     "Title: {title}\n"
     "Abstract: {abstract}\n"
     "\n"
+    "Full text (may be empty if unavailable):\n{full_text}\n"
+    "\n"
     "تذکر زبانی: تمام خروجی تحلیل باید کاملاً به زبان فارسی نوشته شود. "
     "اصطلاحات تخصصی به فارسی بیان می\u200cشوند و معادل انگلیسی آن\u200cها در پرانتز "
     "بلافاصله بعد از کلمهٔ فارسی ذکر می\u200cشود — مثال: «توجه (Attention)»، "

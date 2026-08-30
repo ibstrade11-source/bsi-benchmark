@@ -15,7 +15,7 @@ criteria_source ("llm" or "heuristic_fallback").
 
 import json
 
-from bsi_benchmark.comparison.glossary import load_judge_resource
+from bsi_benchmark.comparison.glossary import load_judge_resource, load_compact_glossary
 class LLMJudge:
 
     @staticmethod
@@ -130,11 +130,12 @@ class LLMJudge:
         #
         # The glossary is a judge-side RESOURCE, not part of the
         # comparison prompt. Keep the two concepts architecturally separate.
-        judge_resource = load_judge_resource()
+        full_resource = load_judge_resource()
+        compact_resource = load_compact_glossary(max_chars=3500)
 
-        if not judge_resource:
+        if not full_resource and not compact_resource:
             raise RuntimeError(
-                "BSI Judge requires the full glossary judge resource, but "
+                "BSI Judge requires the glossary judge resource, but "
                 "docs/BSI_GLOSSARY_FINAL.md could not be loaded "
                 "or BSI_JUDGE_GLOSSARY is disabled"
             )
@@ -181,7 +182,47 @@ class LLMJudge:
             f"BSI ANALYSIS\n{bsi_text}\n"
         )
 
-        result = self.generator.generate_with_judge_resource(article, system_prompt, user_prompt, judge_resource)
+        def _is_token_limit_error(exc):
+            msg = str(exc).lower()
+            keys = (
+                "413",
+                "request too large",
+                "tokens per minute",
+                "tpm",
+                "rate_limit_exceeded",
+                "context length",
+                "maximum context",
+                "too many tokens",
+                "token limit",
+            )
+            return any(k in msg for k in keys)
+
+        # Prefer full glossary; only fall back to compact on token-limit errors.
+        last_error = None
+        result = None
+        used_compact = False
+
+        for resource, is_compact in (
+            (full_resource, False),
+            (compact_resource, True),
+        ):
+            if not resource:
+                continue
+            try:
+                result = self.generator.generate_with_judge_resource(
+                    article, system_prompt, user_prompt, resource
+                )
+                used_compact = is_compact
+                break
+            except Exception as e:
+                last_error = e
+                if is_compact or not _is_token_limit_error(e):
+                    raise
+                print("JUDGE_TOKEN_LIMIT: retrying with compact glossary")
+
+        if result is None:
+            raise last_error if last_error else RuntimeError("Judge generation failed")
+
         text = (result.text or "").strip()
 
         if text.startswith("```"):
@@ -387,7 +428,7 @@ class LLMJudge:
         raw_total = round(sum(c["raw_score"] * c["importance"] for c in criteria) / weight_sum, 2)
         bsi_total = round(sum(c["bsi_score"] * c["importance"] for c in criteria) / weight_sum, 2)
 
-        return {
+        out = {
             "criteria_source": "llm",
             "winner": parsed.get("winner", "bsi" if bsi_total > raw_total else "raw"),
             "reasoning": parsed.get("reasoning", ""),
@@ -398,6 +439,11 @@ class LLMJudge:
             "scale": "0-10",
             "weight_sum": round(weight_sum, 1),
         }
+        if used_compact:
+            out["glossary_mode"] = "compact_fallback"
+        else:
+            out["glossary_mode"] = "full"
+        return out
 
     def _compare_with_heuristic(self, raw, bsi):
         def has(txt, *keys):

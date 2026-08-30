@@ -127,4 +127,5 @@ def load_judge_resource() -> str:
     This function deliberately does NOT build or modify a comparison prompt.
     The caller must treat the returned text as judge-side context/resource only.
     """
-    return load_full_glossary()
+    # Temporary for this run: compact glossary only (token budget).
+    return load_compact_glossary(max_chars=3500)

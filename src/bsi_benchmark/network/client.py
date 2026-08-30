@@ -33,6 +33,38 @@ class HttpClient:
 
         return retry(operation, should_retry=self._should_retry)
 
+    def get_bytes(self, url: str) -> bytes:
+        """
+        Fetch raw binary content at `url` (e.g. a PDF) and return the
+        response body as bytes. Unlike get(), the body is never decoded
+        as text -- decoding binary content (e.g. via r.text) silently
+        corrupts it, which is why this is a separate method rather than
+        a flag on get().
+        """
+
+        def operation():
+            r = self.session.get(
+                url,
+                timeout=DEFAULT_TIMEOUT,
+            )
+
+            return Response(
+                status_code=r.status_code,
+                url=r.url,
+                body="",
+                content=r.content,
+            )
+
+        response = retry(operation, should_retry=self._should_retry)
+
+        if not response.ok:
+            from bsi_benchmark.errors import ProviderUnavailable
+            raise ProviderUnavailable(
+                f"GET {url} -> HTTP {response.status_code}"
+            )
+
+        return response.content
+
     def post(self, url: str, json_body: dict, headers: dict | None = None, timeout: int | None = None):
 
         def operation():

@@ -101,7 +101,19 @@ def main() -> int:
         "--full-text-file",
         default=None,
         help="Optional UTF-8 full-text file to attach to every fetched article "
-             "for this benchmark run. The file is not modified.",
+             "for this benchmark run. The file is not modified. Takes "
+             "priority over --fetch-full-text if both are given.",
+    )
+    compare.add_argument(
+        "--fetch-full-text",
+        action="store_true",
+        help="Instead of supplying a local file, ask the provider to fetch "
+             "the real full text of each article itself (currently "
+             "supported for --provider arxiv only: downloads the PDF and "
+             "extracts text). Per-article failures (no PDF, scanned/"
+             "image-only PDF, network error) are printed as warnings and "
+             "that article falls back to abstract-only rather than "
+             "aborting the whole run. Ignored if --full-text-file is set.",
     )
 
     compare.add_argument(
@@ -246,7 +258,8 @@ def main() -> int:
         DEFAULT_RAW_PROMPT = (
             "Analyze the following academic article. Give a concise, "
             "factual analysis of its main claims and contribution.\n\n"
-            "Title: {title}\nAbstract: {abstract}"
+            "Title: {title}\nAbstract: {abstract}\n\n"
+            "Full text (may be empty if unavailable):\n{full_text}"
         )
 
         raw_prompt = DEFAULT_RAW_PROMPT
@@ -299,6 +312,44 @@ def main() -> int:
                 f"FULLTEXT   : {len(full_text):,} chars "
                 f"from {full_text_path}"
             )
+
+        elif args.fetch_full_text:
+            from bsi_benchmark.providers import ProviderManager
+
+            fulltext_provider = ProviderManager().create(args.provider)
+
+            if not hasattr(fulltext_provider, "fetch_fulltext"):
+                print(
+                    f"WARNING: --fetch-full-text given but provider "
+                    f"'{args.provider}' does not support automatic "
+                    f"full-text fetching yet (only 'arxiv' does). "
+                    f"Continuing with abstract-only for all articles."
+                )
+            else:
+                for article in dataset.articles:
+                    quality = dict(article.input_quality or {})
+                    try:
+                        full_text = fulltext_provider.fetch_fulltext(article)
+                    except Exception as e:
+                        print(
+                            f"WARNING: full-text fetch failed for "
+                            f"'{article.title}': {e}. Falling back to "
+                            f"abstract-only for this article."
+                        )
+                        quality["has_full_text"] = False
+                        quality["full_text_fetch_error"] = str(e)
+                        article.input_quality = quality
+                        continue
+
+                    article.full_text = full_text
+                    quality["has_full_text"] = True
+                    quality["full_text_chars"] = len(full_text)
+                    quality["full_text_source"] = "provider_fetch:" + args.provider
+                    article.input_quality = quality
+                    print(
+                        f"FULLTEXT   : {len(full_text):,} chars fetched "
+                        f"for '{article.title}'"
+                    )
 
         spec = ComparisonSpec(
             generators=[g.strip() for g in args.generators.split(",") if g.strip()],
