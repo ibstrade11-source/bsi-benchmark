@@ -68,7 +68,7 @@ def test_result_formats_cleanly_with_real_article_data():
 
         template = load_bsi_prompt(path)
         formatted = template.format(
-            title="Sample Paper", abstract="Sample abstract text."
+            title="Sample Paper", abstract="Sample abstract text.", full_text=""
         )
         assert "Sample Paper" in formatted
         assert "Sample abstract text." in formatted

@@ -97,7 +97,7 @@ def _capture_provider_messages(Generator):
     generator = Generator()
     captured = {}
 
-    def fake_call_messages(api_key, messages):
+    def fake_call_messages(api_key, messages, max_tokens=None):
         captured["messages"] = messages
         return Analysis(
             text='{"criteria":[]}',
