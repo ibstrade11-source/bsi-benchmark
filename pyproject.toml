@@ -29,7 +29,8 @@ classifiers = [
 ]
 
 dependencies = [
-  "requests>=2.32"
+  "requests>=2.32",
+  "pypdf>=5.0"
 ]
 
 [project.scripts]

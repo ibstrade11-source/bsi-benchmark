@@ -17,12 +17,15 @@ from typing import Optional
 from .version import __version__ as TOOL_VERSION
 
 METHODOLOGY_NOTE = (
-    "Scores are produced by BSIEvaluator, an offline lexical/keyword-based "
-    "proxy for the seven BIO v1.0 dimensions (regex and keyword matching, "
-    "not semantic understanding). They are first-pass triage signals, not "
-    "a validated measurement of analytical quality, until checked against "
-    "independent human judgement on a representative sample. Do not cite "
-    "numeric BSI scores as a certified metric without that validation step."
+    "Scores/judgements come from an independent LLM judge (see "
+    "comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG "
+    "vocabulary and to choose its own evaluation criteria. If no judge "
+    "model is available or its response cannot be parsed, the run falls "
+    "back to a simple keyword-presence heuristic -- the stored record's "
+    "own 'criteria_source' field ('llm' vs 'heuristic_fallback') always "
+    "says honestly which one produced a given result. Neither path is a "
+    "validated measurement of analytical quality until checked against "
+    "independent human judgement on a representative sample."
 )
 
 

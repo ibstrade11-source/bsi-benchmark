@@ -55,6 +55,24 @@ def main() -> int:
     compare.add_argument("--provider", required=True, help="e.g. crossref, arxiv, mock")
     compare.add_argument("--query", required=True)
     compare.add_argument(
+        "--judge",
+        default=None,
+        help="Judge generator name. If omitted, each generator judges its own output.",
+    )
+    compare.add_argument(
+        "--judge-model",
+        default=None,
+        help="Optional model identifier used by the explicit judge generator.",
+    )
+    compare.add_argument(
+        "--fresh",
+        action="store_true",
+        help="Ignore any existing checkpoint at --output and start a new "
+             "run (an existing checkpoint/report, if present, is archived "
+             "with a timestamp suffix rather than overwritten).",
+    )
+
+    compare.add_argument(
         "--generators", required=True,
         help="Comma-separated generator names registered in generation.registry "
              "(e.g. 'anthropic,openai' or 'mock' for an offline dry run).",
@@ -72,6 +90,32 @@ def main() -> int:
              "from the main BSI repository. Not fabricated by this tool -- "
              "supply the real prompt you want benchmarked.",
     )
+
+    compare.add_argument(
+    "--limit",
+    type=int,
+    default=None,
+    help="Limit number of articles returned by provider"
+)
+    compare.add_argument(
+        "--full-text-file",
+        default=None,
+        help="Optional UTF-8 full-text file to attach to every fetched article "
+             "for this benchmark run. The file is not modified. Takes "
+             "priority over --fetch-full-text if both are given.",
+    )
+    compare.add_argument(
+        "--fetch-full-text",
+        action="store_true",
+        help="Instead of supplying a local file, ask the provider to fetch "
+             "the real full text of each article itself (currently "
+             "supported for --provider arxiv only: downloads the PDF and "
+             "extracts text). Per-article failures (no PDF, scanned/"
+             "image-only PDF, network error) are printed as warnings and "
+             "that article falls back to abstract-only rather than "
+             "aborting the whole run. Ignored if --full-text-file is set.",
+    )
+
     compare.add_argument(
         "--bsi-source-url",
         default="https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
@@ -214,7 +258,8 @@ def main() -> int:
         DEFAULT_RAW_PROMPT = (
             "Analyze the following academic article. Give a concise, "
             "factual analysis of its main claims and contribution.\n\n"
-            "Title: {title}\nAbstract: {abstract}"
+            "Title: {title}\nAbstract: {abstract}\n\n"
+            "Full text (may be empty if unavailable):\n{full_text}"
         )
 
         raw_prompt = DEFAULT_RAW_PROMPT
@@ -228,23 +273,123 @@ def main() -> int:
         bsi_prompt = load_bsi_prompt(args.bsi_prompt_file, label="bsi-prompt-file")
 
         try:
-            dataset = PipelineRunner().run(args.provider, args.query)
+            dataset = PipelineRunner().run(
+                args.provider,
+                args.query,
+                args.limit,
+            )
         except ProviderError as e:
             print(f"ERROR fetching dataset: {e}")
             return 1
 
+        if args.full_text_file:
+            full_text_path = os.path.abspath(args.full_text_file)
+
+            if not os.path.isfile(full_text_path):
+                print(f"ERROR: full-text file not found: {full_text_path}")
+                return 1
+
+            try:
+                with open(full_text_path, "r", encoding="utf-8") as f:
+                    full_text = f.read()
+            except OSError as e:
+                print(f"ERROR reading full-text file: {e}")
+                return 1
+
+            if not full_text.strip():
+                print(f"ERROR: full-text file is empty: {full_text_path}")
+                return 1
+
+            for article in dataset.articles:
+                article.full_text = full_text
+                quality = dict(article.input_quality or {})
+                quality["has_full_text"] = True
+                quality["full_text_chars"] = len(full_text)
+                quality["full_text_source"] = full_text_path
+                article.input_quality = quality
+
+            print(
+                f"FULLTEXT   : {len(full_text):,} chars "
+                f"from {full_text_path}"
+            )
+
+        elif args.fetch_full_text:
+            from bsi_benchmark.providers import ProviderManager
+
+            fulltext_provider = ProviderManager().create(args.provider)
+
+            if not hasattr(fulltext_provider, "fetch_fulltext"):
+                print(
+                    f"WARNING: --fetch-full-text given but provider "
+                    f"'{args.provider}' does not support automatic "
+                    f"full-text fetching yet (only 'arxiv' does). "
+                    f"Continuing with abstract-only for all articles."
+                )
+            else:
+                for article in dataset.articles:
+                    quality = dict(article.input_quality or {})
+                    try:
+                        full_text = fulltext_provider.fetch_fulltext(article)
+                    except Exception as e:
+                        print(
+                            f"WARNING: full-text fetch failed for "
+                            f"'{article.title}': {e}. Falling back to "
+                            f"abstract-only for this article."
+                        )
+                        quality["has_full_text"] = False
+                        quality["full_text_fetch_error"] = str(e)
+                        article.input_quality = quality
+                        continue
+
+                    article.full_text = full_text
+                    quality["has_full_text"] = True
+                    quality["full_text_chars"] = len(full_text)
+                    quality["full_text_source"] = "provider_fetch:" + args.provider
+                    article.input_quality = quality
+                    print(
+                        f"FULLTEXT   : {len(full_text):,} chars fetched "
+                        f"for '{article.title}'"
+                    )
+
         spec = ComparisonSpec(
             generators=[g.strip() for g in args.generators.split(",") if g.strip()],
             prompt_modes={"raw": raw_prompt, "bsi": bsi_prompt},
+            judge=args.judge,
+            judge_model=args.judge_model,
         )
 
         print(f"Provider   : {dataset.provider}")
         print(f"Query      : {dataset.query}")
         print(f"Articles   : {len(dataset.articles)}")
+        if dataset.skipped_count:
+            print(
+                f"Skipped    : {dataset.skipped_count} article(s) with no "
+                f"usable title/abstract (not sent to any generator): "
+                f"{', '.join(dataset.skipped_titles[:5])}"
+                + (" ..." if dataset.skipped_count > 5 else "")
+            )
+        if not dataset.articles:
+            print(
+                "ERROR: no articles with a usable title/abstract were found "
+                "for this query/provider/limit combination. Try a different "
+                "query, provider, or a higher --limit."
+            )
+            return 1
         print(f"Generators : {', '.join(spec.generators)}")
         print(f"Modes      : {', '.join(spec.prompt_modes.keys())}")
         print("Running... (this calls a real API for each non-mock generator; may take a while)")
         print()
+
+        from bsi_benchmark.comparison.checkpoint import (
+            checkpoint_path as _checkpoint_path_for,
+            archive_existing_checkpoint,
+        )
+
+        ckpt_path = _checkpoint_path_for(args.output)
+        if args.fresh:
+            archive_existing_checkpoint(args.output)
+        elif os.path.exists(ckpt_path):
+            print(f"Resuming from checkpoint: {ckpt_path}")
 
         report = CrossModelRunner().run(
             dataset, spec,
@@ -255,7 +400,16 @@ def main() -> int:
                 max_tokens=args.max_tokens,
                 prompt_version=args.prompt_version,
             )),
-        )
+        
+            checkpoint_path=ckpt_path,)
+
+        if any(
+            c.generator == "mock"
+            for r in report.results
+            for c in r.cells
+        ):
+            print("ERROR: MockGenerator output is test-only and cannot be stored as benchmark evidence.")
+            return 2
 
         md_path = f"{args.output}.md"
         json_path = f"{args.output}.json"
@@ -302,6 +456,7 @@ def main() -> int:
                 "against the actual analysis text."
             )
         print()
+
 
         md_path = f"{args.output}.md"
         json_path = f"{args.output}.json"

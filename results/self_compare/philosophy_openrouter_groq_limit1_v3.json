@@ -1,0 +1,203 @@
+{
+  "dataset_name": "philosophy of mind consciousness",
+  "results": [
+    {
+      "article": {
+        "title": "The Rediscovery of the Mind",
+        "abstract": "In this major new work, John Searle launches a formidable attack on current orthodoxies in the philosophy of mind. More than anything else, he argues, it is the neglect of consciousness that results in so much barrenness and sterility in psychology, the philosophy of mind, and cognitive science: there can be no study of mind that leaves out consciousness. What is going on in the brain is neurophysiological processes and consciousness and nothing more—no rule following, no mental information processing or mental models, no language of thought, and no universal grammar. Mental events are themselves features of the brain, \"like liquidity is a feature of water.\"Beginning with a spirited discussion of what's wrong with the philosophy of mind, Searle characterizes and refutes the philosophical tradition of materialism. But he does not embrace dualism. All these \"isms\" are mistaken, he insists. Once you start counting types of substance you are on the wrong track, whether you stop at one or two. In four chapters that constitute the heart of his argument, Searle elaborates a theory of consciousness and its relation to our overall scientific world view and to unconscious mental phenomena. He concludes with a criticism of cognitive science and a proposal for an approach to studying the mind that emphasizes the centrality of consciousness to any account of mental functioning.In his characteristically direct style, punctuated with persuasive examples, Searle identifies the very terminology of the field as the main source of truth. He observes that it is a mistake to suppose that the ontology of the mental is objective and to suppose that the methodology of a science of the mind must concern itself only with objectively observable behavior; that it is also a mistake to suppose that we know of the existence of mental phenomena in others only by observing their behavior; that behavior or causal relations to behavior are not essential to the existence of mental phenomena; and that it is inconsistent with what we know about the universe and our place in it to suppose that everything is knowable by us.",
+        "doi": "https://doi.org/10.7551/mitpress/5834.001.0001",
+        "url": "https://openalex.org/W1804524409",
+        "input_quality": {
+          "has_title": true,
+          "has_abstract": true,
+          "source": "openalex",
+          "enriched": false
+        }
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "**Analysis of *The Rediscovery of the Mind* (John Searle)**\n\n**Core Thesis**\nSearle argues that **consciousness is the essential, irreducible feature of the mind** and that its systematic neglect by materialism, dualism, and computational cognitive science has rendered these fields sterile. He proposes a \"biological naturalism\" where mental states are high-level neurophysiological features of the brain—ontologically subjective but scientifically tractable.\n\n**Main Claims & Arguments**\n\n1.  **Critique of Orthodox Categories:** Searle rejects the traditional materialism/dualism dichotomy. He argues both err by treating \"substance\" as the primary ontological category. Mental phenomena are not separate substances (dualism) nor merely behavioral dispositions/functional states (materialism/functionalism); they are **biological features of the brain** (analogous to liquidity as a feature of H₂O).\n2.  **Ontological Subjectivity vs. Epistemic Objectivity:** Consciousness has a *first-person ontology* (it exists only as experienced by a subject). This does not preclude an *epistemically objective* science of consciousness; science can study subjective phenomena objectively (e.g., studying pain without feeling it).\n3.  **Rejection of Computationalism (\"Strong AI\"):** Syntax (formal symbol manipulation) is insufficient for semantics (meaning/understanding). The brain does not process \"mental information\" or follow rules intrinsically; it causes consciousness via specific neurobiological processes. *Simulation* of cognitive processes is not *duplication* of mental states.\n4.  **Centrality of Consciousness:** Unconscious mental states (e.g., repressed desires, background beliefs) are only intelligible as states that *could* be conscious. There is no \"deep unconscious\" consisting of rule-following or algorithmic processing inaccessible in principle to consciousness.\n5.  **Critique of Methodological Behaviorism/Functionalism:** It is a mistake to limit the ontology of the mind to objectively observable behavior or causal roles. We have direct, non-inferential access to our own minds, and we attribute mental states to others based on shared biological structure, not solely behavioral evidence.\n\n**Theoretical Contribution: \"Biological Naturalism\"**\n*   **Ontology:** Mental states = higher-level causal features of brain microstructure.\n*   **Causality:** Mental causation is real (top-down: consciousness causes behavior) but realized entirely by bottom-up neurobiology. This avoids epiphenomenalism without resorting to property dualism.\n*   **Methodology:** Calls for a cognitive science that treats consciousness as the *primary* datum to be explained, rather than an epiphenomenon or a \"user illusion\" generated by unconscious computation.\n\n**Style & Rhetoric**\n*   Characterized as \"direct\" and \"persuasive,\" utilizing thought experiments (e.g., the Chinese Room argument, implied by the syntax/semantics distinction) and conceptual analysis to expose category errors in standard terminology.\n\n**Significance**\nThe work attempts to reframe the \"mind-body problem\" not as a metaphysical puzzle about substances, but as a **neurobiological problem of feature emergence**, insisting that any viable science of the mind must account for qualitative subjectivity (qualia) and intrinsic intentionality.",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-11T00:07:37Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "reasoning": "The BSI analysis provides a more detailed and nuanced exploration of Searle's arguments, and demonstrates a high level of relevance, realization, and incremental value. The RAW analysis provides a good overview of Searle's arguments, but lacks the depth and nuance of the BSI analysis.",
+            "criteria": [
+              {
+                "name": "Logical Coherence",
+                "importance": 20.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.5,
+                "reason": "The RAW analysis presents a clear and logical argument, while the BSI analysis provides a more detailed and nuanced exploration of the logical coherence of Searle's arguments."
+              },
+              {
+                "name": "Epistemic Depth",
+                "importance": 25.0,
+                "raw_score": 7.0,
+                "bsi_score": 9.0,
+                "reason": "The RAW analysis provides a good overview of the epistemic depth of Searle's arguments, while the BSI analysis delves deeper into the underlying assumptions and implications of Searle's theory."
+              },
+              {
+                "name": "Ontological Clarity",
+                "importance": 15.0,
+                "raw_score": 6.0,
+                "bsi_score": 8.0,
+                "reason": "The RAW analysis provides a clear explanation of Searle's ontological commitments, while the BSI analysis provides a more detailed and nuanced exploration of the ontological implications of Searle's theory."
+              },
+              {
+                "name": "Methodological Soundness",
+                "importance": 10.0,
+                "raw_score": 5.0,
+                "bsi_score": 7.0,
+                "reason": "The RAW analysis provides a good overview of Searle's methodological approach, while the BSI analysis provides a more detailed and nuanced exploration of the methodological implications of Searle's theory."
+              },
+              {
+                "name": "Theoretical Contribution",
+                "importance": 20.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.0,
+                "reason": "The RAW analysis provides a good overview of Searle's theoretical contribution, while the BSI analysis provides a more detailed and nuanced exploration of the implications of Searle's theory for the field of cognitive science."
+              },
+              {
+                "name": "Style and Rhetoric",
+                "importance": 5.0,
+                "raw_score": 4.0,
+                "bsi_score": 6.0,
+                "reason": "The RAW analysis provides a clear and concise explanation of Searle's arguments, while the BSI analysis provides a more engaging and persuasive presentation of Searle's ideas."
+              },
+              {
+                "name": "Significance",
+                "importance": 5.0,
+                "raw_score": 4.0,
+                "bsi_score": 6.0,
+                "reason": "The RAW analysis provides a good overview of the significance of Searle's theory, while the BSI analysis provides a more detailed and nuanced exploration of the implications of Searle's theory for the field of cognitive science."
+              }
+            ],
+            "total_scores": {
+              "raw": 6.75,
+              "bsi": 8.45
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "high",
+              "incremental_value": "high",
+              "reason": "The BSI analysis provides a more detailed and nuanced exploration of Searle's arguments, and demonstrates a high level of relevance, realization, and incremental value."
+            },
+            "incremental_value": "high",
+            "scale": "0-10",
+            "weight_sum": 100.0
+          },
+          "scores": {
+            "RAW": 0.675,
+            "BSI": 0.845
+          },
+          "failed": false
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل محتوای چکیده کتاب «باز یافتن ذهن» اثر جان سرل (John Searle)\n**نسخه تحلیل:** BSI v3.4.2  \n**تاریخ تحلیل:** ۲۶ ژوئن ۲۰۲۶  \n**محتوا:** چکیده منتشر شده کتاب *The Rediscovery of the Mind* (MIT Press, 1992)  \n**تحلیل‌گر:** ارزیاب ارشد شاخص بهمنش  \n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI\n\n**خلاصه اجرایی:**  \nمتن ورودی چکیده‌ای از کتاب بنیادین «باز یافتن ذهن» اثر جان سرل است که در آن نویسنده به نقدِ متداول‌ترین باورهای فلسفه ذهن (مادی‌گرایی، دوگانه‌گرایی، کارکردگرایی، و محاسبه‌گرایی) می‌پردازد و نظریه‌ای تحت عنوان «طبیعی‌گرایی بیولوژیک» (Biological Naturalism) را تداعی می‌کند. استدلال اصلی بر محورMerkezیت «وعی» (Consciousness) به عنوان پدیده‌ای بیولوژیک، ذاتی، و غیرقابل اختزال قرار دارد. سرل استدلال می‌کند که علم شناختی (Cognitive Science) و فلسفه ذهن معاصر با نادیده گرفتن وعی و تعویض آن با پردازش نمادین (Symbol Manipulation) یا رفتار، دچار عقیمیت شده‌اند. او trillemای کاذب بین «مادی» و «ذهنی» را رد کرده و وعی را ویژگی‌ای سطح بالا (High-level Feature) از مغز می‌داند، مشابه سیالگی (Liquidity) برای آب.\n\n**Core Claim (ادعای هسته‌ای):**  \n> «وعی پدیده‌ای بیولوژیک، علیّ و ذاتی است که توسط فرآیندهای عصبی-فیزیکیولژیک مغز ایجاد می‌شود و در سطح سیستم محقق می‌گردد؛ این پدیده نه با منطق محاسبه‌گرایی (Computationalism) قابل بازتولید است، نه نیازمند ماده‌ای جدا (Dualism) است، و علم شناختی باید منهج خود را بر مرکزیت معنا (Intentionality) و تجربه ذاتی (Subjective Experience) بازسازی کند.»\n\n**امتیاز کلی BSI (Overall BSI Score): ۸۲ / ۱۰۰**  \n*توضیح امتیاز: محتوای چکیده اگرچه مختصر است، اما تراکم مفهومی، صراحت اِپistemیک، و توانایی بازتعریف پارادایم درک ذهن را دارد. کسر امتیاز به دلیل عدم ارائه شواهد تجربی مستقیم در متن چکیده (معمول در چکیده‌ها) و محدودیت در عملیاتی‌سازی مستقیم است.*\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (Seven Core Criteria Evaluation)\n\n| # | معیار اصلی (Core Criterion) | امتیاز (۰-۱۰۰) | وزن | امتیاز وزنی | تحلیل تشریحی و استدلال امتیازدهی |\n|:---:|:---|:---:|:---:|:---:|:---|\n| **۱** | **انسجام منطقی (Logical Coherence)** | **۹۵** | ۰.۱۵ | ۱۴.۲۵ | استدلال سرل در چکیده فاقد تناقض درونی است. رد trillemای مادی/ذهنی، تفکیک ابستمولوژی از انتولوژی، و نقد کارکردگرایی با دقت منطقی بالا ارائه شده. پیش‌فرض‌ها (وعی وجود دارد، مغز وجود دارد) به نتیجه (طبیعی‌گرایی بیولوژیک) منتهی می‌شوند بدون پرش منطقی. |\n| **۲** | **عمق معرفت‌شناختی (Epistemic Depth)** | **۹۰** | ۰.۲۰ | ۱۸.۰۰ | چکیده به لایه‌های عمیق پنهان می‌پردازد: تمایز «معنای درونی» (Intrinsic Intentionality) از «معنای مشتق» (Derived Intentionality)، نقدِ «مذهب‌های» (Isms) به عنوان متاکلیشه‌های لغوی، و تأکید بر نایاب بودن «منظور اول شخص» (First-Person Ontology). این عمق فراتر از سطح مسئله‌های تجربی است. |\n",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-11T00:09:17Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "reasoning": "The BSI analysis provides a more detailed and nuanced exploration of Searle's arguments, and demonstrates a high level of relevance, realization, and incremental value. The RAW analysis provides a good overview of Searle's arguments, but lacks the depth and nuance of the BSI analysis.",
+            "criteria": [
+              {
+                "name": "Logical Coherence",
+                "importance": 20.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.5,
+                "reason": "The RAW analysis presents a clear and logical argument, while the BSI analysis provides a more detailed and nuanced exploration of the logical coherence of Searle's arguments."
+              },
+              {
+                "name": "Epistemic Depth",
+                "importance": 25.0,
+                "raw_score": 7.0,
+                "bsi_score": 9.0,
+                "reason": "The RAW analysis provides a good overview of the epistemic depth of Searle's arguments, while the BSI analysis delves deeper into the underlying assumptions and implications of Searle's theory."
+              },
+              {
+                "name": "Ontological Clarity",
+                "importance": 15.0,
+                "raw_score": 6.0,
+                "bsi_score": 8.0,
+                "reason": "The RAW analysis provides a clear explanation of Searle's ontological commitments, while the BSI analysis provides a more detailed and nuanced exploration of the ontological implications of Searle's theory."
+              },
+              {
+                "name": "Methodological Soundness",
+                "importance": 10.0,
+                "raw_score": 5.0,
+                "bsi_score": 7.0,
+                "reason": "The RAW analysis provides a good overview of Searle's methodological approach, while the BSI analysis provides a more detailed and nuanced exploration of the methodological implications of Searle's theory."
+              },
+              {
+                "name": "Theoretical Contribution",
+                "importance": 20.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.0,
+                "reason": "The RAW analysis provides a good overview of Searle's theoretical contribution, while the BSI analysis provides a more detailed and nuanced exploration of the implications of Searle's theory for the field of cognitive science."
+              },
+              {
+                "name": "Style and Rhetoric",
+                "importance": 5.0,
+                "raw_score": 4.0,
+                "bsi_score": 6.0,
+                "reason": "The RAW analysis provides a clear and concise explanation of Searle's arguments, while the BSI analysis provides a more engaging and persuasive presentation of Searle's ideas."
+              },
+              {
+                "name": "Significance",
+                "importance": 5.0,
+                "raw_score": 4.0,
+                "bsi_score": 6.0,
+                "reason": "The RAW analysis provides a good overview of the significance of Searle's theory, while the BSI analysis provides a more detailed and nuanced exploration of the implications of Searle's theory for the field of cognitive science."
+              }
+            ],
+            "total_scores": {
+              "raw": 6.75,
+              "bsi": 8.45
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "high",
+              "incremental_value": "high",
+              "reason": "The BSI analysis provides a more detailed and nuanced exploration of Searle's arguments, and demonstrates a high level of relevance, realization, and incremental value."
+            },
+            "incremental_value": "high",
+            "scale": "0-10",
+            "weight_sum": 100.0
+          },
+          "scores": {
+            "RAW": 0.675,
+            "BSI": 0.845
+          },
+          "failed": false
+        }
+      ]
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "4988afe7ae6be3fc8a955a6856cc3296a74a4f6a",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-08-11T00:06:36Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}

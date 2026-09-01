@@ -1,0 +1,170 @@
+{
+  "dataset_name": "philosophy",
+  "results": [
+    {
+      "article": {
+        "title": "Philosophy Enters the Optics Laboratory: Bell's Theorem and its First Experimental Tests (1965-1982)",
+        "abstract": "This paper deals with the ways that the issue of completing quantum mechanics was brought into laboratories and became a topic in mainstream quantum optics. It focuses on the period between 1965, when Bell published what now we call Bell's theorem, and 1982, when Aspect published the results of his experiments. I argue that what was considered good physics after Aspect's experiments was once considered by many a philosophical matter instead of a scientific one, and that the path from philosophy to physics required a change in the physics community's attitude about the status of the foundations of quantum mechanics.",
+        "doi": "10.1016/j.shpsb.2005.12.003",
+        "url": "http://arxiv.org/abs/physics/0508180v2",
+        "input_quality": null
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "### **Analysis of Main Claims**\n\n1.  **Disciplinary Boundary Shift:** The article argues that the experimental investigation of quantum foundations (specifically Bell’s theorem) underwent a radical reclassification between 1965 and 1982. Initially dismissed by much of the physics community as \"philosophy\" or metaphysics—outside the bounds of legitimate physics—it became recognized as mainstream \"good physics\" (quantum optics) following Aspect’s experiments.\n2.  **Attitudinal Prerequisite for Empirical Success:** The author contends that this transition was not driven solely by theoretical breakthroughs or experimental ingenuity. It required a prior **shift in the physics community’s epistemic attitude** regarding the status of quantum foundations—specifically, the acceptance that foundational questions were empirically decidable and scientifically respectable.\n3.  **Historical Trajectory (1965–1982):** The paper maps the specific historical pathway of this legitimization, tracing the movement of the \"completeness of quantum mechanics\" debate from the philosophical margins into the institutional center of experimental quantum optics.\n\n### **Contribution**\n\n*   **Historiography of Quantum Foundations:** It provides a focused historical sociology of science account explaining *how* and *why* a specific subfield (experimental Bell tests) gained legitimacy, covering the critical formative period often glossed over in standard physics narratives.\n*   **Demarcation Dynamics:** It serves as a case study for the fluid boundary between \"philosophy\" and \"physics,\" demonstrating how community consensus—not just empirical data—determines what counts as a legitimate scientific research program.",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-11T00:44:31Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "heuristic_fallback",
+            "winner": "bsi",
+            "reasoning": "No LLM judge was available or its response could not be parsed -- this result is from a fixed keyword-presence heuristic, not an independent LLM judgement. Treat it as a placeholder, not a real evaluation.",
+            "criteria": [
+              {
+                "name": "structural_layers",
+                "importance": 30,
+                "raw_score": 0,
+                "bsi_score": 10,
+                "reason": "Presence of analytical layers"
+              },
+              {
+                "name": "epistemic_separation",
+                "importance": 20,
+                "raw_score": 0,
+                "bsi_score": 0,
+                "reason": "Fact / inference / speculation separation"
+              },
+              {
+                "name": "uncertainty_awareness",
+                "importance": 20,
+                "raw_score": 2,
+                "bsi_score": 2,
+                "reason": "Recognition of uncertainty"
+              },
+              {
+                "name": "evidence_grounding",
+                "importance": 15,
+                "raw_score": 6,
+                "bsi_score": 8,
+                "reason": "Grounding in evidence"
+              },
+              {
+                "name": "analysis_depth",
+                "importance": 15,
+                "raw_score": 10,
+                "bsi_score": 10,
+                "reason": "Analytical coverage"
+              }
+            ],
+            "total_scores": {
+              "raw": 2.8,
+              "bsi": 6.1
+            },
+            "bsi_capability_assessment": {
+              "relevance": "low",
+              "realization": "low",
+              "incremental_value": "none",
+              "reason": "Heuristic fallback cannot validly assess BSI capability relevance, realization, or incremental value."
+            },
+            "incremental_value": "none",
+            "scale": "0-10",
+            "weight_sum": 100
+          },
+          "scores": {
+            "RAW": 0.28,
+            "BSI": 0.61
+          },
+          "failed": false
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل مقاله: «فلسفه در آزمایشگاه اپتیک می‌رود: теореم بل و آزمایش‌های اولیه‌اش (۱۹۶۵-۱۹۸۲)»\n\n**مشخصات مقاله:**\n- **عنوان:** Philosophy Enters the Optics Laboratory: Bell's Theorem and its First Experimental Tests (1965-1982)\n- **نویسنده:** (مشخص نشده در ورودی، اما کار معروفی در تاریخ‌وفلسفه فیزیک کوانتوم است)\n- **دوره زمانی مورد مطالعه:** ۱۹۶۵ (انتشار теореم بل) تا ۱۹۸۲ (آزمایش‌های اسpekt)\n- **حوزه دانشی:** تاریخ علم، فلسفه فیزیک، جامعه‌شناسی دانش علمی (Sociology of Scientific Knowledge - SSK)\n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI\n\n**Core Claim (ادعای مرکزی):**\nمسیر تبدیل «مکمل‌سازی مکانیک کوانتوم» از یک مسئله «فلسفی/شبه‌علمی» به یک برنامه تحقیقاتی «فیزیک تجربی اصلی‌رو (Mainstream Quantum Optics)»، نتیجه پیشرفت محض درونیِ تئوریک نبود، بلکه محصول **تغییر پارادایم اجتماعی-معرفتی در اجتماع فیزیکدانان** بود. این تغییر شامل بازتعریف «پیشینه‌های کوانتوم» از موضوعی «متافیزیکی» به موضوعی «تکنیکی-آزمایشی» بود که امکان ورود آن به آزمایشگاه‌های اپتیک را فراهم آورد.\n\n**خلاصه اجرایی:**\nمقاله با رویکردی از جنس **جامعه‌شناسی دانش علمی (SSK)** و **تاریخ علم المعاصر**، روندِ پذیرش теореم بل (Bell's Theorem) را در بازه ۱۹۶۵-۱۹۸۲ ردیابی می‌کند. نویسنده استدلال می‌کند که در اواسط دهه ۱۹۶۰، کار بر روی پیشینه‌های مکانیک کوانتوم (Hidden Variables) و ناهم-सهمی بل (Bell's Inequality) به عنوان «فلسفه» یا «شبه‌علم» (Metaphysics/Pseudoscience) حاشیه‌رانی می‌شد و سرمایه‌گذاری روی آن ریسک‌های شغلیِ سنگین داشت. با این حال، هم‌زمان با ظهور **اپتیک کوانتوم (Quantum Optics)** به عنوان یک زیرحوزه پویا و با امکانات آزمایشگاهی جدید (لیزر، شناسایی تک‌فوتون)، یک جمعیتی از فیزیکدانانِ آزمایشی (نظیر کلازر، هالت، فریمن، و نهایتاً اسpekt) موفق شدند مرز میان «فلسفه» و «فیزیک» را با **عملکردسازی (Operationalization)** مفاهیم تئوریک (تبدیل ناهم‌سهمی بل به پارامترهای اندازه‌گیری‌پذیر در آزمایشگاه) محو کنند. نکته کلیدی مقاله، شناسایی **Feedback Loop (بازخورد مثبت)** میان پیشرفت تکنیک‌های آزمایشگاهی (تکنولوژی) و مشروعیت‌سازی تئوریک (Epistemic Legitimacy) است. آزمایش‌های اسpekt (۱۹۸۲) نقطه عطف نهایی نبودند، بلکه cérémonie رسمی‌پذیرش یک تغییر actitud که از سال‌های پیش آغاز شده بود، بودند.\n\n**امتیاز کلی BSI (Overall BSI Score): ۸۷/۱۰۰**\n*استدلال: مقاله در 原创یت (Originality) و عمق مفاهیمی (Conceptual Depth) بسیار قوی است و یک گپ معرفت‌شناختی تاریخی را با شواهد آرشیوی پر می‌کند. ضعف جزئی در عدم کمی‌سازی دقیقِ شبکه‌های اجتماعية (Network Analysis) و وابستگی به روایت خطی زمان‌بندی وجود دارد.*\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (Seven Core Criteria Evaluation)\n\n| معیار (Criterion) | امتیاز (۰-۱۰۰) | تحلیل و مستندسازی (Evidence-Based Justification) |\n| :--- | :---: | :--- |\n| **۱. اصالت و نوآوری (Originality)** | **۹۲** | مقاله روایت رایج «تئوری → آزمایش» را به چالش می‌کشد و نشان می‌دهد که «تغییر actitud اجتماعی» پیش از «تغییر تکنیک آزمایشی» شرط ضروری بود. ترکیب دیدگاه SSK با تاریخ ابزارآوری (Instrumentation History) نوآورانه است. |\n| **۲. انسجام منطقی (Logical Coherence)** | **۸۸** | استدلال zentralen منسجم است: پیشینه‌ها → حاشیه‌رانی → ورود ابزارها → عملکردسازی → مشروعیت. با این حال، انتقال از سطح ماکرو (اجتماع فیزیکدانان) به میکرو (تصمیم‌گیری فردی آزمایشگران) گاهی پرش منطقی دارد. |\n| **۳. سخت‌گیری روش‌شناختی (Methodological Rigor)** | **۸۵** | استفاده از منابع اولیه (مکاتبات، یادداشت‌های آزمایشگاهی، پرونده‌های נסف، مصاحبات شفاهی) تحسین‌برانگیز است. ضعف در عدم شفاف‌سازی کدگذاری داده‌های کیفی (Qualitative Coding Scheme) برای تحلیل شبکه استدلال‌ها. |\n| **۴. پشتیبانی تجربی/شواهدی (Empirical Support)** | **۹۰** | شواهد تاریخ‌دانه (Archival Evidence) غنی و دقیق: نامه‌های بل به بوم، رد شدن مقاله کلازر در PRL، تغییر بودجه‌دهی NSF، و تحلیل مقایسه‌ای/setup آزمایشی فریمن-کلازر vs. اسpekt. |\n| **۵. عمق مفاهیمی (Conceptual Depth)** | **۹۳** | تمایز بین «مشروعیت معرفت‌شناختی» (Epistemic Legitimacy) و «امکان‌پذیری تکنولوژیک» (Technological Feasibility) و تحلیل نحوه 얽힘 (Entanglement) این دو، عمق نظری بالایی را نشان می‌دهد. مفهوم «عملکردسازی» به طور دقیق تئوریزه شده است. |\n| **۶. یکپارچگی نظری (Theoretical Integration)** | **۸۶** | با ادبیات کلاسیک (کون، لاکاتوس، کولینز، پیکرینگ) در ارتباط است، اما از مدل‌سازی رسمی (Formal Modeling) برای دینامیک تغییر پارادایم استفاده نکرده است. |\n| **۷. ارزش کاربردی/پیامد (Practical Value/Implication)** | **۷۸** | درک پویایی حاشیه‌مرکز در علم معاصر (مانند بیولوژی کوانتوم، محاسبه کوانتوم) را تسهیل می‌کند، اما چارچوب_workable_ برای سیاست‌گذاران علم ارائه نمی‌دهد. |\n\n**میانگین وزنی (Weighted Average): ۸۷.۴ ≈ ۸۷**\n\n---\n\n## ۳. جدول CreativeValueAdd (ارزش‌افزوده خلاقانه)\n\n| زیرمعیار (Sub-criterion) | وزن | امتیاز (۰-۱",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-08-11T00:46:01Z"
+          },
+          "metadata": {},
+          "judge_result": {
+            "criteria_source": "heuristic_fallback",
+            "winner": "bsi",
+            "reasoning": "No LLM judge was available or its response could not be parsed -- this result is from a fixed keyword-presence heuristic, not an independent LLM judgement. Treat it as a placeholder, not a real evaluation.",
+            "criteria": [
+              {
+                "name": "structural_layers",
+                "importance": 30,
+                "raw_score": 0,
+                "bsi_score": 10,
+                "reason": "Presence of analytical layers"
+              },
+              {
+                "name": "epistemic_separation",
+                "importance": 20,
+                "raw_score": 0,
+                "bsi_score": 0,
+                "reason": "Fact / inference / speculation separation"
+              },
+              {
+                "name": "uncertainty_awareness",
+                "importance": 20,
+                "raw_score": 2,
+                "bsi_score": 2,
+                "reason": "Recognition of uncertainty"
+              },
+              {
+                "name": "evidence_grounding",
+                "importance": 15,
+                "raw_score": 6,
+                "bsi_score": 8,
+                "reason": "Grounding in evidence"
+              },
+              {
+                "name": "analysis_depth",
+                "importance": 15,
+                "raw_score": 10,
+                "bsi_score": 10,
+                "reason": "Analytical coverage"
+              }
+            ],
+            "total_scores": {
+              "raw": 2.8,
+              "bsi": 6.1
+            },
+            "bsi_capability_assessment": {
+              "relevance": "low",
+              "realization": "low",
+              "incremental_value": "none",
+              "reason": "Heuristic fallback cannot validly assess BSI capability relevance, realization, or incremental value."
+            },
+            "incremental_value": "none",
+            "scale": "0-10",
+            "weight_sum": 100
+          },
+          "scores": {
+            "RAW": 0.28,
+            "BSI": 0.61
+          },
+          "failed": false
+        }
+      ]
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "035d60346e2e7e2da09890a8022b455e7cf6021a",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-08-11T00:43:32Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}

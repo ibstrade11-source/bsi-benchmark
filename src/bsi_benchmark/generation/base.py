@@ -41,3 +41,61 @@ class AnalysisGenerator(ABC):
             failures, so callers can handle both uniformly.
         """
         raise NotImplementedError
+
+    def generate_with_judge_resource(
+        self,
+        article,
+        system_prompt: str,
+        user_prompt: str,
+        judge_resource: str | None = None,
+    ):
+        """Judge-resource transport contract.
+
+        Architectural separation:
+
+        system_prompt:
+            judging instructions only.
+
+        user_prompt:
+            article + RAW/BSI comparison task only.
+
+        judge_resource:
+            independent judge-side knowledge resource.
+
+        The base class MUST NOT concatenate judge_resource into either
+        prompt. Provider implementations that support an independent
+        resource channel may override this method.
+        """
+        if judge_resource:
+            raise NotImplementedError(
+                f"{self.__class__.__name__} does not implement the "
+                "independent judge-resource transport API"
+            )
+
+        return self.generate_with_system(
+            article,
+            system_prompt,
+            user_prompt,
+        )
+
+    def generate_with_system(self, article, system_prompt: str, user_prompt: str):
+        """
+        Like generate(), but with the prompt split into a system-level
+        context (background/reference material, e.g. task rules and the
+        BSI glossary) and a user-level task (the actual content being
+        acted on, e.g. the RAW/BSI analyses to compare).
+
+        Keeping this split matters for the judge specifically: the
+        glossary is background context for interpreting BSI terminology,
+        not part of the comparison task itself, and mixing it into the
+        same turn as the RAW/BSI analyses blurs that distinction for the
+        model. Subclasses whose backend supports a real system-role
+        message (OpenRouterGenerator, GroqGenerator) override this to
+        send system_prompt and user_prompt as separate messages.
+
+        Default implementation (for generators that don't override this):
+        falls back to a single combined prompt via generate(), so every
+        generator keeps working without needing this method implemented.
+        """
+        combined = f"{system_prompt}\n\n{user_prompt}"
+        return self.generate(article, combined)

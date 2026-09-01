@@ -1,5 +1,0 @@
-{
-  "provider": "crossref",
-  "evaluator": "basic",
-  "reporter": "json"
-}

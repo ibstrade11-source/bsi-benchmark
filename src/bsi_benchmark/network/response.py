@@ -10,6 +10,7 @@ class Response:
     status_code: int
     url: str
     body: str
+    content: bytes = b""
 
     @property
     def ok(self) -> bool:

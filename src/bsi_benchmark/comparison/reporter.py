@@ -1,60 +1,168 @@
 """
-Plain-text/markdown rendering of a ComparisonReport, for CLI output and for
-copy-pasting into a writeup. Kept dependency-free (no pandas/tabulate) to
-match the rest of the project's minimal-dependency style.
+Markdown reporter for comparison runs.
+
+Reports preserve judge provenance:
+- criteria source
+- score scale
+- weights
+- normalized weighted scores
+- final comparison result
+
+The judge selects criteria. Suggested criteria are only fallback metadata.
 """
 
 from .result import ComparisonReport
 
-DIM_ORDER = ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "BSI", "grounding_ratio", "tag_coverage"]
-
 
 def render_markdown(report: ComparisonReport) -> str:
-    lines = [f"# Comparison: {report.dataset_name}", ""]
+    lines = [
+        f"# Comparison: {report.dataset_name}",
+        ""
+    ]
 
     if report.run_metadata:
         m = report.run_metadata
-        commit = m.get("git_commit") or "unknown (not a git checkout, or git unavailable)"
-        dirty = m.get("git_dirty")
-        dirty_note = " (uncommitted local changes present)" if dirty else ""
+
         lines.append("## Run metadata")
         lines.append(f"- bsi-benchmark version: {m.get('tool_version')}")
-        lines.append(f"- git commit: {commit}{dirty_note}")
+        lines.append(f"- git commit: {m.get('git_commit')}")
         lines.append(f"- run timestamp (UTC): {m.get('run_timestamp_utc')}")
-        lines.append(f"- methodology note: {m.get('methodology_note')}")
+
+        if m.get("methodology_note"):
+            lines.append(f"- methodology: {m.get('methodology_note')}")
+
         lines.append("")
 
     if report.source_url:
-        lines.append(
-            f"> BSI prompt source (read it yourself, unedited): {report.source_url}"
-        )
+        lines.append(f"> BSI prompt source: {report.source_url}")
         lines.append("")
 
     for result in report.results:
-        title = result.article.title or "(untitled)"
-        lines.append(f"## {title}")
-        if result.article.url or result.article.doi:
-            prov = []
-            if result.article.url:
-                prov.append(f"source: {result.article.url}")
-            if result.article.doi:
-                prov.append(f"doi: {result.article.doi}")
-            lines.append(f"*{' | '.join(prov)}*")
+
+        lines.append(f"## {result.article.title}")
         lines.append("")
-        header = "| generator | mode | " + " | ".join(DIM_ORDER) + " |"
-        sep = "|---|---|" + "|".join(["---"] * len(DIM_ORDER)) + "|"
-        lines.append(header)
-        lines.append(sep)
+
+        if result.article.url:
+            lines.append(f"*source:* {result.article.url}")
+
+        if result.article.doi:
+            lines.append(f"*doi:* {result.article.doi}")
+
+        lines.append("")
+
+        failed_cells = [cell for cell in result.cells if cell.failed]
+        if failed_cells:
+            lines.append("### Generation failures")
+            lines.append("")
+            for cell in failed_cells:
+                error = cell.metadata.get("error", "unknown error")
+                lines.append(f"- **{cell.generator}/{cell.mode}**: {error}")
+            lines.append("")
+
+        judge = None
 
         for cell in result.cells:
-            if cell.failed:
-                row = f"| {cell.generator} | {cell.mode} | ERROR: {cell.scores['error']} |"
-                lines.append(row)
-                continue
+            if cell.judge_result:
+                judge = cell.judge_result
+                break
 
-            values = " | ".join(f"{cell.scores.get(d, 0.0):.3f}" for d in DIM_ORDER)
-            lines.append(f"| {cell.generator} | {cell.mode} | {values} |")
+        if not judge:
+            lines.append("### Judge Evaluation")
+            lines.append("")
+            lines.append("No judge result.")
+            lines.append("")
+            continue
+
+        lines.append("### Judge Evaluation")
+        lines.append("")
+
+        lines.append("#### Judge Information")
+        lines.append("")
+        lines.append("| Field | Value |")
+        lines.append("|---|---|")
+        lines.append(
+            f"| Criteria source | {judge.get('criteria_source','judge')} |"
+        )
+        lines.append(
+            f"| Score scale | {judge.get('scale','0-10')} |"
+        )
+        lines.append(
+            f"| Weight sum | {judge.get('weight_sum','100')} |"
+        )
+        lines.append("")
+
+        lines.append("#### Judge Reasoning")
+        lines.append("")
+        lines.append(f"**Winner:** {judge.get('winner','')}")
+        lines.append("")
+        lines.append(judge.get("reasoning",""))
+        lines.append("")
+
+        criteria = judge.get("criteria", [])
+
+        lines.append("#### Criteria Selected by Judge")
+        lines.append("")
+        lines.append(
+            "| Criterion | Weight | Raw (/10) | BSI (/10) | Weighted Raw | Weighted BSI | Explanation |"
+        )
+        lines.append(
+            "|---|---:|---:|---:|---:|---:|---|"
+        )
+
+        raw_total = 0.0
+        bsi_total = 0.0
+
+        for item in criteria:
+
+            weight = float(item.get("importance", 0))
+            raw = float(item.get("raw_score", 0))
+            bsi = float(item.get("bsi_score", 0))
+
+            weighted_raw = round(raw * weight / 100, 2)
+            weighted_bsi = round(bsi * weight / 100, 2)
+
+            raw_total += weighted_raw
+            bsi_total += weighted_bsi
+
+            lines.append(
+                f"| {item.get('name','')} "
+                f"| {weight:.0f} "
+                f"| {raw:.1f} "
+                f"| {bsi:.1f} "
+                f"| {weighted_raw:.2f} "
+                f"| {weighted_bsi:.2f} "
+                f"| {item.get('reason','')} |"
+            )
 
         lines.append("")
+
+        lines.append("#### Final Scores")
+        lines.append("")
+        lines.append("| Analysis | Score (/10) |")
+        lines.append("|---|---:|")
+        lines.append(f"| Raw | {raw_total:.2f} |")
+        lines.append(f"| BSI | {bsi_total:.2f} |")
+
+        lines.append("")
+
+        diff = round(bsi_total - raw_total, 2)
+
+        lines.append("#### Summary")
+        lines.append("")
+        lines.append(f"- Winner: **{judge.get('winner','')}**")
+        lines.append(f"- Score difference: **{diff:+.2f}**")
+        lines.append(
+            f"- Criteria evaluated: **{len(criteria)}**"
+        )
+
+        lines.append("")
+
+        lines.append("#### Score Formula")
+        lines.append("")
+        lines.append(
+            "Final score = Σ(weight × criterion score / 100)"
+        )
+        lines.append("")
+
 
     return "\n".join(lines)

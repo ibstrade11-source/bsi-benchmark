@@ -19,7 +19,7 @@ def test_capture_returns_iso8601_utc_timestamp():
 def test_capture_includes_methodology_note():
     meta = RunMetadata.capture()
     assert meta.methodology_note == METHODOLOGY_NOTE
-    assert "not a validated measurement" in meta.methodology_note
+    assert "validated measurement" in meta.methodology_note
 
 
 def test_git_commit_is_none_or_40_char_hex_when_not_a_repo(tmp_path):

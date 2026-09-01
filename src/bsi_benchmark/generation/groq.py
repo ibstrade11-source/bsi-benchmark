@@ -15,8 +15,13 @@ from .base import AnalysisGenerator
 from .prompt import render
 
 API_URL = "https://api.groq.com/openai/v1/chat/completions"
-DEFAULT_MODEL = "llama-3.3-70b-versatile"
-DEFAULT_MAX_TOKENS = 2000
+DEFAULT_MODEL = os.environ.get(
+    "GROQ_MODEL",
+    "openai/gpt-oss-20b"
+)
+DEFAULT_MAX_TOKENS = 8000
+
+JUDGE_MAX_TOKENS = 2000
 
 
 class GroqGenerator(AnalysisGenerator):
@@ -38,12 +43,91 @@ class GroqGenerator(AnalysisGenerator):
 
         prompt = render(prompt_template, article)
 
+        return self._call_messages(
+            api_key, [{"role": "user", "content": prompt}]
+        )
+
+    def generate_with_system(self, article, system_prompt: str, user_prompt: str) -> Analysis:
+        api_key = os.environ.get('GROQ_API_KEY')
+        if not api_key:
+            raise ProviderUnavailable(
+                "GROQ_API_KEY is not set."
+            )
+        return self._call_messages(
+            api_key,
+            [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+        )
+
+    def generate_with_judge_resource(
+        self,
+        article,
+        system_prompt: str,
+        user_prompt: str,
+        judge_resource: str | None = None,
+    ) -> Analysis:
+        """Transport judge resource separately from the comparison prompt.
+
+        IMPORTANT ARCHITECTURAL RULE:
+
+        - system_prompt = judging instructions ONLY
+        - user_prompt   = RAW/BSI comparison ONLY
+        - judge_resource = independent judge knowledge ONLY
+
+        Provider name and model name are API metadata only. They are
+        never inserted into any prompt content.
+        """
+        api_key = os.environ.get("GROQ_API_KEY")
+        if not api_key:
+            raise ProviderUnavailable(
+                "GROQ_API_KEY is not set."
+            )
+
+        messages = []
+
+        if judge_resource:
+            messages.append(
+                {
+                    "role": "system",
+                    "content": (
+                        "JUDGE KNOWLEDGE RESOURCE.\n"
+                        "Use this only as background knowledge for semantic "
+                        "disambiguation of BSI terminology.\n"
+                        "It is NOT evidence, NOT a scoring rubric, and NOT "
+                        "proof of any conclusion.\n\n"
+                        + judge_resource
+                    ),
+                }
+            )
+
+        # Judging instructions only.
+        messages.append(
+            {
+                "role": "system",
+                "content": system_prompt,
+            }
+        )
+
+        # Actual comparison task only.
+        messages.append(
+            {
+                "role": "user",
+                "content": user_prompt,
+            }
+        )
+
+        return self._call_messages(api_key, messages, max_tokens=JUDGE_MAX_TOKENS)
+
+    def _call_messages(self, api_key: str, messages: list, max_tokens: int | None = None) -> Analysis:
         response = self.client.post(
             API_URL,
             json_body={
                 "model": self.model,
-                "max_tokens": self.max_tokens,
-                "messages": [{"role": "user", "content": prompt}],
+                "max_tokens": max_tokens if max_tokens is not None else self.max_tokens,
+                "reasoning_effort": "low",
+                "messages": messages,
             },
             headers={
                 "Authorization": f"Bearer {api_key}",

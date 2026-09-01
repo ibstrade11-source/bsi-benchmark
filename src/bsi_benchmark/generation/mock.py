@@ -15,8 +15,93 @@ class MockGenerator(AnalysisGenerator):
 
     name = "mock"
 
+    def generate_with_judge_resource(
+        self,
+        article,
+        system_prompt: str,
+        user_prompt: str,
+        judge_resource: str | None = None,
+    ) -> Analysis:
+        """Offline mock implementation of the independent judge-resource API.
+
+        Contract:
+        - judge_resource is accepted separately.
+        - judge_resource is never inserted into system_prompt.
+        - judge_resource is never inserted into user_prompt.
+        - the deterministic mock judge response is produced through the
+          existing generate() implementation.
+        - no provider/model identity is injected into the prompt.
+        """
+        if judge_resource is None:
+            judge_resource = ""
+
+        # IMPORTANT:
+        # The glossary/resource is deliberately NOT included here.
+        # Mock transport only needs the judging instructions + comparison
+        # task to activate its deterministic JSON judge behavior.
+        combined_prompt = system_prompt + "\n\n" + user_prompt
+
+        return self.generate(article, combined_prompt)
+
     def generate(self, article, prompt_template: str) -> Analysis:
         rendered = render(prompt_template, article)
+
+        # Judge-style prompts (see comparison/judge.py) ask for a JSON
+        # verdict, not an analysis -- detect that by the same "Return
+        # ONLY valid JSON" marker judge.py's prompt uses, so MockGenerator
+        # can stand in as a self-judge offline (no real LLM/API key),
+        # exercising the same code path self-judging uses in production.
+        if "Return ONLY valid JSON" in rendered:
+            text = """{
+  "criteria": [
+    {
+      "name": "structural_layers",
+      "importance": 30,
+      "raw_score": 5,
+      "bsi_score": 8,
+      "reason": "Structural organization is highly important for comparing these analyses."
+    },
+    {
+      "name": "epistemic_separation",
+      "importance": 20,
+      "raw_score": 5,
+      "bsi_score": 8,
+      "reason": "Separating factual content from inference is important for this evaluation."
+    },
+    {
+      "name": "uncertainty_awareness",
+      "importance": 20,
+      "raw_score": 5,
+      "bsi_score": 8,
+      "reason": "Recognition of uncertainty materially affects analytical quality."
+    },
+    {
+      "name": "evidence_grounding",
+      "importance": 15,
+      "raw_score": 6,
+      "bsi_score": 8,
+      "reason": "Evidence grounding is relevant to judging the reliability of the analysis."
+    },
+    {
+      "name": "analysis_depth",
+      "importance": 15,
+      "raw_score": 5,
+      "bsi_score": 9,
+      "reason": "Analytical coverage provides an important measure of comparative quality."
+    }
+  ],
+  "bsi_capability_assessment": {
+    "relevance": "high",
+    "realization": "high",
+    "incremental_value": "high",
+    "reason": "The structured BSI analysis provides additional observable analytical depth."
+  },
+  "winner": "bsi",
+  "incremental_value": "high",
+  "reasoning": "The BSI analysis provides stronger structured and epistemically separated analysis."
+}"""
+            return Analysis(text=text, source_model=self.name)
+
         is_bsi_mode = "bsi" in rendered.lower() or "لایه" in rendered
 
         if is_bsi_mode:
