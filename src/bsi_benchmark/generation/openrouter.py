@@ -200,4 +200,13 @@ class OpenRouterGenerator(AnalysisGenerator):
                 "OpenRouter response contained empty text content."
             )
 
-        return Analysis(text=text, source_model=self.model)
+        # OpenRouter's response is OpenAI-compatible and normally includes
+        # a "usage" object (prompt_tokens/completion_tokens/total_tokens).
+        # Passed through as-is when present, never fabricated when absent
+        # -- see METHODOLOGY.md section 32 (Execution Burden) and
+        # section 63 (data integrity: "missing != zero").
+        usage = payload.get("usage")
+        if not isinstance(usage, dict):
+            usage = None
+
+        return Analysis(text=text, source_model=self.model, usage=usage)

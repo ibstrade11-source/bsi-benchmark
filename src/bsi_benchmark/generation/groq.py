@@ -151,4 +151,13 @@ class GroqGenerator(AnalysisGenerator):
         if not text:
             raise InvalidProviderResponse("Groq response contained no text content.")
 
-        return Analysis(text=text, source_model=self.model)
+        # Groq's response is OpenAI-compatible and normally includes a
+        # "usage" object (prompt_tokens/completion_tokens/total_tokens).
+        # Passed through as-is when present, never fabricated when absent
+        # -- see METHODOLOGY.md section 32 (Execution Burden) and
+        # section 63 (data integrity: "missing != zero").
+        usage = payload.get("usage") if isinstance(payload, dict) else None
+        if not isinstance(usage, dict):
+            usage = None
+
+        return Analysis(text=text, source_model=self.model, usage=usage)

@@ -25,6 +25,7 @@ checkpoint_path:
   - leaves a cell whose judge result already came from a real LLM judge
     untouched.
 """
+import time
 from datetime import datetime, timezone
 from dataclasses import replace as _dataclasses_replace
 
@@ -229,6 +230,18 @@ class CrossModelRunner:
         )
 
     def _generate_one(self, article, generator, generator_name, mode, template):
+        # Execution Burden per METHODOLOGY.md section 32: wall-clock time
+        # and provider-reported token usage are recorded alongside quality
+        # results, never fabricated (section 63) -- elapsed time is timed
+        # here directly (always genuine, regardless of provider), and
+        # token usage is copied through only when the provider's response
+        # actually included a usage object (Analysis.usage; None otherwise,
+        # see generation/groq.py and generation/openrouter.py).
+        start = time.monotonic()
+
+        def _elapsed() -> float:
+            return round(time.monotonic() - start, 3)
+
         try:
             analysis = generator.generate(article, template)
             if analysis is not None and analysis.generated_at is None:
@@ -236,7 +249,7 @@ class CrossModelRunner:
         except ProviderError as e:
             full_text = getattr(article, "full_text", None)
             if not (_looks_like_token_budget_error(e) and full_text):
-                return None, {"error": str(e)}
+                return None, {"error": str(e), "execution_time_seconds": _elapsed()}
 
             last_error = e
             for budget_chars in _COMPACTION_BUDGET_ESCALATION:
@@ -252,6 +265,8 @@ class CrossModelRunner:
                         "token_budget_fallback": True,
                         "token_budget_fallback_chars": budget_chars,
                         "original_error": str(e),
+                        "execution_time_seconds": _elapsed(),
+                        "usage": getattr(analysis, "usage", None),
                     }
                 except ProviderError as e2:
                     if not _looks_like_token_budget_error(e2):
@@ -259,6 +274,7 @@ class CrossModelRunner:
                             "error": str(e2),
                             "token_budget_fallback_attempted": True,
                             "original_error": str(e),
+                            "execution_time_seconds": _elapsed(),
                         }
                     last_error = e2
                     continue
@@ -268,6 +284,10 @@ class CrossModelRunner:
                 "token_budget_fallback_attempted": True,
                 "token_budget_fallback_budgets_tried": list(_COMPACTION_BUDGET_ESCALATION),
                 "original_error": str(e),
+                "execution_time_seconds": _elapsed(),
             }
 
-        return analysis, {}
+        return analysis, {
+            "execution_time_seconds": _elapsed(),
+            "usage": getattr(analysis, "usage", None),
+        }

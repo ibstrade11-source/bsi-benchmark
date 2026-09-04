@@ -16,3 +16,14 @@ class Analysis:
     text: str
     source_model: str | None = None   # e.g. "claude-sonnet-5", "bsi-v3.4.2"
     generated_at: str | None = None   # ISO 8601 timestamp, caller-supplied
+    usage: dict | None = None         # provider-reported token usage, when
+                                       # available (e.g. {"prompt_tokens": n,
+                                       # "completion_tokens": n, "total_tokens":
+                                       # n} from an OpenAI-compatible API).
+                                       # Never fabricated: None when the
+                                       # provider's response did not include
+                                       # a usage object, per METHODOLOGY.md
+                                       # section 63 ("no data may be
+                                       # fabricated merely to complete a
+                                       # result table"). Feeds Execution
+                                       # Burden reporting (section 32).
