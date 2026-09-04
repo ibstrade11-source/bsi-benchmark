@@ -221,7 +221,9 @@ class CrossModelRunner:
                         )
                     )
 
-            results.append(ComparisonResult(article=article, cells=cells))
+            results.append(
+                ComparisonResult(article=article, cells=cells, article_id=art_key)
+            )
 
         dataset_name = getattr(dataset, "query", None) or getattr(dataset, "name", "unnamed")
         return ComparisonReport(

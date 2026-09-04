@@ -47,9 +47,21 @@ class ComparisonCell:
     scores: dict = field(default_factory=dict)
     failed: bool = False
     status: str = field(init=False, default=STATUS_VALID)
+    model_id: Optional[str] = field(init=False, default=None)
 
     def __post_init__(self) -> None:
         self.status = self._compute_status()
+        # METHODOLOGY.md section 5 requires the exact model identifier to
+        # be recorded per Run. Analysis.source_model already carries this
+        # (e.g. "openai/gpt-oss-20b", set by each generator -- see
+        # generation/groq.py, generation/openrouter.py, etc.) but was only
+        # reachable by digging into the nested analysis object. Surfacing
+        # it as a first-class cell field means it stays visible even when
+        # inspecting/exporting cell-level status without needing to know
+        # to look inside `analysis`, and it is still None -- never
+        # fabricated -- for a failed cell with no analysis, per section 63.
+        if self.analysis is not None:
+            self.model_id = getattr(self.analysis, "source_model", None)
 
     def _compute_status(self) -> str:
         if self.failed:
@@ -98,6 +110,17 @@ class ComparisonCell:
 class ComparisonResult:
     article: Article
     cells: List[ComparisonCell] = field(default_factory=list)
+    # METHODOLOGY.md section 4.1 requires a stable Artifact ID recorded
+    # before output generation. This reuses the exact identity function
+    # already used for checkpoint caching (comparison/checkpoint.py
+    # article_key: DOI when present, otherwise a content hash of
+    # title+abstract) rather than inventing a second, potentially
+    # inconsistent identifier -- so a result's article_id always matches
+    # the cache key that produced its cells. Empty string, not None, is
+    # the "not supplied" default so this field round-trips cleanly
+    # through JSON export even for results built outside the normal
+    # runner path (e.g. in tests).
+    article_id: str = ""
 
     @property
     def article_input_valid(self) -> bool:
