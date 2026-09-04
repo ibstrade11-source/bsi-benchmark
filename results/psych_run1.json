@@ -1,0 +1,295 @@
+{
+  "dataset_name": "cognitive psychology decision making",
+  "results": [
+    {
+      "article": {
+        "title": "The Cognitive Revolution and the Political Psychology of Elite Decision Making",
+        "abstract": "Experimental evidence in cognitive psychology and behavioral economics is transforming the way political science scholars think about how humans make decisions in areas of high complexity, uncertainty, and risk. Nearly all those studies utilize convenience samples of university students, but in the real world political elites actually make most pivotal political decisions such as threatening war or changing the course of economic policy. Highly experienced elites are more likely to exhibit the attributes of rational decision-making; and over the last fifteen years a wealth of studies suggest that such elites are likely to be more skilled in strategic bargaining than samples with less germane experience. However, elites are also more likely to suffer overconfidence, which degrades decision-making skills. We illustrate implications for political science with a case study of crisis bargaining between the US and North Korea. Variations in the experience of US elite decision-makers between 2002 and 2006 plausibly explain the large shift in US crisis signaling better than other rival hypotheses such as “Iraq fatigue.” Beyond crisis bargaining other major political science theories might benefit from attention to the attributes of individual decision-makers.",
+        "full_text": null,
+        "doi": "https://doi.org/10.1017/s1537592713001084",
+        "url": "https://openalex.org/W3121340552",
+        "input_quality": {
+          "has_title": true,
+          "has_abstract": true,
+          "source": "openalex",
+          "enriched": false
+        }
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "### Analysis of \"The Cognitive Revolution and the Political Psychology of Elite Decision Making\"\n\n**Source:** Abstract only (Full text unavailable).\n\n#### 1. Main Claims\nThe abstract advances four core empirical and theoretical claims:\n\n1.  **The \"Convenience Sample\" Problem:** Political science increasingly relies on cognitive psychology and behavioral economics (the \"Cognitive Revolution\"), but the evidence base rests overwhelmingly on university student samples, not the political elites who actually make high-stakes decisions (war, economic policy).\n2.  **The Elite Competence Advantage:** Elites with high levels of relevant experience are more likely to approximate rational decision-making models and demonstrate superior skill in strategic bargaining compared to inexperienced subjects (e.g., students).\n3.  **The Elite Overconfidence Penalty:** Paradoxically, those same experienced elites are *more* susceptible to overconfidence biases, which systematically degrades their decision-making quality.\n4.  **Explanatory Power of Elite Attributes (Case Study):** Applying this framework to US-North Korea crisis bargaining (2002–2006), the authors argue that *variations in the experience levels of specific US decision-makers* provide a better explanation for shifts in US signaling behavior than structural or contextual alternatives like \"Iraq fatigue.\"\n\n#### 2. Contribution to the Field\n*   **Methodological Bridge:** It explicitly links the \"Cognitive Revolution\" in political science to the critical methodological gap between experimental subjects (students) and the target population (elites).\n*   **Nuanced Theory of Elite Cognition:** It moves beyond a binary \"rational vs. irrational\" or \"elites vs. masses\" dichotomy. It posits a **dual-process trade-off specific to expertise**: experience enhances *strategic competence* (System 2/analytical processing) but simultaneously amplifies *cognitive bias* (overconfidence/System 1 heuristics).\n*   **Micro-Foundations for IR Theory:** It demonstrates how individual-level psychological variables (elite experience, overconfidence) can serve as superior independent variables compared to systemic or domestic-political explanations (e.g., \"Iraq fatigue\") for specific foreign policy outcomes (crisis signaling).\n*   **Generalizability Argument:** It signals a broader research agenda: major political science theories (beyond crisis bargaining) require \"attention to the attributes of individual decision-makers\" to improve explanatory power.",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-09-04T20:10:45Z",
+            "usage": {
+              "prompt_tokens": 283,
+              "completion_tokens": 550,
+              "total_tokens": 833,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 60,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          "metadata": {
+            "execution_time_seconds": 17.172,
+            "usage": {
+              "prompt_tokens": 283,
+              "completion_tokens": 550,
+              "total_tokens": 833,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 60,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "winner_source": "llm",
+            "reasoning": "BSI offers a richer, more rigorous, and innovative evaluation of the article, while RAW remains a shallow summary. The BSI assessment improves upon RAW in every substantive criterion, justifying a clear BSI win.",
+            "criteria": [
+              {
+                "name": "Comprehensiveness of Argumentation",
+                "importance": 20.0,
+                "raw_score": 5.0,
+                "bsi_score": 9.0,
+                "reason": "Raw analysis summarizes only the abstract and lists claims without elaborating on how they connect; BSI provides detailed narrative, context, and logical flow."
+              },
+              {
+                "name": "Depth of Theoretical Insight",
+                "importance": 20.0,
+                "raw_score": 6.0,
+                "bsi_score": 9.0,
+                "reason": "Raw mentions dual-process trade-off and overconfidence, but does not explore underlying mechanisms; BSI explicitly discusses the paradox and its implications."
+              },
+              {
+                "name": "Integration of Empirical Evidence",
+                "importance": 20.0,
+                "raw_score": 7.0,
+                "bsi_score": 8.0,
+                "reason": "Raw notes the US‑North Korea case but offers no evidence assessment; BSI evaluates the case study’s methodological strengths and weaknesses."
+              },
+              {
+                "name": "Methodological Rigor and Critique",
+                "importance": 15.0,
+                "raw_score": 5.0,
+                "bsi_score": 8.0,
+                "reason": "Raw lacks any methodological critique; BSI discusses sampling, selection bias, and causal inference."
+              },
+              {
+                "name": "Innovation and Creative Value",
+                "importance": 15.0,
+                "raw_score": 7.0,
+                "bsi_score": 9.0,
+                "reason": "Raw does not highlight novelty beyond summarization; BSI identifies a novel elite‑cognition paradox and its broader relevance."
+              },
+              {
+                "name": "Clarity and Readability",
+                "importance": 10.0,
+                "raw_score": 8.0,
+                "bsi_score": 7.0,
+                "reason": "Raw is succinct and easy to read; BSI is longer but more complex, slightly reducing immediate accessibility."
+              }
+            ],
+            "total_scores": {
+              "raw": 6.2,
+              "bsi": 8.45
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "medium",
+              "incremental_value": "high",
+              "reason": "The BSI analysis directly addresses the article’s focus on elite cognition, providing deeper methodological critique and theoretical expansion that RAW does not cover."
+            },
+            "incremental_value": "high",
+            "scale": "0-10",
+            "weight_sum": 100.0,
+            "glossary_mode": "full"
+          },
+          "scores": {
+            "RAW": 0.62,
+            "BSI": 0.845
+          },
+          "failed": false,
+          "status": "valid",
+          "model_id": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل ارزیابی محتوای فکری: «انقلاب شناختی و روان‌شناسی سیاسی تصمیم‌گیری نخبگان»\n\n**مشخصات مقاله:**\n- **عنوان:** The Cognitive Revolution and the Political Psychology of Elite Decision Making\n- **موضوع:** اثر تجربه نخبگان بر کیفیت تصمیم‌گیری در باره‌های پیچیده، پرریسک و غیرقطعی\n- **رویکرد:** ترکیب شواهد آزمایشی روانشناسی شناختی/اقتصاد رفتاری با مطالعه موردی تاریخی (مذاکره بحرانی آمریکا–کره شمالی، ۲۰۰۲–۲۰۰۶)\n- **ادعای اصلی (Core Claim):** نخبگان با تجربه بیشتر از منطقی بودن (Rationality) و مهارت مذاکره استراتژیک برخوردارند، اما هم‌زمان دچار اعتماد بیش از حد (Overconfidence) می‌شوند که کیفیت تصمیم‌گیری را پایین می‌آورد؛ تغییر در ترکیب تجربه نخبگان آمریکایی بین ۲۰۰۲ و ۲۰۰۶ توضیح‌دهنده تغییر سیگنال‌دهی بحرانی بهتر از giả thuyết «خستگی عراق» است.\n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI\n\n**خلاصه اجرایی:**  \nمقاله حاضر بر تقابل بین دو جریان ادبیات تمرکز دارد: (الف) ادبیات تجربة‌های آزمایشی که غالباً با نمونه‌های راحة (دانشجویان دانشگاه) انجام شده و انحراف‌های شناختی سیستماتیک را نشان می‌دهد، و (ب) ادبیات تجربه و خبره (Expertise) که نشان می‌دهد نخبگان سیاسی در باره‌های واقعی رفتاری блиজتر به عقلانیتی محدود اما کارآمد (Bounded Rationality) از خود نشان می‌دهند. نگارندگان استدلال می‌کنند که «تجربه関連» (Domain-relevant experience) هم مهارت‌های استراتژیک را تقویت می‌کند و هم سوگیری اعتماد بیش از حد را تقویت می‌کند — یک پارادوکس دوگانه. مطالعه موردی آمریکا–کره شمالی به‌عنوان نمونه‌ای تجربی برای آزمون این ادعا به کار رفته است: تغییر کادر تصمیم‌گیری از نخبگان کم‌تجربه (متمرکز بر تغییر رژیم) به نخبگان با تجربه دیپلماتیک/نظامی عمیق، همزمان با تغییر سیگنال‌دهی از تهدیدات مطلق به مذاکره چندجانبه بوده است.\n\n**Core Claim (ادعای مرکزی):**  \n> «تجربه نخبگان 정치ی اثر دوطرفه دارد: تقویت عقلانیت استراتژیک (Strategic Rationality) و تقویت اعتماد بیش از حد (Overconfidence) هم‌زمان؛ تغییر در سطح تجربه کادر تصمیم‌گیری می‌تواند تحولات سیگنال‌دهی بحرانی را بهتر از متغیرهای ساختاری/مفهومی (مانند خستگی عراق) تبیین کند.»\n\n**امتیاز کلی BSI:** **۷۸ / ۱۰۰**  \n*استدلال: مقاله در ادغام ادبیات تجربی و تاریخی نوآورانه است (CreativeValueAdd بالا)، اما در لایه پنهان (Latent) دچار ضعیف‌سازی‌های روش‌شناختی است:عدم تمایز دقیق بین «تجربه» و «انتخاب‌ِ خودنگرانه نخبگان با تجربه» (Selection Bias)، ساده‌سازی علیتی در مطالعه موردی، و عدم ارزیابی کمی «اعتماد بیش از حد» به‌عنوان متغیر واسطه.*\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه\n\n| معیار اصلی | وزن | امتیاز (۰–۱۰۰) | امتیاز وزنی | توضیح تشریحی |\n|------------|-----|----------------|------------|----------------|\n| **انسجام منطقی (Logical Coherence)** | ۱۵٪ | ۸۲ | ۱۲.۳ | استدلال کلی منسجم است؛ اما پرش از «تجربه» به «تغییر سیگنال‌دهی» بدون مدل‌سازی مکانیسمی صریح انجام شده. |\n| **شواهد تجربی (Empirical Support)** | ۲۰٪ | ۷۰ | ۱۴.۰ | ادبیات تجربی غنی است؛ مطالعه موردی کیفی و توضیحی است، نه آزمونی. عدم کنترل متغیرهای مخل (Confounders) در مورد آمریکا–کره شمالی. |\n| **نوآوری نظری (Theoretical Novelty)** | ۱۵٪ | ۸۵ | ۱۲.۷۵ | ادغام ادبیات «انقلاب شناختی» با «روانشناسی نخبگان» و پیشنهاد پارادوکس دوگانه نوآورانه است. |\n| **عمق مکانیسمی (Mechanistic Depth)** | ۱۵٪ | ۶۵ | ۹.۷۵ | مکانیسم‌های «چگونه تجربه اعتماد بیش از حد تولید می‌کند» تشریح نشده؛ فقط همبستگی گزارش شده. |\n| ** دامنه کاربرد (Scope & Generalizability)** | ۱۰٪ | ۷۵ | ۷.۵ | ادعاهای تعمیم‌پذیر به «نظریات دیگر علوم سیاسی» بدون مرزبندی شرطی (Boundary Conditions) 제시 شده. |\n| **دقت روش‌شناختی (Methodological Rigor)** | ۱۵٪ | ۶۸ | ۱۰.۲ | ترکیب روش‌ها (Literature Review + Case Study) مناسب؛ اما کمبود استراتژی شناسایی علیتی (Process Tracing با تست‌های تمرین/بازیابی) قابل نقد است. |\n| **ارزش افزوده خلاقانه (CreativeValueAdd)** | ۱۰٪ | ۹۲ | ۹.۲ | ترکیب متقابل سه زیرمعیار (Epistemic Gap Targeting، Combinatorial Synthesis، Generative Capacity) بسیار قوی —siehe بخش ۳. |\n| **مجموع امتیاز وزنی** | **۱۰۰٪** | — | **۷۵.۷** | **امتیاز کلی BSI: ۷۸** (تعدیل با در نظر گرفتن نوآوری و عمق تحلیلی کلی) |\n\n---\n\n## ۳. جدول CreativeValueAdd با ۳ زیرمعیار\n\n| زیرمعیار | وزن در CVA | امتیاز (۰–۱۰۰) | امتیاز وزنی | استدلال تفصیلی |\n|-----------|------------|----------------|------------|------------------|\n| **Epistemic Gap Targeting (هدف‌گذاری شکاف معرفی)** | ۳۵٪ | ۹۰ | ۳۱.۵ | مقاله شکاف اصلی را به‌درستی شناسایی می‌کند: «ادبیات تجربی با نمونه‌های راحة» در برابر «واقعیت تصمیم‌گیری نخبگانی». پرسش محوری: «آیا نخبگان در باره‌های واقعی هم انحراف‌های شناختی دانشجوها را نشان می‌دهند؟» — شکاف معرفی دقیق و پراهمیت. |\n| **Combinatorial Synthesis (ترکیب ترکیبی)** | ۴۰٪ | ۹۵ | ۳۸.۰ | ترکیب سهinent ادبیات مجزا: (۱) هیوریستیک‌ها و سوگیری‌های شناختی (Kahneman & Tversky)، (۲) ادبیات خبره و مهارت استراتژیک (Ericsson, Tetlock)، (۳) نظریه سیگنال‌دهی بحرانی (Fearon, Schelling). ترکیب نه تنها جمع‌آوری، بلکه *تولید تنش نظری جدید* (پارادوکس دوگانه) است. |\n| **Generative Capacity (ظرفیت مولد)** | ۲۵٪ | ۸۸ | ۲۲.۰ | مقاله پرسش‌های جدید را می‌گشاید: (الف) چگونه «انتخاب",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-09-04T20:01:58Z",
+            "usage": {
+              "prompt_tokens": 1346,
+              "completion_tokens": 2000,
+              "total_tokens": 3346,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 383,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          "metadata": {
+            "execution_time_seconds": 72.466,
+            "usage": {
+              "prompt_tokens": 1346,
+              "completion_tokens": 2000,
+              "total_tokens": 3346,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 383,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "winner_source": "llm",
+            "reasoning": "BSI offers a richer, more rigorous, and innovative evaluation of the article, while RAW remains a shallow summary. The BSI assessment improves upon RAW in every substantive criterion, justifying a clear BSI win.",
+            "criteria": [
+              {
+                "name": "Comprehensiveness of Argumentation",
+                "importance": 20.0,
+                "raw_score": 5.0,
+                "bsi_score": 9.0,
+                "reason": "Raw analysis summarizes only the abstract and lists claims without elaborating on how they connect; BSI provides detailed narrative, context, and logical flow."
+              },
+              {
+                "name": "Depth of Theoretical Insight",
+                "importance": 20.0,
+                "raw_score": 6.0,
+                "bsi_score": 9.0,
+                "reason": "Raw mentions dual-process trade-off and overconfidence, but does not explore underlying mechanisms; BSI explicitly discusses the paradox and its implications."
+              },
+              {
+                "name": "Integration of Empirical Evidence",
+                "importance": 20.0,
+                "raw_score": 7.0,
+                "bsi_score": 8.0,
+                "reason": "Raw notes the US‑North Korea case but offers no evidence assessment; BSI evaluates the case study’s methodological strengths and weaknesses."
+              },
+              {
+                "name": "Methodological Rigor and Critique",
+                "importance": 15.0,
+                "raw_score": 5.0,
+                "bsi_score": 8.0,
+                "reason": "Raw lacks any methodological critique; BSI discusses sampling, selection bias, and causal inference."
+              },
+              {
+                "name": "Innovation and Creative Value",
+                "importance": 15.0,
+                "raw_score": 7.0,
+                "bsi_score": 9.0,
+                "reason": "Raw does not highlight novelty beyond summarization; BSI identifies a novel elite‑cognition paradox and its broader relevance."
+              },
+              {
+                "name": "Clarity and Readability",
+                "importance": 10.0,
+                "raw_score": 8.0,
+                "bsi_score": 7.0,
+                "reason": "Raw is succinct and easy to read; BSI is longer but more complex, slightly reducing immediate accessibility."
+              }
+            ],
+            "total_scores": {
+              "raw": 6.2,
+              "bsi": 8.45
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "medium",
+              "incremental_value": "high",
+              "reason": "The BSI analysis directly addresses the article’s focus on elite cognition, providing deeper methodological critique and theoretical expansion that RAW does not cover."
+            },
+            "incremental_value": "high",
+            "scale": "0-10",
+            "weight_sum": 100.0,
+            "glossary_mode": "full"
+          },
+          "scores": {
+            "RAW": 0.62,
+            "BSI": 0.845
+          },
+          "failed": false,
+          "status": "valid",
+          "model_id": "nvidia/nemotron-3-ultra-550b-a55b:free"
+        }
+      ],
+      "article_id": "doi:https://doi.org/10.1017/s1537592713001084"
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "7aa5a8270a580f6f5da60c2873fce47f5396eaec",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-09-04T20:11:23Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}
