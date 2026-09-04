@@ -17,6 +17,26 @@ from bsi_benchmark.models.analysis import Analysis
 from bsi_benchmark.models.article import Article
 
 
+# Execution status vocabulary, per METHODOLOGY.md section 35 ("Failure
+# Handling"): every Run must carry one of these four statuses rather than
+# a single failed/not-failed boolean, so a caller can distinguish "this
+# generated fine but is still missing a required independent judge
+# result" (INCOMPLETE) from "the generator call itself failed"
+# (FAILED), and from the theoretically-unreachable data-integrity
+# anomaly of a cell with no analysis that was never marked failed
+# (INVALID). This is purely additive: `failed` and the existing
+# has_valid_analysis/has_valid_judge properties are unchanged, and
+# ComparisonResult.complete still uses the same logic it always did --
+# `status` is a derived, read-only summary of that same logic, exposed
+# as a real dataclass field so it round-trips through asdict()/JSON
+# export (see comparison/json_export.py) instead of only existing as a
+# property that dataclasses.asdict() would silently drop.
+STATUS_VALID = "valid"
+STATUS_FAILED = "failed"
+STATUS_INCOMPLETE = "incomplete"
+STATUS_INVALID = "invalid"
+
+
 @dataclass
 class ComparisonCell:
     generator: str
@@ -26,6 +46,29 @@ class ComparisonCell:
     judge_result: Optional[dict] = None
     scores: dict = field(default_factory=dict)
     failed: bool = False
+    status: str = field(init=False, default=STATUS_VALID)
+
+    def __post_init__(self) -> None:
+        self.status = self._compute_status()
+
+    def _compute_status(self) -> str:
+        if self.failed:
+            return STATUS_FAILED
+
+        if self.analysis is None:
+            # failed=False but no analysis is a data-integrity anomaly
+            # that should not occur through the normal runner path --
+            # flagged rather than silently treated as either valid or
+            # a generation failure.
+            return STATUS_INVALID
+
+        if self.mode == "bsi" and not self.has_valid_judge:
+            # Generation succeeded but the run is not yet
+            # evidence-complete: no independent judge result (or an
+            # invalid/heuristic one) is attached.
+            return STATUS_INCOMPLETE
+
+        return STATUS_VALID
 
     @property
     def has_valid_analysis(self) -> bool:

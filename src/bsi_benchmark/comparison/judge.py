@@ -428,9 +428,40 @@ class LLMJudge:
         raw_total = round(sum(c["raw_score"] * c["importance"] for c in criteria) / weight_sum, 2)
         bsi_total = round(sum(c["bsi_score"] * c["importance"] for c in criteria) / weight_sum, 2)
 
+        # METHODOLOGY.md section 37.7 requires that every score/label fall
+        # within its permitted range before a Run is accepted -- unlike
+        # "importance" (validated per-criterion above) and "raw_score"/
+        # "bsi_score" (validated above), "winner" was previously taken
+        # verbatim from the LLM's JSON with no check that it is actually
+        # one of {"raw", "bsi", "tie"}. A stray value here (typo,
+        # explanatory sentence instead of a label, wrong language, etc.)
+        # would silently propagate into ComparisonCell.scores and any
+        # downstream aggregation. Rather than discarding an otherwise
+        # valid judgment over a single bad label (same "normalize, don't
+        # discard" principle used for weight_sum above), an out-of-range
+        # winner is corrected to the value implied by total_scores and
+        # the correction is recorded transparently so it remains
+        # auditable (METHODOLOGY.md section 64) instead of silently
+        # overwritten.
+        _VALID_WINNERS = {"raw", "bsi", "tie"}
+        _declared_winner = parsed.get("winner")
+        _inferred_winner = (
+            "tie" if raw_total == bsi_total
+            else ("bsi" if bsi_total > raw_total else "raw")
+        )
+        if _declared_winner in _VALID_WINNERS:
+            winner = _declared_winner
+            winner_source = "llm"
+            winner_raw_from_llm = None
+        else:
+            winner = _inferred_winner
+            winner_source = "corrected_from_total_scores"
+            winner_raw_from_llm = _declared_winner
+
         out = {
             "criteria_source": "llm",
-            "winner": parsed.get("winner", "bsi" if bsi_total > raw_total else "raw"),
+            "winner": winner,
+            "winner_source": winner_source,
             "reasoning": parsed.get("reasoning", ""),
             "criteria": criteria,
             "total_scores": {"raw": raw_total, "bsi": bsi_total},
@@ -443,6 +474,8 @@ class LLMJudge:
             out["glossary_mode"] = "compact_fallback"
         else:
             out["glossary_mode"] = "full"
+        if winner_raw_from_llm is not None:
+            out["winner_raw_from_llm"] = winner_raw_from_llm
         return out
 
     def _compare_with_heuristic(self, raw, bsi):
@@ -481,6 +514,7 @@ class LLMJudge:
         return {
             "criteria_source": "heuristic_fallback",
             "winner": "bsi" if bsi_total > raw_total else "raw",
+            "winner_source": "heuristic_fallback",
             "reasoning": (
                 "No LLM judge was available or its response could not be "
                 "parsed -- this result is from a fixed keyword-presence "
