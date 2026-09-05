@@ -16,6 +16,22 @@ criteria_source ("llm" or "heuristic_fallback").
 import json
 
 from bsi_benchmark.comparison.glossary import load_judge_resource, load_compact_glossary
+from bsi_benchmark.generation.compaction import compact_full_text
+
+# METHODOLOGY.md section 33 ("Context Limit and Truncation") requires a
+# specified, recorded method for handling an oversized request rather
+# than silently giving up. The existing full->compact GLOSSARY fallback
+# below only shrinks the glossary; it does nothing when the bulk of the
+# token budget is consumed by the RAW/BSI analysis TEXT itself (which
+# became the dominant cost once truncation was fixed elsewhere and BSI
+# analyses routinely run several thousand tokens). This constant sets
+# the character budget used to compact each analysis text, reusing the
+# same head/middle/tail sampling already validated for compacting an
+# oversized article full_text (generation/compaction.py) -- for exactly
+# the same reason it was chosen there: a plain head-cut would silently
+# drop a paper's/analysis's conclusion, while head+middle+tail keeps a
+# representative sample of the whole document.
+_JUDGE_INPUT_COMPACT_CHARS = 3000
 class LLMJudge:
 
     @staticmethod
@@ -197,28 +213,51 @@ class LLMJudge:
             )
             return any(k in msg for k in keys)
 
-        # Prefer full glossary; only fall back to compact on token-limit errors.
+        # Prefer full glossary; only fall back to compact on token-limit
+        # errors. If the compact-glossary attempt STILL hits a
+        # token-limit error, the analysis texts themselves are compacted
+        # too (third tier) before giving up -- see the module-level
+        # comment on _JUDGE_INPUT_COMPACT_CHARS for why. This only
+        # affects what the JUDGE sees; the stored/reported analysis text
+        # (raw_text/bsi_text, and everything derived from them elsewhere
+        # in the record) is never modified.
         last_error = None
         result = None
-        used_compact = False
+        used_compact_glossary = False
+        used_compact_input = False
 
-        for resource, is_compact in (
-            (full_resource, False),
-            (compact_resource, True),
-        ):
+        attempts = [
+            (full_resource, False, user_prompt),
+            (compact_resource, True, user_prompt),
+        ]
+        if compact_resource:
+            compact_user_prompt = (
+                f"ARTICLE TITLE\n{article.title}\n\n"
+                f"RAW ANALYSIS\n"
+                f"{compact_full_text(raw_text, budget_chars=_JUDGE_INPUT_COMPACT_CHARS)}\n\n"
+                f"BSI ANALYSIS\n"
+                f"{compact_full_text(bsi_text, budget_chars=_JUDGE_INPUT_COMPACT_CHARS)}\n"
+            )
+            attempts.append((compact_resource, True, compact_user_prompt))
+
+        for idx, (resource, is_compact, prompt_to_use) in enumerate(attempts):
             if not resource:
                 continue
             try:
                 result = self.generator.generate_with_judge_resource(
-                    article, system_prompt, user_prompt, resource
+                    article, system_prompt, prompt_to_use, resource
                 )
-                used_compact = is_compact
+                used_compact_glossary = is_compact
+                used_compact_input = prompt_to_use is not user_prompt
                 break
             except Exception as e:
                 last_error = e
-                if is_compact or not _is_token_limit_error(e):
+                if idx == len(attempts) - 1 or not _is_token_limit_error(e):
                     raise
-                print("JUDGE_TOKEN_LIMIT: retrying with compact glossary")
+                if idx == 0:
+                    print("JUDGE_TOKEN_LIMIT: retrying with compact glossary")
+                else:
+                    print("JUDGE_TOKEN_LIMIT: retrying with compacted analysis text")
 
         if result is None:
             raise last_error if last_error else RuntimeError("Judge generation failed")
@@ -470,10 +509,11 @@ class LLMJudge:
             "scale": "0-10",
             "weight_sum": round(weight_sum, 1),
         }
-        if used_compact:
+        if used_compact_glossary:
             out["glossary_mode"] = "compact_fallback"
         else:
             out["glossary_mode"] = "full"
+        out["judge_input_compacted"] = used_compact_input
         if winner_raw_from_llm is not None:
             out["winner_raw_from_llm"] = winner_raw_from_llm
         return out
