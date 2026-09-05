@@ -27,3 +27,22 @@ class Analysis:
                                        # fabricated merely to complete a
                                        # result table"). Feeds Execution
                                        # Burden reporting (section 32).
+    finish_reason: str | None = None  # provider-reported stop reason for
+                                       # the FINAL API call that produced
+                                       # `text` (e.g. "stop", "length").
+                                       # "length" means the model's own
+                                       # response hit the max_tokens cap --
+                                       # the analysis may be an incomplete/
+                                       # truncated artifact even though
+                                       # generation itself did not error.
+                                       # Never fabricated: None when the
+                                       # provider's response did not report
+                                       # one.
+    continuation_rounds: int = 0      # how many extra "continue where you
+                                       # left off" API calls were made and
+                                       # concatenated onto `text` because
+                                       # earlier calls hit finish_reason ==
+                                       # "length" (see generation/groq.py,
+                                       # generation/openrouter.py). 0 means
+                                       # the analysis is exactly one API
+                                       # call's output.

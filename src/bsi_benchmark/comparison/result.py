@@ -48,8 +48,21 @@ class ComparisonCell:
     failed: bool = False
     status: str = field(init=False, default=STATUS_VALID)
     model_id: Optional[str] = field(init=False, default=None)
+    truncated: bool = field(init=False, default=False)
 
     def __post_init__(self) -> None:
+        # METHODOLOGY.md section 33 ("Context Limit and Truncation"): a
+        # response cut off by the provider's own max_tokens limit
+        # (finish_reason == "length") is a distinct condition from a
+        # generation failure or a missing judge result -- the analysis
+        # text exists and may even look complete, but was not allowed to
+        # finish. Surfaced as its own field (not folded silently into
+        # `failed`) so a truncated-but-technically-successful generation
+        # is still visible and, per section 30 ("incomplete execution
+        # must not be treated as full Framework execution"), does not
+        # count as STATUS_VALID.
+        if self.analysis is not None:
+            self.truncated = getattr(self.analysis, "finish_reason", None) == "length"
         self.status = self._compute_status()
         # METHODOLOGY.md section 5 requires the exact model identifier to
         # be recorded per Run. Analysis.source_model already carries this
@@ -73,6 +86,9 @@ class ComparisonCell:
             # flagged rather than silently treated as either valid or
             # a generation failure.
             return STATUS_INVALID
+
+        if self.truncated:
+            return STATUS_INCOMPLETE
 
         if self.mode == "bsi" and not self.has_valid_judge:
             # Generation succeeded but the run is not yet
