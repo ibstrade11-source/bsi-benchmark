@@ -1,0 +1,23 @@
+{
+  "cells": {
+    "doi:https://doi.org/10.1186/1748-5908-4-50::gemini::raw": {
+      "analysis": null,
+      "metadata": {
+        "error": "Gemini HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n",
+        "execution_time_seconds": 2.202
+      },
+      "failed": true
+    },
+    "doi:https://doi.org/10.1186/1748-5908-4-50::gemini::bsi": {
+      "analysis": null,
+      "metadata": {
+        "error": "Gemini HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"User location is not supported for the API use.\",\n    \"status\": \"FAILED_PRECONDITION\"\n  }\n}\n",
+        "execution_time_seconds": 4.591
+      },
+      "failed": true
+    }
+  },
+  "judge_results": {
+    "doi:https://doi.org/10.1186/1748-5908-4-50::gemini": null
+  }
+}

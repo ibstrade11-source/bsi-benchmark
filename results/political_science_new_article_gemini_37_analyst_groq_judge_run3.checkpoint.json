@@ -1,0 +1,94 @@
+{
+  "cells": {
+    "doi:https://doi.org/10.1186/1748-5908-4-50::gemini::raw": {
+      "analysis": {
+        "text": "Based on the provided text, here is a concise, factual analysis of the article's main claims and contributions:\n\n### **Main Claims**\n* **Fragmentation in Implementation Science:** Prior to this work, existing implementation theories overlapped significantly, lacked comprehensive constructs, used inconsistent terminology, and failed to fully explain why interventions succeeded or failed across different healthcare contexts.\n* **Need for Multi-Level Evaluation:** To successfully translate research into practice, researchers must evaluate both summative (outcomes) and formative (process and context) measures.\n* **Utility of a Consolidated Framework:** Synthesizing disparate theories into a single, comprehensive framework provides a pragmatic structure to navigate the complex, dynamic, and multi-level realities of real-world healthcare implementation.\n\n### **Key Contributions**\n* **Development of the CFIR:** The authors established the **Consolidated Framework for Implementation Research (CFIR)**, which has become one of the most widely cited and utilized meta-theoretical frameworks in implementation science.\n* **Systematized Taxonomy:** The paper consolidated existing literature to define **37 specific constructs** organized across **five major domains**:\n  1. **Intervention Characteristics** (8 constructs; e.g., evidence strength, adaptability).\n  2. **Outer Setting** (4 constructs; e.g., patient needs, external policies).\n  3. **Inner Setting** (12 constructs; e.g., culture, leadership engagement, climate).\n  4. **Characteristics of Individuals** (5 constructs; e.g., knowledge, beliefs about the intervention).\n  5. **Process of Implementation** (8 constructs; e.g., planning, engaging, executing, reflecting).\n* **Standardized Definitions:** The paper provides explicit, standardized definitions for each construct, resolving historical redundancies and terminology conflicts in the field.\n* **Practical Research Tool:** CFIR offers a practical guide for researchers to design formative evaluations, diagnose barriers and facilitators to implementation, and compare findings across diverse clinical settings to build a cohesive, generalizable knowledge base.",
+        "source_model": "gemini-3.5-flash",
+        "generated_at": "2026-09-06T17:55:02Z",
+        "usage": null,
+        "finish_reason": null,
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 14.477,
+        "usage": null
+      },
+      "failed": false
+    },
+    "doi:https://doi.org/10.1186/1748-5908-4-50::gemini::bsi": {
+      "analysis": {
+        "text": "# تحلیل عمیق مقاله چارچوب تلفیقی برای تحقیقات پیاده‌سازی (Consolidated Framework for Implementation Research - CFIR) بر اساس شاخص بهمنش (Behmanesh Index - BSI v3.4.2)\n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary)\n\n* **مشخصات سند مبنا:** مقاله «بسترسازی برای پیاده‌سازی یافته‌های پژوهش‌های خدمات سلامت در عمل: یک چارچوب تلفیقی برای پیشبرد علم پیاده‌سازی (Fostering implementation of health services research findings into practice: a consolidated framework for advancing implementation science)» نوشته دمشروودر و همکاران (Damschroder et al.).\n* **ادعای محوری (Core Claim):** مقاله مدعی است که مداخلات موثر در خدمات سلامت به دلیل ناهمگونی بافت‌ها و تعاریف پراکنده در نظریه‌های موجود، به نتایج درمانی ملموس منجر نمی‌شوند. چارچوب تلفیقی برای تحقیقات پیاده‌سازی (CFIR) با یکپارچه‌سازی و طبقه‌بندی مفاهیم کلیدی از نظریه‌های مختلف در قالب ۵ دامنه (Domain) و ۳۹ سازه (Construct)، ابزاری کاربردی و جامع برای ارزیابی مداخلات، پیش‌بینی موانع و تحلیل نتایج ارائه می‌دهد.\n* **امتیاز کلی شاخص بهمنش (BSI Score):** ۹۲ از ۱۰۰. این نمره نشان‌دهنده قدرت بالای تلفیق نظری، سازمان‌دهی ساختاریافته و کاربرد پذیری گسترده این چارچوب در حوزه‌های چندبعدی است، اگرچه در زمینه پویایی‌های غیرخطی میان سازه‌ها نیاز به بسط بیشتری دارد.\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (Seven Core Criteria Evaluation Table)\n\n| معیار ارزیابی (Evaluation Criterion) | امتیاز (از ۱۰) | تحلیل توصیفی (Descriptive Analysis) |\n| :--- | :---: | :--- |\n| **۱. سخت‌گیری روش‌شناختی (Methodological Rigor)** | ۹ | استفاده از روش نمونه‌گیری گلوله‌برفی (Snowball Sampling) برای شناسایی جامع نظریه‌ها و فرآیند دقیق غربالگری و ادغام سازه‌ها. |\n| **۲. تلفیق نظری (Theoretical Integration)** | ۱۰ | ادغام موفقیت‌آمیز بیش از ده‌ها نظریه پراکنده در یک فرآیند منسجم و رفع همپوشانی‌های اصطلاح‌شناختی. |\n| **۳. حساسیت بافتی (Contextual Sensitivity)** | ۹.۵ | تفکیک دقیق بین محیط درونی (Inner Setting) و محیط بیرونی (Outer Setting) که پویایی‌های سازمانی را به خوبی پوشش می‌دهد. |\n| **۴. وضوح مفهومی (Conceptual Clarity)** | ۹ | ارائه تعاریف صریح و عملیاتی برای هر یک از ۳۹ سازه که تداخل مفاهیم را به حداقل می‌رساند. |\n| **۵. پشتیبانی تجربی (Empirical Support)** | ۸.۵ | اگرچه چارچوب در زمان نگارش مقاله یک فرضیه فراتحلیلی بود، اما در سال‌های بعد به شدت توسط داده‌های تجربی متعدد تایید شد. |\n| **۶. قابلیت اجرا (Actionability)** | ۹.۵ | ارائه راهنمای عملی برای ارزیابی‌های تکوینی (Formative Evaluations) و سنجش اثربخشی در حین پیاده‌سازی. |\n| **۷. نوآوری (Innovation)** | ۹ | گذار از رویکردهای تک‌بعدی انتشار به سمت یک هستان‌شناسی (Ontology) چندسطحی و ساختاریافته در علم پیاده‌سازی. |\n\n---\n\n## ۳. جدول ارزش‌افزوده خلاقانه (CreativeValueAdd Table)\n\n| زیرمعیار خلاقیت (Creativity Sub-criterion) | وزن (Weight) | امتیاز (از ۱۰۰) | تحلیل مکانیسمی ارزش‌افزوده (Mechanism Analysis of Value Add) |\n| :--- | :---: | :---: | :--- |\n| **هدف‌گیری شکاف معرفتی (Epistemic Gap Targeting)** | ۳۵٪ | ۹۰ | شناسایی دقیق شکاف حاصل از چنددستگی اصطلاحات (Terminology Fragmentation) در علم پیاده‌سازی و پر کردن آن با یک زبان مشترک (Common Language). |\n| **تالیف ترکیبی (Combinatorial Synthesis)** | ۴۰ | ۹۵ | ترکیب هوشمندانه نظریه‌های روان‌شناختی فردی با نظریه‌های جامعه‌شناختی سازمانی برای خلق یک کل هم‌افزا (Synergistic Whole). |\n| **ظرفیت زایایی (Generative Capacity)** | ۲۵٪ | ۹۲ | ایجاد زیرساختی قدرتمند برای پژوهش‌های بعدی که به عنوان بستر اصلی توسعه ابزارهای سنجش و ارزیابی کیفی در علم پزشکی و سلامت عمل می‌کند. |\n\n---\n\n## ۴. لایه‌برداری عمیق (Deep Layering Analysis)\n\n### لایه آشکار (Manifest Layer)\nدر سطح ظاهری، چارچوب تلفیقی برای تحقیقات پیاده‌سازی (CFIR) ساختاری متشکل از ۵ دامنه اصلی ارائه می‌دهد:\n۱. **ویژگی‌های مداخله (Intervention Characteristics):** شامل سازه‌هایی مانند مزیت نسبی (Relative Advantage) و قابلیت انطباق (Adaptability).\n۲. **محیط بیرونی (Outer Setting):** شامل نیازهای بیماران (Patient Needs) و فشارهای بیرونی (Peer Pressure).\n۳. **محیط درونی (Inner Setting):** شامل فرهنگ سازمانی (Culture) و جو پیاده‌سازی (Implementation Climate).\n۴. **ویژگی‌های افراد (Characteristics of Individuals):** شامل خودکارآمدی (Self-efficacy) و دانش نسبت به مداخله.\n۵. **فرآیند (Process):** شامل برنامه‌ریزی (Planning)، اجرا (Executing) و ارزیابی (Evaluating).\n\n### لایه پنهان (Latent Layer)\nدر لایه پنهان، این چارچوب بر پویایی قدرت، مقاومت سازمانی در برابر تغییر (Resistance to Change) و تعاملات روان‌شناختی کارکنان متمرکز است. \n* **حلقه‌های بازخورد (Feedback Loops):** پیاده‌سازی موفق یک مداخله، خودکارآمدی افراد (سازه فردی) را تقویت می‌کند که این امر به نوبه خود جو پیاده‌سازی (سازه محیط درونی) را بهبود بخشیده و تمایل برای ارزیابی مداوم (سازه فرآیندی) را افزایش می‌دهد. این چرخه بازخورد مثبت (Positive Feedback Loop) به پایداری مداخله منجر می‌شود.\n* **نقاط اهرمی (Leverage Points):** تعهد رهبری (Leadership Engagement) در محیط درونی به عنوان یک نقطه اهرمی حیاتی عمل می‌کند؛ تغییر در این نقطه می‌تواند به طور تصاعدی موانع مربوط به منابع در دسترس (Available Resources) را خنثی کند.\n\n### لایه متا (Meta Layer)\nدر سطح متا، چارچوب از یک موضع معرفت‌شناختی عمل‌گرایانه (Pragmatic Epistemology) پیروی می‌کند. این لایه نشان می‌دهد که حقیقت علمی در خلاء کار نمی‌کند، بلکه به شدت وابسته به بستر (Context-dependent) است. چارچوب فرضیه خطی بودن انتقال دانش از آزمایشگاه به بالین را رد کرده و به جای آن، واقعیت را یک سیستم تطبیقی پیچیده (Complex Adaptive System) می‌داند که در آن مداخلات باید به طور مداوم با محیط هم‌تکامل (Co-evolve) شوند.\n\n---\n\n## ۵. تحلیل گروه اطلاعات معرفتی (Epistemic Information Group - EIG Analysis)\n\nاین تحلیل نشان می‌دهد که چارچوب تلفیقی برای تحقیقات پیاده‌سازی (CFIR) چگونه عدم قطعیت‌ها و مرزهای دانشی را مدیریت می‌کند:\n* **مرزهای اطلاعاتی (Information Boundaries):** چارچوب مرزهای دانش تجربی را از طریق ایجاد یک هستان‌شناسی ساختاریافته (Structured Ontology) مشخص می‌کند. این ساختار به پژوهشگران اجازه می‌دهد تا بدانند دقیقاً چه بخش‌هایی از بافت سازمانی هنوز ناشناخته است.\n* **کاهش آنتروپی معرفتی (Epistemic Entropy Reduction):** پیش از معرفی این چارچوب، پراکندگی نظریه‌ها موجب سردرگمی علمی (Scientific Confusion) شده بود. چارچوب با ادغام نظام‌مند سازه‌ها، آنتروپی اطلاعاتی را کاهش داده و همگرایی علمی را تقویت می‌کند.\n\n---\n\n## ۶. ممیزی پیش‌نویس (Draft Analysis Audit - REIG)\n\nاین بخش ممیزی سخت‌گیرانه‌ای بر روی تحلیل انجام‌شده در بخش‌های ۱ تا ۵ ارائه می‌دهد تا از عدم وجود سوگیری اطمینان حاصل شود.\n\n* **انطباق علی (Causal Compliance):**\n  * *بررسی:* آیا رابطه علیت ادعا شده است که فراتر از همبستگی باشد؟\n  * *نتیجه:* **تایید شد (PASS)**. روابط توصیف‌شده میان سازه‌ها بر اساس تعاملات پویای شناخته‌شده در ادبیات علمی است و از ادعای قطعیت علی یک‌سویه پرهیز شده است.\n* **انطباق تعمیم‌دهی (Generalization Compliance):**\n  * *بررسی:* آیا تعمیم غیرمجاز در تحلیل وارد شده است؟\n  * *نتیجه:* **تایید شد (PASS)**. تحلیل بر ماهیت وابسته به بافت (Context-specific) چارچوب تاکید دارد و ادعا نمی‌کند که این چارچوب بدون بومی‌سازی در تمامی صنایع غیرپزشکی به یک میزان پاسخگو است.\n* **انطباق سنجش (Measurement Compliance):**\n  * *بررسی:* آیا امتیازات داده‌شده دقیق‌تر از سطح اطمینان واقعی هستند؟\n  * *نتیجه:* **تایید شد (PASS)**. امتیاز دهی بر اساس یک ماتریس کیفی ذهنی اما مستدل (Subjective yet Reasoned Qualitative Matrix) بر پایه استانداردهای شاخص بهمنش انجام شده و ادعای دقت ریاضی مطلق ندارد.\n* **انطباق قاب‌بندی (Framing Compliance):**\n  * *بررسی:* آیا قضاوت‌های ارزشی غیرعلمی در متن وارد شده است؟\n  * *نتیجه:* **تایید شد (PASS)**. لحن تحلیل کاملاً خنثی، آکادمیک و متمرکز بر ارزش‌های متدولوژیک سند است.\n\n---\n\n## ۷. نتیجه‌گیری نهایی (Final Conclusion)\n\n### نقاط قوت (Strengths)\n* انسجام ساختاری بی‌نظیر و ارائه زبانی مشترک برای علم پیاده‌سازی.\n* تفکیک هوشمندانه سطوح خرد (Micro)، میانه (Meso) و کلان (Macro) بافت‌های سازمانی.\n* قابلیت عملیاتی شدن بالا جهت سنجش‌های میدانی.\n\n### نقاط ضعف (Weaknesses)\n* عدم تبیین دقیق وزن نسبی هر سازه (برخی سازه‌ها در عمل بسیار حیاتی‌تر از بقیه هستند).\n* پویایی‌های زمانی (Temporal Dynamics) و نحوه تغییر سازه‌ها در طول زمان به اندازه کافی در نسخه اولیه فرموله نشده‌اند.\n\n### پیشنهادهای بهبود (Recommendations)\n* ترکیب چارچوب تلفیقی برای تحقیقات پیاده‌سازی (CFIR) با مدل‌های پویایی سیستم (System Dynamics) جهت شبیه‌سازی روابط غیرخطی بین دامنه‌ها.\n* توسعه ابزارهای سنجش کمی استاندارد بر اساس تعاریف ۳۹ سازه ارائه شده.\n\n---\nتحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.",
+        "source_model": "gemini-3.5-flash",
+        "generated_at": "2026-09-06T17:55:29Z",
+        "usage": null,
+        "finish_reason": null,
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 27.611,
+        "usage": null
+      },
+      "failed": false
+    }
+  },
+  "judge_results": {
+    "doi:https://doi.org/10.1186/1748-5908-4-50::gemini": {
+      "criteria_source": "llm",
+      "winner": "bsi",
+      "winner_source": "llm",
+      "reasoning": "While RAW provides a concise overview, BSI delivers richer methodological detail, deeper theoretical integration, and actionable guidance, yielding a higher overall assessment.",
+      "criteria": [
+        {
+          "name": "Theoretical Integration Depth",
+          "importance": 30.0,
+          "raw_score": 7.0,
+          "bsi_score": 9.0,
+          "reason": "BSI explicitly rates theoretical integration at 10 and describes synthesis of 10+ theories; RAW mentions integration but with less detail."
+        },
+        {
+          "name": "Methodological Rigor",
+          "importance": 20.0,
+          "raw_score": 6.0,
+          "bsi_score": 9.0,
+          "reason": "BSI scores 9 for rigorous snowball sampling and systematic review; RAW does not discuss sampling or systematic methods."
+        },
+        {
+          "name": "Practical Actionability",
+          "importance": 25.0,
+          "raw_score": 8.0,
+          "bsi_score": 9.0,
+          "reason": "Both note practical use, but BSI gives higher score and discusses actionable guidance for formative evaluations."
+        },
+        {
+          "name": "Clarity of Construct Definitions",
+          "importance": 15.0,
+          "raw_score": 8.0,
+          "bsi_score": 9.0,
+          "reason": "BSI highlights explicit, operational definitions for 39 constructs; RAW mentions definitions but less emphasis."
+        },
+        {
+          "name": "Scope of Empirical Validation",
+          "importance": 10.0,
+          "raw_score": 7.0,
+          "bsi_score": 8.0,
+          "reason": "BSI acknowledges subsequent empirical support; RAW does not detail validation evidence."
+        }
+      ],
+      "total_scores": {
+        "raw": 7.2,
+        "bsi": 8.9
+      },
+      "bsi_capability_assessment": {
+        "relevance": "high",
+        "realization": "high",
+        "incremental_value": "high",
+        "reason": "BSI framework directly addresses gaps identified by RAW, adds mechanistic and longitudinal layers, and expands upon empirical grounding."
+      },
+      "incremental_value": "high",
+      "scale": "0-10",
+      "weight_sum": 100.0,
+      "glossary_mode": "full",
+      "judge_input_compacted": false
+    }
+  }
+}

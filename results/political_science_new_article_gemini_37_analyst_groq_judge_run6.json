@@ -1,0 +1,201 @@
+{
+  "dataset_name": "public policy implementation empirical study",
+  "results": [
+    {
+      "article": {
+        "title": "Fostering implementation of health services research findings into practice: a consolidated framework for advancing implementation science",
+        "abstract": "BACKGROUND: Many interventions found to be effective in health services research studies fail to translate into meaningful patient care outcomes across multiple contexts. Health services researchers recognize the need to evaluate not only summative outcomes but also formative outcomes to assess the extent to which implementation is effective in a specific setting, prolongs sustainability, and promotes dissemination into other settings. Many implementation theories have been published to help promote effective implementation. However, they overlap considerably in the constructs included in individual theories, and a comparison of theories reveals that each is missing important constructs included in other theories. In addition, terminology and definitions are not consistent across theories. We describe the Consolidated Framework For Implementation Research (CFIR) that offers an overarching typology to promote implementation theory development and verification about what works where and why across multiple contexts. METHODS: We used a snowball sampling approach to identify published theories that were evaluated to identify constructs based on strength of conceptual or empirical support for influence on implementation, consistency in definitions, alignment with our own findings, and potential for measurement. We combined constructs across published theories that had different labels but were redundant or overlapping in definition, and we parsed apart constructs that conflated underlying concepts. RESULTS: The CFIR is composed of five major domains: intervention characteristics, outer setting, inner setting, characteristics of the individuals involved, and the process of implementation. Eight constructs were identified related to the intervention (e.g., evidence strength and quality), four constructs were identified related to outer setting (e.g., patient needs and resources), 12 constructs were identified related to inner setting (e.g., culture, leadership engagement), five constructs were identified related to individual characteristics, and eight constructs were identified related to process (e.g., plan, evaluate, and reflect). We present explicit definitions for each construct. CONCLUSION: The CFIR provides a pragmatic structure for approaching complex, interacting, multi-level, and transient states of constructs in the real world by embracing, consolidating, and unifying key constructs from published implementation theories. It can be used to guide formative evaluations and build the implementation knowledge base across multiple studies and settings.",
+        "full_text": null,
+        "doi": "https://doi.org/10.1186/1748-5908-4-50",
+        "url": "https://openalex.org/W2020155291",
+        "input_quality": {
+          "has_title": true,
+          "has_abstract": true,
+          "source": "openalex",
+          "enriched": false
+        }
+      },
+      "cells": [
+        {
+          "generator": "gemini",
+          "mode": "raw",
+          "analysis": {
+            "text": "### Summary and Overview\nThis seminal paper addresses the gap between health services research and clinical practice by introducing the **Consolidated Framework for Implementation Research (CFIR)**. Developed by synthesizing and standardizing constructs from existing implementation theories, the CFIR provides a unified, overarching meta-framework to guide formative evaluations and systematically assess what works, where, and why across diverse contexts.\n\n---\n\n### Key Problem Addressed\n* **Research-to-Practice Gap:** Many evidence-based interventions fail to translate into sustained, real-world clinical outcomes.\n* **Theoretical Fragmentation:** Prior implementation science literature contained numerous overlapping, redundant, and fragmented models characterized by inconsistent terminology and missing constructs.\n\n---\n\n### Core Contribution: The CFIR Structure\nThe authors conducted a systematic synthesis of published implementation models, standardizing definitions and organizing implementation determinants into **five major domains** encompassing 37 constructs:\n\n1. **Intervention Characteristics (8 constructs):** Features of the intervention itself, such as evidence strength and quality, adaptability, complexity, and design quality.\n2. **Outer Setting (4 constructs):** The broader socio-political, economic, and external context, including patient needs, resources, and external policies or incentives.\n3. **Inner Setting (12 constructs):** The structural and cultural environment of the adopting organization, including leadership engagement, culture, climate, and available resources.\n4. **Characteristics of Individuals (5 constructs):** The agency, beliefs, knowledge, and behaviors of people involved in the implementation process.\n5. **Process (8 constructs):** The active stages and strategies of implementation, including planning, engaging stakeholders, executing, and evaluating/reflecting.\n\n---\n\n### Main Claims and Practical Implications\n* **Standardization:** By offering standardized terminology and explicit definitions, CFIR reduces conceptual ambiguity in implementation research.\n* **Comprehensive Multi-Level Analysis:** The framework enables researchers to systematically diagnose barriers and facilitators across complex, multi-level environments.\n* **Generalizability:** CFIR provides a common structure that facilitates cross-study comparisons, synthesis of empirical findings, and cumulative knowledge-building across different healthcare settings.",
+            "source_model": "gemini-3.7-flash",
+            "generated_at": "2026-09-07T01:00:48Z",
+            "usage": null,
+            "finish_reason": null,
+            "continuation_rounds": 0
+          },
+          "metadata": {
+            "execution_time_seconds": 5.29,
+            "usage": null
+          },
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "winner_source": "llm",
+            "reasoning": "The BSI analysis demonstrates superior depth, methodological clarity, and practical guidance, justifying selection of the BSI analysis as the winner.",
+            "criteria": [
+              {
+                "name": "Comprehensiveness",
+                "importance": 25.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.0,
+                "reason": "Both analyses cover the CFIR’s five domains and 37 constructs, but the BSI analysis provides a more detailed breakdown of construct numbers and domain functions, offering a fuller mapping."
+              },
+              {
+                "name": "Methodological Clarity",
+                "importance": 20.0,
+                "raw_score": 8.0,
+                "bsi_score": 8.5,
+                "reason": "The RAW summary mentions systematic synthesis but lacks detail on sampling and coding. BSI cites snowball sampling and explicit criteria, improving transparency."
+              },
+              {
+                "name": "Practical Applicability",
+                "importance": 20.0,
+                "raw_score": 8.5,
+                "bsi_score": 9.5,
+                "reason": "RAW highlights general use of CFIR for diagnosis; BSI explicitly links CFIR to operational tools, stakeholder engagement, and feedback loops, giving practitioners clearer guidance."
+              },
+              {
+                "name": "Theoretical Integration",
+                "importance": 15.0,
+                "raw_score": 7.5,
+                "bsi_score": 9.0,
+                "reason": "RAW lists domain structures but does not deeply discuss underlying mechanisms or causal loops; BSI delves into latent mechanisms, feedback loops, and critical realism, providing deeper theory."
+              },
+              {
+                "name": "Innovation",
+                "importance": 20.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.0,
+                "reason": "Both present CFIR, but BSI adds novel discussion of generative capacity, combinatorial synthesis, and epistemic gap targeting, which RAW omits."
+              }
+            ],
+            "total_scores": {
+              "raw": 8.03,
+              "bsi": 9.0
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "medium",
+              "incremental_value": "high",
+              "reason": "The BSI analysis aligns closely with the article’s content, extending it by adding depth in mechanism and practical detail, thereby offering incremental value over a standard summary."
+            },
+            "incremental_value": "high",
+            "scale": "0-10",
+            "weight_sum": 100.0,
+            "glossary_mode": "full",
+            "judge_input_compacted": false
+          },
+          "scores": {
+            "RAW": 0.803,
+            "BSI": 0.9
+          },
+          "failed": false,
+          "status": "valid",
+          "model_id": "gemini-3.7-flash",
+          "truncated": false
+        },
+        {
+          "generator": "gemini",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل جامع و ارزیابی شاخص بهمنش (BSI v3.4.2)\n\n**مشخصات محتوای مورد ارزیابی:**\n* **عنوان مقاله:** ارتقای پیاده‌سازی یافته‌های پژوهش‌های خدمات سلامت در عمل: یک چارچوب یکپارچه برای پیشبرد علم پیاده‌سازی (Fostering implementation of health services research findings into practice: a consolidated framework for advancing implementation science)\n* **نویسندگان/منبع:** چارچوب یکپارچه برای پژوهش‌های پیاده‌سازی (Consolidated Framework for Implementation Research - CFIR)\n\n---\n\n### ۱. خلاصه اجرایی (Executive Summary)\n\n* **ادعای محوری (Core Claim):** علم پیاده‌سازی (Implementation Science) از پراکندگی اصطلاحات، هم‌پوشانی نظریه‌ها و فقدان یک طبقه‌بندی جامع رنج می‌برد؛ «چارچوب یکپارچه برای پژوهش‌های پیاده‌سازی (CFIR)» با تجمیع، تفکیک و استانداردسازی ۳۹ سازه (Construct) در ۵ دامنه اصلی، یک ساختار واقع‌گرایانه و منسجم برای درک چگونگی، چرایی و شرایط موفقیت مداخلات در بسترهای گوناگون فراهم می‌آورد.\n* **امتیاز کلی شاخص بهمنش (Overall BSI Score):** **۹۱ از ۱۰۰** (نشان‌دهنده ارزش علمی، ساختاری و ترکیبی بسیار بالا)\n\n---\n\n### ۲. جدول ارزیابی معیارهای اصلی ۷گانه\n\n| ردیف | معیار ارزیابی (Evaluation Criteria) | امتیاز (از ۱۰) | استدلال و شواهد تحلیلی |\n| :--- | :--- | :--- | :--- |\n| ۱ | انسجام مفهومی (Conceptual Coherence) | ۹.۵ | تعاریف درون ۵ دامنه اصلی کاملاً سازگار بوده و مرزهای میان بسترهای درونی و بیرونی با دقت تفکیک شده است. |\n| ۲ | استحکام روش‌شناختی (Methodological Rigor) | ۸.۵ | استفاده از روش نمونه‌گیری گلوله برفی (Snowball Sampling) و معیارهای صریح برای ترکیب یا تفکیک سازه‌ها، متدولوژی را معتبر ساخته است؛ هرچند ارزیابی ساختارمندتری از وزن‌دهی تجربی سازه‌ها می‌توانست افزوده شود. |\n| ۳ | قدرت تبیین و تعمیم (Explanatory & Generalizability Power) | ۹.۵ | چارچوب به‌گونه‌ای طراحی شده که قابلیت اعمال بر طیف وسیعی از محیط‌های سلامت و مداخلات پیچیده را در زمینه‌های مختلف داراست. |\n| ۴ | نوآوری ترکیبی (Combinatorial Novelty) | ۹.۰ | عدم ادعای خلق سازه‌های نوین از صفر، بلکه ارائه یک فراتحلیل مفهومی و یکپارچه‌سازی نظریه‌های متفرق در قالب یک زبان مشترک. |\n| ۵ | ارزش کاربردی و عملیاتی (Practical & Operational Utility) | ۹.۵ | ساختاریافتگی سازه‌ها، ارزیابی تکوینی (Formative Evaluation) را به ابزاری عملیاتی برای مدیران و پژوهشگران تبدیل می‌کند. |\n| ۶ | شفافیت و صراحت اصطلاحات (Terminological Clarity) | ۹.۰ | یکسان‌سازی نام‌گذاری‌ها و رفع ابهام از مفاهیم هم‌پوشان به شفاف‌ترین شکل ممکن در متن لحاظ شده است. |\n| ۷ | پایداری در برابر ابطال‌پذیری (Falsifiability & Robustness) | ۸.۵ | تعاریف عملیاتی سازه‌ها اجازه سنجش و بازآزمایی را می‌دهند، هرچند سنجش تعاملات پیچیده همزمان چالش‌برانگیز است. |\n\n---\n\n### ۳. جدول ارزش‌افزوده خلاقانه (CreativeValueAdd)\n\n| زیرمعیار (Sub-criterion) | وزن (Weight) | امتیاز (از ۱۰۰) | تحلیل تفصیلی ارزش‌افزوده |\n| :--- | :--- | :--- | :--- |\n| **هدف‌گیری شکاف معرفتی (Epistemic Gap Targeting)** | ۳۵٪ | ۹۲ | شناسایی دقیق بحران ترجمه دانش به عمل (Knowledge Translation Gap) و ناتوانی در تکرارپذیری نتایج مداخلات در بسترهای نامتجانس. |\n| **سنتز ترکیبی (Combinatorial Synthesis)** | ۴۰٪ | ۹۴ | ادغام سیستماتیک نظریه‌های متعدد رفتار فردی، پویایی‌های سازمانی و زمینه‌های اجتماعی در یک فرامدل (Meta-framework) منسجم. |\n| **ظرفیت زایایی (Generative Capacity)** | ۲۵٪ | ۸۶ | ارائه یک زبان مشترک که بستر صدها ابزار اندازه‌گیری، پرسش‌نامه و متدولوژی ارزیابی در دو دهه پس از انتشار را ایجاد کرده است. |\n| **امتیاز موزون ارزش‌افزوده خلاقانه** | **۱۰۰٪** | **۹۱.۳** | **سطح نوآوری: پارادایم‌ساز در حوزه پیاده‌سازی کاربردی** |\n\n---\n\n### ۴. لایه‌برداری عمیق (Deep Layered Analysis)\n\n#### الف) لایه آشکار (Manifest Layer)\nدر سطح پدیدارشناختی، مقاله به یک مشکل بالینی-اجرایی پاسخ می‌دهد: مداخلات سلامت در شرایط کنترل‌شده موفق هستند اما در دنیای واقعی با شکست مواجه می‌شوند. راهکار ارائه‌شده یک طبقه‌بندی (Typology) پنج‌بعدی شامل: ویژگی‌های مداخله (Intervention Characteristics)، بستر بیرونی (Outer Setting)، بستر درونی (Inner Setting)، ویژگی‌های افراد درگیر (Characteristics of Individuals)، و فرآیند پیاده‌سازی (Process of Implementation) است که مجموعاً ۳۹ سازه مشخص را پوشش می‌دهد.\n\n#### ب) لایه پنهان (Latent Layer)\n* **مکانیسم‌های زیربنایی (Underlying Mechanisms):** مدل پیاده‌سازی در CFIR بر مبنای درهم‌تنیدگی عاملیت انسانی (Human Agency) و ساختارهای سازمانی عمل می‌کند. موفقیت در پیاده‌سازی ناشی از یک فرآیند خطی نیست، بلکه حاصل انطباق‌پذیری مداخله با فرهنگ بستر درونی و فشارهای ناشی از بستر بیرونی است.\n* **حلقه‌های بازخورد (Feedback Loops):** \n  1. *حلقه تقویت‌کننده یادگیری و بازاندیشی (Reinforcing Loop of Reflecting & Evaluating):* ارزیابی تکوینی منجر به بازنگری در طراحی مداخله شده و انطباق را افزایش می‌دهد که به نوبه خود درگیری رهبری (Leadership Engagement) را تشدید می‌کند.\n  2. *حلقه تضعیف‌کننده مقاومت فرهنگی (Balancing Loop of Cultural Inertia):* عدم تناسب اولیه مداخله با فرهنگ سازمانی، اصطکاک ایجاد کرده و اجرای فرآیند را کند می‌کند تا زمانی که مداخله از طریق سازگاری‌پذیری (Adaptability) تعدیل شود.\n* **نقاط اهرمی (Leverage Points):**\n  * *درگیری رهبران و قهرمانان تغییر (Champions & Leadership Engagement):* تغییر رفتار در سطح فردی و تخصیص منابع در سطح ساختاری، نقطه اهرمی با بازدهی بالا برای شکستن اینرسی سازمانی است.\n  * *قابلیت انطباق مداخله (Adaptability):* انعطاف‌پذیری اجزای پیرامونی مداخله ضمن حفظ هسته اصلی (Core Components).\n\n#### ج) لایه فراگیر/فلسفی (Meta Layer)\nاز دیدگاه معرفت‌شناختی، این مقاله گذار از «پوزیتیویسم خام (Naive Positivism)» (که فرض می‌کرد یک مداخله مؤثر آزمایشگاهی در هر جایی کار می‌کند) به «واقع‌گرایی انتقادی (Critical Realism)» است. چارچوب CFIR به دنبال پاسخ به این پرسش بنیادین است: «چه چیزی، برای چه کسانی، در چه شرایطی و چرا کار می‌کند؟» این رویکرد، پیاده‌سازی را نه یک رویداد، بلکه یک سیستم انطباقی پیچیده (Complex Adaptive System) می‌بیند.\n\n---\n\n### ۵. تحلیل شکاف اطلاعاتی و شواهد (EIG Analysis - Epistemic & Informational Gap)\n\n* **شکاف تعمیم‌پذیری نامحدود (Generalization Boundary):** مقاله مبتنی بر ادبیات حوزه سلامت است؛ اگرچه ساختار سازمانی در آن لحاظ شده، تعمیم مستقیم آن به ساختارهای غیررسمی یا صنایع با سلسله‌مراتب کاملاً افقی نیازمند آزمون است.\n* **شکاف دینامیک زمانی در برابر ساختار ایستا (Temporal vs. Static Dynamics):** CFIR یک چارچوب دسته‌بندی عالی ارائه می‌دهد اما وزن روابط علّی میان‌سازه‌ای و توالی زمانی دقیق را مشخص نمی‌کند (توصیف ساختاری بر تبیین فرآیندی غالب است).\n* **شکاف قابلیت اندازه‌گیری کمی (Quantification Gap):** با وجود شفافیت در تعاریف، شاخص‌های دقیق اندازه‌گیری کمی برای هر سازه در این مقاله مشخص نشده و به مطالعات بعدی محول شده است.\n\n---\n\n### ۶. ممیزی پیش‌نویس تحلیل (REIG Audit - Recursive Evaluation of Draft Analysis)\n\nاین بخش خروجی بخش‌های ۱ تا ۵ همین تحلیل را مورد ارزیابی سخت‌گیرانه قرار می‌دهد:\n\n* **انطباق علّی (Causal Compliance):** \n  * *بررسی:* آیا در تحلیل ادعای علیت فراتر از همبستگی شده است؟\n  * *نتیجه:* **تأیید شد (PASS).** در لایه پنهان، تأثیرگذاری بازخوردها به عنوان پویایی سیستمیک توصیف شده و ادعای علیت خطی و مطلق نشده است.\n* **انطباق تعمیم (Generalization Compliance):**\n  * *بررسی:* آیا در ارزیابی، تعمیم غیرمجاز داده شده است؟\n  * *نتیجه:* **تأیید شد (PASS).** مرزهای کاربرد مدل در حوزه خدمات سلامت و ضرورت اعتبارسنجی در محیط‌های دیگر در تحلیل گنجانده شده است.\n* **انطباق سنجش و امتیازدهی (Measurement Compliance):**\n  * *بررسی:* آیا امتیازات داده شده با قطعیت کاذب همراه است؟\n  * *نتیجه:* **تأیید شد (PASS).** امتیازات متناسب با شواهد متن، استنادات متدولوژیک و چارچوب سنجش استاندارد تعیین شده‌اند.\n* **انطباق چارچوب‌بندی و ارزش‌گذاری (Framing Compliance):**\n  * *بررسی:* آیا قضاوت‌های ارزشی و سوگیری غیرمبتنی بر داده رخ داده است؟\n  * *نتیجه:* **تأیید شد (PASS).** لحن تحلیل کاملاً آکادمیک، انتقادی و بی‌طرفانه است.\n\n**وضعیت نهایی ممیزی:** **قبول (PASS)** — هیچ‌گونه انحراف از اصول اعتبارسنجی روش‌شناختی در پیش‌نویس تحلیل یافت نشد.\n\n---\n\n### ۷. نتیجه‌گیری نهایی، نقاط قوت/ضعف و پیشنهادات بهبود\n\n#### نقاط قوت کلیدی:\n1. یکپارچه‌سازی و سامان‌دهی یک حوزه علمی آشفته و چندپارچه در قالب ۵ دامنه ساختاریافته.\n2. ایجاد پایه‌ای محکم برای توسعه ارزیابی‌های تکوینی و فراتحلیل‌های بین‌رشته‌ای.\n3. تفکیک دقیق بین بستر درونی و بیرونی مداخله.\n\n#### نقاط ضعف کلیدی:\n1. عدم ارائه یک مدل ریاضی/علّی از نحوه تعامل و اولویت‌بندی سازه‌ها در زمان‌بندی‌های مختلف.\n2. احتمال سردرگمی کاربران در کاربرد همزمان تمام ۳۹ سازه به دلیل پیچیدگی بالا (Cognitive Overload).\n\n#### پیشنهادات جهت بهبود و توسعه:\n1. تدوین مدل‌های ریاضیاتی و شبکه‌ای از تعاملات بین سازه‌ها با استفاده از مدل‌سازی معادلات ساختاری (Structural Equation Modeling) یا پویایی‌شناسی سیستم‌ها (System Dynamics).\n2. ایجاد یک نسخه خلاصه و ماتریس وزن‌دهی شده بر اساس نوع مداخله (Intervention-Specific Subsets) جهت کاهش بار محاسباتی در پروژه‌های کوچک‌تر.\n\n---\n\nتحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.",
+            "source_model": "gemini-3.7-flash",
+            "generated_at": "2026-09-07T01:01:01Z",
+            "usage": null,
+            "finish_reason": null,
+            "continuation_rounds": 0
+          },
+          "metadata": {
+            "execution_time_seconds": 13.137,
+            "usage": null
+          },
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "winner_source": "llm",
+            "reasoning": "The BSI analysis demonstrates superior depth, methodological clarity, and practical guidance, justifying selection of the BSI analysis as the winner.",
+            "criteria": [
+              {
+                "name": "Comprehensiveness",
+                "importance": 25.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.0,
+                "reason": "Both analyses cover the CFIR’s five domains and 37 constructs, but the BSI analysis provides a more detailed breakdown of construct numbers and domain functions, offering a fuller mapping."
+              },
+              {
+                "name": "Methodological Clarity",
+                "importance": 20.0,
+                "raw_score": 8.0,
+                "bsi_score": 8.5,
+                "reason": "The RAW summary mentions systematic synthesis but lacks detail on sampling and coding. BSI cites snowball sampling and explicit criteria, improving transparency."
+              },
+              {
+                "name": "Practical Applicability",
+                "importance": 20.0,
+                "raw_score": 8.5,
+                "bsi_score": 9.5,
+                "reason": "RAW highlights general use of CFIR for diagnosis; BSI explicitly links CFIR to operational tools, stakeholder engagement, and feedback loops, giving practitioners clearer guidance."
+              },
+              {
+                "name": "Theoretical Integration",
+                "importance": 15.0,
+                "raw_score": 7.5,
+                "bsi_score": 9.0,
+                "reason": "RAW lists domain structures but does not deeply discuss underlying mechanisms or causal loops; BSI delves into latent mechanisms, feedback loops, and critical realism, providing deeper theory."
+              },
+              {
+                "name": "Innovation",
+                "importance": 20.0,
+                "raw_score": 8.0,
+                "bsi_score": 9.0,
+                "reason": "Both present CFIR, but BSI adds novel discussion of generative capacity, combinatorial synthesis, and epistemic gap targeting, which RAW omits."
+              }
+            ],
+            "total_scores": {
+              "raw": 8.03,
+              "bsi": 9.0
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "medium",
+              "incremental_value": "high",
+              "reason": "The BSI analysis aligns closely with the article’s content, extending it by adding depth in mechanism and practical detail, thereby offering incremental value over a standard summary."
+            },
+            "incremental_value": "high",
+            "scale": "0-10",
+            "weight_sum": 100.0,
+            "glossary_mode": "full",
+            "judge_input_compacted": false
+          },
+          "scores": {
+            "RAW": 0.803,
+            "BSI": 0.9
+          },
+          "failed": false,
+          "status": "valid",
+          "model_id": "gemini-3.7-flash",
+          "truncated": false
+        }
+      ],
+      "article_id": "doi:https://doi.org/10.1186/1748-5908-4-50"
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "6ae2f7dfe0a28c9921608e12a784aab71bb0f86e",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-09-07T01:00:42Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}

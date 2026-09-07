@@ -1,0 +1,201 @@
+{
+  "dataset_name": "political science",
+  "results": [
+    {
+      "article": {
+        "title": "Political Science and the Three New Institutionalisms",
+        "abstract": "The ‘new institutionalism’ is a term that now appears with growing frequency in political science. However, there is considerable confusion about just what the ‘new institutionalism’ is, how it differs from other approaches, and what sort of promise or problems it displays. The object of this essay is to provide some preliminary answers to these questions by reviewing recent work in a burgeoning literature. Some of the ambiguities surrounding the new institutionalism can be dispelled if we recognize that it does not constitute a unified body of thought. Instead, at least three different analytical approaches, each of which calls itself a ‘new institutionalism’, have appeared over the past fifteen years. We label these three schools of thought: historical institutionalism, rational choice institutionalism, and sociological institutionalism.’ All of these approaches developed in reaction to the behavioural perspectives that were influential during the 1960s and 1970s and all seek to elucidate the role that institutions play in the determination of social and political outcomes. However, they paint quite different pictures of the political world. In the sections that follow, we provide a brief account of the genesis of each school and characterize what is distinctive about its approach to social and political problems. We then compare their analytical strengths and weaknesses, * An earlier version of this paper WLS presented at the 1994 Annual Meeting of the American Political Science Association and at a Conference on ‘What is Institutionalism Now? at the",
+        "full_text": null,
+        "doi": "https://doi.org/10.1111/j.1467-9248.1996.tb00343.x",
+        "url": "https://openalex.org/W1561018600",
+        "input_quality": {
+          "has_title": true,
+          "has_abstract": true,
+          "source": "openalex",
+          "enriched": false
+        }
+      },
+      "cells": [
+        {
+          "generator": "gemini",
+          "mode": "raw",
+          "analysis": {
+            "text": "### Overview\nPeter A. Hall and Rosemary C. R. Taylor’s landmark paper, **\"Political Science and the Three New Institutionalisms\"** (1996), addresses the conceptual ambiguity surrounding the term \"new institutionalism\" in political science. The authors argue that new institutionalism is not a unified theory, but rather a collection of three distinct analytical approaches that emerged independently to explain how institutions structure political behavior and outcomes.\n\n---\n\n### Main Claims\n\n1. **Reaction to Behavioralism:**\n   All three branches emerged in reaction to the behavioralist and structural-functionalist approaches of the 1960s and 1970s, which treated institutions as neutral arenas or mere reflections of individual preferences and social forces. Instead, all three assert that institutions play an active, decisive role in shaping politics.\n\n2. **Delineation of the Three Institutionalisms:**\n   * **Historical Institutionalism (HI):** \n     * *Focus:* How institutional arrangements, established at critical historical junctures, persist over time and shape future political trajectories (*path dependency*).\n     * *Mechanism:* Views politics as a struggle for power; institutions mediate conflict, structure access to power, and distribute resources unevenly.\n   * **Rational Choice Institutionalism (RCI):** \n     * *Focus:* How utility-maximizing actors use institutions to solve collective action problems and reduce transaction costs.\n     * *Mechanism:* Institutions are treated as formal rules and incentive structures that constrain or channel the strategic interactions of self-interested actors with fixed preferences.\n   * **Sociological Institutionalism (SI):** \n     * *Focus:* How institutions provide the cognitive scripts, symbols, and cultural templates through which actors interpret the world.\n     * *Mechanism:* Broadens the definition of institutions to include cultural norms. It argues that organizations adopt structures not necessarily to maximize efficiency, but to gain social legitimacy (*institutional isomorphism*).\n\n3. **Complementarity and Dialogue:**\n   While the three schools differ fundamentally in how they define institutions, how they conceptualize human agency (strategic *calculus* vs. cultural/cognitive *habitus*), and how they explain institutional change, they are not mutually exclusive. The authors claim that political science benefits significantly from synthesizing these perspectives rather than treating them as rival paradigms.\n\n---\n\n### Primary Contributions\n\n* **Taxonomic Clarity:** The paper established the standard typology (Historical, Rational Choice, and Sociological) used by political scientists, sociologists, and economists to categorize institutional analysis.\n* **Comparative Theoretical Framework:** It systematically mapped out the core assumptions of each school regarding:\n  * The definition of an institution.\n  * The relationship between institutions and individual action.\n  * The mechanisms of institutional origin, continuity, and change.\n* **Bridge-Building in Political Methodology:** By highlighting the distinct blind spots of each school (e.g., RCI’s difficulty explaining endogenous preferences, HI’s difficulty modeling institutional change, and SI’s tendency to downplay power dynamics), the article laid the groundwork for cross-paradigm research and theoretical integration.",
+            "source_model": "gemini-3.7-flash",
+            "generated_at": "2026-09-07T01:04:07Z",
+            "usage": null,
+            "finish_reason": null,
+            "continuation_rounds": 0
+          },
+          "metadata": {
+            "execution_time_seconds": 6.872,
+            "usage": null
+          },
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "winner_source": "llm",
+            "reasoning": "The BSI evaluation demonstrates superior coverage across all article‑specific criteria, offering a more comprehensive, systematic, and insightful appraisal than the RAW analysis. Therefore, BSI is the winner.",
+            "criteria": [
+              {
+                "name": "Conceptual Clarity & Rigor",
+                "importance": 30.0,
+                "raw_score": 6.0,
+                "bsi_score": 9.0,
+                "reason": "The RAW review merely lists the three schools without deep differentiation, whereas the BSI analysis explicitly dissects terminology and delineates precise boundaries of each approach."
+              },
+              {
+                "name": "Logical & Structural Coherence",
+                "importance": 25.0,
+                "raw_score": 5.0,
+                "bsi_score": 8.0,
+                "reason": "RAW presents claims in a loose, non‑linear format; BSI follows a structured, step‑by‑step argument that logically builds from problem definition to synthesis."
+              },
+              {
+                "name": "Theoretical Grounding",
+                "importance": 20.0,
+                "raw_score": 6.0,
+                "bsi_score": 9.0,
+                "reason": "RAW summarizes the schools but offers little engagement with their theoretical roots; BSI links each paradigm to its foundational critiques of behavioralism and situates them within broader academic debates."
+              },
+              {
+                "name": "Explanatory Depth",
+                "importance": 15.0,
+                "raw_score": 5.0,
+                "bsi_score": 8.0,
+                "reason": "RAW lacks mechanistic explanations; BSI explicitly discusses underlying mechanisms (path dependency, transaction costs, cognitive scripts) and their causal roles."
+              },
+              {
+                "name": "Originality & Value Add",
+                "importance": 10.0,
+                "raw_score": 5.0,
+                "bsi_score": 9.0,
+                "reason": "Both texts acknowledge the taxonomy, yet BSI’s assessment highlights the article’s enduring influence and its role in fostering cross‑paradigm integration."
+              }
+            ],
+            "total_scores": {
+              "raw": 5.5,
+              "bsi": 8.6
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "high",
+              "incremental_value": "high",
+              "reason": "The BSI analysis leverages the article’s content to produce a layered, evidence‑based evaluation that surpasses the RAW summary in depth, clarity, and methodological rigor."
+            },
+            "incremental_value": "high",
+            "scale": "0-10",
+            "weight_sum": 100.0,
+            "glossary_mode": "full",
+            "judge_input_compacted": false
+          },
+          "scores": {
+            "RAW": 0.55,
+            "BSI": 0.86
+          },
+          "failed": false,
+          "status": "valid",
+          "model_id": "gemini-3.7-flash",
+          "truncated": false
+        },
+        {
+          "generator": "gemini",
+          "mode": "bsi",
+          "analysis": {
+            "text": "### گزارش ارزیابی تحلیلی بر پایه شاخص بهمنش (BSI v3.4.2)\n\n**مشخصات اثر مورد ارزیابی:**\n* **عنوان مقاله:** علوم سیاسی و سه نهادگرایی جدید (*Political Science and the Three New Institutionalisms*)\n* **پدیدآورندگان اصلی:** پیتر ای. هال و رزماری سی. آر. تیلور (*Peter A. Hall & Rosemary C. R. Taylor*)\n* **داده ورودی:** چکیده ساختاریافته و مبانی نظری مقاله\n\n---\n\n### ۱. خلاصه اجرایی (*Executive Summary*)، ادعای بنیادین (*Core Claim*) و امتیاز کل\n\n* **خلاصه اجرایی (*Executive Summary*):**\n  مقالهٔ کلاسیک هال و تیلور در تلاش است تا آشفتگی و ابهام مفهومی پیرامون اصطلاح «نهادگرایی جدید (*New Institutionalism*)» را در رشتهٔ علوم سیاسی برطرف سازد. نویسندگان نشان می‌دهند که این جریان یک پارادایم یکپارچه نیست، بلکه از سه مکتب تحلیلی مجزا تشکیل شده است: «نهادگرایی تاریخی (*Historical Institutionalism*)»، «نهادگرایی انتخاب عقلانی (*Rational Choice Institutionalism*)» و «نهادگرایی جامعه‌شناختی (*Sociological Institutionalism*)». هر سه مکتب در واکنش به جریان رفتارگرایی (*Behavioralism*) دهه‌های ۱۹۶۰ و ۱۹۷۰ پدید آمده‌اند، اما در تعریف نهاد، چگونگی شکل‌گیری ترجیحات و سازوکار اثرگذاری نهادها بر پیامدهای سیاسی و اجتماعی تفاوت‌های بنیادین دارند.\n* **ادعای بنیادین (*Core Claim*):**\n  تقلیل مفهوم نهادگرایی جدید به یک رویکرد واحد، مانع درک کارکرد واقعی نهادها در علوم سیاسی است؛ تفکیک و واکاوی تطبیقی سه رویکرد تاریخی، انتخاب عقلانی و جامعه‌شناختی امکان استفاده هم‌افزا از نقاط قوت و پوشش نقاط ضعف متقابل آن‌ها را در تبیین پدیده‌های سیاسی فراهم می‌آورد.\n* **امتیاز کلی شاخص بهمنش (*Overall BSI Score*):** **۸۹ / ۱۰۰** (سطح اثرگذاری: عالی / کلاسیک بنیادین)\n\n---\n\n### ۲. جدول ارزیابی معیارهای اصلی هفت‌گانه (*Main 7 Criteria Assessment*)\n\n| معیار ارزیابی (*Evaluation Criterion*) | وزن (*Weight*) | امتیاز (از ۱۰۰) | توجیه تحلیلی و شواهد متنی (*Analytical Justification & Evidence*) |\n| :--- | :---: | :---: | :--- |\n| **۱. وضوح و دقت مفهومی (*Conceptual Clarity & Rigor*)** | ۱۵٪ | **۹۵** | تفکیک دقیق سه شاخه نامتجانس از یک اصطلاح مشترک و ارائه مرزبندی‌های روشن مفهومی. |\n| **۲. انسجام منطقی و ساختاری (*Logical & Structural Coherence*)** | ۱۵٪ | **۹۰** | توالی منطقی از تبیین مسئله و خاستگاه تاریخی تا مقایسه تطبیقی و جمع‌بندی نقاط ضعف و قوت. |\n| **۳. مبنای نظری و ریشه‌یابی فکری (*Theoretical Grounding*)** | ۱۵٪ | **۹۲** | ریشه‌یابی دقیق تقابل پارادایمی با مکتب رفتارگرایی و پیوند با خاستگاه‌های جامعه‌شناختی و اقتصادی. |\n| **۴. توان تبیینی و تحلیلی (*Explanatory & Analytical Power*)** | ۱۵٪ | **۸۸** | تبیین موفق چرایی تفاوت دیدگاه‌ها درباره نحوه اثرگذاری نهادها بر کنش بازیگران و نتایج جمعی. |\n| **۵. جامعیت و پوشش دیدگاه‌ها (*Comprehensiveness*)** | ۱۵٪ | **۸۵** | پوشش کامل جریان‌های مسلط زمان انتشار؛ هرچند مکاتب متأخرتر نظیر نهادگرایی گفتمانی هنوز شکل نگرفته بودند. |\n| **۶. ارزش افزوده و اصالت تفکر (*Value Add & Originality*)** | ۱۵٪ | **۸۷** | پایه‌گذاری یک دسته‌بندی جریان‌ساز که به عنوان چارچوب مرجع در آموزش و پژوهش علوم سیاسی تثبیت شد. |\n| **۷. ابطال‌پذیری و نقدپذیری (*Falsifiability & Critical Aperture*)** | ۱۰٪ | **۸۲** | اذعان شفاف به نقاط ضعف تحلیلی هر سه مکتب و باز گذاشتن مسیر برای نقد رویکردهای ترکیبی. |\n\n---\n\n### ۳. جدول ارزش افزوده خلاقانه (*CreativeValueAdd Table*)\n\n| زیرمعیار (*Sub-criterion*) | سهم وزنی (*Weight*) | امتیاز (از ۱۰۰) | استدلال و ارزیابی عمیق (*Deep Analytical Rationale*) |\n| :--- | :---: | :---: | :--- |\n| **هدف‌گیری شکاف معرفتی (*Epistemic Gap Targeting*)** | ۳۵٪ | **۹۳** | شناسایی دقیق شکاف دانشی ناشی از استفاده مبهم و چندگانه از مفهوم نهادگرایی جدید در ادبیات علوم سیاسی و رفع این ابهام از طریق مرزبندی نظری دقیق. |\n| **سنتز ترکیبی (*Combinatorial Synthesis*)** | ۴۰٪ | **۸۹** | ترکیب موفق مبانی جامعه‌شناسی، اقتصاد سیاسی و تحلیل تاریخی جهت بازتعریف ساختار یافته مناسبات میان ساختار و کارگزار (*Structure and Agency*). |\n| **ظرفیت زایایی (*Generative Capacity*)** | ۲۵٪ | **۹۱** | ایجاد یک چارچوب تحلیلی فرادست که منشأ نگارش صدها پژوهش تجربی و توسعه نظریه‌های تلفیقی در دهه‌های پس از انتشار شد. |\n\n* **نمره کل ارزش افزوده خلاقانه (*Composite CreativeValueAdd Score*):** **۹۰.۹ / ۱۰۰**\n\n---\n\n### ۴. لایه‌برداری عمیق تحلیلی (*Deep Layering Analysis*)\n\n#### الف) لایه آشکار (*Manifest Layer*)\nدر سطح متن، مقاله به عنوان یک مرور ادبیات انتقادی سامان یافته است. مسئله اصلی، کاربرد مکرر اما آشفته واژه «نهادگرایی جدید» در پژوهش‌های سیاسی است. متن ادعا می‌کند که با تفکیک سه رویکرد تاریخی، انتخاب عقلانی و جامعه‌شناختی، می‌توان سردرگمی موجود را رفع کرد. این سه رویکرد بر پایه خاستگاه مشترک خود (نفی رفتارگرایی) و کارکرد مشترک (تبیین نقش نهادها در سرنوشت سیاسی جامعه) در کنار هم قرار گرفته اما در مفروضات بنیادین مقایسه می‌شوند.\n\n#### ب) لایه پنهان (*Latent Layer*)\n* **سازوکارهای بنیادین (*Underlying Mechanisms*):**\n  1. *سازوکار نهادگرایی تاریخی:* وابستگی به مسیر (*Path Dependency*) و اثرات بازخوردی مثبت (*Positive Feedback Effects*) که طی آن تصمیمات پیشین، دامنه گزینه‌های آینده را مقید می‌سازد.\n  2. *سازوکار نهادگرایی انتخاب عقلانی:* تعادل راهبردی (*Strategic Equilibrium*) و کاهش هزینه‌های مبادله (*Transaction Cost Reduction*) که در آن نهادها به مثابه قواعد بازی برای حل معمای کنش جمعی عمل می‌کنند.\n  3. *سازوکار نهادگرایی جامعه‌شناختی:* الگوهای شناختی (*Cognitive Templates*)، مشروعیت‌بخشی نمادین (*Symbolic Legitimation*) و هم‌شکلی ساختاری (*Isomorphism*) که هویت و ترجیحات بازیگر را درونی می‌سازند.\n* **حلقه‌های بازخورد (*Feedback Loops*):**\n  * *حلقه خودتقویت‌کننده نهادی (*Self-Reinforcing Institutional Loop*):* ساختارهای نهادی منافع و هویت‌ها را شکل می‌دهند؛ بازیگران بر اساس این منافع از همان نهادها دفاع می‌کنند، که منجر به تداوم و ماندگاری نهادی (*Institutional Persistence*) می‌شود.\n* **نقاط اهرمی (*Leverage Points*):**\n  * بزنگاه‌های بحرانی (*Critical Junctures*): لحظاتی از تاریخ که پایداری نهادی شکسته می‌شود و زمینه برای تغییر ساختاری یا انتخاب مسیر جدید فراهم می‌آید.\n\n#### ج) لایه فرا/متا (*Meta Layer*)\nاین لایه نبرد پارادایمی عمیق‌تری را حول مسئله «عاملیت در برابر ساختار (*Agency vs. Structure*)» و «عقلانیت ابزاری در برابر عقلانیت هنجاری/فرهنگی» آشکار می‌سازد. مقاله هال و تیلور در یک سطح فرانظری نشان می‌دهد که دانش علوم سیاسی بدون توافق بر سر ماهیت هستی‌شناختی انسان (انسان اقتصادی در برابر انسان جامعه‌شناختی) ناچار است پدیده‌ها را از پنجره‌های تحلیلی چندگانه اما مکمل مشاهده کند.\n\n---\n\n### ۵. تحلیل شکاف‌های معرفتی و استنباطی (*EIG Analysis*)\n\n* **شکاف ادعا–شواهد (*Claim-Evidence Gap*):** از آنجا که مقاله ماهیت فرانظری و تحلیلی دارد، شواهد به شکل مرور ارجاعات ادبیات نظری عرضه شده‌اند و فاقد داده‌های تجربی کمی هستند.\n* **شکاف تعمیم‌پذیری (*Generalization Gap*):** دسته‌بندی ارائه‌شده ممکن است مرزهای تلفیقی نوین و پژوهش‌های بین‌رشته‌ای نوظهور را به طور کامل درون این سه جعبه مجزا جای ندهد.\n* **شکاف علیت در برابر همبستگی (*Causality vs. Correlation Gap*):** مقاله به درستی سازوکارهای علّی هر مکتب را تفکیک می‌کند اما درباره اولویت قطعی یکی بر دیگری ادعای تجربی اثبات‌ناپذیری مطرح نمی‌سازد.\n\n---\n\n### ۶. ممیزی پیش‌نویس تحلیل (*REIG Audit of Draft Analysis*)\n\n| نقطه بررسی (*Audit Dimension*) | وضعیت (*Status*) | ارزیابی انطباق و مستندات ممیزی (*Compliance Evaluation*) |\n| :--- | :---: | :--- |\n| **انطباق علّی (*Causal Compliance*)** | **تأیید (*PASS*)** | پیش‌نویس تحلیل تنها سازوکارهای علّی ادعاشده توسط هر مکتب را گزارش کرده و هیچ رابطه همبستگی را به عنوان علیت قطعی ارزیابی نکرده است. |\n| **انطباق تعمیم (*Generalization Compliance*)** | **تأیید (*PASS*)** | تعمیم‌های ارائه‌شده محدود به حوزه نظریه‌پردازی نهادگرایی در علوم سیاسی باقی مانده و به حوزه‌های نامرتبط بسط داده نشده است. |\n| **انطباق سنجش (*Measurement Compliance*)** | **تأیید (*PASS*)** | امتیازات ارائه‌شده بازتاب‌دهنده وزن کلاسیک و جایگاه اجماعی مقاله در ادبیات آکادمیک بوده و از دقت کاذب اجتناب شده است. |\n| **انطباق چارچوب‌بندی (*Framing Compliance*)** | **تأیید (*PASS*)** | هیچ قضاوت ارزشی یا جانبداری هنجاری در تبیین مکاتب سه‌گانه صورت نگرفته و اصل بی‌طرفی کاملاً حفظ شده است. |\n\n* **نتیجه نهایی ممیزی پیش‌نویس:** **پذیرش کامل (*FULL PASS*)**\n\n---\n\n### ۷. نتیجه‌گیری نهایی، نقاط قوت/ضعف و توصیه‌های تکمیلی\n\n* **نقاط قوت بنیادین:**\n  1. ارائه یک آرایه‌بندی مفهومی (*Conceptual Taxonomy*) شفاف و ماندگار که سردرگمی نظری در علوم سیاسی را به حداقل رساند.\n  2. واکاوی بی‌طرفانه نقاط کور و مزیت‌های نسبی هر سه مکتب بدون ترجیح هنجاری ناموجه.\n  3. فراهم‌سازی زبان مشترک برای گفتگوی بین‌رشته‌ای میان اقتصاد، تاریخ و جامعه‌شناسی.\n* **نقاط ضعف و کاستی‌ها:**\n  1. کم‌توجهی نسبی به نقش متغیرهای گفتمانی، زبانی و ایده‌ای که بعدها زمینه ظهور «نهادگرایی گفتمانی (*Discursive Institutionalism*)» را ایجاد کرد.\n  2. ارائه تفکیکی تا حدی صلب میان مکاتب که در واقعیت پژوهش‌های تجربی پیچیده هم‌پوشانی‌های متعددی دارند.\n* **پیشنهادهای بهبود تحلیلی:**\n  * در تحلیل‌های تکمیلی معاصر، پیشنهاد می‌شود رویکرد چهارم (نهادگرایی گفتمانی/ایده‌ای) در کنار این سه مکتب به عنوان مکمل جهت تبیین فرآیندهای اقناع و تغییرات تدریجی نهادی لحاظ گردد.\n\n---\nتحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.",
+            "source_model": "gemini-3.7-flash",
+            "generated_at": "2026-09-07T01:04:20Z",
+            "usage": null,
+            "finish_reason": null,
+            "continuation_rounds": 0
+          },
+          "metadata": {
+            "execution_time_seconds": 12.813,
+            "usage": null
+          },
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "winner_source": "llm",
+            "reasoning": "The BSI evaluation demonstrates superior coverage across all article‑specific criteria, offering a more comprehensive, systematic, and insightful appraisal than the RAW analysis. Therefore, BSI is the winner.",
+            "criteria": [
+              {
+                "name": "Conceptual Clarity & Rigor",
+                "importance": 30.0,
+                "raw_score": 6.0,
+                "bsi_score": 9.0,
+                "reason": "The RAW review merely lists the three schools without deep differentiation, whereas the BSI analysis explicitly dissects terminology and delineates precise boundaries of each approach."
+              },
+              {
+                "name": "Logical & Structural Coherence",
+                "importance": 25.0,
+                "raw_score": 5.0,
+                "bsi_score": 8.0,
+                "reason": "RAW presents claims in a loose, non‑linear format; BSI follows a structured, step‑by‑step argument that logically builds from problem definition to synthesis."
+              },
+              {
+                "name": "Theoretical Grounding",
+                "importance": 20.0,
+                "raw_score": 6.0,
+                "bsi_score": 9.0,
+                "reason": "RAW summarizes the schools but offers little engagement with their theoretical roots; BSI links each paradigm to its foundational critiques of behavioralism and situates them within broader academic debates."
+              },
+              {
+                "name": "Explanatory Depth",
+                "importance": 15.0,
+                "raw_score": 5.0,
+                "bsi_score": 8.0,
+                "reason": "RAW lacks mechanistic explanations; BSI explicitly discusses underlying mechanisms (path dependency, transaction costs, cognitive scripts) and their causal roles."
+              },
+              {
+                "name": "Originality & Value Add",
+                "importance": 10.0,
+                "raw_score": 5.0,
+                "bsi_score": 9.0,
+                "reason": "Both texts acknowledge the taxonomy, yet BSI’s assessment highlights the article’s enduring influence and its role in fostering cross‑paradigm integration."
+              }
+            ],
+            "total_scores": {
+              "raw": 5.5,
+              "bsi": 8.6
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "high",
+              "incremental_value": "high",
+              "reason": "The BSI analysis leverages the article’s content to produce a layered, evidence‑based evaluation that surpasses the RAW summary in depth, clarity, and methodological rigor."
+            },
+            "incremental_value": "high",
+            "scale": "0-10",
+            "weight_sum": 100.0,
+            "glossary_mode": "full",
+            "judge_input_compacted": false
+          },
+          "scores": {
+            "RAW": 0.55,
+            "BSI": 0.86
+          },
+          "failed": false,
+          "status": "valid",
+          "model_id": "gemini-3.7-flash",
+          "truncated": false
+        }
+      ],
+      "article_id": "doi:https://doi.org/10.1111/j.1467-9248.1996.tb00343.x"
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "6ae2f7dfe0a28c9921608e12a784aab71bb0f86e",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-09-07T01:04:00Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  }
+}

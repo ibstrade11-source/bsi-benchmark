@@ -1,0 +1,101 @@
+{
+  "cells": {
+    "doi:https://doi.org/10.1186/1748-5908-4-50::gemini::raw": {
+      "analysis": {
+        "text": "Based on the provided abstract, here is a concise, factual analysis of the article's main claims and contributions.\n\n### **Main Claims**\n* **The Implementation Gap:** Many clinically effective health services interventions fail to translate into routine practice due to a lack of understanding of *how* and *why* implementation succeeds or fails in different contexts.\n* **Limitations of Existing Theories:** Prior implementation science theories were highly fragmented, used inconsistent terminology, overlapped significantly, and often lacked comprehensive coverage of necessary constructs.\n* **Need for a Unified Typology:** To advance the field, researchers require a standardized, consolidated framework to guide formative evaluations and systematically compare findings across diverse studies and settings.\n\n### **Key Contributions**\n* **Creation of the CFIR:** The paper introduces the **Consolidated Framework for Implementation Research (CFIR)**, which has become one of the most widely used meta-theoretical frameworks in implementation science.\n* **Synthesis of 5 Key Domains:** The CFIR consolidates existing theories into five major, interacting domains comprised of **37 distinct constructs**:\n  1. **Intervention Characteristics (8 constructs):** Attributes of the intervention being implemented (e.g., evidence strength, adaptability, cost).\n  2. **Outer Setting (4 constructs):** The external patient, political, and social context (e.g., patient needs, peer pressure).\n  3. **Inner Setting (12 constructs):** The structural, political, and cultural context of the organization implementing the intervention (e.g., culture, leadership engagement, climate).\n  4. **Characteristics of Individuals (5 constructs):** The active agents involved in the implementation process (e.g., knowledge, beliefs, self-efficacy).\n  5. **Process of Implementation (8 constructs):** The active stages of implementation (e.g., planning, engaging, executing, reflecting/evaluating).\n* **Standardized Definitions:** The authors provide explicit, standardized definitions for each of the 37 constructs, resolving prior issues of redundant or conflated terminology.\n* **Pragmatic Application:** The framework provides a practical structure for researchers to diagnose implementation barriers, guide formative evaluations, and build a cohesive, cumulative knowledge base across different healthcare settings.",
+        "source_model": "gemini-3.5-flash",
+        "generated_at": "2026-09-06T18:48:41Z",
+        "usage": null,
+        "finish_reason": null,
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 16.351,
+        "usage": null
+      },
+      "failed": false
+    },
+    "doi:https://doi.org/10.1186/1748-5908-4-50::gemini::bsi": {
+      "analysis": {
+        "text": "# تحلیل ارزیابی چارچوب جامع برای تحقیقات پیاده‌سازی (CFIR) بر اساس شاخص بهمنش (BSI v3.4.2)\n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary)\n\n*   **ادعای محوری (Core Claim):** مقاله حاضر استدلال می‌کند که مداخلات مؤثر در پژوهش‌های خدمات سلامت (Health Services Research) اغلب در انتقال به مراقبت‌های بالینی واقعی شکست می‌خورند. علت این امر، پراکندگی، هم‌پوشانی و عدم سازگاری اصطلاحات در نظریه‌های پیاده‌سازی موجود است. این پژوهش با معرفی «چارچوب جامع برای تحقیقات پیاده‌سازی (Consolidated Framework for Implementation Research - CFIR)»، یک گونه‌شناسی (Typology) منسجم و یکپارچه در قالب ۵ حوزه کلیدی ارائه می‌دهد تا ارزیابی تکوینی (Formative Evaluation) و انباشت دانش پیاده‌سازی را تسهیل کند.\n*   **امتیاز کلی شاخص بهمنش (Overall BSI Score):** ۹۲ از ۱۰۰ (سطح عالی - ممتاز)\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (7 Core Criteria Evaluation Table)\n\n| معیار ارزیابی (Evaluation Criterion) | امتیاز (از ۱۰) | تحلیل و توجیه (Analysis & Justification) |\n| :--- | :--- | :--- |\n| **۱. وضوح و شفافیت (Clarity & Precision)** | ۱۰ | تعاریف مفاهیم کاملاً صریح و ساختاریافته ارائه شده‌اند تا ابهام اصطلاحات سنتی رفع شود. |\n| **۲. انسجام منطقی (Logical Coherence)** | ۹ | گذار منطقی از شناسایی خلاءهای نظری (Theory Gaps) به ارائه مدل یکپارچه بسیار قوی است. |\n| **۳. اعتبار روش‌شناسی (Methodological Validity)** | ۹ | استفاده از روش نمونه‌گیری گلوله‌برفی (Snowball Sampling) برای ادغام نظریه‌ها، متدولوژی مناسبی است. |\n| **۴. شواهد و پشتیبانی (Evidence & Support)** | ۸ | تکیه بر تحلیل متون و نظریه‌های پیشین قوی است، هرچند در چکیده جزییات آزمون تجربی مدل محدود است. |\n| **۵. نوآوری و اصالت (Originality & Innovation)** | ۹ | تجمیع خلاقانه نظریه‌های متکثر در قالب یک فرانظریه (Meta-theory) نوآوری بالایی دارد. |\n| **۶. کاربردپذیری (Applicability)** | ۱۰ | این مدل به عنوان یکی از کاربردی‌ترین ابزارها در علم پیاده‌سازی (Implementation Science) شناخته می‌شود. |\n| **۷. جامعیت (Comprehensiveness)** | ۹ | پوشش کامل ابعاد درونی، بیرونی، ویژگی‌های افراد، فرایند و مداخله نشان از جامعیت بالا دارد. |\n\n---\n\n## ۳. جدول ارزش افزوده خلاقانه (CreativeValueAdd Table)\n\n| زیرمعیار (Sub-criterion) | سهم (Weight) | امتیاز (از ۱۰۰) | تحلیل توصیفی (Descriptive Analysis) |\n| :--- | :--- | :--- | :--- |\n| **هدف‌گیری خلاء معرفتی (Epistemic Gap Targeting)** | ۳۵٪ | ۹۰ | به طور مستقیم پراکندگی تعاریف و خلاء همگرایی نظری در علم پیاده‌سازی را نشانه می‌رود. |\n| **سنتز ترکیبی (Combinatorial Synthesis)** | ۴۰٪ | ۹۵ | با ترکیب سازه‌های هم‌پوشان از نظریه‌های مختلف، ساختاری منسجم و غیرتکراری خلق کرده است. |\n| **ظرفیت زاینده (Generative Capacity)** | ۲۵٪ | ۹۰ | چارچوبی ارائه می‌دهد که به عنوان مبنایی برای پژوهش‌های تجربی بی‌شمار بعدی عمل می‌کند. |\n\n---\n\n## ۴. لایه‌برداری عمیق (Deep Layering Analysis)\n\n### لایه آشکار (Manifest Layer)\nدر این لایه، مقاله به وضوح مشکل عدم انتقال یافته‌های پژوهشی به حوزه عمل را مطرح می‌کند. روش‌شناسی شامل بررسی ساختاریافته نظریه‌های موجود و ادغام سازه‌های موازی (Redundant Constructs) در ۵ حوزه اصلی است:\n1.  ویژگی‌های مداخله (Intervention Characteristics) - ۸ سازه\n2.  محیط بیرونی (Outer Setting) - ۴ سازه\n3.  محیط درونی (Inner Setting) - ۱۲ سازه\n4.  ویژگی‌های افراد درگیر (Characteristics of Individuals) - ۵ سازه\n5.  فرایند پیاده‌سازی (Process of Implementation) - ۸ سازه\n\n### لایه پنهان (Latent Layer)\nدر سطح عمیق‌تر، این مقاله در حال مبارزه با «برج بابل اصطلاحات (Terminology Babel)» در علوم تجربی است. مکانیسم پنهان در اینجا، ایجاد یک زبان مشترک (Common Language) برای تسهیل ارتباطات بین‌رشته‌ای است. \n*   **حلقه‌های بازخورد (Feedback Loops):** تعریف سازه‌های استاندارد، فرآیند ارزیابی‌های تکوینی را بهبود می‌بخشد، که این امر به نوبه خود داده‌های تجربی دقیق‌تری تولید کرده و اعتبار چارچوب CFIR را در یک چرخه تقویتی (Reinforcing Loop) افزایش می‌دهد.\n*   **نقاط اهرمی (Leverage Points):** تمرکز بر تعامل میان محیط درونی (Inner Setting) و بیرونی (Outer Setting) به عنوان نقطه اهرمی اصلی برای تغییر رفتار سازمان‌ها شناسایی شده است.\n\n### لایه فرا (Meta Layer)\nدر این لایه، پارادایم حاکم بر پژوهش‌های سلامت از «اثبات اثربخشی بالینی (Clinical Efficacy)» به سمت «تحقیقات پیاده‌سازی (Implementation Research)» تغییر می‌کند. این لایه نشان می‌دهد که حقیقت علمی به تنهایی برای تغییر رفتار سیستم‌های پیچیده انسانی کافی نیست و نیازمند یک علم انتقال (Translational Science) ساختاریافته هستیم.\n\n---\n\n## ۵. تحلیل شاخص رشد معرفتی (EIG Analysis - Epistemic Increment Growth)\n\nاین سند با ادغام تئوری‌های پراکنده و متناقض، سطح آنتروپی معرفتی (Epistemic Entropy) را در حوزه مدیریت سلامت به شدت کاهش می‌دهد. ارزش افزوده معرفتی آن، تبدیل تئوری‌های انتزاعی به یک ابزار سنجش عینی و کاربردی است که به محققان اجازه می‌دهد متغیرهای مداخله‌گر در پیاده‌سازی را به شکلی فرموله و مقایسه کنند.\n\n---\n\n## ۶. ممیزی پیش‌نویس (REIG - Draft Analysis Audit)\n\n*خروجی این بخش حاصل ممیزی دقیق تحلیل ارائه‌شده در بخش‌های ۱ تا ۵ است:*\n\n*   **انطباق علیتی (Causal Compliance):**\n    *   *وضعیت:* PASS\n    *   *توضیح:* در تحلیل ادعا نشده که استفاده از CFIR به طور قطعی تضمین‌کننده موفقیت ۱۰۰ درصدی پیاده‌سازی است، بلکه به عنوان تسهیل‌کننده و ساختاردهنده معرفی شده است. رابطه همبستگی میان ساختارهای منسجم و موفقیت ارزیابی حفظ شده است.\n*   **انطباق تعمیم‌دهی (Generalization Compliance):**\n    *   *وضعیت:* PASS\n    *   *توضیح:* تعمیم‌دهی مدل CFIR به درستی به حوزه «محیط‌های پیچیده و پویا» محدود شده و به عنوان یک ابزار اقتضایی (Contingency Tool) دیده شده است.\n*   **انطباق اندازه‌گیری (Measurement Compliance):**\n    *   *وضعیت:* PASS\n    *   *توضیح:* امتیاز ۹۲/۱۰۰ منعکس‌کننده تأثیرگذاری تاریخی و ساختار روش‌شناختی قوی مدل است و معیارهای سنجش به طور شفاف در جدول ۷گانه توجیه شده‌اند.\n*   **انطباق قاب‌بندی (Framing Compliance):**\n    *   *وضعیت:* PASS\n    *   *توضیح:* از سوگیری‌های ارزشی پرهیز شده و تحلیل بر اساس ارزش متدولوژیک و ساختاری متن اصلی انجام گرفته است.\n\n---\n\n## ۷. نتیجه‌گیری نهایی (Final Conclusion)\n\n*   **نقاط قوت (Strengths):**\n    *   یکپارچه‌سازی بی‌نظیر نظریه‌های پراکنده علمی در قالب یک مدل پنج‌بعدی منسجم.\n    *   ارائه زبان استاندارد مشترک برای علم پیاده‌سازی.\n    *   تسهیل ارزیابی‌های تکوینی و فرآیندی در کنار ارزیابی‌های نهایی پیامدها.\n*   **نقاط ضعف (Weaknesses):**\n    *   تعداد بالای سازه‌ها (۳۹ سازه) ممکن است در عمل به پیچیدگی و دشواری جمع‌آوری داده‌ها منجر شود.\n    *   وزن‌دهی و اولویت‌بندی پویای بین سازه‌ها بسته به نوع مداخله به وضوح تبیین نشده است.\n*   **پیشنهادهای بهبود (Improvement Proposals):**\n    *   طراحی الگوهای بهینه‌سازی‌شده و کوتاه‌تر (Rapid CFIR) برای پروژه‌های بالینی کوچک‌مقیاس با محدودیت زمانی.\n    *   توسعه راهنماهای عملیاتی گام‌به‌گام برای چگونگی سنجش کیفی و کمی هر یک از ۳۹ سازه معرفی شده.\n\n---\nتحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.",
+        "source_model": "gemini-3.5-flash",
+        "generated_at": "2026-09-06T18:49:12Z",
+        "usage": null,
+        "finish_reason": null,
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 31.169,
+        "usage": null
+      },
+      "failed": false
+    }
+  },
+  "judge_results": {
+    "doi:https://doi.org/10.1186/1748-5908-4-50::gemini": {
+      "criteria_source": "llm",
+      "winner": "bsi",
+      "winner_source": "llm",
+      "reasoning": "The BSI evaluation offers deeper methodological detail, layered structural analysis, and higher explanatory power, surpassing the raw summary in all weighted criteria. Consequently, BSI is the superior analytical approach for this article.",
+      "criteria": [
+        {
+          "name": "Clarity and Precision of Claims",
+          "importance": 25.0,
+          "raw_score": 6.0,
+          "bsi_score": 9.0,
+          "reason": "RAW lists core claims but lacks detailed definitions; BSI explicitly dissects claims with structured sub‑claims."
+        },
+        {
+          "name": "Depth of Evidence and Methodological Rigor",
+          "importance": 20.0,
+          "raw_score": 5.0,
+          "bsi_score": 8.0,
+          "reason": "RAW cites literature synthesis but offers no methodological detail; BSI outlines snowball sampling, systematic review, and layering of evidence."
+        },
+        {
+          "name": "Explanatory and Mechanistic Breadth",
+          "importance": 20.0,
+          "raw_score": 6.0,
+          "bsi_score": 9.0,
+          "reason": "RAW mentions five domains but stops at descriptive level; BSI maps latent mechanisms, feedback loops, and causal structures."
+        },
+        {
+          "name": "Practical Applicability and Usability",
+          "importance": 15.0,
+          "raw_score": 7.0,
+          "bsi_score": 9.0,
+          "reason": "RAW notes CFIR's usage; BSI provides concrete examples of application and potential for formative evaluation."
+        },
+        {
+          "name": "Incremental Knowledge Contribution",
+          "importance": 10.0,
+          "raw_score": 5.0,
+          "bsi_score": 10.0,
+          "reason": "RAW reproduces known framework; BSI assesses novelty, generative capacity, and epistemic value."
+        },
+        {
+          "name": "Structural Coherence Across Layers",
+          "importance": 10.0,
+          "raw_score": 6.0,
+          "bsi_score": 9.0,
+          "reason": "RAW offers a single‑layer overview; BSI demonstrates manifest, latent, and meta layers, showing internal consistency."
+        }
+      ],
+      "total_scores": {
+        "raw": 5.85,
+        "bsi": 8.9
+      },
+      "bsi_capability_assessment": {
+        "relevance": "high",
+        "realization": "high",
+        "incremental_value": "high",
+        "reason": "The BSI analysis directly addresses the article's context, demonstrates comprehensive layering, and provides added epistemic insight beyond a simple summary."
+      },
+      "incremental_value": "high",
+      "scale": "0-10",
+      "weight_sum": 100.0,
+      "glossary_mode": "full",
+      "judge_input_compacted": false
+    }
+  }
+}
