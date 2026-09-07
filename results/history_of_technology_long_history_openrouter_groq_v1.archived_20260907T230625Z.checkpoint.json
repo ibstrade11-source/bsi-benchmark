@@ -1,0 +1,74 @@
+{
+  "cells": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::openrouter::raw": {
+      "analysis": {
+        "text": "**Analysis of \"A Long History: From Universal Language to Artificial Intelligence\"**\n\n**Main Claims**\n1.  **Technical Mediation of Language:** Access to language is historically structured by technical infrastructures, artifacts, and media; it is never direct or neutral.\n2.  **Continuity over Rupture:** Contemporary AI language models (LLMs) are not unprecedented disruptions but the latest iteration in a centuries-long genealogy of attempts to formalize, code, and render language computable.\n3.  **Co-constitution of Form and Epistemology:** The technical formalization of language (from 17th-century universal language projects → mid-20th-century information theory → computational linguistics) was inextricably linked to specific epistemic assumptions, material circumstances, and practices of knowledge production.\n4.  **Historical Contingency:** Current language technologies are historically contingent interventions shaped by this lineage, rather than radical breaks with the past.\n\n**Scholarly Contribution**\n*   **Genealogical Intervention:** Provides a *longue durée* historical framework (17th century–present) connecting early modern universal language schemes, information theory, and computational linguistics to modern AI, filling a gap in STS/history of science scholarship which has often treated these eras separately.\n*   **Reframing AI Discourse:** Counters dominant \"rupture narratives\" surrounding LLMs by demonstrating that core problems—formalization, coding, ordering of knowledge—are persistent features of the sociotechnical imaginary of language.\n*   **Epistemic Historicization:** Demonstrates that the *computability* of language is not an inherent property discovered by modern engineering, but a constructed outcome of specific historical choices regarding how knowledge and social life should be ordered.",
+        "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "generated_at": "2026-09-07T23:03:11Z",
+        "usage": {
+          "prompt_tokens": 245,
+          "completion_tokens": 419,
+          "total_tokens": 664,
+          "cost": 0,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 71,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 12.858,
+        "usage": {
+          "prompt_tokens": 245,
+          "completion_tokens": 419,
+          "total_tokens": 664,
+          "cost": 0,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 71,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "failed": false
+    },
+    "doi:https://doi.org/10.1353/tech.2026.a988849::openrouter::bsi": {
+      "analysis": null,
+      "metadata": {
+        "error": "OpenRouter response did not contain a non-empty 'choices' array. keys=['id', 'error']; error={'message': 'Upstream error from Nvidia: Service temporarily overloaded', 'code': 502}; body_prefix='{\"id\":\"gen-1788822325-65Cobx3EY7xvLumuiGaE\",\"error\":{\"message\":\"Upstream error from Nvidia: Service temporarily overloaded\",\"code\":502}}'",
+        "execution_time_seconds": 133.45
+      },
+      "failed": true
+    }
+  },
+  "judge_results": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::openrouter": null
+  }
+}

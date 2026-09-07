@@ -9,3 +9,8 @@ class PipelineResult:
     articles: list[Article]
     skipped_count: int = 0
     skipped_titles: list[str] = field(default_factory=list)
+
+    # Retrieval validation / audit trail.
+    retrieval_status: str = "accepted"
+    retrieval_validation: dict = field(default_factory=dict)
+    rejected_articles: list[dict] = field(default_factory=list)

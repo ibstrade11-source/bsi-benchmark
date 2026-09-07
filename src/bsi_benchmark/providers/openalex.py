@@ -20,6 +20,20 @@ class OpenAlexProvider(Provider):
     def __init__(self):
         self.client = HttpClient()
 
+    def get_work(self, work_id: str):
+        """Retrieve one exact OpenAlex Work by ID or OpenAlex URL."""
+        work_id = str(work_id).strip().rstrip("/")
+        if "/" in work_id:
+            work_id = work_id.rsplit("/", 1)[-1]
+
+        url = f"{self.BASE_URL}/{quote(work_id)}"
+        response = self.client.get(url)
+        if not response.ok:
+            raise ProviderUnavailable(
+                f"OpenAlex HTTP {response.status_code}: {response.body}"
+            )
+        return response.body
+
     def search(self, query: str, rows: int = 5):
 
         url = (

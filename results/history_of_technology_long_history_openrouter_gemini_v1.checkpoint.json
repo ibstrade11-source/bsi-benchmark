@@ -1,0 +1,182 @@
+{
+  "cells": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::openrouter::raw": {
+      "analysis": {
+        "text": "**Analysis of \"A Long History: From Universal Language to Artificial Intelligence\"**\n\n**Main Claims**\n1.  **Continuity over Rupture:** Contemporary AI language models (LLMs) are not unprecedented disruptions but the latest iteration in a centuries-long trajectory of technical mediation of language.\n2.  **Co-constitution of Language and Technology:** The formalization, coding, and computability of language were not neutral technical achievements; they were shaped by—and simultaneously shaped—specific epistemic assumptions, material circumstances, and knowledge-production practices.\n3.  **Genealogical Scope:** This trajectory spans three key historical moments:\n    *   **17th-century Europe:** Projects for \"universal languages\" (philosophical/taxonomic ordering).\n    *   **Mid-20th century:** The emergence of information theory (statistical/probabilistic modeling).\n    *   **Late 20th century:** The integration of computational methods into linguistics (formal syntax/parsing).\n\n**Contribution**\n*   **Intervention in STS/History of Science:** Bridges the gap between classic Science and Technology Studies (STS) emphasis on sociotechnical contingency and the specific domain of *language* technologies, which the abstract argues has been undertheorized in this regard.\n*   **Reframing of AI:** Provides a historical corrective to \"radical rupture\" narratives surrounding LLMs, positioning them as historically contingent interventions in longstanding debates about the ordering of knowledge and social life.\n*   **Synthesis:** Connects disparate historical episodes (universal language schemes, Shannon/Weaver information theory, computational linguistics) into a single genealogy of rendering language *computable*.\n\n**Methodological/Theoretical Stance**\n*   **Genealogical/Historical Epistemology:** Traces the conditions of possibility for current technologies rather than assessing their performance.\n*   **Co-productionist:** Treats technical artifacts (code, infrastructure) and epistemic objects (language, information, knowledge) as mutually constitutive.",
+        "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "generated_at": "2026-09-07T22:31:42Z",
+        "usage": {
+          "prompt_tokens": 245,
+          "completion_tokens": 464,
+          "total_tokens": 709,
+          "cost": 0,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 57,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 12.636,
+        "usage": {
+          "prompt_tokens": 245,
+          "completion_tokens": 464,
+          "total_tokens": 709,
+          "cost": 0,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 57,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "failed": false
+    },
+    "doi:https://doi.org/10.1353/tech.2026.a988849::openrouter::bsi": {
+      "analysis": {
+        "text": "# تحلیل ارزیابی شاخص بهمنش (BSI v3.4.2)\n\n**موضوع تحلیل:** مقاله «تاریخچه‌ای دراز: از زبان جهان‌گستر تا هوش مصنوعی» (A Long History: From Universal Language to Artificial Intelligence)  \n**نوع محتوا:** چکیده مقاله علمی-تحلیلی (رشته‌های STS، تاریخ علم، زبان‌شناسی محاسباتی)  \n**تاریخ تحلیل:** ۲۶ ژوئن ۲۰۲۶  \n**ارزیاب:** مستر پرامپت شاخص بهمنش نسخه ۳.۴.۲  \n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI\n\n**خلاصه اجرایی:**  \nمقاله حاضر با استناد به چکیده ارائه‌شده، مدعی است که مدل‌های زبانی هوش مصنوعی (AI Language Models) باید نه به عنوان «شکاف‌های ردیف‌نشده» (Unprecedented Disruptions) بلکه به عنوان «مداخلات تاریخی مشروط» (Historically Contingent Interventions) درک شوند. نویسنده با ریشه‌یابی ژنئولوژیک (Genealogical) که از پروژه‌های زبان جهان‌گستر قرن ۱۷م (Universal Language Projects) آغاز شده، از میان نظریه اطلاعات (Information Theory) می‌گذرد و به یکپارچه‌سازی روش‌های محاسباتی در زبان‌شناسی می‌رسد، استدلال می‌کند که «صوری‌سازی» (Formalization)، «کدگذاری» (Coding) و «محاسبه‌پذیرسازی» (Rendering Computable) زبان، هم‌زمان با پیش‌فرض‌های شناختی خاص، شرایط فنی و ممارست‌های تولید دانش هم‌سازگار (Co-constituted) شده‌اند. مقاله تلاش می‌کند بستر bacteriologic (بوم‌شناختی/روان‌شناختی) فضای فعلی AI را با روش‌شناسی Science and Technology Studies (STS) و تاریخ علم بازگو کند.\n\n**Core Claim (ادعای هسته‌ای):**  \n> «تکنولوژی‌های زبانی معاصر (LLMs) ادامه‌ای مستقیم و ضرورتی برای ژنئالوژی طولانی رسمی‌سازی و محاسبه‌پذیرسازی زبان هستند که در پروژه‌های زبان جهانی قرن ۱۷م ریشه دارد و در میان نظریه اطلاعات و زبان‌شناسی محاسباتی میانه قرن ۲۰م بلوغ می‌یابد؛ بنابراین، این تکنولوژی‌ها «شکاف ردیف‌نشده» نیستند، بلکه «مداخلات تاریخی مشروط» هستند که با پیش‌فرض‌های شناختی و شرایط فنی خاص هم‌سازگار شده‌اند.»\n\n**امتیاز کلی BSI: ۸.۷ / ۱۰**  \n*(توضیح: ترکیب نادیده‌گرفته‌شده‌ای از تاریخ علم، STS و نقد فناوری با استدلال ژنئولوژیک قوی؛ اما محدودیت تحلیل تنها بر پایه چکیده و عدم دسترسی به متن کامل، دقت لایه‌های پنهان و فرامiddle را تا حدی محدود می‌کند.)*\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (Seven Core Criteria)\n\n| # | معیار اصلی (Core Criterion) | وزن | امتیاز (۰-۱۰) | امتیاز وزنی | استدلال ارزیابی (Evidence-Based Justification) |\n|---|----------------------------|-----|--------------|------------|------------------------------------------------|\n| ۱ | **انسجام منطقی و استدلالی** (Logical Coherence & Reasoning) | ۰.۱۵ | ۹.۰ | ۱.۳۵ | استدلال ژنئولوژیک (Genealogical) از قرن ۱۷ تا میانه قرن ۲۰ و امروز، زنجیره علیت/هم‌سازگاری (Co-constitution) را به صورت خطی و منسجم ترسیم می‌کند. پریم‌ها (پروژه‌های زبان جهانی، نظریه اطلاعات، زبان‌شناسی محاسباتی) به نتیجه (LLMs به عنوان مداخلات مشروط) متصل‌اند. |\n| ۲ | **نوآوری معرفتی و شکاف‌شناسی** (Epistemic Novelty & Gap Targeting) | ۰.۲۰ | ۹.۵ | ۱.۹۰ | هدف مستقیم: شکاف بین روایات «شکاف ردیف‌نشده» (Rupture Narratives) و «ادوام تاریخی» (Historical Continuity). مقاله این شکاف را با ابزارهای STS/تاریخ علم هدف قرار می‌دهد که در ادبیات پرهیز AI کمتر پرشورده شده. |\n| ۳ | **ترکیب小说ی و تکاملی** (Combinatorial Synthesis) | ۰.۱۵ | ۹.۰ | ۱.۳۵ | ترکیب سه حوزه متمایز: ۱. تاریخ ایده‌ها (زبان جهانی)، ۲. تاریخ فناوری/نظریه اطلاعات، ۳. نقد معاصر AI/STS. ترکیب لزوماً جدید است، نه فقط خلاصه‌بندی. |\n| ۴ | **ظرفیت ژنراتیو/عملیاتی** (Generative Capacity) | ۰.۱۵ | ۸.۵ | ۱.۲۷ | چارچوب «مداخلات تاریخی مشروط» ظرفیتGenerative برای تحلیل‌های سیاست‌گذاری، طراحی اخلاقی و ارزیابی تأثیر اجتماعی دارد. اما بدون متن کامل، جزئیات مکانیسمی (Operationalization) نامشخص است. |\n| ۵ | **سازگاری بانتولوژی BIO** (BIO Ontology Compliance) | ۰.۱۰ | ۹.۰ | ۰.۹۰ | تطبیق بالا با لایه‌های BIO: Manifest (تکنولوژیولوژی‌های زبانی، چکیده)، Latent (پیش‌فرض‌های شناختی، هم‌سازگاری تکنیک-دانش)، Meta (ژنوﺋﻮژیک قدرت/دانش، بازتعریف روش‌شناختی). واژگان BIO (Co-constitution، Epistemic Assumptions، Genealogy) مستقیماً بکار رفته‌اند. |\n| ۶ | **엄مμέدی/دقت روش‌شناختی** (Methodological Rigor) | ۰.۱۵ | ۸.۰ | ۱.۲۰ | روش ژنئولوژی (Genealogy) و تحلیل 공동تولید (Co-production) مناسب است. اما چکیده تنها «نمایش» (Shows) را ادعا می‌کند بدون 드러ن 싹 méthodes (بایگانی، متنی، مصاحبه) را در چکیده تفصیل دهد. عدم دسترسی به متن کامل مانع ارزیابی دقیق شواهد است. |\n| ۷ | **ارزش‌افزودنی خلاقانه** (Creative Value Add - CVA) | ۰.۱۰ | ۹.۰ | ۰.۹۰ |詳細は در جدول مخصص CVA (بخش ۳). خلاصه: هدف‌گذاری شکاف معرفت‌سازی (Epistemic Gap) قوی، ترکیبnovel تاریخ ایده‌ها با نقد AI، و ظرفیت ژنراتیو برای سیاست‌گذاری. |\n| **مجموع امتیاز کلی BSI** | | **۱.۰۰** | | **۸.۸۷ ≈ ۸.۷** | **امتیاز نهایی: ۸.۷ / ۱۰** |\n\n---\n\n## ۳. جدول CreativeValueAdd (CVA) با ۳ زیرمعیار\n\n| زیرمعیار CVA | وزن در CVA | امتیاز (۰-۱۰) | امتیاز وزنی | استدلال تحلیلی و شواهد متنی |\n|--------------|-----------|--------------|------------|-------------------------------|\n| **هدف‌گذاری شکاف معرفت‌سازی** (Epistemic Gap Targeting) — ۳۵٪ | ۰.۳۵ | ۹.۵ | ۳.۳۲۵ | **شکاف شناسایی‌شده:** روایات غلبه در رسانه و بخش‌هایی از ادبیات AI که LLMs را «شکاف ردیف‌نشده» (Unprecedented Disruption) می‌نامند. **استراتژی پر کردن شکاف:** ارائه ژنئالوژی پیوسته (Continuous Genealogy) از قرن ۱۷ تا امروز. **قدرت استدلال:** استفاده از مفهوم «هم‌سازگاری» (Co-constitution) به جای «تأثیر متقابل» ساده، پیش‌فرض‌های شناختی (Epistemic Assumptions) را به عنوان موتور تاریخچه pozycjon می‌کند، نه به عنوان پیش‌زمینه خاموش. این مقاله شکاف «زمانی-مفهومی» را هدف می‌گیرد، نه فقط شکاف تجربی. |\n| **ترکیب 소설ی و تکاملی** (Combinatorial Synthesis) — ۴۰٪ | ۰.۴۰ | ۹.۰ | ۳.۶۰ | **مولفه‌های ترکیبی:** ۱. تاریخ فلسفه زبان/منطق (ویلس، لایبنیز، دکارت — زبان جهانی). ۲. تاریخ ریاضیات/مهندسی (شانون، تورینگ، وینر — نظریه اطلاعات). ۳. تاریخ زبان‌شناسی (چامسکی،.hadoop/کارپوس‌ها — زبان‌شناسی محاسباتی). ۴. نظریه اجتماعی علم (STS، کون، لاتور، جاسینوف — 공동تولید/Co-production). **نوآوری ترکیب:** مقاله این چهار رشته را در یک استدلال «واحد» (Unitary Argument) می‌بافد: رسمی‌سازی ← کدگذاری ← محاسبه‌پذیرسازی. این ترکیب «افقی» (Inter-disciplinary) و «عمودی» (Historical Depth) همزمان است. ضعف جزئی: چکیده نگارش چگونگی تعامل «قدرت/دانش» (Power/Knowledge) در هر فاز را مشخص نکرده (احتمالاً در متن کامل وجود دارد). |\n| **ظرفیت ژنراتیو/عملیاتی** (Generative Capacity) — ۲۵٪ | ۰.۲۵ | ۸.۵ | ۲.۱۲۵ | **خروجی‌های ژنراتیو:** ۱. چارچوب مفهومی برای «نقد الگوریتمی» (Algorithmic Critique) که ریشه تاریخی دارد. ۲. ابزار برای سیاست‌گذاران: جلوگیری از «استثناگری فنی» (Technological Exceptionalism) در قانون‌گذاری AI. ۳. بستر برای طراحان سیستم: درک پیش‌فرض‌های درونی (Embedded Epistemic Assumptions) در معماری مدل‌ها. ۴. مسیرهای تحقیقاتی جدید: ژنئولوژی داده‌های آموزشی (Training Data Genealogy). **محدودیت:** بدون متن کامل، «مکانیسم‌های عملیاتی» (Operational Mechanisms) برای تبدیل این دیدگاه به ابزار ارزیابی کمی/کیفی مشخص نیست. |\n| **مجموع CVA** | **۱.۰۰** | | **۹.۰۵ / ۱۰** | **امتیاز CVA: ۹.۰۵ (عالی)** |\n\n---\n\n## ۴. لایه‌برداری عمیق (Deep Layer Analysis)\n\n### ۴.۱. لایه محسوس (Manifest Layer) —Visible Artifacts & Claims\n**مفروضات صریح (Explicit Propositions):**\n1.  دسترسی به زبان توسط زیرساخت‌های فنی (Technical Infrastructures)، مصنوعات (Artifacts) و رسانه‌ها (Media) توسطتداری (Mediated) است.\n2.  صعود مدل‌های زبانی AI سوالات میانی را «تشدید» (Intensified) کرده، اغلب با کادر «شکاف ردیف‌نشده».\n3.  محققان STS/تاریخ علم بر «مشروطیت‌های اجتماعی-فنی» (Sociotechnical Contingencies) تأکید داشته‌اند.\n4.  شکاف ادبیات: کم‌توجهی به نحوه مداخله تکنولوژی‌های زبانی معاصر در مناظرات دیرین زبان/اطلاعات/ نظم دانش.\n5.  بازه زمانی: قرن ۱۷ (زبان جهانی) → میانه قرن ۲۰ (نظریه اطلاعات، زبان‌شناسی محاسباتی) → امروز.\n6.  سه فرآیند کلیدی: **صوری‌سازی** (Formalization)، **کدگذاری** (Coding)، **محاسبه‌پذیرسازی** (Rendering Computable).\n7.  این سه فرآیند با **پیش‌فرض‌های شناختی** (Epistemic Assumptions)، **شرایط فنی** (Technical Circumstances) و **ممارست‌های تولید دانش** (Practices of Knowledge Production) **هم‌سازگار** (Co-constituted) شده‌اند.\n8.  نتیجه: بازنویسی (Reframe) تکنولوژی‌های زبانی به عنوان «مداخلات تاریخی مشروط» (Historically Contingent Interventions) به جای «شکاف‌های ردیف‌نشده».\n\n**ساختار استدلالی صریح:** استدلال استقرایی-تاریخی (Historical-Inductive Argument) با Movimiento ژنئولوژیک (Foucauldian Genealogical Move).\n\n---\n\n### ۴.۲. لایه پنهان (Latent Layer) — Hidden Mechanisms, Patterns, Feedback Loops, Leverage Points\n\n#### الف) مکانیسم‌های پنهان (Hidden Mechanisms)\n1.  **مکانیسم «منطقی‌سازیِ авториته» (Logicization of Authority):**\n    *   *ریشه:* پروژه‌های زبان جهانی (ویلس، لایبنیز) تلاش برای خلع سلاح «ابهام» و «قدرت تفسیر» از نهادهای دینی/سلطانی و انتقال آن به «منطق математиک» بوده‌اند.\n    *   *تداوم:* نظریه اطلاعات (شانون) «معنای» (Meaning) را از «اطلاعات» (Information) جدا کرد تا انتقال قابل‌محاسبه شود. این یک **عمل تفویض επιستمیک** (Epistemic Displacement) است: авториته تعیین «معنی» از انسان به سیستم نمادین/ماشین منتقل می‌شود.\n    *   *ظهور در LLMs:* مدل‌های بزرگ، «معنی» را به «انتخاب توکن احتمالی» تقلیل می‌دهند. авториته نهایی «صحت» و «»سازگاری» (Coherence) از کاربر/مفسر انسانی به «معماری مدل» (Model Architecture) و «داده‌های آموزشی» (Training Data) منتقل شده است. این مکانیسم پنهانِ «انتقال موقعیت معرفتی» (Epistemic Locus Shift) است که مقاله با واژه «هم‌سازگاری» (Co-constitution) به آن اشاره می‌کند اما در چکیده بازنشانده نشده.\n\n2.  **مکانیسم «مادی‌شدنِ انتزاع» (Reification of Abstraction):**\n    *   *فرآیند:* زبان جهانی → نمادهای منطق رسمی → بیت‌های شانون → وکتورهای فضایی معنایی (Embeddings).\n    *   *مکانیسم پنهان:* در هر مرحله، یک «انتزاع مایع و زمینه‌دار» (Fluid, Contextual Abstraction) به یک «مادیِ سخت و محاسبه‌پذیر» (Hard, Computable Artifact) تبدیل می‌شود. این تبدیل **بی‌طرفانه نیست**؛ chọn lọc (Selection) و حذف (Deletion) ایدئولوژیک/شناختی دارد (مثال: حذف پراگماتیک، لحن، سکوت، قدرت در شانون؛ حذف ناهمگونی فرهنگی در توکنایزیشن).\n    *   *Feedback Loop:* داده‌های آموزشیِ «مادی‌شده» (Reified Data) مدل را آموزش می‌دهند → مدل خروجی تولید می‌کند → خروجی‌ها به عنوان «داده‌های جدید» به محیط اجتماعی تزریق می‌شوند → محیط اجتماعی تغییر می‌کند → داده‌های جدید از محیط تغییر یافته استخراج می‌شوند. این **حلقه بازخورد انجامیدگی-مادی** (Performativity-Materiality Loop) است که مقاله در لایه Meta به آن می‌پردازد.\n\n3.  **مکانیسم «معماری‌سازیِ ناآگاهی» (Architecting Ignorance):**\n    *   رسمی‌سازی (Formalization) به معنای تعریف مرزهای «آن‌چه قابل محاسبه است» است. هر رسمی‌سازی یک **حریم ناآگاهی طراحی‌شده** (Designed Ignorance Boundary) ایجاد می‌کند.\n    *   زبان جهانی: نادیده گرفتن ابهام/شاعری.\n    *   نظریه اطلاعات: نادیده گرفتن معنای/مرجع.\n    *   زبان‌شناسی محاسباتی: نادیده گرفتن عملکرد اجتماعی/واژگانPositional.\n    *   LLMs: نادیده گرفتن درک/قصد/مسئولیت.\n    *   مقاله این الگوی تکرارشونده (Recursive Pattern) را «هم‌سازگاری پیش‌فرض‌های شناختی» می‌نامد. این یک **Leverage Point (نقطه یراسازی) حیاتی** است: تحلیل حریم ناآگاهی در هر فاز، پیش‌بینیِ شکست‌های اخلاقی/اجتماعی فاز بعد را می‌سیراست.\n\n#### ب) الگوهای تکرارشونده (Recursive Patterns)\n| فاز تاریخی | عملیات اصلی (Operation) | پیش‌فرض شناختی درونی (Embedded Epistemic Assumption) | حریم ناآگاهی (Ignorance Boundary) | قدرت/نهاد قدرت (Power/Institution) |\n| :--- | :--- | :--- | :--- | :--- |\n| **قرن ۱۷: زبان جهانی** | رسمی‌سازی منطق (Logical Formalization) | زبان = تصویر کلامِ ذهن (Language = Mirror of Thought) | ابهام، استعاره، بافت اجتماعی، قدرت تفسیر | جمهوری‌های علم (Republic of Letters)، دولت‌های مُرکب (Nascent Nation-States) |\n| **میانه قرن ۲۰: نظریه اطلاعات** | کدگذاری احتمالی (Probabilistic Coding) | اطلاعات ≠ معنا (Information ≠ Meaning) — جداپذیرند | مرجع، قصد، نویز معنایی، Праگماتیک | 군-صنایع پیچیده (Military-Industrial Complex)، بل لبه (Bell Labs) |\n| **نیمه دوم قرن ۲۰: زبان‌شناسی محاسباتی** | محاسبه‌پذیرسازی دستور/کارپوس (Computational Parsing/Corpus) | قواعد = آمار توزیع (Grammar = Distributional Statistics) | twórcیت زبانی، کاربرد موضع‌گرا، ناهمگونی لهجه | آکادمی (MIT, Stanford)، DARPA، نوزادان Silicon Valley |\n| **امروز: LLMs** | پیش‌بینی توکن مقیاس وسیع (Massive Next-Token Prediction) | دانسته‌ها = وزن‌های مدل (Knowledge = Model Weights) | حقیقت، وكالة (Agency)، مسئولیت، درک عمیق، کپی‌رایت | شرکت‌های بزرگ تکنولوژی (Big Tech)، سرمایه‌ریزی مخاطره‌پذیر (VC) |\n\n**Feedback Loop شناسایی‌شده (Cross-Era Feedback Loop):**\nخروجی هر فاز → ** زیرساخت معرفت‌سازی (Epistemic Infrastructure)** فاز بعد.\n*   منطق رسمی لایبنیز → پایه بول/شانون.\n*   انتروپی شانون → پایه مدل‌های n-gram/بک‌آف.\n*   کارپوس‌های(Treebank) → داده‌های پیش‌교육 BERT/GPT.\n*   **نکته کلیدی:** این حلقه بازخورد **خطی نیست**؛력은 پالایش (Refinement) و انبساط (Expansion) حریم ناآگاهی را با قدرت نهادین تقویت می‌کند.\n\n#### ج) Leverage Points (نقاط یراسازی) — مطابق چارچوب دونلا ميدوز (Donella Meadows)\n1.  **Leverage Point 12 (ثوابت/پارامترها): پارامترهای «توکنایزیشن» و «هدف تابع ضرر» (Loss Function).** تغییر این پارامترها (مثال: توکنایزیشن چندزبانه عادلانه، Loss Function با مجازات سوگیری) می‌تواند حریم ناآگاهی را جابجا کند. *استفاده مقاله: تاریخچه توکنایزیشن را از «استقرار واحدهای واژگانی» ریشه‌یابی کند.*\n2.  **Leverage Point 10 (ساختار توزیع능력): معماری «داده‌های آموزشی» به عنوان زیرساخت معرفت.** مقاله نشان می‌دهد داده‌ها «خام» نیستند، محصول تاریخچه کدگذاری‌اند. **تداخل مداخله:** بازسازی دیتاست‌ها با آگاهی از ژنئولوژی کدگذاری (Data Archaeology).\n3.  **Leverage Point 6 (لایه‌های تنظیم/Feedback Loops): حلقه بازخورد «خروجی مدل → داده‌های آینده» (Model Collapse / Data Pollution).** مقاله با کادر «مداخلات تاریخی مشروط» این حلقه را قابل‌مشاهدت می‌سازد. **مداخله:** مکانیسم‌های ردیابی نسب (Provenance Tracking) و watermarking الزامی.\n4.  **Leverage Point 4 (قوانین سیستم/Encapsulated Epistemic Assumptions): پیش‌فرض «لگوس = محاسبه» (Logos = Computation).** این عمیق‌ترین نقطه یراسازی است. مقاله با ژنئولوژی این پیش‌فرض را **تاریخی** می‌کند، نه **طبیعی**. **مداخله:** آموزش_interdisciplinary الزامی برای مهندسان AI (فلسفه زبان، STS، تاریخ علم) برای شکستن این قفل شناختی.\n5.  **Leverage Point 2 (ذهنیت/Paradigm): تغییر پارادایم از «شکاف ردیف‌نشده» به «ادوام مشروط».** این تغییر نگاه، سیاست‌گذاری را از «کنترل خطرات وجودی جدید» به «مدیریت اعوجاج‌های تاریخی قدرت/دانش» می‌بریرد. **قدرت ژنراتیو مقاله در این سطح است.**\n\n---\n\n### ۴.۳. لایه فراش (Meta Layer) — Epistemic Positioning, Power/Knowledge, Ontological Commitments\n\n**الف) موقعیت‌گیری معرفتی نگارنده (Author's Epistemic Stance):**\n*   **परंपरा:** STS / Social Construction of Technology (SCOT) / Co-production (Jasanoff) / Genealogy (Foucault).\n*   **موقف:** ضداستثناگری (Anti-Exceptionalism)، تاریخ‌گرای نقدی (Critical Historicist)، نظر.realist نسبت به موادیت (Materialist about Infrastructure).\n*   **استرات",
+        "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "generated_at": "2026-09-07T22:35:29Z",
+        "usage": {
+          "prompt_tokens": 4563,
+          "completion_tokens": 2000,
+          "total_tokens": 6563,
+          "cost": 0,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 117,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "finish_reason": "length",
+        "continuation_rounds": 2
+      },
+      "metadata": {
+        "execution_time_seconds": 226.236,
+        "usage": {
+          "prompt_tokens": 4563,
+          "completion_tokens": 2000,
+          "total_tokens": 6563,
+          "cost": 0,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 117,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "failed": false
+    }
+  },
+  "judge_results": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::openrouter": {
+      "criteria_source": "llm",
+      "winner": "bsi",
+      "winner_source": "llm",
+      "reasoning": "While RAW provides an accurate and concise summary of the article's main claims, BSI delivers substantially deeper analytical value. It articulates specific epistemic mechanisms across historical periods, provides a structured cross-era comparative matrix, and applies systems-level leverage analysis to translate STS theory into concrete critiques of modern AI.",
+      "criteria": [
+        {
+          "name": "Reconstruction of Core Theses & Historical Lineage",
+          "importance": 20.0,
+          "raw_score": 8.5,
+          "bsi_score": 9.0,
+          "reason": "Both analyses accurately capture the primary thesis of historical continuity versus technological rupture, identifying the three key eras (17th-century universal languages, mid-20th-century information theory, late 20th-century computational linguistics). BSI contextualizes the core claim slightly more thoroughly."
+        },
+        {
+          "name": "Latent Mechanistic & Epistemic Depth",
+          "importance": 25.0,
+          "raw_score": 6.0,
+          "bsi_score": 9.5,
+          "reason": "RAW identifies the co-constitution of language and technology at a high level. BSI develops detailed latent mechanisms ('logicization of authority', 'reification of abstraction', 'architecting ignorance') that unpack how formalization shifts authority from human interpretation to computable models across eras."
+        },
+        {
+          "name": "Methodological & Theoretical Articulation",
+          "importance": 15.0,
+          "raw_score": 8.5,
+          "bsi_score": 9.0,
+          "reason": "RAW accurately names the genealogical and co-productionist frameworks. BSI embeds these frameworks within an operational STS evaluation matrix, explaining their exact ontological and epistemological commitments."
+        },
+        {
+          "name": "Systemic Pattern & Feedback Loop Modeling",
+          "importance": 20.0,
+          "raw_score": 4.5,
+          "bsi_score": 9.0,
+          "reason": "RAW does not explore systemic feedback or systemic leverage points. BSI maps an era-by-era recursive matrix detailing embedded assumptions, boundaries of ignorance, institutional drivers, and applies Donella Meadows' leverage hierarchy to language modeling."
+        },
+        {
+          "name": "Generative Extraction & Applied Value",
+          "importance": 20.0,
+          "raw_score": 6.5,
+          "bsi_score": 8.5,
+          "reason": "RAW highlights the paper's conceptual intervention in STS and AI history. BSI translates this theoretical reframing into actionable insights for algorithmic critique, AI policy, dataset archaeology, and technical pedagogy, despite a minor truncation at the tail end."
+        }
+      ],
+      "total_scores": {
+        "raw": 6.67,
+        "bsi": 9.03
+      },
+      "bsi_capability_assessment": {
+        "relevance": "high",
+        "realization": "high",
+        "incremental_value": "high",
+        "reason": "BSI successfully leverages its multi-layer epistemic framework to uncover latent sociotechnical mechanisms and recursive feedback loops implicit in the article's historical genealogy, going significantly beyond standard summarization."
+      },
+      "incremental_value": "high",
+      "scale": "0-10",
+      "weight_sum": 100.0,
+      "glossary_mode": "full",
+      "judge_input_compacted": false
+    }
+  }
+}

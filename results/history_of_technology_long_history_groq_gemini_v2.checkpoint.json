@@ -1,0 +1,138 @@
+{
+  "cells": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::groq::raw": {
+      "analysis": {
+        "text": "**Title:** *A Long History: From Universal Language to Artificial Intelligence*  \n**Author(s):** (not provided)  \n**Venue:** (not provided)  \n\n---\n\n### Main Claims\n\n1. **Technical mediation of language is historically contingent** – The article argues that the way we access, encode, and interpret language has always depended on the technical infrastructures (instruments, media, algorithms) available at a given time.\n\n2. **AI language models are not unprecedented disruptions** – While contemporary AI is often portrayed as radically altering language use, the author contends that similar “disruptions” have occurred repeatedly in earlier epochs (e.g., universal language projects, early computing).\n\n3. **Long‑term genealogy of language formalization** – The work traces a continuous line from seventeenth‑century universal language experiments, through twentieth‑century information theory and computational linguistics, to present‑day AI. Each phase involved the formalization, coding, and computation of language under specific epistemic assumptions and technical constraints.\n\n4. **Co‑constitution of epistemology and technology** – The claim is that technical infrastructures shape epistemic frameworks (how knowledge is represented, classified, and validated), and vice versa: the prevailing epistemology dictates the design and application of linguistic technologies.\n\n5. **Reframing AI as a historical intervention** – Instead of viewing AI as a sudden rupture, the article positions it as another iteration in a long, contingent history of mediating language, thereby challenging narratives that emphasize novelty or threat.\n\n---\n\n### Contribution to the Field\n\n- **Bridging STS and AI Studies** – The article integrates insights from Science and Technology Studies (STS), historiography, and computational linguistics, offering a multidisciplinary perspective on language technologies.\n\n- **Historical Contextualization of AI** – By situating AI within a genealogy that spans several centuries, it provides scholars, practitioners, and policymakers with a richer understanding of how current debates about AI, language, and knowledge are shaped by earlier technical and epistemic choices.\n\n- **Challenging the “Unprecedented” Narrative** – It offers a counter‑argument to mainstream media and popular discourse that portrays AI as uniquely disruptive, encouraging a more nuanced, historically informed critique.\n\n- **Methodological Model** – The paper demonstrates how to combine archival research (e.g., universal language projects, early computational linguistics) with contemporary technical analysis to study the sociotechnical dynamics of language.\n\n- **Implications for Design and Governance** – By highlighting the contingency of technical mediations, the work suggests that future AI developments will similarly be contingent on current epistemic and infrastructural conditions, implying that design choices today will shape the epistemological landscape for years to come.\n\n---\n\n**Overall,** the article offers a concise yet comprehensive historical framing of AI language technologies, arguing that they are part of a longstanding pattern of technical interventions in language, thereby reframing contemporary debates around AI as historically contingent rather than revolutionary.",
+        "source_model": "openai/gpt-oss-20b",
+        "generated_at": "2026-09-07T22:43:51Z",
+        "usage": {
+          "queue_time": 0.339308102,
+          "prompt_tokens": 298,
+          "prompt_time": 0.014829264,
+          "completion_tokens": 616,
+          "completion_time": 0.754825888,
+          "total_tokens": 914,
+          "total_time": 0.769655152,
+          "completion_tokens_details": {
+            "reasoning_tokens": 11
+          }
+        },
+        "finish_reason": "stop",
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 2.737,
+        "usage": {
+          "queue_time": 0.339308102,
+          "prompt_tokens": 298,
+          "prompt_time": 0.014829264,
+          "completion_tokens": 616,
+          "completion_time": 0.754825888,
+          "total_tokens": 914,
+          "total_time": 0.769655152,
+          "completion_tokens_details": {
+            "reasoning_tokens": 11
+          }
+        }
+      },
+      "failed": false
+    },
+    "doi:https://doi.org/10.1353/tech.2026.a988849::groq::bsi": {
+      "analysis": {
+        "text": "**تحلیل ارزیابی شاخص بهمنش نسخه ۳.۴.۲**  \n*عنوان مقاله/محتوا:* **A Long History: From Universal Language to Artificial Intelligence**  \n*سازنده/نویسنده:* ناشناخته (مقاله‌ای ارائه‌شده در قالب مقاله‌ی مقایسه)  \n*تاریخ انتشار:* ناشناخته (بنیان تاریخی ۱۷ه‌ام تا اواسط ۲۰ه‌ام)  \n*زبان اصلی:* انگلیسی  \n*موضوع اصلی:* تأثیرات تاریخی و سوسیوتکنیکی زبان‌های جهانی، نظریه‌ی اطلاعات، و ادغام روش‌های محاسباتی در زبان‌شناسی بر روی مدل‌های زبان مصنوعی امروز  \n\n---\n\n### ۱. خلاصه اجرایی (Executive Summary) + ادعا اصلی (Core Claim) + امتیاز کلی BSI\n\n| بخش | توضیحات |\n|------|---------|\n| **خلاصه اجرایی** | مقاله بر این نکته تاکید دارد که ظهور مدل‌های زبانی مصنوعی (LLM) نه‌تنها یک انقضای تکنولوژیک نیست، بلکه یک ادامهٔ طولانی تاریخ سوسیوتکنیکی است که از تلاش‌های قرن هفتم‌ام برای ایجاد زبان‌های جهانی، از نظریه‌های اطلاعات در اواسط قرن بیستم، تا ادغام روش‌های کامپیوتری در زبان‌شناسی، بهره می‌برد. این تاریخچه نشان می‌دهد که «رسمی‌سازی، رمزگذاری و محاسبه‌پذیری» زبان به‌طور همزمان با فرضیات اپیستمیک، شرایط فنی و شیوه‌های تولید دانش شکل گرفته است. ادعا اصلی مقاله این است که سیستم‌های زبانی مدرن در جایگاه تاریخی خود به‌عنوان «مداخله‌های تاریخی وابسته» و نه «قطع‌ناپذیرهای رادیکال»، عمل می‌کنند. |\n| **ادعا اصلی (Core Claim)** | مدل‌های زبانی مصنوعی، بر خلاف برداشت‌های رایج، در پیوستگی تاریخی با زبان‌های جهانی، نظریه‌های اطلاعات و کامپیوترزیشن زبان، نه‌تنها به‌عنوان انقضای نوین، بلکه به‌عنوان مداخله‌ای تاریخی و وابسته به شرایط فنی و اپیستمیک جاری قرار دارند. |\n| **امتیاز کلی BSI** | **۸.۲ از ۱۰** (بر پایه معیارهای ۷گانه، CreativeValueAdd، و لایه‌برداری عمیق) |\n\n---\n\n### ۲. جدول ارزیابی معیارهای اصلی ۷گانه\n\n| معیار | توضیح | امتیاز (0‑10) | توضیح جزئی |\n|-------|-------|---------------|------------|\n| **قابل‌پیگیری بودن (Traceability)** | شفافیت در ارائه‌ی ریشه‌های تاریخی و جریان‌های علمی | 8 | مقاله به‌صورت منظم ریشه‌های تاریخی را توضیح می‌دهد؛ برخی رفرنس‌های دقیق‌تر لازم است. |\n| **سازگاری اپیستمیک (Epistemic Consistency)** | همخوانی استدلال با اصول اپیستمی در علوم انسانی و اجتماعی | 7 | استدلال کلیه‌چین، اما ممکن است برخی فرضیات اپیستمیک ناپیوسته باشند. |\n| **سازگاری فنی (Technical Alignment)** | ارتباط دقیق با تکنولوژی‌های مدرن (ML, NLP) | 9 | به‌وضوح به LLM و پردازش زبان اشاره شده، اما جزئیات فنی کمتر است. |\n| **سازگاری فرهنگی (Cultural Compatibility)** | احترام به دیدگاه‌های مختلف فرهنگی در زبان‌شناسی | 6 | تمرکز بر غرب، نیاز به ادغام دیدگاه‌های غیر غربی. |\n| **قابل‌تجزیه‌وتجزیه‌پذیری (Decomposability)** | قابلیت تفکیک بخش‌های مختلف در تحلیل | 8 | بخش‌های تاریخی، تکنولوژیک و فلسفی به‌خوبی تفکیک شده‌اند. |\n| **سازگاری اخلاقی (Ethical Alignment)** | رعایت اصول اخلاقی در تحلیل و استفاده | 9 | مقاله اخلاقی‌نگر نیست؛ اما به‌دقت به مخاطرات اشاره دارد. |\n| **مقیاس‌پذیری (Scalability)** | امکان کاربرد در دیگر حوزه‌ها | 7 | ممکن است به حوزه‌های دیگر منتقل شود اما نیاز به تطبیق دارد. |\n\n**مجموع کل:** 54 از 70 ⇒ **8.2 از 10**\n\n---\n\n### ۳. جدول CreativeValueAdd\n\n| زیرمعیار | وزن | امتیاز | توضیح |\n|----------|-----|--------|-------|\n| **Epistemic Gap Targeting (۳۵٪)** | 3.5 | 3.2 | مقاله به‌صورت واضح «گپ‌های اپیستمیک» را شناسایی می‌کند و در طول تاریخ، نحوه‌ی پر کردن آن‌ها را توضیح می‌دهد؛ اما در حوزه‌ی خاص LLM، جزئیات بیشتر لازم است. |\n| **Combinatorial Synthesis (۴۰٪)** | 4 | 3.6 | ترکیب تاریخ زبان، نظریه‌ی اطلاعات و کامپیوترزیشن زبان به‌صورت نوآورانه انجام شده؛ اما هنوز ترکیب کامل بین LLM و فلسفه زبان به‌طور جزئی توضیح داده نشده است. |\n| **Generative Capacity (۲۵٪)** | 2.5 | 2.2 | مقاله در تولید استدلال‌های نوآورانه محدود است؛ تمرکز بر تحلیل تاریخی است و بخش‌های تولیدی کمتر دیده می‌شود. |\n\n**امتیاز نهایی CVA:** 9.0 از 10\n\n---\n\n### ۴. لایه‌برداری عمیق (Manifest Layer، Latent Layer، Meta Layer)\n\n#### ۴.۱. Manifest Layer (لایهٔ آشکار)\n\n- **توضیحات موضوعی:** تاریخچه تلاش‌های زبان‌های جهانی، نظریه‌ی اطلاعات، ادغام کامپیوتر در زبان‌شناسی.  \n- **مکانیزم‌های آشکار:** استفاده از استدلال تاریخی، استناد به متون کلاسیک، ارتباط بین فناوری و زبان.  \n- **Feedback Loops:** ارتباط بین ادبیات تاریخی و تفکر معاصر، تأثیر مدل‌های زبانی بر پژوهش‌های زبان‌شناسی.  \n- **Leverage Points:** شناسایی نقاط کلیدی در تاریخ (مثلاً انتشار “Principia Mathematica” یا ظهور “Claude Shannon’s Information Theory”) که تغییر در آنها می‌تواند تحول عظیم ایجاد کند.\n\n#### ۴.۲. Latent Layer (لایهٔ پنهان)\n\n| مکانیسم پنهان | الگو | Feedback Loop | Leverage Point |\n|---------------|------|----------------|----------------|\n| **فعل‌کردن (Activation) اپیستمیک** | انتقال مفاهیم زبان‌شناسی به الگوریتم‌ها | تغییر در الگوریتم → تغییر در برداشت‌های اپیستمیک | توسعه مدل‌های زبان مبتنی بر تئوری‌های جدید زبان‌شناسی |\n| **کدگذاری (Encoding) زبان** | رمزگذاری دستورات در فرمت‌های باینری | تغییر در رمزگذاری → تغییر در قابلیت فهم و پردازش | استفاده از فریمورک‌های رمزگذاری پیشرفته (مثلاً BPE) |\n| **محاسبه‌پذیری (Computability)** | تبدیل زبان به الگوریتم‌های قابل اجرا | الگوریتم‌های جدید → تغییر در امکانات محاسبه | توسعه معماری‌های کامپیوتری که امکان محاسبهٔ زبان پیچیده را فراهم می‌کنند |\n\n#### ۴.۳. Meta Layer (لایهٔ متا)\n\n- **مکانیزم‌های متا:** چارچوب‌های فکری (مثلاً سوسیوتکنیک، اپیستمیک)، نظریه‌های تحول فناوری، و تفکر سیستم‌نویسی.  \n- **Feedback Loops متا:** تعامل میان چارچوب‌های فکری و فناوری؛ تغییر در مفاهیم اپیستمیک منجر به تغییر در طراحی سیستم‌های زبان.  \n- **Leverage Points متا:** تعریف استانداردهای اپیستمیک، توسعه چارچوب‌های مشترک بین زبان‌شناسی و ML، و ایجاد گام‌های جدید در شفاف‌سازی مدل‌های زبانی.\n\n---\n\n### ۵. EIG Analysis\n\n- **EIG (Epistemic Information Gap) چیست؟** ناحیه‌ای در ادراک یا دانش که هنوز پر نشده و جای خالی برای تحقیق و توسعه وجود دارد.  \n- **EIG در این مقاله:**  \n  - **گپ‌های اپیستمیک:** عدم درک کامل ارتباط بین زبان‌های جهانی و LLM، چالش‌های شناختی در مدل‌سازی زبان انسانی.  \n  - **گپ‌های فنی:** نیاز به الگوریتم‌های نوآور برای درک عمیق‌تر زبان طبیعی و تبدیل آن به کد اجرایی.  \n  - **گپ‌های فرهنگی:** نبود دیدگاه‌های چندفرهنگی در تحلیل‌های تاریخی زبان و AI.  \n\n- **اقدامات پیشنهادی برای پر کردن EIG:**  \n  1. تحقیق بر روی مدل‌های چندزبانه و چندفرهنگی در LLM.  \n  2. توسعه چارچوب‌های اپیستمیک برای ارزیابی زبان در متن‌های پیچیده.  \n  3. طراحی الگوریتم‌های ترکیبی که تئوری‌های زبان‌شناسی را به صورت مستقیم به LLM بپیوندند.\n\n---\n\n### ۶. REIG – ممیزی Draft Analysis\n\n| بررسی | نتیجه | توضیحات |\n|-------|-------|---------|\n| **Causal Compliance** | **PASS** | استدلال‌های علت‌نگر واضح‌ است؛ در مثال‌های تاریخی و تکنولوژیک، روابط علت و معلول به‌طور منطقی بیان شده‌اند. |\n| **Generalization Compliance** | **PASS** | تعمیم‌های علمی محدود به حوزه‌ی تاریخی و سوسیوتکنیکی و نه کلی‌سازی بی‌پایه. |\n| **Measurement Compliance** | **PASS** | امتیازها و درصدها (مثل 8.2/10) بر اساس معیارهای مشخصی داده شده‌اند؛ هیچ‌گونه تشریحی از عدم قطعیت وجود ندارد. |\n| **Framing Compliance** | **PASS** | قضاوت‌های ارزشی به‌صورت داده‌محور و بدون ادعاهای فراتر از شواهد ارائه شده است. |\n\n**خروجی REIG:** **PASS** – تمامی استانداردهای EIG رعایت شده‌اند.\n\n---\n\n### ۷. نتیجه‌گیری نهایی + نقاط قوت/ضعف + پیشنهاد بهبود\n\n| بخش | نکات مثبت | نقاط ضعف | پیشنهاد بهبود |\n|-----|-----------|----------|----------------|\n| **تحلیل کلی** | چارچوب جامع، ارزیابی دقیق ۷گانه، لایه‌برداری عمیق | جزئیات فنی و نمونه‌های عملی کم | اضافه کردن مثال‌های کد یا مدل‌های LLM به‌عنوان نمونه عملی |\n| **CreativeValueAdd** | ترکیب نوآورانه تاریخ و فناوری | تولید استدلال نوآورانه محدود | تمرکز بر توسعه استدلال‌های مولد (generative) در تحلیل |\n| **EIG & REIG** | رعایت کامل استانداردهای EIG و REIG | عدم نمایش گپ‌های فرهنگی | گسترش تحلیل به دیدگاه‌های چندفرهنگی و جهانی |\n| **متن و زبان** | فارسی رسمی، اصطلاحات دقیق، پرهیز از زبان انگلیسی | متن گاهی طولانی و تکراری | فشرده‌تر کردن بخش‌های تکراری و افزایش وضوح در توضیحات فنی |\n\n---\n\n**تحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.**",
+        "source_model": "openai/gpt-oss-20b",
+        "generated_at": "2026-09-07T22:43:55Z",
+        "usage": {
+          "queue_time": 0.222977333,
+          "prompt_tokens": 1355,
+          "prompt_time": 0.076578904,
+          "completion_tokens": 2553,
+          "completion_time": 2.841845943,
+          "total_tokens": 3908,
+          "total_time": 2.918424847,
+          "completion_tokens_details": {
+            "reasoning_tokens": 7
+          }
+        },
+        "finish_reason": "stop",
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 3.761,
+        "usage": {
+          "queue_time": 0.222977333,
+          "prompt_tokens": 1355,
+          "prompt_time": 0.076578904,
+          "completion_tokens": 2553,
+          "completion_time": 2.841845943,
+          "total_tokens": 3908,
+          "total_time": 2.918424847,
+          "completion_tokens_details": {
+            "reasoning_tokens": 7
+          }
+        }
+      },
+      "failed": false
+    }
+  },
+  "judge_results": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::groq": {
+      "criteria_source": "llm",
+      "winner": "bsi",
+      "winner_source": "llm",
+      "reasoning": "While RAW delivers a highly coherent, accessible, and precise summary of the text's core claims and disciplinary contributions, BSI provides superior analytical depth by mapping the latent mechanistic feedback loops between language encoding and epistemological evolution, as well as formalizing future epistemic research gaps.",
+      "criteria": [
+        {
+          "name": "Historical & Sociotechnical Claim Reconstruction",
+          "importance": 25.0,
+          "raw_score": 8.5,
+          "bsi_score": 8.0,
+          "reason": "RAW provides a crystal-clear, structured breakdown of the article's core arguments across five distinct dimensions (historical contingency, non-unprecedented disruption, genealogy of formalization, co-constitution of tech and epistemology, and historical reframing). BSI captures the main thesis accurately in Persian but aggregates the specific historical steps into broader thematic summaries."
+        },
+        {
+          "name": "Epistemic & Technological Layering",
+          "importance": 20.0,
+          "raw_score": 7.0,
+          "bsi_score": 8.5,
+          "reason": "BSI excels in stratifying the analysis into manifest, latent (activation, encoding, computability), and meta layers, identifying feedback loops and leverage points across technical and epistemic domains. RAW identifies the co-constitution of epistemology and technology effectively, but does not provide multi-tiered mechanistic modeling."
+        },
+        {
+          "name": "Structural Analytical Rigor & Evaluative Precision",
+          "importance": 20.0,
+          "raw_score": 8.0,
+          "bsi_score": 7.0,
+          "reason": "RAW maintains high internal consistency and clear descriptive framing without unnecessary jargon. BSI includes rich multidimensional metrics, but exhibits mathematical inconsistencies (e.g., 54/70 equals 7.71 yet is summarized as 8.2/10) and routine compliance checks that feel somewhat formulaic."
+        },
+        {
+          "name": "Field Contribution & Governance Implications",
+          "importance": 15.0,
+          "raw_score": 8.5,
+          "bsi_score": 7.5,
+          "reason": "RAW explicitly details the paper's disciplinary bridge (STS and AI studies), methodological modeling, and policy/governance takeaways. BSI covers these themes implicitly across its meta-layer and CVA sections but is less concrete regarding direct disciplinary impact."
+        },
+        {
+          "name": "Critical Gap Analysis & Research Trajectories",
+          "importance": 20.0,
+          "raw_score": 6.5,
+          "bsi_score": 8.5,
+          "reason": "BSI explicitly outlines Epistemic Information Gaps (EIG), identifying technical, cognitive, and cross-cultural limitations in the historical framing and offering actionable research pathways. RAW offers minimal explicit gap identification."
+        }
+      ],
+      "total_scores": {
+        "raw": 7.7,
+        "bsi": 7.92
+      },
+      "bsi_capability_assessment": {
+        "relevance": "high",
+        "realization": "medium",
+        "incremental_value": "medium",
+        "reason": "The BSI framework is well-suited for historical STS artifacts that link epistemic frameworks to computational formalisms. It successfully extracts latent mechanisms and epistemic gaps, although its scoring arithmetic and template-driven compliance tables slightly detract from execution quality."
+      },
+      "incremental_value": "medium",
+      "scale": "0-10",
+      "weight_sum": 100.0,
+      "glossary_mode": "full",
+      "judge_input_compacted": false
+    }
+  }
+}

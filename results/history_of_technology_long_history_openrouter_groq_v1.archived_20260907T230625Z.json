@@ -1,0 +1,136 @@
+{
+  "dataset_name": "A Long History: From Universal Language to Artificial Intelligence",
+  "results": [
+    {
+      "article": {
+        "title": "A Long History: From Universal Language to Artificial Intelligence",
+        "abstract": "Our access to language is governed by various technical infrastructures, artifacts, and media. The rise of AI language models has intensified questions surrounding such technical mediation-often framed as unprecedented disruptions. While historians and STS scholars have long emphasized the sociotechnical contingencies of informatic systems, scholarship has paid less attention to how contemporary language technologies intervene in longstanding debates about language, information, and the ordering of knowledge and social life. Beginning in seventeenth-century Europe, through projects for universal languages, and extending to the mid-twentieth-century emergence of information theory, and integration of computational methods into linguistics, this article shows that the formalization, coding, and rendering computable of language were co-constituted with particular epistemic assumptions, technical circumstances, and practices of knowledge production. By situating contemporary AI systems within this longer genealogy, the article reframes language technologies as historically contingent interventions rather than radical ruptures.",
+        "full_text": null,
+        "doi": "https://doi.org/10.1353/tech.2026.a988849",
+        "url": "https://openalex.org/W7160269223",
+        "input_quality": {
+          "has_title": true,
+          "has_abstract": true,
+          "source": "openalex",
+          "enriched": false
+        }
+      },
+      "cells": [
+        {
+          "generator": "openrouter",
+          "mode": "raw",
+          "analysis": {
+            "text": "**Analysis of \"A Long History: From Universal Language to Artificial Intelligence\"**\n\n**Main Claims**\n1.  **Technical Mediation of Language:** Access to language is historically structured by technical infrastructures, artifacts, and media; it is never direct or neutral.\n2.  **Continuity over Rupture:** Contemporary AI language models (LLMs) are not unprecedented disruptions but the latest iteration in a centuries-long genealogy of attempts to formalize, code, and render language computable.\n3.  **Co-constitution of Form and Epistemology:** The technical formalization of language (from 17th-century universal language projects → mid-20th-century information theory → computational linguistics) was inextricably linked to specific epistemic assumptions, material circumstances, and practices of knowledge production.\n4.  **Historical Contingency:** Current language technologies are historically contingent interventions shaped by this lineage, rather than radical breaks with the past.\n\n**Scholarly Contribution**\n*   **Genealogical Intervention:** Provides a *longue durée* historical framework (17th century–present) connecting early modern universal language schemes, information theory, and computational linguistics to modern AI, filling a gap in STS/history of science scholarship which has often treated these eras separately.\n*   **Reframing AI Discourse:** Counters dominant \"rupture narratives\" surrounding LLMs by demonstrating that core problems—formalization, coding, ordering of knowledge—are persistent features of the sociotechnical imaginary of language.\n*   **Epistemic Historicization:** Demonstrates that the *computability* of language is not an inherent property discovered by modern engineering, but a constructed outcome of specific historical choices regarding how knowledge and social life should be ordered.",
+            "source_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "generated_at": "2026-09-07T23:03:11Z",
+            "usage": {
+              "prompt_tokens": 245,
+              "completion_tokens": 419,
+              "total_tokens": 664,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 71,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "finish_reason": "stop",
+            "continuation_rounds": 0
+          },
+          "metadata": {
+            "execution_time_seconds": 12.858,
+            "usage": {
+              "prompt_tokens": 245,
+              "completion_tokens": 419,
+              "total_tokens": 664,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 71,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          "judge_result": null,
+          "scores": {},
+          "failed": false,
+          "status": "valid",
+          "model_id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "truncated": false
+        },
+        {
+          "generator": "openrouter",
+          "mode": "bsi",
+          "analysis": null,
+          "metadata": {
+            "error": "OpenRouter response did not contain a non-empty 'choices' array. keys=['id', 'error']; error={'message': 'Upstream error from Nvidia: Service temporarily overloaded', 'code': 502}; body_prefix='{\"id\":\"gen-1788822325-65Cobx3EY7xvLumuiGaE\",\"error\":{\"message\":\"Upstream error from Nvidia: Service temporarily overloaded\",\"code\":502}}'",
+            "execution_time_seconds": 133.45
+          },
+          "judge_result": null,
+          "scores": {},
+          "failed": true,
+          "status": "failed",
+          "model_id": null,
+          "truncated": false
+        }
+      ],
+      "article_id": "doi:https://doi.org/10.1353/tech.2026.a988849"
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "89a941006de1ccab30f7a16e09f86841cd5991eb",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-09-07T23:02:58Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  },
+  "retrieval_metadata": {
+    "retrieval_status": "accepted",
+    "retrieval_validation": {
+      "retrieval_status": "accepted",
+      "retrieval_validation": "title_match",
+      "query_type": "title",
+      "requested_query": "A Long History: From Universal Language to Artificial Intelligence",
+      "selected_title": "A Long History: From Universal Language to Artificial Intelligence",
+      "selected_rank": 1,
+      "match_score": 1.0,
+      "threshold": 0.72,
+      "candidate_count": 1
+    },
+    "rejected_articles": [],
+    "skipped_count": 0,
+    "skipped_titles": []
+  },
+  "benchmark_status": "benchmarkable"
+}

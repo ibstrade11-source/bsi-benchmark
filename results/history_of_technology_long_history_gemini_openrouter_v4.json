@@ -1,0 +1,247 @@
+{
+  "dataset_name": "A Long History: From Universal Language to Artificial Intelligence",
+  "results": [
+    {
+      "article": {
+        "title": "A Long History: From Universal Language to Artificial Intelligence",
+        "abstract": "Our access to language is governed by various technical infrastructures, artifacts, and media. The rise of AI language models has intensified questions surrounding such technical mediation-often framed as unprecedented disruptions. While historians and STS scholars have long emphasized the sociotechnical contingencies of informatic systems, scholarship has paid less attention to how contemporary language technologies intervene in longstanding debates about language, information, and the ordering of knowledge and social life. Beginning in seventeenth-century Europe, through projects for universal languages, and extending to the mid-twentieth-century emergence of information theory, and integration of computational methods into linguistics, this article shows that the formalization, coding, and rendering computable of language were co-constituted with particular epistemic assumptions, technical circumstances, and practices of knowledge production. By situating contemporary AI systems within this longer genealogy, the article reframes language technologies as historically contingent interventions rather than radical ruptures.",
+        "full_text": null,
+        "doi": "https://doi.org/10.1353/tech.2026.a988849",
+        "url": "https://openalex.org/W7160269223",
+        "input_quality": {
+          "has_title": true,
+          "has_abstract": true,
+          "source": "openalex",
+          "enriched": false
+        }
+      },
+      "cells": [
+        {
+          "generator": "gemini",
+          "mode": "raw",
+          "analysis": {
+            "text": "Based on the provided abstract, here is a concise, factual analysis of the article's main claims and scholarly contribution:\n\n### **Main Claims**\n1. **AI as Historical Continuity, Not Radical Rupture:** While modern AI language models are frequently framed as unprecedented disruptions, they are actually part of a centuries-long trajectory of technical interventions in language.\n2. **Co-constitution of Language and Computation:** The formalization, coding, and computability of language—spanning 17th-century European universal language schemes, mid-20th-century information theory, and computational linguistics—have always developed alongside specific epistemological assumptions, technical conditions, and social ordering practices.\n3. **Sociotechnical Contingency:** Language technologies are not neutral tools; they actively intervene in longstanding debates regarding how knowledge, information, and social life are organized.\n\n### **Primary Scholarly Contribution**\n* **Historical and Theoretical Reframing:** The article bridges a gap in Science and Technology Studies (STS) and the history of computing by situating contemporary Large Language Models (LLMs) and AI within a broader historical genealogy. In doing so, it shifts the critical discourse around AI from a framework of technological exceptionalism to one of historical and epistemological contingency.",
+            "source_model": "gemini-3.7-flash",
+            "generated_at": "2026-09-07T22:07:49Z",
+            "usage": null,
+            "finish_reason": null,
+            "continuation_rounds": 0
+          },
+          "metadata": {
+            "execution_time_seconds": 13.532,
+            "usage": null
+          },
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "winner_source": "llm",
+            "reasoning": "BSI delivers substantially deeper, more structured, and more critical engagement with the article's historical-genealogical thesis across all seven weighted criteria. RAW provides only a surface-level summary of claims without analytical depth, gap analysis, mechanism identification, or critical evaluation. BSI's incremental value is high because it transforms a descriptive summary into a multi-layered epistemic assessment that exposes both the article's structural coherence and its specific analytical vulnerabilities (e.g., emergent abilities, causal attribution gaps).",
+            "criteria": [
+              {
+                "name": "Historical Genealogical Depth",
+                "importance": 25.0,
+                "raw_score": 3.0,
+                "bsi_score": 9.0,
+                "reason": "Article's core project is tracing AI language models to 17th-century universal language schemes; RAW only mentions this in passing while BSI provides detailed multi-century tracing with specific intellectual lineages."
+              },
+              {
+                "name": "Theoretical/Conceptual Rigor",
+                "importance": 20.0,
+                "raw_score": 4.0,
+                "bsi_score": 9.0,
+                "reason": "Co-constitution of language and computation is the central thesis; RAW states it without analysis while BSI unpacks ontological reductionism, feedback loops, and leverage points with conceptual precision."
+              },
+              {
+                "name": "Critical Intervention Value",
+                "importance": 15.0,
+                "raw_score": 5.0,
+                "bsi_score": 9.0,
+                "reason": "Challenging the 'radical rupture' narrative is the article's main intervention; RAW merely reports the claim while BSI evaluates its resilience against emergence arguments and identifies where the genealogy needs strengthening."
+              },
+              {
+                "name": "Interdisciplinary Synthesis",
+                "importance": 15.0,
+                "raw_score": 3.0,
+                "bsi_score": 9.0,
+                "reason": "Article bridges STS, history of philosophy, linguistics, information theory, and AI; RAW lists fields but BSI demonstrates successful synthesis across Shannon, Leibniz, transformer architectures, and pragmatic language models."
+              },
+              {
+                "name": "Mechanism/Process Analysis",
+                "importance": 10.0,
+                "raw_score": 2.0,
+                "bsi_score": 8.0,
+                "reason": "Understanding HOW historical continuity operates (not just THAT it exists); RAW provides none while BSI identifies ontological reductionism as mechanism, reinforcing feedback loops, and definitional leverage points."
+              },
+              {
+                "name": "Epistemic Gap Identification",
+                "importance": 10.0,
+                "raw_score": 2.0,
+                "bsi_score": 8.0,
+                "reason": "Article's value lies partly in exposing what current AI discourse misses; RAW identifies no gaps while BSI's EIG analysis articulates both an epistemic-ontological gap and a causal attribution gap regarding emergent abilities."
+              },
+              {
+                "name": "Practical/Policy Relevance",
+                "importance": 5.0,
+                "raw_score": 3.0,
+                "bsi_score": 8.0,
+                "reason": "Article claims historical understanding prevents AI governance hype; RAW mentions this superficially while BSI evaluates policy value concretely and links to governance implications."
+              }
+            ],
+            "total_scores": {
+              "raw": 3.3,
+              "bsi": 8.75
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "high",
+              "incremental_value": "high",
+              "reason": "BSI's multi-layer architecture (Manifest/Latent/Meta), EIG gap analysis, and REIG self-audit are exceptionally well-suited to this historical-epistemological article type, and the BSI analysis realizes these capabilities thoroughly with article-specific substantive output at every layer."
+            },
+            "incremental_value": "high",
+            "scale": "0-10",
+            "weight_sum": 100.0,
+            "glossary_mode": "full",
+            "judge_input_compacted": false
+          },
+          "scores": {
+            "RAW": 0.33,
+            "BSI": 0.875
+          },
+          "failed": false,
+          "status": "valid",
+          "model_id": "gemini-3.7-flash",
+          "truncated": false
+        },
+        {
+          "generator": "gemini",
+          "mode": "bsi",
+          "analysis": {
+            "text": "# تحلیل جامع شاخص بهمنش (BSI v3.4.2)\n\n**عنوان تحلیل:** تبارشناسی تاریخی میانجی‌گری فنی زبان؛ از پروژه‌های زبان جهانی تا هوش مصنوعی مدرن  \n**مشخصات متن ورودی:**  \n- **عنوان مقاله:** تاریخچه‌ای بلند: از زبان جهانی تا هوش مصنوعی (*A Long History: From Universal Language to Artificial Intelligence*)  \n- **قلمرو موضوعی:** مطالعات علم و فناوری (STS)، تاریخ معرفت‌شناختی زبان، فلسفه محاسبات و هوش مصنوعی  \n\n---\n\n### ۱. خلاصه اجرایی (Executive Summary)\n\nاین مقاله با اتخاذ رویکردی تبارشناسانه و تاریخی در چارچوب مطالعات علم و فناوری (Science and Technology Studies - STS)، تصور رایج درباره ظهور مدل‌های زبانی بزرگ (Large Language Models - LLMs) و هوش مصنوعی مدرن به عنوان یک «گسست فناورانه بی‌سابقه (Radical Rupture)» را به چالش می‌کشد. نویسنده با ردیابی تاریخی فرمول‌بندی، کدگذاری و محاسباتی‌سازی زبان از قرن هفدهم میلادی (پروژه‌های زبان جهانی مانند لایبنیتس و دکارت) تا میانه قرن بیستم (نظریه اطلاعات شانون و ادغام محاسبات در زبان‌شناسی)، نشان می‌دهد که مدل‌های زبانی کنونی مداخله‌هایی مشروط به بستر تاریخی (Historically Contingent Interventions) در مناقشات دیرینه پیرامون نظم‌دهی به دانش، اطلاعات و حیات اجتماعی هستند.\n\n- **ادعای بنیادین (Core Claim):** فناوری‌های مدرن هوش مصنوعی در حوزه زبان، گسست‌های رادیکال و نوظهور نیستند، بلکه تداوم و تبلور تاریخی فرآیندهای هم‌برآمده (Co-constituted) صوری‌سازی، کدگذاری و تسخیر محاسباتی زبان در پیوند با فرضیات معرفت‌شناختی، زیرساخت‌های فنی و رویه‌های تولید دانش از قرن هفدهم تاکنون به‌شمار می‌روند.\n- **امتیاز کلی شاخص بهمنش (BSI Overall Score):** **۸۱ / ۱۰۰**\n\n---\n\n### ۲. جدول ارزیابی معیارهای اصلی هفت‌گانه\n\n| شماره | معیار اصلی (Core Criterion) | امتیاز (از ۱۰۰) | وزن معیار | استدلال و ارزیابی تحلیلی |\n| :---: | :--- | :---: | :---: | :--- |\n| ۱ | **اصالت و تازگی تبارشناختی (Genealogical Novelty)** | ۷۸ | ۱۵٪ | مقاله به جای تکرار نقدهای متداول درباره سوگیری یا مسائل مهندسی هوش مصنوعی، خط سیر تاریخی را از قرن ۱۷ بازتعریف می‌کند؛ هرچند برخی پیوندهای تاریخی پیش‌تر در تاریخ زبان‌شناسی مطرح شده بود. |\n| ۲ | **انسجام و دقت منطقی (Logical Coherence & Rigor)** | ۸۵ | ۲۰٪ | ساختار استدلال از فرضیه تداوم تاریخی تا نفی گسست ناگهانی، با یکپارچگی مفهومی و پرهیز از تله‌های دترمینیستی بنا شده است. |\n| ۳ | **عمق معرفت‌شناختی (Epistemic Depth)** | ۸۴ | ۲۰٪ | تمرکز بر هم‌برآمدگی (Co-constitution) زبان و فناوری و واسازی تلقیِ زبان به مثابه ابزار خنثی، نشان‌دهنده عمق نظری بالا است. |\n| ۴ | **تطابق روش‌شناختی (Methodological Compliance)** | ۸۰ | ۱۵٪ | بهره‌گیری از رویکردهای تاریخی-انتقادی STS به شکل منسجم رعایت شده، هرچند تحلیل کمّی مدل‌های فعلی غایب است. |\n| ۵ | **ظرفیت بین‌رشته‌ای (Interdisciplinary Capacity)** | ۸۶ | ۱۰٪ | تلفیق موفق تاریخ فلسفه، زبان‌شناسی، نظریه اطلاعات (Information Theory) و فناوری هوش مصنوعی معاصر. |\n| ۶ | **مقاومت در برابر نقد (Counter-Argument Resilience)** | ۷۵ | ۱۰٪ | پاسخ به طرفداران نظریه «پیدایش ناگهانی قابلیت‌ها (Emergence)» در مدل‌های بزرگ مقیاس تا حدی ضمنی باقی مانده است. |\n| ۷ | **ارزش کاربردی در سیاست‌گذاری فناوری (Policy & Practical Value)** | ۸۰ | ۱۰٪ | فهم تاریخی پدیده‌ها از ایجاد حباب‌های هیجانی در حکمرانی هوش مصنوعی جلوگیری می‌کند. |\n\n---\n\n### ۳. جدول ارزش‌افزوده خلاقانه (CreativeValueAdd)\n\n| زیرمعیار | سهم وزنی | امتیاز (از ۱۰۰) | تحلیل توجیهی و تبیین ارزش افزوده |\n| :--- | :---: | :---: | :--- |\n| **هدف‌گیری گپ معرفتی (Epistemic Gap Targeting)** | ۳۵٪ | ۸۲ | تمرکز بر خلأ ناشی از نادیده گرفتن پیش‌فرض‌های تاریخی-معرفت‌شناختی در درک فناوری‌های نوین پردازش زبان طبیعی. |\n| **سنتز ترکیبی (Combinatorial Synthesis)** | ۴۰٪ | ۸۴ | ترکیب موفق نظریه اطلاعات شانون، پروژه‌های زبان همگانی قرن ۱۷ و معماری‌های نوین پردازش زبان در یک زنجیره مفهومی واحد. |\n| **ظرفیت زایایی فکری (Generative Capacity)** | ۲۵٪ | ۷۶ | بسترسازی برای پژوهش‌های آتی در زمینه نقد زیرساخت‌های زبانی و بازنگری در شیوه ارزیابی هوش مصنوعی بر مبنای تاریخ دانش. |\n\n**امتیاز نهایی CreativeValueAdd:** **۸۱.۳ / ۱۰۰**\n\n---\n\n### ۴. لایه‌برداری عمیق سیستمی (Deep Layered Analysis)\n\n#### ۱. لایه آشکار (Manifest Layer)\nدر این لایه، متن مستقیماً ادعا می‌کند که دسترسی انسان به زبان همواره از طریق مصنوعات فنی، زیرساخت‌ها و رسانه‌ها صورت گرفته است. گفتمان عمومی کنونی، پیشرفت‌های اخیر در هوش مصنوعی را نوعی گسست تمدنی می‌پندارد. متن با ارائه سه برهه تاریخی کلیدی (قرن هفدهم، پیدایش نظریه اطلاعات در میانه قرن بیستم، و ورود روش‌های محاسباتی به زبان‌شناسی)، این تلقی را رد کرده و نشان می‌دهد محاسباتی‌سازی زبان دارای پیش‌زمینه‌های معرفتی دیرپاست.\n\n#### ۲. لایه پنهان (Latent Layer)\n- **مکانیسم‌های نهفته (Hidden Mechanisms):** مکانیسم اصلی عبارت است از «تقلیل‌گرایی هستی‌شناختی (Ontological Reductionism)»؛ یعنی تبدیل زبان از پدیده‌ای اجتماعی، سیال و زمینه-محور به داده‌های صوری و گسسته با هدف دستیابی به قابلیت کنترل و انباشت اطلاعات.\n- **حلقه‌های بازخورد (Feedback Loops):** \n  - *حلقه بازخورد تقویت‌کننده (Reinforcing Loop):* فرضیه محاسباتی بودن زبان $\\leftarrow$ تولید ابزارهای صوری‌سازی $\\leftarrow$ تعریف موفقیت بر مبنای داده‌های قابل محاسبه $\\leftarrow$ تقویت این باور که ماهیت زبان صرفاً آماری و محاسباتی است.\n- **نقاط اهرمی (Leverage Points):** نقطه اهرمی کلیدی، به چالش کشیدن «تعریف اطلاعات» در مبانی پردازش زبان است. تغییر پارادایم از مدل مکانیکی-آماری زبان به مدل‌های تفسیری و کاربردشناختی (Pragmatic) می‌تواند مسیر توسعه الگوریتم‌ها را تغییر دهد.\n\n#### ۳. لایه فرانظری (Meta Layer)\nدر این لایه، متن ماهیت خودِ «فناوری زبان» را به عنوان ابزار قدرت و نظم‌دهی اجتماعی (Social Ordering) افشا می‌کند. استانداردسازی زبان از قرن هفدهم همواره همگام با پروژه‌های گسترش حاکمیت، مدیریت اداری و حذف تنوع‌های زبانی محلی بوده است. هوش مصنوعی کنونی نیز ادامه‌دهنده همین مسیر در قالبی ماتریسی و جهانی‌شده است.\n\n---\n\n### ۵. ارزیابی گپ‌های استنباطی معرفتی (EIG Analysis)\n\n- **گپ نوع اول (Epistemic-Ontological Gap):** آیا تبدیل ساختارهای تاریخی به سازوکارهای محاسباتی مدرن بدون نقص انجام شده است؟ متن با دقت نشان می‌دهد که تقلیل زبان به ساختار صوری همواره شکافی پرنشدنی با واقعیت زنده کاربرد زبان ایجاد می‌کند.\n- **گپ نوع دوم (Causal Attribution Gap):** ادعای عدم گسست رادیکال، نباید تغییرات مقیاسی و فازهای گذار در شبکه‌های عصبی عمیق را که ویژگی‌های پیش‌بینی‌نشده تولید می‌کنند نادیده بگیرد؛ این گپ تحلیلی در متن نیازمند تصریح بیشتر است.\n\n---\n\n### ۶. ممیزی خود-انعکاسی پیش‌نویس (REIG - Draft Analysis Audit)\n\nاین بخش خروجی بخش‌های ۱ تا ۵ تولیدشده در همین تحلیل را مورد ارزیابی نقادانه قرار می‌دهد:\n\n- **انطباق علّی (Causal Compliance):**  \n  *وضعیت: تأیید (PASS)*  \n  *بررسی:* در پیش‌نویس، همبستگی تاریخی پروژه‌های صوری‌سازی زبان با هوش مصنوعی به عنوان یک تبارشناسی مفهومی تبیین شده و ادعای علیت دترمینیستی مکانیکی مطرح نگردیده است.\n- **انطباق تعمیم‌پذیری (Generalization Compliance):**  \n  *وضعیت: تأیید (PASS)*  \n  *بررسی:* پیش‌نویس، ادعای مقاله را به کل زیرساخت‌های شناختی تعمیم نداده و در محدوده مطالعات علم و فناوری و فلسفه زبان باقی مانده است.\n- **انطباق اندازه‌گیری و سنجش (Measurement Compliance):**  \n  *وضعیت: تأیید (PASS)*  \n  *بررسی:* امتیازات اختصاص‌داده‌شده در جدول‌های هفت‌گانه و ارزش‌افزوده خلاقانه، بازتاب‌دهنده محدوده کیفی متن و ترازهای استنادی واقعی آن هستند و از دقت کاذب پرهیز شده است.\n- **انطباق چارچوب‌بندی و ارزش‌داوری (Framing Compliance):**  \n  *وضعیت: تأیید (PASS)*  \n  *بررسی:* تحلیل از پیش‌داوری ارزشی علیه مهندسی هوش مصنوعی پرهیز کرده و صرفاً وزن دیدگاه تاریخی-معرفت‌شناختی را گزارش نموده است.\n\n**نتیجه ممیزی REIG:** **پذیرفته شد (PASS)**\n\n---\n\n### ۷. نتیجه‌گیری نهایی، نقاط قوت/ضعف و راهکارهای ارتقا\n\n**نقاط قوت:**\n- ارائه خوانش انتقادی ریشه‌دار در برابر تبلیغات تجاری پیرامون هوش مصنوعی به مثابه جادوی ناگهانی.\n- بهره‌گیری عمیق از تاریخ ایده صوری‌سازی زبان (Formalization) و ارتباط آن با نظریه اطلاعات.\n- توانایی بالا در پیوند دادن پرسش‌های فنی روز به مباحث فلسفی قرن هفدهم.\n\n**نقاط ضعف:**\n- کم‌توجهی به پدیده‌های جهش عملکردی در مدل‌های بزرگ‌مقیاس (Emergent Abilities) که برخی از تحلیل‌گران آن‌ها را متمایز از فرمول‌بندی‌های سنتی می‌دانند.\n- عدم ارائه شواهد فنی دقیق از درون معماری‌های توجه (Attention Mechanisms) برای تقویت تز تبارشناسانه.\n\n**پیشنهادهای بهبود:**\n۱. ادغام تحلیل‌های فنی شبکه‌های عصبی ترنسفورمر (Transformer Architectures) با مبانی نظریه اطلاعات شانون جهت اثبات دقیق‌تر تداوم تاریخی.  \n۲. بررسی نحوه مواجهه پارادایم پیوندگرایی (Connectionism) با سنت نمادین (Symbolic Tradition) قرن هفدهم در متن.\n\n---\nتحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.",
+            "source_model": "gemini-3.7-flash",
+            "generated_at": "2026-09-07T22:08:06Z",
+            "usage": null,
+            "finish_reason": null,
+            "continuation_rounds": 0
+          },
+          "metadata": {
+            "execution_time_seconds": 16.929,
+            "usage": null
+          },
+          "judge_result": {
+            "criteria_source": "llm",
+            "winner": "bsi",
+            "winner_source": "llm",
+            "reasoning": "BSI delivers substantially deeper, more structured, and more critical engagement with the article's historical-genealogical thesis across all seven weighted criteria. RAW provides only a surface-level summary of claims without analytical depth, gap analysis, mechanism identification, or critical evaluation. BSI's incremental value is high because it transforms a descriptive summary into a multi-layered epistemic assessment that exposes both the article's structural coherence and its specific analytical vulnerabilities (e.g., emergent abilities, causal attribution gaps).",
+            "criteria": [
+              {
+                "name": "Historical Genealogical Depth",
+                "importance": 25.0,
+                "raw_score": 3.0,
+                "bsi_score": 9.0,
+                "reason": "Article's core project is tracing AI language models to 17th-century universal language schemes; RAW only mentions this in passing while BSI provides detailed multi-century tracing with specific intellectual lineages."
+              },
+              {
+                "name": "Theoretical/Conceptual Rigor",
+                "importance": 20.0,
+                "raw_score": 4.0,
+                "bsi_score": 9.0,
+                "reason": "Co-constitution of language and computation is the central thesis; RAW states it without analysis while BSI unpacks ontological reductionism, feedback loops, and leverage points with conceptual precision."
+              },
+              {
+                "name": "Critical Intervention Value",
+                "importance": 15.0,
+                "raw_score": 5.0,
+                "bsi_score": 9.0,
+                "reason": "Challenging the 'radical rupture' narrative is the article's main intervention; RAW merely reports the claim while BSI evaluates its resilience against emergence arguments and identifies where the genealogy needs strengthening."
+              },
+              {
+                "name": "Interdisciplinary Synthesis",
+                "importance": 15.0,
+                "raw_score": 3.0,
+                "bsi_score": 9.0,
+                "reason": "Article bridges STS, history of philosophy, linguistics, information theory, and AI; RAW lists fields but BSI demonstrates successful synthesis across Shannon, Leibniz, transformer architectures, and pragmatic language models."
+              },
+              {
+                "name": "Mechanism/Process Analysis",
+                "importance": 10.0,
+                "raw_score": 2.0,
+                "bsi_score": 8.0,
+                "reason": "Understanding HOW historical continuity operates (not just THAT it exists); RAW provides none while BSI identifies ontological reductionism as mechanism, reinforcing feedback loops, and definitional leverage points."
+              },
+              {
+                "name": "Epistemic Gap Identification",
+                "importance": 10.0,
+                "raw_score": 2.0,
+                "bsi_score": 8.0,
+                "reason": "Article's value lies partly in exposing what current AI discourse misses; RAW identifies no gaps while BSI's EIG analysis articulates both an epistemic-ontological gap and a causal attribution gap regarding emergent abilities."
+              },
+              {
+                "name": "Practical/Policy Relevance",
+                "importance": 5.0,
+                "raw_score": 3.0,
+                "bsi_score": 8.0,
+                "reason": "Article claims historical understanding prevents AI governance hype; RAW mentions this superficially while BSI evaluates policy value concretely and links to governance implications."
+              }
+            ],
+            "total_scores": {
+              "raw": 3.3,
+              "bsi": 8.75
+            },
+            "bsi_capability_assessment": {
+              "relevance": "high",
+              "realization": "high",
+              "incremental_value": "high",
+              "reason": "BSI's multi-layer architecture (Manifest/Latent/Meta), EIG gap analysis, and REIG self-audit are exceptionally well-suited to this historical-epistemological article type, and the BSI analysis realizes these capabilities thoroughly with article-specific substantive output at every layer."
+            },
+            "incremental_value": "high",
+            "scale": "0-10",
+            "weight_sum": 100.0,
+            "glossary_mode": "full",
+            "judge_input_compacted": false
+          },
+          "scores": {
+            "RAW": 0.33,
+            "BSI": 0.875
+          },
+          "failed": false,
+          "status": "valid",
+          "model_id": "gemini-3.7-flash",
+          "truncated": false
+        }
+      ],
+      "article_id": "doi:https://doi.org/10.1353/tech.2026.a988849"
+    }
+  ],
+  "source_url": "https://github.com/ibstrade11-source/behmanesh-index-prompt/blob/main/MASTER_PROMPT_BSI_v3.4.2.md",
+  "run_metadata": {
+    "tool_version": "0.1.0",
+    "git_commit": "89a941006de1ccab30f7a16e09f86841cd5991eb",
+    "git_dirty": true,
+    "run_timestamp_utc": "2026-09-07T22:23:59Z",
+    "methodology_note": "Scores/judgements come from an independent LLM judge (see comparison/judge.py) instructed not to reuse BSI's own D1-D7/EIG vocabulary and to choose its own evaluation criteria. If no judge model is available or its response cannot be parsed, the run falls back to a simple keyword-presence heuristic -- the stored record's own 'criteria_source' field ('llm' vs 'heuristic_fallback') always says honestly which one produced a given result. Neither path is a validated measurement of analytical quality until checked against independent human judgement on a representative sample.",
+    "provider_name": null,
+    "model_version": null,
+    "temperature": null,
+    "max_tokens": null,
+    "prompt_version": null,
+    "framework_name": "bsi"
+  },
+  "retrieval_metadata": {
+    "retrieval_status": "accepted",
+    "retrieval_validation": {
+      "retrieval_status": "accepted",
+      "retrieval_validation": "title_match",
+      "query_type": "title",
+      "requested_query": "A Long History: From Universal Language to Artificial Intelligence",
+      "selected_title": "A Long History: From Universal Language to Artificial Intelligence",
+      "selected_rank": 1,
+      "match_score": 1.0,
+      "threshold": 0.72,
+      "candidate_count": 1
+    },
+    "rejected_articles": [],
+    "skipped_count": 0,
+    "skipped_titles": []
+  },
+  "benchmark_status": "benchmarkable"
+}

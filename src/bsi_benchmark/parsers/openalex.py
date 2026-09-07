@@ -33,9 +33,19 @@ class OpenAlexParser(Parser):
 
         data = json.loads(raw)
 
+        # OpenAlex search responses use {"results": [...]},
+        # while /works/{id} returns one Work object directly.
+        # Normalize both response shapes to a list.
+        if "results" in data:
+            items = data["results"]
+        elif data.get("id") and data.get("title"):
+            items = [data]
+        else:
+            raise ValueError("Unrecognized OpenAlex response shape")
+
         articles = []
 
-        for item in data["results"]:
+        for item in items:
 
             title = item.get("title") or ""
             abstract = _reconstruct_abstract(item.get("abstract_inverted_index"))

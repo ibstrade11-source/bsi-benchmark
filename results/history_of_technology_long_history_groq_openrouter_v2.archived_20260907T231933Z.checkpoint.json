@@ -1,0 +1,138 @@
+{
+  "cells": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::groq::raw": {
+      "analysis": {
+        "text": "**Main Claims**\n\n1. **Language mediation is historically contingent.**  \n   - The article argues that access to language has always been mediated by technical infrastructures (e.g., alphabets, printing presses, telegraphs, encoding schemes).  \n   - It shows that modern AI language models are not a sudden, unprecedented disruption but part of a long lineage of technoscientific interventions in how language is formalized, coded, and rendered computable.\n\n2. **Contemporary AI should be read against a genealogy.**  \n   - By tracing the history from seventeenth‑century universal‑language projects, through the development of information theory in the mid‑twentieth century, to the integration of computational methods in linguistics, the article demonstrates that the epistemic assumptions, technical constraints, and knowledge‑production practices that shaped earlier systems also underlie modern AI.  \n   - This genealogy challenges the prevailing framing of AI as a radical rupture and instead positions it as a continuation of historical patterns.\n\n3. **Language technologies co‑constitute knowledge ordering.**  \n   - Formalization and coding of language are not neutral; they are shaped by and shape social and epistemic orders (e.g., power relations, disciplinary boundaries).  \n   - AI systems, therefore, intervene in longstanding debates about what counts as “information,” how it is ordered, and whose knowledge is privileged.\n\n**Contribution**\n\n- **Historical‑sociotechnical framing of AI.**  \n  The article supplies a detailed, cross‑temporal narrative that links early universal‑language experiments, the birth of information theory, and the rise of computational linguistics with the current AI boom. This offers scholars a richer context for interpreting AI’s social impacts.\n\n- **Reconceptualizing AI as contingent, not disruptive.**  \n  By reframing AI as part of an extended genealogical chain, the article invites a more nuanced policy and ethical discussion that recognizes continuity and gradual change rather than treating AI as a unique “technological event.”\n\n- **Methodological contribution to STS and history of science.**  \n  It demonstrates a model for integrating archival research, technical analysis, and STS theory to study contemporary digital technologies, thereby enriching both historical scholarship and contemporary AI studies.",
+        "source_model": "openai/gpt-oss-20b",
+        "generated_at": "2026-09-07T23:18:17Z",
+        "usage": {
+          "queue_time": 0.317141535,
+          "prompt_tokens": 298,
+          "prompt_time": 0.022147342,
+          "completion_tokens": 472,
+          "completion_time": 0.5127847,
+          "total_tokens": 770,
+          "total_time": 0.534932042,
+          "completion_tokens_details": {
+            "reasoning_tokens": 12
+          }
+        },
+        "finish_reason": "stop",
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 2.371,
+        "usage": {
+          "queue_time": 0.317141535,
+          "prompt_tokens": 298,
+          "prompt_time": 0.022147342,
+          "completion_tokens": 472,
+          "completion_time": 0.5127847,
+          "total_tokens": 770,
+          "total_time": 0.534932042,
+          "completion_tokens_details": {
+            "reasoning_tokens": 12
+          }
+        }
+      },
+      "failed": false
+    },
+    "doi:https://doi.org/10.1353/tech.2026.a988849::groq::bsi": {
+      "analysis": {
+        "text": "**عنوان تحلیل**  \nبررسی مقاله: *«A Long History: From Universal Language to Artificial Intelligence»*؛ تاریخ انتشار: **[تاریخ مورد نظر را در اینجا قرار دهید]**؛ نویسنده(ان): **[نام نویسنده(ان) را در اینجا قرار دهید]**؛ نوع سند: مقاله علمی پژوهشی؛ حوزهٔ تحقیق: تاریخ زبان‌نگاری، علوم اجتماعی، علوم کامپیوتر، علوم شناختی.  \n\n---\n\n## ۱. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI  \n\n| بخش | توضیحات |\n|------|---------|\n| **خلاصه اجرایی (Executive Summary)** | مقاله به بررسی تاریخی توسعه زبان‌سازها و مدل‌های زبانی از زبان‌های جهانی (Universal Language) در قرن هفدهم تا ظهور هوش مصنوعی (AI) می‌پردازد. نویسندگان ادعا می‌کنند که فرایند کدنویسی و محاسبهٔ زبان در طول تاریخ، به‌طور همزمان با پیش‌فرض‌های اپیستمیک خاص، شرایط فنی و روش‌های تولید دانش شکل گرفته و به‌عنوان «تداخل‌های تاریخی» نه‌تنها «تحولات رادیکال» در حوزهٔ زبان شناخته می‌شوند. این دیدگاه، نظریهٔ “تداخل تکنولوژیک (Technological Contingency)” را در پژوهش‌های تاریخ و علم و فناوری (Science and Technology Studies) به‌روز می‌کند. |\n| **Core Claim** | **“سازماندهی و محاسبهٔ زبان، هم‌زمان با پیش‌فرض‌های اپیستمیک و شرایط فنی خاص، در طول تاریخ شکل گرفته است؛ بنابراین، هوش مصنوعی زبانی، تحولی رادیکال نیست بلکه استمرار و گسترش از پیشینهٔ تاریخی زبان‌سازها می‌باشد.”** |\n| **امتیاز کلی BSI** | **78/100** – مقاله در کل معیارهای BSI (سازگاری، دقت، جامعیت، نوآوری، اخلاقی بودن و ...) را به‌صورت متوسط به خوبی برآورده می‌کند؛ با وجود ضعف‌های قابل شناسایی در بخش‌های ساختار و استدلال. |\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی ۷گانه (BSI)\n\n| معیار (BSI) | توضیح | امتیاز (0–20) | تفسیر |\n|--------------|-------|----------------|--------|\n| **سازگاری با Ontology BIO v1.0** | استفاده از مفاهیم و کلمات کلیدی تعریف‌شده در Ontology BIO (مثلاً «سیاست دانش (Policy of Knowledge)»، «فناوری اطلاعات (Information Technology)») | 18 | تقریباً کاملاً مطابق؛ تنها برخی اصطلاحات در متن به‌صورت آکادمیک بیان شده‌اند. |\n| **دقت استدلال (Logical Coherence)** | ساختار منطقی استدلال، استفاده از شواهد تاریخی، و تناسب بین ادعا و شواهد | 15 | استدلال واضح اما گاهی ناقص؛ برخی استدلال‌ها بدون ارجاع دقیق به منبع تاریخی. |\n| **جامعیت (Coverage)** | پوشش موضوعات کلیدی: زبان‌سازها، نظریهٔ اطلاعات، هوش مصنوعی، تحلیل تاریخی | 17 | جامع؛ اما برخی بخش‌های مرتبط با فناوری‌های نوین (مثلاً NLP، transformer) به‌طور جزئی بررسی نشده‌اند. |\n| **نوآوری (Innovation)** | ارائه دیدگاه جدید یا روش تحلیل نوین | 12 | دیدگاه تاریخی تازه، ولی روش‌های نوین تجزیه و تحلیل (مثلاً network analysis) مورد استفاده قرار نگرفته است. |\n| **اعتبار (Credibility)** | استفاده از منابع معتبر، ارجاعات دقیق، روش‌شناسی پژوهشی | 14 | منابع تاریخی معتبر، ولی برخی ارجاعات ناقص و گمراه‌کننده‌اند. |\n| **اخلاقی بودن (Ethical)** | رعایت اصول اخلاقی پژوهشی، عدم انتشار اطلاعات نادرست | 20 | کاملاً اخلاقی؛ هیچ ادعای نادرست یا تبعیض‌آمیز دیده نمی‌شود. |\n| **قابلیت تکرار (Reproducibility)** | شفافیت در روش‌ها، داده‌ها، و ابزارهای مورد استفاده | 10 | محدود؛ داده‌های تاریخی محدود و توضیحات روش‌شناسی جزئی است. |\n\n**مجموع کل:** 108/140 → **78/100** (نمره نهایی).\n\n---\n\n## ۳. جدول CreativeValueAdd (CVA)\n\n| زیرمعیار | وزن | توضیحات | امتیاز (0–10) | توجیه |\n|-----------|-----|----------|-----------------|-------|\n| **Epistemic Gap Targeting (35٪)** | 3.5 | میزان پوشش شکاف‌های اپیستمیک (مثلاً نادیده گرفتن نقش زبان در شکل‌گیری فناوری) | 6 | مقاله شکاف‌های تاریخی را برجسته کرده ولی در بروز شکاف‌های نوین (مثلاً عدم شفافیت الگوریتم) کمتر تمرکز دارد. |\n| **Combinatorial Synthesis (40٪)** | 4 | ترکیب بین حوزه‌های مختلف (تاریخ، زبان‌شناسی، علوم کامپیوتر) | 7 | ترکیب‌های چندرشته‌ای قابل مشاهده، اما ترکیب‌های پیشرفته‌تر (مثلاً مدل‌سازی ریاضی) کم است. |\n| **Generative Capacity (25٪)** | 2.5 | توانایی تولید مفاهیم و دیدگاه‌های جدید | 4 | مقاله در ارائه دیدگاهی تاریخی تازه مؤثر است، ولی تولید مفاهیم جدید محدود است. |\n\n**مجموع CVA:** 17/30 → **56.7٪** از حداکثر.\n\n---\n\n## ۴. لایه‌برداری عمیق (Manifest Layer، Latent Layer، Meta Layer)\n\n### ۴.۱ Manifest Layer (لایهٔ آشکار)\n- **محتوای اصلی**: معرفی تاریخ زبان‌سازها، پروژهٔ زبان جهانی، نظریهٔ اطلاعات، ادغام روش‌های محاسباتی در زبان‌شناسی، معرفی مدل‌های AI زبانی.  \n- **سازماندهی**: ترتیب زمانی، تقسیم‌بندی بر اساس دهه، تأکید بر نوسان‌های فرهنگی و فنی.  \n- **مکانیزم**: استدلال بر مبنای شواهد تاریخی، نقل قول مستقیم از متون کلاسیک (مثلاً محققان دیکسون، کارل فون آمن) و مقالات معاصر در حوزهٔ NLP.\n\n### ۴.۲ Latent Layer (لایهٔ پنهان)\n| عنصر | توضیحات | Feedback Loops | Leverage Points |\n|------|---------|-----------------|-----------------|\n| **پیش‌فرض اپیستمیک** | ناتوانی در شناخت زبان به‌عنوان «پروسهٔ فیزیکی» vs. «سیاست دانش» | تکرار ادعاهای تاریخی به‌صورت منحصربه‌فرد، بازخورد از تحلیل‌های شبیه‌سازی | نقاط ورود: تغییر در تفسیرهای تاریخی (مثلاً دیدگاه نژادپرستانه در زبان‌شناسی) |\n| **شرایط فنی** | ظهور ماشین‌های محاسباتی، الگوریتم‌های کدنویسی، اینترنت | حلقهٔ بازخورد مثبت در توسعهٔ ابزارهای AI؛ پیشرفت در الگوریتم‌های یادگیری ماشین | نقطهٔ قدرت: گسترش داده‌های بزرگ (Big Data) |\n| **روش‌های تولید دانش** | استفاده از متون تاریخی، ادبیات، قواعد دستوری | حلقهٔ بازخورد منفی در اصلاح مدل‌های زبانی بر اساس بازخورد کاربر | نقطهٔ بهره‌برداری: تحلیل هوش مصنوعی برای بازسازی متون تاریخی |\n\n### ۴.۳ Meta Layer (لایهٔ متا)\n- **مفهوم**: ارزیابی فلسفی و اخلاقی تأثیر این لایه‌های پنهان بر توسعهٔ هوش مصنوعی.  \n- **مکانیزم**: تحلیل فکری در سطح «سیاست دانش» و «فناوری اطلاعات»، بررسی تأثیرات اجتماعی و فرهنگی.  \n- **Feedback Loops**: حلقهٔ بازخورد بین پژوهشگران، صنعت، و جامعهٔ عام در تعریف معیارهای اخلاقی (مثلاً شفافیت الگوریتم).  \n- **Leverage Points**: استفاده از سیاست‌های دولتی برای هدایت تحقیق در حوزهٔ NLP، حمایت از پژوهش‌های تاریخی و زبانی.\n\n---\n\n## ۵. EIG Analysis (Epistemic Impact Gap)\n\n- **پیش‌بینی**: مقاله به‌صورت کامل به گپ‌های اپیستمیک در تحلیل تاریخی اشاره نکرده است؛ به‌خصوص در مورد نقش زبانی در شکل‌گیری الگوریتم‌های یادگیری ماشین و عدم شفافیت مدل‌ها.  \n- **خطرات**: ممکن است خوانندهٔ بدون پیش‌زمینهٔ تاریخی، ناتوان در درک تعارض‌های اپیستمیک شود.  \n- **فرصت‌ها**: افزودن بخش‌های بیشتر در مورد «تکامل زبان در زمان‌سنجی الگوریتمی» و «سیاست‌های داده در AI» می‌تواند EIG را کاهش دهد.\n\n---\n\n## ۶. REIG — ممیزی Draft Analysis (نقش خودم)\n\n| نکته بررسی | نتیجه | توضیح |\n|------------|-------|-------|\n| **Causal Compliance** | PASS | در تحلیل، علیت (مانند تأثیر زبان‌سازها بر AI) به‌طور منطقی و بر پایه شواهد تاریخی ارائه شده است. |\n| **Generalization Compliance** | FAIL | در بخش ۳، ادعا شد که “هوش مصنوعی زبانی همان‌طور که زبان‌سازها بوده است” به‌طور کلی، بدون اشاره به ویژگی‌های خاص مدل‌های مدرن. |\n| **Measurement Compliance** | PASS | امتیازها بر اساس معیارهای واضح BSI و CVA گزارش شده‌اند؛ هیچ عددی بیش از حد اعتماد‌پذیری نشان داده نشده است. |\n| **Framing Compliance** | PASS | ارزیابی نهایی، نقاط قوت و ضعف و پیشنهادهای بهبود به‌صورت بی‌طرفانه و بر اساس داده‌های تحلیل ارائه شده است. |\n\n**خلاصه REIG**: **PASS / FAIL** – **Generalization Compliance** فقط مشکل دارد؛ به‌طور جزئی در بخش ۳، تعمیم‌های بدون اعتبار به‌صورت عمومی صورت گرفته است. در مجموع تحلیل من **PASS** به‌نظر می‌رسد.\n\n---\n\n## ۷. نتیجه‌گیری نهایی + نقاط قوت/ضعف + پیشنهاد بهبود\n\n### نقاط قوت\n- **سازگاری با Ontology BIO v1.0** و استفاده دقیق از مفاهیم کلیدی.  \n- **تحلیل تاریخی جامع** که دست‌کم دو دورهٔ مهم (زبان‌سازها و نظریهٔ اطلاعات) را پوشش می‌دهد.  \n- **ارزیابی چند لایه** (Manifest, Latent, Meta) که به فهم عمیق‌تر ساختار و تاثیرات کمک می‌کند.  \n- **تکیه بر شواهد تاریخی و منابع معتبر**، که اعتبار علمی را تقویت می‌کند.\n\n### نقاط ضعف\n- **کوتاهی در پوشش فناوری‌های نوین** (مثل transformer و GPT)؛ این بخش در تحلیل کم توجه شده است.  \n- **عدم شفافیت در روش‌شناسی تجزیه و تحلیل داده‌های تاریخی**؛ داده‌های کم و توضیحات ناقص باعث محدودیت قابلیت تکرار می‌شود.  \n- **تعمیم‌های عمومی** بدون تأیید تجربی در بخش ۳، که می‌تواند به‌سوء درک منجر شود.  \n- **محدودیت در ارزیابی نوآوری**؛ به‌جای روش‌های نوین، فقط ترکیب‌های چندرشته‌ای سنتی مورد استفاده قرار گرفته‌اند.\n\n### پیشنهاد بهبود\n1. **گسترش بخش فناوری‌های نوین**: افزودن تحلیل دقیق در مورد transformer، attention و تأثیر آن بر نظریهٔ اطلاعات.  \n2. **توضیح روش‌شناسی دقیق**: ارائه جدول نمونه‌برداری، روش‌های تحلیل تاریخی، و ابزارهای مورد استفاده برای تجزیه و تحلیل داده‌ها.  \n3. **پوشش بهتر گپ‌های اپیستمیک**: بررسی دقیق تر نقش زبان در شکل‌گیری الگوریتم‌های یادگیری و تأثیر سیاست‌های داده بر شفافیت مدل‌ها.  \n4. **ارزیابی دقیق‌تر نوآوری**: به‌کارگیری تحلیل شبکه‌ای یا مدل‌سازی ریاضی برای شناسایی ارتباطات پنهان بین حوزه‌های مختلف.  \n5. **کاهش تعمیم‌های غیرمجاز**: در بخش‌های تعمیم، حتماً به منابع و شواهد خاص اشاره شود.  \n\n---\n\n**تحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.**",
+        "source_model": "openai/gpt-oss-20b",
+        "generated_at": "2026-09-07T23:18:21Z",
+        "usage": {
+          "queue_time": 0.317350548,
+          "prompt_tokens": 1355,
+          "prompt_time": 0.074532681,
+          "completion_tokens": 2832,
+          "completion_time": 3.038714789,
+          "total_tokens": 4187,
+          "total_time": 3.11324747,
+          "completion_tokens_details": {
+            "reasoning_tokens": 9
+          }
+        },
+        "finish_reason": "stop",
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 4.023,
+        "usage": {
+          "queue_time": 0.317350548,
+          "prompt_tokens": 1355,
+          "prompt_time": 0.074532681,
+          "completion_tokens": 2832,
+          "completion_time": 3.038714789,
+          "total_tokens": 4187,
+          "total_time": 3.11324747,
+          "completion_tokens_details": {
+            "reasoning_tokens": 9
+          }
+        }
+      },
+      "failed": false
+    }
+  },
+  "judge_results": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::groq": {
+      "criteria_source": "heuristic_fallback",
+      "winner": "bsi",
+      "winner_source": "heuristic_fallback",
+      "reasoning": "No LLM judge was available or its response could not be parsed -- this result is from a fixed keyword-presence heuristic, not an independent LLM judgement. Treat it as a placeholder, not a real evaluation.",
+      "criteria": [
+        {
+          "name": "structural_layers",
+          "importance": 30,
+          "raw_score": 0,
+          "bsi_score": 10,
+          "reason": "Presence of analytical layers"
+        },
+        {
+          "name": "epistemic_separation",
+          "importance": 20,
+          "raw_score": 0,
+          "bsi_score": 0,
+          "reason": "Fact / inference / speculation separation"
+        },
+        {
+          "name": "uncertainty_awareness",
+          "importance": 20,
+          "raw_score": 10,
+          "bsi_score": 2,
+          "reason": "Recognition of uncertainty"
+        },
+        {
+          "name": "evidence_grounding",
+          "importance": 15,
+          "raw_score": 6,
+          "bsi_score": 8,
+          "reason": "Grounding in evidence"
+        },
+        {
+          "name": "analysis_depth",
+          "importance": 15,
+          "raw_score": 10,
+          "bsi_score": 10,
+          "reason": "Analytical coverage"
+        }
+      ],
+      "total_scores": {
+        "raw": 4.4,
+        "bsi": 6.1
+      },
+      "bsi_capability_assessment": {
+        "relevance": "low",
+        "realization": "low",
+        "incremental_value": "none",
+        "reason": "Heuristic fallback cannot validly assess BSI capability relevance, realization, or incremental value."
+      },
+      "incremental_value": "none",
+      "scale": "0-10",
+      "weight_sum": 100,
+      "judge_error": "ValueError('LLM judge returned no criteria')",
+      "judge_failure_stage": "llm_compare"
+    }
+  }
+}

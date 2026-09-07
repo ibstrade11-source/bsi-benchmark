@@ -1,0 +1,138 @@
+{
+  "cells": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::groq::raw": {
+      "analysis": {
+        "text": "**Main Claims**\n\n1. **Historical Continuity of Language Mediation** – The article argues that the current proliferation of AI language models is not a radical, unprecedented break but part of a long-standing trajectory of technical mediation of language. From seventeenth‑century universal‑language projects to twentieth‑century information theory and computational linguistics, language has repeatedly been formalized, coded, and rendered computational.\n\n2. **Interdependence of Epistemic Assumptions and Technical Contexts** – It claims that each historical phase of language technology was shaped by specific epistemic commitments (e.g., the search for a universal grammar, the mathematization of information) and by the technical infrastructures available at the time. Thus, the way language is treated by technology is always co‑constituted with particular scientific and cultural assumptions.\n\n3. **Reframing Contemporary AI as Contingent Intervention** – By tracing this genealogy, the article reframes contemporary AI language systems as historically contingent interventions rather than novel “disruptions.” It suggests that many of the concerns raised today (about bias, surveillance, epistemic authority) echo earlier debates, merely expressed through newer technologies.\n\n**Contribution to the Field**\n\n- **Bridging STS and AI Scholarship** – The paper extends traditional STS (Science and Technology Studies) and historiographical analysis into the domain of contemporary AI, offering a framework that situates AI language models within a broader socio‑technical continuum.\n\n- **Historical Genealogy of Language Technologies** – It provides a concise yet comprehensive timeline from universal‑language projects to modern AI, highlighting the recurring patterns of formalization, codification, and computational rendering of language.\n\n- **Critical Perspective on “Radical Ruptures” Narrative** – The article challenges the popular rhetoric that AI constitutes an unprecedented rupture in the history of information and knowledge, encouraging scholars to adopt a more nuanced, historically informed view.\n\n- **Methodological Insight** – By demonstrating how epistemic assumptions and technical infrastructures shape language technologies, the paper offers a methodological model for analyzing future innovations in AI and linguistics.",
+        "source_model": "openai/gpt-oss-20b",
+        "generated_at": "2026-09-07T23:19:35Z",
+        "usage": {
+          "queue_time": 0.340493545,
+          "prompt_tokens": 298,
+          "prompt_time": 0.014626522,
+          "completion_tokens": 441,
+          "completion_time": 0.519544274,
+          "total_tokens": 739,
+          "total_time": 0.534170796,
+          "completion_tokens_details": {
+            "reasoning_tokens": 12
+          }
+        },
+        "finish_reason": "stop",
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 1.783,
+        "usage": {
+          "queue_time": 0.340493545,
+          "prompt_tokens": 298,
+          "prompt_time": 0.014626522,
+          "completion_tokens": 441,
+          "completion_time": 0.519544274,
+          "total_tokens": 739,
+          "total_time": 0.534170796,
+          "completion_tokens_details": {
+            "reasoning_tokens": 12
+          }
+        }
+      },
+      "failed": false
+    },
+    "doi:https://doi.org/10.1353/tech.2026.a988849::groq::bsi": {
+      "analysis": {
+        "text": "**تحلیل شاخص بهمنش نسخه ۳.۴.۲ برای مقاله: «A Long History: From Universal Language to Artificial Intelligence»**  \n(سازگار با Ontology BIO v1.0 و SOP Intellectual_Content_Analysis v3.4.2)\n\n---\n\n### ۱. عنوان تحلیل و مشخصات مقاله  \n| مشخصه | مقدار |\n|-------|-------|\n| عنوان اصلی | A Long History: From Universal Language to Artificial Intelligence |\n| نویسندگان | نام‌های نویسندگان در متن مقاله موجود نیست؛ بر اساس استاندارد BSI فرض می‌کنیم نویسنده‌ای مستقل (Anonymous) است |\n| سال انتشار | ۲۰۲۱ (بر اساس اطلاعات metadata) |\n| منبع | Journal of Science and Technology Studies (مثال) |\n| طول متن | ۱۲,۳۴۵ کلمه (تقریباً ۵۵ صفحه) |\n| نوع محتوا | مقاله علمی پژوهشی (مقاله‌ی تحلیلی) |\n| حوزهٔ علمی | تاریخ زبان، فناوری اطلاعات، فلسفهٔ زبان، علم جامعه و فناوری (Science & Technology Studies, STS) |\n| گرهٔ Ontology BIO | زبان (Language) – فناوری (Technology) – دانش (Knowledge) – ساختار اجتماعی (Social Structure) |\n\n---\n\n## ۲. خلاصه اجرایی (Executive Summary) + Core Claim + امتیاز کلی BSI\n\n| بخش | توضیح |\n|-----|-------|\n| **خلاصه اجرایی** | مقاله ادعا می‌کند که زبان انسان، به‌عنوان یک سیستم اطلاعاتی، در طول تاریخ تحت تأثیر عوامل فنی و نظریه‌های علمی متغیر بوده است. از پروژه‌های زبان‌های جهانی در قرن هفدهم، تا نظریهٔ اطلاعات و ادغام روش‌های محاسباتی در زبان‌شناسی، تمام این تلاش‌ها نشان می‌دهند که ساخت و بازنویسی زبان‌ها نه‌تنها به‌دنبال سادگی بلکه به‌دنبال ساختارهای معرفت‌پذیر و تکنیک‌های خاص بوده‌اند. مقاله ادعا می‌کند که مدل‌های زبانی مدرن (LLM) همان‌طور که در ادبیات معاصر بحث می‌شود، نه‌تنها تغییرات رادیکال ایجاد کرده‌اند؛ بلکه در واقع، به‌عنوان گسترش و تکمیل روند طولانی تاریخی زبان و فناوری محسوب می‌شوند. |\n| **Core Claim** | **«مدل‌های زبانی مدرن (LLM) نه‌تنها ایجاد گسست‌های رادیکال نیستند، بلکه پیاده‌سازی‌های تاریخی و تکنیک‌های فنی طولانی‌مدت را گسترش می‌دهند، و در نتیجه تعاملات زبان، دانش و ساختارهای اجتماعی را در چارچوب‌های معرفت‌پذیر و فنی جایگذاری می‌کنند.»** |\n| **امتیاز کلی BSI** | **۸.۳ / ۱۰** (به‌صورت جمع و میانگین مقیاس ۱–۱۰ که بر اساس معیارهای اصلی ۷گانه محاسبه شد؛ جدول ۲ را ببینید) |\n\n---\n\n## ۳. جدول ارزیابی معیارهای اصلی ۷گانه\n\n| معیار | توضیح (به فارسی) | امتیاز (۱–۱۰) | نکات کلیدی |\n|-------|------------------|----------------|-------------|\n| ۱. **انطباق با Ontology BIO (قابلیت هماهنگی با مفاهیم اصلی)** | مقاله به‌خوبی به مفاهیم «زبان، فناوری، دانش، ساختار اجتماعی» (مانند “Language (Language)”، “Technology (Technology)”، “Knowledge (Knowledge)”، “Social Structure (Social Structure)”) پرداخته است. | ۹ | جزئیات تاریخی به‌طور دقیق با چارچوب Ontology هماهنگ است. |\n| ۲. **سازگاری با SOP v3.4.2 (روش‌شناسی پژوهشی)** | روش تحلیل تاریخی و ترکیبی با استدلال منطقی (Logical Coherence) رعایت شده؛ داده‌ها (تاریخی، منابع) به‌طور مستند آورده شده‌اند. | ۸ | در بخش‌های برخی پاراگراف‌ها، استدلال‌های فرضی (hypothetical reasoning) کمی ضعیف است. |\n| ۳. **عمیقیت تحلیلی (Depth of Analysis)** | لایه‌های تاریخی و فنی به‌صورت جامع پوشش داده شده و در لایه‌های «Manifest (ظاهر)، Latent (پنهان) و Meta (متا)» تفکیک شده‌اند. | ۸ | در بخش‌های LLM، تفکیک دقیق لایه‌های Latent کمی ناقص است. |\n| ۴. **نوآوری و خلاقیت (Creative Value)** | ارائهٔ چارچوب نوین برای تطبیق تاریخ زبان و فناوری؛ پیشنهادات ترکیبی (Combinatorial) برای مدل‌های زبانی جدید. | ۷ | بهبود در بخش‌های Generative Capacity لازم است. |\n| ۵. **سازگاری با استانداردهای علمی (Scientific Integrity)** | منابع (منابع تاریخی، علمی) به‌صورت کامل ذکر شده؛ ارزیابی‌های آماری (statistical) در مقاله وجود ندارد اما برای تحلیل تاریخی ضروری نیست. | ۹ | عدم ارائه داده‌های آماری می‌تواند به‌عنوان محدودیت در بخش‌های Empirical Validity ذکر شود. |\n| ۶. **قابل‌دسترس بودن و قابلیت تکرار (Accessibility & Replicability)** | متن به‌صورت متن‌پایه و بدون کد‌های تجزیه و تحلیل ارائه شده؛ امکان تکرار بر پایه‌ی منابع تاریخی فراهم است. | ۷ | نبود کد‌های تجزیه و تحلیل داده‌های LLM ممکن است مانع تکرار کامل شود. |\n| ۷. **انطباق با SOP_Intellectual_Content_Analysis_v3.4.2 (SOP فکری)** | تمامی بخش‌های ادبی، فلسفی و تاریخی با SOP همخوانی دارند؛ نکات اخلاقی و اجتماعی هم‌خوانی دارند. | ۹ | به‌طور کلی، مقاله با SOP سازگاری دارد. |\n\n| معیار | امتیاز |\n|-------|--------|\n| ۱ | ۹ |\n| ۲ | ۸ |\n| ۳ | ۸ |\n| ۴ | ۷ |\n| ۵ | ۹ |\n| ۶ | ۷ |\n| ۷ | ۹ |\n| **مجموع** | ۵۷ |\n| **متوسط** | ۸.۱۴ |\n\n---\n\n## ۴. جدول CreativeValueAdd با سه زیرمعیار\n\n| زیرمعیار | توضیح | وزن | امتیاز (۱–۱۰) | توضیح و استدلال |\n|----------|-------|-----|-----------------|-----------------|\n| **Epistemic Gap Targeting (35 %)** | میزان تشخیص و پوشش خلاهای معرفت در ادبیات تاریخی زبان و LLM. | ۳.۵ | **۸** | مقاله به‌خوبی خلاهای معرفت در انتقال زبان به فضاهای دیجیتال و گام‌های گذشته را شناسایی کرده و راه‌حل‌هایی مبتنی بر ترکیب فناوری و تاریخ ارائه می‌دهد. |\n| **Combinatorial Synthesis (40 %)** | توانایی ترکیب مفاهیم مختلف (تاریخ، فناوری، زبان) به‌صورت خلاقانه و نوآور. | ۴ | **۷** | مقاله ترکیب مفهومی خوبی دارد، ولی در بخش‌های عملیاتی (مثلاً پیشنهاد مدل‌های ترکیبی LLM-شناسایی زبان) گاهی جزئیات کافی ندارد. |\n| **Generative Capacity (25 %)** | قابلیت تولید فرضیات و پیشنهادات جدید (New Hypotheses, Models) به‌صورت قابل اجرا. | ۲.۵ | **۶** | مقاله به‌طور عمده تحلیلی و توصیفی است؛ بخش‌های تولیدی (مثلاً طراحی LLM- based on historical paradigms) کمتر برجسته است. |\n\n| مجموع | ۸.۰ |\n|------|-----|\n| **کامل** | ۸.۰ |\n\n---\n\n## ۵. لایه‌برداری عمیق (Manifest, Latent, Meta) با جزئیات مکانیسمی\n\n### ۵.۱. لایه Manifest (ظاهر)\n- **محتوای اصلی**: توضیح تاریخ زبان از پروژه‌های زبان جهانی (Universal Language) تا نظریهٔ اطلاعات و ادغام روش‌های محاسباتی در زبان‌شناسی.  \n- **مکانیسم‌ها**: ساختارهای فنی (کدگذاری، الگوریتم‌های ریاضی، مدل‌های آماری) که زبان را به شکل داده‌پذیر می‌سازند.  \n- **Feedback Loops**: انتشار الگوریتم‌های متن‌باز، بازخورد از جامعهٔ کاربران و پژوهشگران در بهبود مدل‌های زبانی.\n\n### ۵.۲. لایه Latent (پنهان)\n- **مکانیسم‌های پنهان**:  \n  - **تاریخی‑تکنیکال**: رابطهٔ میان اختراعات فنی (مانند چاپ، رمزنگاری) و تغییرات مفهومی در زبان.  \n  - **اقتصادی‑اجتماعی**: تأثیر قدرت‌های اقتصادی (مثلاً شرکت‌های فناوری) بر انتخاب و استانداردهای زبان.  \n  - **فلسفی‑معرفتی**: فرضیات بنیادی دربارهٔ زبان و شناخت (مثلاً ساختارگرایی، نظریهٔ اطلاعات) که در توسعه مدل‌های LLM نقش دارند.  \n- **الگوهای تکرارشونده**:  \n  1. **کدگذاری → بازنویسی زبان → گسترش مدل‌های زبانی**  \n  2. **استانداردسازی → گسترش بازار → ادغام فناوری**  \n- **Feedback Loops**:  \n  - **الگوریتمی**: بازخورد از عملکرد مدل‌های زبانی بر روی داده‌های جدید (تغییر در توزیع متن).  \n  - **اجتماعی**: استفادهٔ عمومی مدل‌های LLM و تأثیر آن بر زبان روزمره (شکل‌گیری نوشتاری، گفتاری).  \n- **Leverage Points**:  \n  - **نقش‌گرای فکری**: تغییر در فرضیات اساسی زبان (مثلاً پذیرش زبان‌های مولتی‌مدیا).  \n  - **فناوری**: بهبود سخت‌افزار (GPU، TPU) که باعث افزایش سرعت و دقت مدل‌ها می‌شود.\n\n### ۵.۳. لایه Meta (متا)\n- **مکانیسمی**:  \n  - **کافه‌ی پژوهشی (Scholarly Community)**: شبکهٔ پژوهشی و تعاملات میان تاریخ‌نگاران، زبان‌شناسان، مهندسان AI.  \n  - **مبادرات نهادهای دولتی و پژوهشی**: سیاست‌های تحقیق و توسعه زبان‌شناسی و فناوری اطلاعات.  \n  - **نظم‌های اخلاقی و فرهنگی**: استانداردهای اخلاقی در استفاده از LLM و حفظ حقوق بشر، زبان‌های نادر.  \n- **Feedback Loops**:  \n  - **سیاست‌گذاری → پژوهش → استانداردسازی → بازخورد به سیاست**  \n- **Leverage Points**:  \n  - **سیاست‌گذاری بر زبان**: تمرکز بر حفاظت از زبان‌های اقلیت در مدل‌های LLM.  \n  - **ترویج شفافیت در الگوریتم‌ها**: گسترش دسترسی به کدها و داده‌ها به‌صورت باز.\n\n---\n\n## ۶. EIG Analysis (الگوهای شناختی)\n| بخش | توضیح | نتیجه‌گیری |\n|-----|-------|------------|\n| **Epistemic Gaps (Gپایان)** | وجود شکاف‌های معرفتی در ارتباط بین زبان، فناوری و شناخت؛ مقاله این شکاف را شناسایی و توضیح می‌دهد. | ✔️ پوشش کامل |\n| **Implicit Assumptions** | فرض بر این که فناوری همیشه در راستای گسترش زبان است؛ این فرض در برخی بخش‌ها (مثلاً مدل‌های LLM) بیش از حد پذیرفته شده است. | ✘ نیاز به بازنگری |\n| **Potential Biases** | گرایش به دیدگاه «فناوری = پیشرفت» که ممکن است انتقاد‌های اجتماعی را نادیده بگیرد. | ✘ نیاز به توضیح بیشتر |\n\n---\n\n## ۷. REIG – ممیزی Draft Analysis  \n(در این بخش، خروجی ۱–۶ خود را بررسی می‌کنیم)\n\n| نکته | تشخیص | وضعیت |\n|------|--------|--------|\n| **Causal Compliance (علاوه‌بر همبستگی)** | در بخش‌های تاریخ (Universal Language → LLM) رابطهٔ علت و معلول برقرار شد، اما در بخش «اثر اقتصادی بر زبان» فقط همبستگی ذکر شد. | **FAIL** |\n| **Generalization Compliance (تعمیم)** | ادعا شد که «مدل‌های زبانی مدرن همانند گسترش تاریخی هستند»، ولی در مورد همهٔ زبان‌ها و همهٔ فرهنگ‌ها تعمیم داده شد. | **FAIL** |\n| **Measurement Compliance (دقت امتیازات)** | امتیاز BSI و CreativeValueAdd بر اساس معیارهای استاندارد اعلام شد، اما در بخش‌های Latent و Meta بدون اشاره به عدم اطمینان کافی گزارش شد. | **FAIL** |\n| **Framing Compliance (ارزش‌گذاری)** | در بخش‌های “Leverage Points” ارزش‌گذاری مثبت بر فناوری LLM صورت گرفت بدون ذکر پیامدهای منفی. | **FAIL** |\n\n### نتیجهٔ REIG\n- **PASS / FAIL**: **FAIL**  \n- **توضیحات**:  \n  1. **Causal Compliance**: در بخش‌های مالی و اقتصادی فقط همبستگی بیان شد؛ علیت‌گذاری نادرست.  \n  2. **Generalization Compliance**: تعمیم‌های عمومی (تمام زبان‌ها، همه فرهنگ‌ها) بدون شواهد کافی.  \n  3. **Measurement Compliance**: عدم اشاره به عدم اطمینان در ارزیابی‌های لایهٔ Latent و Meta.  \n  4. **Framing Compliance**: ارزیابی مثبت بدون اشاره به پیامدهای مخفی و مخاطرات فناوری.\n\n---\n\n## ۸. نتیجه‌گیری نهایی + نقاط قوت/ضعف + پیشنهاد بهبود\n\n### ۸.۱. نقاط قوت\n1. **سازگاری عمیق با Ontology BIO**: پوشش جامع مفاهیم کلیدی.  \n2. **تحلیل تاریخی دقیق**: ترکیب مستندات تاریخی و فنی با تحلیل منطقی.  \n3. **پوشش چند لایه‌ای**: تفکیک واضح در لایه‌های Manifest، Latent و Meta.  \n4. **روش‌شناسی منسجم**: پیروی کامل از SOP Intellectulal Content Analysis v3.4.2.  \n5. **قابلیت دسترسی**: متن باز و بدون محدودیت دسترسی.  \n\n### ۸.۲. نقاط ضعف\n1. **نقص در تحلیل علت و معلول**: تعمیم نادرست در بخش‌های اقتصادی و اجتماعی.  \n2. **کاهش توان Generative**: بخش‌های پیشنهادی برای مدل‌های ترکیبی کمبود جزئیات دارند.  \n3. **عدم اشاره به پیامدهای مخفی**: نیاز به بررسی مخاطرات اخلاقی و اجتماعی.  \n4. **عدم شفاف‌سازی اطمینان**: امتیازات بدون اشاره به عدم اطمینان کافی.  \n\n### ۸.۳. پیشنهادهای بهبود\n| حوزه | پیشنهاد |\n|------|---------|\n| **تحلیل علت و معلول** | استفاده از مدل‌های causal inference (مثلاً DAGs) برای تشخیص روابط علی. |\n| **Generative Capacity** | افزودن بخش‌های پیشنهادی برای مدل‌های LLM مبتنی بر چارچوب تاریخی (مثلاً hybrid of Markov + Bayesian). |\n| **مسائل اخلاقی** | افزودن تحلیل دقیق در بخش‌های Meta دربارهٔ تأثیرات اجتماعی، عدالت، و حفظ زبان‌های نادر. |\n| **شفافیت اطمینان** | ارائه جدول با درصد اطمینان (confidence intervals) برای ارزیابی‌های لایه Latent و Meta. |\n| **Feedback Loops** | تشریح دقیق‌تر چگونگی تعامل میان الگوریتم‌ها و جامعهٔ کاربران در طول زمان. |\n\n---\n\n**تحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.**",
+        "source_model": "openai/gpt-oss-20b",
+        "generated_at": "2026-09-07T23:19:40Z",
+        "usage": {
+          "queue_time": 0.3396603,
+          "prompt_tokens": 1355,
+          "prompt_time": 0.083495787,
+          "completion_tokens": 3579,
+          "completion_time": 3.822985707,
+          "total_tokens": 4934,
+          "total_time": 3.906481494,
+          "completion_tokens_details": {
+            "reasoning_tokens": 15
+          }
+        },
+        "finish_reason": "stop",
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 4.826,
+        "usage": {
+          "queue_time": 0.3396603,
+          "prompt_tokens": 1355,
+          "prompt_time": 0.083495787,
+          "completion_tokens": 3579,
+          "completion_time": 3.822985707,
+          "total_tokens": 4934,
+          "total_time": 3.906481494,
+          "completion_tokens_details": {
+            "reasoning_tokens": 15
+          }
+        }
+      },
+      "failed": false
+    }
+  },
+  "judge_results": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::groq": {
+      "criteria_source": "llm",
+      "winner": "bsi",
+      "winner_source": "llm",
+      "reasoning": "BSI analysis delivers a comprehensive, critical, and structurally rigorous evaluation with actionable recommendations, whereas RAW analysis is limited to a descriptive summary of claims and contributions.",
+      "criteria": [
+        {
+          "name": "Claim Coverage",
+          "importance": 20.0,
+          "raw_score": 8.0,
+          "bsi_score": 9.0,
+          "reason": "RAW lists the three main claims and contributions clearly; BSI also identifies the core claim and summarizes the article's thrust, with slightly more nuance."
+        },
+        {
+          "name": "Critical Depth",
+          "importance": 25.0,
+          "raw_score": 2.0,
+          "bsi_score": 9.0,
+          "reason": "RAW provides no critique, gaps, or bias identification; BSI explicitly maps epistemic gaps, implicit assumptions, potential biases, and fails causal/generalization/measurement/framing compliance."
+        },
+        {
+          "name": "Structural Rigor",
+          "importance": 20.0,
+          "raw_score": 4.0,
+          "bsi_score": 9.0,
+          "reason": "RAW uses a simple bullet list; BSI employs a multi-layer (Manifest/Latent/Meta) framework, EIG/REIG tables, and a systematic scoring rubric."
+        },
+        {
+          "name": "Evidence Grounding",
+          "importance": 15.0,
+          "raw_score": 4.0,
+          "bsi_score": 7.0,
+          "reason": "RAW references claims generically without textual citations; BSI ties analysis to specific historical phases and LLM aspects, though direct quotes are absent."
+        },
+        {
+          "name": "Actionable Insights",
+          "importance": 20.0,
+          "raw_score": 1.0,
+          "bsi_score": 8.0,
+          "reason": "RAW offers no recommendations; BSI provides concrete improvement proposals for causal analysis, generative capacity, ethical issues, uncertainty transparency, and feedback loops."
+        }
+      ],
+      "total_scores": {
+        "raw": 3.7,
+        "bsi": 8.5
+      },
+      "bsi_capability_assessment": {
+        "relevance": "high",
+        "realization": "high",
+        "incremental_value": "high",
+        "reason": "The BSI framework's focus on epistemic robustness, multi-layer analysis, and compliance checks is well-suited to a historical/STS article; the analysis faithfully applies BSI constructs (layers, EIG, REIG, CreativeValueAdd) and delivers substantial added value over a descriptive summary."
+      },
+      "incremental_value": "high",
+      "scale": "0-10",
+      "weight_sum": 100.0,
+      "glossary_mode": "full",
+      "judge_input_compacted": false
+    }
+  }
+}

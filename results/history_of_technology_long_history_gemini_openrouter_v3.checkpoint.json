@@ -1,0 +1,101 @@
+{
+  "cells": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::gemini::raw": {
+      "analysis": {
+        "text": "Based on the provided abstract, here is a concise, factual analysis of the article's main claims and core contributions:\n\n### **Main Claims**\n1. **Historical Continuity over Radical Rupture:** Modern AI language models should not be viewed as unprecedented, radical disruptions; rather, they are the latest phase in a multi-century genealogy of technical mediation and linguistic formalization.\n2. **Co-Constitution of Language and Technology:** The formalization, coding, and computational processing of language—from 17th-century European universal language schemes to mid-20th-century information theory and computational linguistics—have always been shaped by specific epistemic assumptions, technical contexts, and knowledge production practices.\n3. **Intervention in Knowledge and Social Ordering:** Contemporary language technologies actively participate in long-standing sociotechnical debates concerning how information, language, and social life are organized and governed.\n\n### **Core Contribution**\n* **Historiographical and STS Reframing:** The article bridges Science and Technology Studies (STS) and the history of linguistics by tracing a direct conceptual and technical lineage from early modern universal language projects to contemporary AI. In doing so, it provides a critical framework that contextualizes modern AI language models as historically contingent interventions rather than isolated, novel phenomena.",
+        "source_model": "gemini-3.7-flash",
+        "generated_at": "2026-09-07T21:53:15Z",
+        "usage": null,
+        "finish_reason": null,
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 12.654,
+        "usage": null
+      },
+      "failed": false
+    },
+    "doi:https://doi.org/10.1353/tech.2026.a988849::gemini::bsi": {
+      "analysis": {
+        "text": "# ارزیابی تخصصی بر پایهٔ شاخص بهمنش (BSI v3.4.2)\n\n**عنوان تحلیل:** تبارشناسی تاریخی هوش مصنوعی و زبان: از زبان جهانی تا هوش مصنوعی مدرن  \n**مشخصات مقاله:**  \n- **عنوان اصلی:** *A Long History: From Universal Language to Artificial Intelligence*  \n- **حوزهٔ موضوعی:** مطالعات علم، فناوری و جامعه (STS)، تاریخ زبان‌شناسی محاسباتی، فلسفهٔ اطلاعات، نظریهٔ رسانه  \n- **مبنای روش‌شناختی:** چارچوب استاندارد ارزیابی محتوای فکری (SOP v3.4.2) و هستی‌شناسی کاربردی (BIO v1.0)\n\n---\n\n## ۱. خلاصهٔ اجرایی (Executive Summary) + ادعای بنیادین (Core Claim) + امتیاز کلی\n\n### خلاصهٔ اجرایی (Executive Summary)\nاین مقاله رویکردی انتقادی-تاریخی به پدیدهٔ نوظهور مدل‌های زبانی بزرگ و هوش مصنوعی معاصر دارد. متن با به چالش کشیدن گفتمان غالب پیرامون «گسست بی‌سابقه (Unprecedented Rupture)»، مدل‌های هوش مصنوعی زبانی را امتداد خطی و تاریخی پروژه‌های قرن هفدهمی ساخت «زبان جهانی (Universal Language)»، فرمال‌سازی زبان در نظریهٔ اطلاعات میانهٔ قرن بیستم و ادغام روش‌های محاسباتی در زبان‌شناسی معرفی می‌کند. نویسنده نشان می‌دهد که فرمال‌سازی، کدگذاری و محاسبه‌پذیر کردن زبان، همواره همراه با مفروضات معرفت‌شناختی، اقتضائات فنی و شیوه‌های تولید دانش شکل گرفته و مداخله‌ای مشروط به بستر تاریخی (Historically Contingent Intervention) محسوب می‌شود.\n\n### ادعای بنیادین (Core Claim)\nمدل‌های زبانی هوش مصنوعی معاصر نمایانگر یک جهش ناگهانی و بریده از تاریخ نیستند، بلکه نقطهٔ اوج و تداوم یک تبارشناسی چندقرنه در راستای کدگذاری، نظم‌بخشی ساختاری به دانش و محاسبه‌پذیر کردن زبان هستند که ریشه در پروژه‌های فلسفی قرن هفدهم و نظریهٔ اطلاعات دارند.\n\n### امتیاز کلی شاخص بهمنش (BSI Overall Score)\n**امتیاز کل: ۸۴ / ۱۰۰ (سطح کیفی: عالی / نوآورانه در تبارشناسی مفهومی)**\n\n---\n\n## ۲. جدول ارزیابی معیارهای اصلی هفت‌گانه (Core Criteria Evaluation)\n\n| شماره | معیار ارزیابی (Criterion) | امتیاز (از ۱۰) | شرح و ارزیابی تحلیلی |\n| :--- | :--- | :--- | :--- |\n| ۱ | **انسجام منطقی (Logical Coherence)** | ۸.۵ | استدلال‌ها دارای توالی زمانی و منطقی قوی از قرن ۱۷ تا عصر حاضر هستند و نتیجه‌گیری مستقیماً از مقدمات تاریخی اخذ می‌شود. |\n| ۲ | **استحکام شواهد (Evidentiary Rigor)** | ۸.۰ | ارجاع به نقاط عطف تاریخی (پروژه‌های قرن ۱۷، نظریه اطلاعات، زبان‌شناسی محاسباتی) چارچوب استواری ایجاد کرده، هرچند شواهد تجربی مبتنی بر چکیده محدود است. |\n| ۳ | **عمق نظری و مفهومی (Theoretical Depth)** | ۹.۰ | استفادهٔ دقیق از مفاهیم مطالعات علم و فناوری (STS) و بازخوانی نظری تقلیل‌پذیری زبان به نمادهای محاسباتی. |\n| ۴ | **نوآوری مفهومی (Conceptual Novelty)** | ۸.۰ | چارچوب‌بندی مجدد هوش مصنوعی از یک «انقلاب فناورانه» به یک «روند پیوستهٔ تبارشناختی» ارزش تحلیلی بالایی دارد. |\n| ۵ | **کاربردپذیری و بینش راهبردی (Actionability)** | ۷.۵ | برای سیاست‌گذاری حوزهٔ فناوری و مطالعات انتقادی هوش مصنوعی دیدگاه زمینه‌ساز ارائه می‌دهد، اما راهکار فنی مستقیم ندارد. |\n| ۶ | **استواری ساختاری و روش‌شناسی (Methodological Rigor)** | ۸.۵ | اتخاذ رویکرد تبارشناختی (Genealogical Approach) و تاریخی-انتقادی هم‌راستا با روش‌شناسی استاندارد STS. |\n| ۷ | **شفافیت و وضوح بیانی (Clarity & Articulation)** | ۹.۰ | نثر متراکم، فاقد زوائد، با واژگان دقیق تخصصی و هدایت مستقیم مخاطب به ادعای اصلی. |\n\n---\n\n## ۳. جدول ارزش‌افزودهٔ خلاقانه (CreativeValueAdd Matrix)\n\n| زیرمعیار (Sub-criteria) | وزن (Weight) | امتیاز (از ۱۰۰) | تحلیل توجیهی و ارزیابی مکانیسمی |\n| :--- | :--- | :--- | :--- |\n| **هدف‌گیری شکاف معرفتی (Epistemic Gap Targeting)** | ۳۵٪ | ۸۶ | هدف‌گیری خطای شناختی رایج دربارهٔ «بی‌سابقگی مطلق» هوش مصنوعی و پر کردن خلأ تاریخی میان فلسفهٔ زبان قرن ۱۷ و الگوریتم‌های پردازش زبان طبیعی مدرن. |\n| **سنتز ترکیبی (Combinatorial Synthesis)** | ۴۰٪ | ۸۸ | پیوند زدن تاریخ فلسفه، مطالعات علم، فناوری و جامعه (STS)، نظریهٔ اطلاعات کلود شانون و مهندسی زبانی معاصر در یک پیکرهٔ واحد تحلیلی. |\n| **ظرفیت زایایی فکری (Generative Capacity)** | ۲۵٪ | ۸۲ | تولید لنزهای انتقادی تازه برای محققان به منظور بازخوانی پیش‌فرض‌های نهفته در ترنسفورمرها و مدل‌های هوش مصنوعی زبانی بر اساس پیشینهٔ نظم‌بخشی به دانش. |\n| **امتیاز وزنی کل ارزش‌افزوده** | **۱۰۰٪** | **۸۵.۸** | **خروجی تحلیلی بسیار ارزشمند با غنای تبارشناختی بالا** |\n\n---\n\n## ۴. لایه‌برداری عمیق تحلیلی (Deep Layering Analysis)\n\n```\n+-------------------------------------------------------------------------+\n| ۳. لایهٔ فرانگر (Meta Layer)                                            |\n| - هژمونی شناخت‌شناسی کمی‌گرا و تلقی محاسبه‌پذیری جهان                    |\n| - تقلیل پدیدارشناسی زبان به ماتریس‌های احتمالاتی                          |\n+-------------------------------------------------------------------------+\n                                    ▲\n                                    │ بازتولید ساختار\n                                    │\n+-------------------------------------------------------------------------+\n| ۲. لایهٔ پنهان (Latent Layer)                                           |\n| - مکانیسم: تقلیل فرمال (Formal Reductionism)                            |\n| - حلقهٔ بازخورد: استانداردسازی داده ──> توهم شمولیت ──> مهندسی معنا       |\n| - نقطهٔ اهرمی: بازتعریف معناشناسی ورای نحو محاسباتی                     |\n+-------------------------------------------------------------------------+\n                                    ▲\n                                    │ نمود عینی\n                                    │\n+-------------------------------------------------------------------------+\n| ۱. لایهٔ آشکار (Manifest Layer)                                         |\n| - مقایسهٔ پروژه‌های زبان جهانی قرن ۱۷ با مدل‌های زبانی هوش مصنوعی         |\n| - نقد گفتمان «گسست بنیادین» هوش مصنوعی                                  |\n+-------------------------------------------------------------------------+\n```\n\n### ۱. لایهٔ آشکار (Manifest Layer)\nدر سطح ظاهری، متن به بررسی تاریخ زیرساخت‌های فنی زبان، نمادها و رسانه‌ها می‌پردازد. ادعای مشهود این است که مدل‌های زبانی امروزی، جدیدترین ابزار واسطه‌گری فنی در فرایند پردازش و ثبت زبان هستند و سابقهٔ محاسبه‌پذیری آن به پروژه‌های قرن هفدهم برای خلق زبان‌های جهان‌شمول و ریاضی‌وار برمی‌گردد.\n\n### ۲. لایهٔ پنهان (Latent Layer)\n- **مکانیسم‌های پنهان (Latent Mechanisms):** مکانیسم تقلیل هستی‌شناختی؛ متن نشان می‌دهد که چگونه زبان در یک سیر تاریخی مداوم، از یک پدیدهٔ زیسته، فرهنگی و اگزیستانسیل به یک «سیستم محاسباتی و نمادین بسته» تبدیل شده است.\n- **حلقه‌های بازخورد (Feedback Loops):** \n  - *حلقهٔ خودتقویت‌کننده:* تلاش برای نظم‌بخشی به دانش $\\leftarrow$ ابداع فرمالیسم زبانی $\\leftarrow$ ایجاد زیرساخت فنی محاسبه‌پذیر $\\leftarrow$ تغییر درک انسان از ماهیت زبان به سمت ساختار ماشینی $\\leftarrow$ پذیرش مدل‌های آماری به عنوان متولیان واقعی معنا.\n- **نقاط اهرمی (Leverage Points):** نقطه‌ای که تحلیل بر آن دست می‌گذارد، «فرضیات معرفت‌شناختی اولیه» است. اگر در این نقطه مداخله شود، ادعای استقلال و هوشمندی خودبنیاد هوش مصنوعی فرو می‌ریزد و مشخص می‌شود مدل‌ها تنها ماشین‌های بازتولید الگوهای تاریخی-نهادی هستند.\n\n### ۳. لایهٔ فرانگر (Meta Layer)\nدر عمیق‌ترین سطح، این رویکرد به نقد «مدرنیتهٔ اطلاعاتی» می‌پردازد. این لایه بیانگر آن است که تمایل به مهارپذیری، نظارت و نظم‌بخشی به حیات اجتماعی از مسیر استانداردسازی زبان می‌گذرد. هوش مصنوعی تجلی نهایی تبدیل تفکر انسانی به کارایی بوروکراتیک و آماری است.\n\n---\n\n## ۵. تحلیل شکاف اطلاعاتی و شواهد (Epistemic Information Gap - EIG)\n\n1. **شکاف تبارشناختی پیوستگی-گسست:** متن فرضیهٔ گسست را رد می‌کند، اما دقیقاً مشخص نمی‌کند که ابعاد غیرخطی و مقیاس‌پذیری عظیم داده‌ها (Deep Learning Scale) چه تغییرات پارادایمیکی ورای نظریات سنتی ایجاد کرده‌اند.\n2. **شکاف تعمیم‌پذیری مکانی-زمانی:** تمرکز متن عمدتاً بر تبارشناسی غربی (اروپای قرن هفدهم و زبان‌شناسی آمریکا) است و نقش سنت‌های زبانی غیرغربی در محاسبه‌پذیری نادیده مانده است.\n3. **شکاف مکانیسمی فنی:** عدم تفکیک بین رویکردهای نمادین قدیم (Symbolic AI) و مدل‌های توزیع‌شدهٔ ماتریسی جدید (Connectionist Transformers) از منظر فلسفهٔ زبان.\n\n---\n\n## ۶. ممیزی ارزیابی پیش‌نویس (REIG - Draft Audit)\n\n⚠️ **فراروش ارزیابی:** این بخش مستقیماً بر روی پیش‌نویس تحلیل حاضر (بخش‌های ۱ تا ۵) اجرا شده است تا اطمینان حاصل شود تحلیلگر خود دچار سوگیری‌های شناختی، تعمیم نابجا یا ادعاهای فراتر از داده نشده است.\n\n* **انطباق علّی (Causal Compliance):**  \n  - *وضعیت:* **تأیید شد (PASS)**  \n  - *شرح:* در تحلیل حاضر، همبستگی تاریخی و پیوستگی تبارشناختی به عنوان علیت تام مادی معرفی نشد، بلکه به عنوان «پیش‌شرط‌های معرفتی و بسترساز» چارچوب‌بندی شد.\n* **انطباق تعمیم‌پذیری (Generalization Compliance):**  \n  - *وضعیت:* **تأیید شد (PASS)**  \n  - *شرح:* تحلیل، احکام کلی را تنها به چارچوب مکتب STS و تاریخ زبان‌شناسی محاسباتی محدود کرد و از تسری بی‌پایه به کارایی مهندسی هوش مصنوعی پرهیز نمود.\n* **انطباق سنجش و اندازه‌گیری (Measurement Compliance):**  \n  - *وضعیت:* **تأیید شد (PASS)**  \n  - *شرح:* امتیازات جدول معیارها و ارزش‌افزوده متناسب با عمق چکیده و متن مستند تخصیص یافته و از اغراق در قطعیت پرهیز شده است.\n* **انطباق چارچوب‌بندی (Framing Compliance):**  \n  - *وضعیت:* **تأیید شد (PASS)**  \n  - *شرح:* هیچ‌گونه قضاوت ارزشی ایدئولوژیک اعمال نشد؛ ادبیات تحلیل در مرز واژگان روش‌شناختی و دانشگاهی حفظ گردید.\n\n**نتیجهٔ ممیزی REIG:** **قبول کامل (PASS)**\n\n---\n\n## ۷. نتیجه‌گیری، نقاط قوت، نقاط ضعف و پیشنهادات بهبود\n\n### نقاط قوت (Strengths)\n- چارچوب‌بندی مجدد و شالوده‌شکنانه از پدیدهٔ هوش مصنوعی زبانی.\n- پیوند منسجم میان نظریهٔ اطلاعات و پروژه‌های تاریخی زبان جهانی.\n- خنثی‌سازی هیجانات کاذب فناورانه (Tech Hype) از طریق لنز مطالعات علم و فناوری.\n\n### نقاط ضعف (Weaknesses)\n- عدم توجه کافی به جهش‌های کیفی ناشی از ظهور یادگیری ژرف در برابر زبان‌شناسی سنتی.\n- اروپامحور بودن بسترهای تاریخی بررسی‌شده در متن.\n\n### پیشنهادات بهبود (Actionable Improvements)\n- مقایسهٔ تفصیلی بین رویکرد زبان جهانی لایب‌نیتس و بردارهای فضایی واژگان (Word Embeddings) در ترنسفورمرها.\n- تبیین پیامدهای اخلاقی این تبارشناسی تاریخی برای سیستم‌های حاکمیت داده و تنظیم‌گری هوش مصنوعی معاصر.\n\n---\nتحلیل حاضر کاملاً مطابق SOP_Intellectual_Content_Analysis_v3.4.2 و Ontology BIO v1.0 انجام شد.",
+        "source_model": "gemini-3.7-flash",
+        "generated_at": "2026-09-07T21:53:36Z",
+        "usage": null,
+        "finish_reason": null,
+        "continuation_rounds": 0
+      },
+      "metadata": {
+        "execution_time_seconds": 20.412,
+        "usage": null
+      },
+      "failed": false
+    }
+  },
+  "judge_results": {
+    "doi:https://doi.org/10.1353/tech.2026.a988849::gemini": {
+      "criteria_source": "llm",
+      "winner": "bsi",
+      "winner_source": "llm",
+      "reasoning": "BSI wins on analytical depth, structural rigor, and critical generativity. It transforms the article's implicit genealogy into an explicit three-layer causal model, quantifies theoretical novelty, and produces actionable research gaps—all while passing a formal self-audit. RAW remains a useful executive summary but lacks the mechanistic and meta-critical dimensions that BSI supplies.",
+      "criteria": [
+        {
+          "name": "Historical Genealogy Coherence",
+          "importance": 25.0,
+          "raw_score": 7.0,
+          "bsi_score": 9.0,
+          "reason": "RAW captures the continuity claim but stays at summary level; BSI's three-layer mapping (Manifest/Latent/Meta) explicitly traces the genealogy from 17th-century universal language through information theory to transformer architectures, showing mechanistic links."
+        },
+        {
+          "name": "STS/Framing Insight",
+          "importance": 20.0,
+          "raw_score": 7.0,
+          "bsi_score": 9.0,
+          "reason": "RAW names the STS reframing; BSI deepens it by exposing the epistemic assumptions (quantitative ontology, formal reductionism) and the meta-level critique of 'informational modernity' that the article only implies."
+        },
+        {
+          "name": "Conceptual Depth",
+          "importance": 20.0,
+          "raw_score": 5.0,
+          "bsi_score": 9.0,
+          "reason": "RAW offers no theoretical elaboration; BSI synthesizes philosophy of language, Shannon information theory, STS, and NLP engineering into a combinatorial framework with scored Theoretical Depth (9/10) and CreativeValueAdd synthesis (88/100)."
+        },
+        {
+          "name": "Critical Gap Identification",
+          "importance": 15.0,
+          "raw_score": 3.0,
+          "bsi_score": 8.0,
+          "reason": "RAW identifies zero gaps; BSI's EIG section pinpoints three substantive gaps: continuity/rupture non-linearity, Western-centric genealogy, and symbolic vs. connectionist mechanistic divergence."
+        },
+        {
+          "name": "Structural/Methodological Rigor",
+          "importance": 10.0,
+          "raw_score": 6.0,
+          "bsi_score": 9.0,
+          "reason": "RAW uses a simple two-section structure; BSI deploys a seven-criterion rubric, weighted CreativeValueAdd matrix, three-layer deep analysis, and a formal REIG self-audit against causal, generalization, measurement, and framing compliance."
+        },
+        {
+          "name": "Accessibility & Clarity",
+          "importance": 10.0,
+          "raw_score": 9.0,
+          "bsi_score": 6.0,
+          "reason": "RAW is concise, jargon-light, and immediately readable; BSI is dense, bilingual, and assumes familiarity with BSI-specific constructs (Manifest/Latent/Meta, EIG, REIG), reducing accessibility for non-specialist readers."
+        }
+      ],
+      "total_scores": {
+        "raw": 6.1,
+        "bsi": 8.55
+      },
+      "bsi_capability_assessment": {
+        "relevance": "high",
+        "realization": "high",
+        "incremental_value": "high",
+        "reason": "BSI's multi-layer architecture and gap-analysis tools are well-matched to a historical-genealogical STS article; the analysis fully realizes those tools (all layers populated, self-audit passed) and delivers substantial incremental insight (deep mechanisms, meta-critique, three concrete epistemic gaps) beyond RAW's descriptive summary."
+      },
+      "incremental_value": "high",
+      "scale": "0-10",
+      "weight_sum": 100.0,
+      "glossary_mode": "full",
+      "judge_input_compacted": false
+    }
+  }
+}
