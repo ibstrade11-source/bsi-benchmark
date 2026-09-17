@@ -61,6 +61,13 @@ def _looks_like_token_budget_error(exc: Exception) -> bool:
 _COMPACTION_BUDGET_ESCALATION = (6000, 1500, 300)
 
 
+def _judge_model_name(judge):
+    """Return the actual model identifier used by the Judge generator."""
+    generator = getattr(judge, "generator", None)
+    model = getattr(generator, "model", None)
+    return str(model).strip() if model else ""
+
+
 class CrossModelRunner:
 
     def __init__(self, generator_manager=None, judge=None):
@@ -174,6 +181,14 @@ class CrossModelRunner:
 
                 if checkpointing.is_valid_judge_result(cached_judge):
                     judge_result = cached_judge
+
+                    # Backfill judge_model for valid cached results created
+                    # before judge-model metadata recording was added.
+                    judge_model_name = _judge_model_name(judge)
+                    if judge_model_name and not judge_result.get("judge_model"):
+                        judge_result["judge_model"] = judge_model_name
+                        checkpoint["judge_results"][jkey] = judge_result
+                        _save_checkpoint()
                 elif judge_init_error is not None:
                     judge_result = {"error": f"judge initialization failed: {judge_init_error}"}
                     checkpoint["judge_results"][jkey] = judge_result
@@ -191,6 +206,15 @@ class CrossModelRunner:
                             )
                         except Exception as exc:
                             judge_result = {"error": str(exc)}
+
+                    # Persist the exact model actually used by the Judge.
+                    # This is intentionally taken from the Judge generator,
+                    # never inferred from the Analyst model or filename.
+                    if isinstance(judge_result, dict):
+                        judge_model_name = _judge_model_name(judge)
+                        if judge_model_name:
+                            judge_result["judge_model"] = judge_model_name
+
                     checkpoint["judge_results"][jkey] = judge_result
                     _save_checkpoint()
                 else:
