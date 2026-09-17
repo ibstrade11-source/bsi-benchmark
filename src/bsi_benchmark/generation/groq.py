@@ -15,10 +15,7 @@ from .base import AnalysisGenerator
 from .prompt import render
 
 API_URL = "https://api.groq.com/openai/v1/chat/completions"
-DEFAULT_MODEL = os.environ.get(
-    "GROQ_MODEL",
-    "openai/gpt-oss-20b"
-)
+DEFAULT_MODEL = "openai/gpt-oss-120b"
 # GROQ_MAX_TOKENS lets a real generation run be given more headroom
 # without a code change, mirroring the existing GROQ_MODEL override
 # pattern. This does NOT affect JUDGE_MAX_TOKENS below -- the judge is

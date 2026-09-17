@@ -18,7 +18,7 @@ from .base import AnalysisGenerator
 from .prompt import render
 
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
-DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
+DEFAULT_MODEL = "gemini-3.6-flash"
 GEMINI_MAX_RETRIES = int(os.getenv("GEMINI_MAX_RETRIES", "50"))
 GEMINI_RETRY_DELAY = float(os.getenv("GEMINI_RETRY_DELAY", "5"))
 
